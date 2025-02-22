@@ -1,0 +1,32 @@
+---
+import Layout from '../../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const categories = [...new Set(posts.flatMap(post => post.data.categories))];
+  
+  return categories.map(category => {
+    const categoryPosts = posts.filter(post => 
+      post.data.categories.includes(category)
+    );
+    
+    return {
+      params: { category: category.toLowerCase().replace(/ /g, '-') },
+      props: { category, posts: categoryPosts },
+    };
+  });
+}
+
+const { category, posts } = Astro.props;
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout 
+  title={`Articles sur ${category} - Fabien Salles`}
+  description={`Découvrez tous mes articles sur ${category}`}
+>
+  <!-- Le reste du contenu reste inchangé -->
+</Layout>

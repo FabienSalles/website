@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { number: "10+", label: "années d'expérience" },
+  { number: "50+", label: "projets accompagnés" },
+  { number: "200+", label: "développeurs formés" },
+  { number: "15+", label: "entreprises conseillées" }
+];
+
+const services = [
+  {
+    title: "Tech Lead / Coach Technique",
+    description: "Accompagnement des équipes, mise en place de bonnes pratiques, et support technique pour améliorer la qualité des développements."
+  },
+  {
+    title: "Formation",
+    description: "Formations sur mesure dans mes domaines d'expertise : Git, tests unitaires, clean code, et bien plus."
+  },
+  {
+    title: "Développement",
+    description: "Contribution au développement de votre produit avec un focus sur la qualité et les bonnes pratiques."
+  }
+];
+
+const testimonials = [
+  {
+    name: "Marie Laurent",
+    role: "CTO, TechCorp",
+    content: "L'accompagnement de Fabien a transformé nos pratiques de développement. Notre équipe est plus efficace et notre code plus maintenable.",
+    image: "https://i.pravatar.cc/150?img=1"
+  },
+  {
+    name: "Thomas Dubois",
+    role: "Lead Developer, StartupFlow",
+    content: "La formation Clean Code a été un véritable tournant pour notre équipe. Fabien sait transmettre sa passion et son expertise.",
+    image: "https://i.pravatar.cc/150?img=2"
+  }
+];
+
+const clients = [
+  { name: "TechCorp", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=TechCorp" },
+  { name: "StartupFlow", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=StartupFlow" },
+  { name: "InnovTech", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=InnovTech" },
+  { name: "DevPro", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=DevPro" }
+];
+---
+
+<Layout title="Fabien Salles - Expert en artisanat logiciel | Tech Lead & Formateur">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div class="container mx-auto px-4 py-20">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">
+          Expert en artisanat logiciel, tech lead et formateur indépendant
+        </h1>
+        <p class="text-xl text-gray-700 mb-8">
+          Je vous accompagne dans l'amélioration de vos pratiques de développement, 
+          la montée en compétence de vos équipes et le développement de vos produits.
+        </p>
+        <div class="flex gap-4">
+          <a href="/contact" class="btn btn-primary">
+            Me contacter
+          </a>
+          <a href="/about" class="btn btn-outline">
+            En savoir plus
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map(stat => (
+          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+            <div class="text-gray-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Domaines d'expertise</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {services.map(service => (
+          <div class="p-6 border rounded-lg hover:shadow-lg transition-all duration-300">
+            <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Témoignages</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {testimonials.map(testimonial => (
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <img 
+                src={testimonial.image} 
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full"
+              />
+              <div>
+                <div class="font-semibold">{testimonial.name}</div>
+                <div class="text-gray-600 text-sm">{testimonial.role}</div>
+              </div>
+            </div>
+            <p class="text-gray-700">{testimonial.content}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Section -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ils me font confiance</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {clients.map(client => (
+          <div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">
+            <img 
+              src={client.logo} 
+              alt={client.name}
+              class="max-w-full h-auto"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 transform;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply border-2 border-blue-600 text-blue-600 hover:bg-blue-50;
+  }
+</style>

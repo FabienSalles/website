@@ -1,0 +1,11 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const cv = await getEntry('cv', 'cv');
+const { data } = cv;
+---
+
+<Layout title={data.title} description={data.description}>
+  <!-- Le reste du contenu reste inchangé -->
+</Layout>

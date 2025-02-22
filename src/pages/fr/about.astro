@@ -1,0 +1,97 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="À propos - Fabien Salles" 
+  description="Découvrez mon parcours et ma vision de l'artisanat logiciel"
+>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">À propos</h1>
+
+    <div class="prose prose-lg max-w-none">
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Ma vision de l'artisanat logiciel</h2>
+        <p>
+          En tant qu'expert en artisanat logiciel, je suis passionné par la création de logiciels
+          de qualité qui apportent une réelle valeur aux utilisateurs. Je crois fermement que le
+          développement logiciel est un art qui nécessite non seulement des compétences techniques,
+          mais aussi une approche réfléchie et des pratiques rigoureuses.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Mon approche</h2>
+        <p>
+          Je me concentre sur plusieurs aspects clés dans mon travail :
+        </p>
+        <ul class="mt-4 space-y-4">
+          <li>
+            <strong>Clean Code</strong> - Je crois en l'importance d'un code propre, lisible et
+            maintenable. Un code bien écrit est un investissement pour l'avenir.
+          </li>
+          <li>
+            <strong>Tests</strong> - Les tests automatisés sont essentiels pour garantir la qualité
+            et la fiabilité du code. Je pratique et enseigne le TDD (Test-Driven Development).
+          </li>
+          <li>
+            <strong>Architecture</strong> - Une bonne architecture est la clé d'un logiciel évolutif
+            et maintenable. Je privilégie les principes SOLID et l'architecture hexagonale.
+          </li>
+          <li>
+            <strong>Formation</strong> - Je partage mes connaissances à travers des formations
+            et du coaching technique pour aider les équipes à progresser.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Services</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="p-6 bg-gray-50 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">Formation</h3>
+            <ul class="space-y-2">
+              <li>Clean Code et bonnes pratiques</li>
+              <li>Test-Driven Development (TDD)</li>
+              <li>Domain-Driven Design (DDD)</li>
+              <li>Git avancé</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-lg">
+            <h3 class="text-xl font-semibold mb-3">Accompagnement</h3>
+            <ul class="space-y-2">
+              <li>Coaching technique</li>
+              <li>Revue de code</li>
+              <li>Mise en place de processus qualité</li>
+              <li>Architecture logicielle</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Me contacter</h2>
+        <p>
+          Vous souhaitez discuter de votre projet ou en savoir plus sur mes services ?
+          N'hésitez pas à me contacter :
+        </p>
+        <div class="mt-4 flex gap-4">
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            class="inline-flex items-center text-blue-600 hover:text-blue-800"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:contact@fabiensalles.dev"
+            class="inline-flex items-center text-blue-600 hover:text-blue-800"
+          >
+            Email
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>

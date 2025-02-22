@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Contact - Fabien Salles" 
+  description="Contactez-moi pour discuter de vos projets ou de vos besoins en formation"
+>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Contact</h1>
+
+    <div class="max-w-2xl mx-auto">
+      <div class="prose prose-lg mb-12">
+        <p>
+          Vous souhaitez discuter de votre projet, organiser une formation ou simplement échanger
+          sur l'artisanat logiciel ? Je serai ravi d'en discuter avec vous.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h2 class="text-xl font-semibold mb-4">Contact direct</h2>
+          <ul class="space-y-4">
+            <li>
+              <a 
+                href="mailto:contact@fabiensalles.dev"
+                class="flex items-center text-blue-600 hover:text-blue-800"
+              >
+                contact@fabiensalles.dev
+              </a>
+            </li>
+            <li>
+              <a 
+                href="https://www.linkedin.com/in/fabiensalles/"
+                class="flex items-center text-blue-600 hover:text-blue-800"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h2 class="text-xl font-semibold mb-4">Prestations</h2>
+          <ul class="space-y-2">
+            <li>Formation Clean Code</li>
+            <li>Coaching technique</li>
+            <li>Architecture logicielle</li>
+            <li>Accompagnement d'équipe</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="prose prose-lg">
+        <h2 class="text-2xl font-bold mb-4">Informations utiles</h2>
+        <p>
+          Pour une réponse plus rapide et pertinente, n'hésitez pas à inclure dans votre message :
+        </p>
+        <ul>
+          <li>Le contexte de votre projet ou de votre équipe</li>
+          <li>Vos objectifs et attentes</li>
+          <li>Le calendrier envisagé</li>
+          <li>La taille de l'équipe (pour les formations)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</Layout>

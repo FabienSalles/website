@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+// Import all page components statically
+import IndexPage from './index.astro';
+import AboutPage from './about.astro';
+import BlogIndexPage from './blog/index.astro';
+import CVPage from './cv.astro';
+import FormationsPage from './formations.astro';
+import BlogPostPage from './blog/[...slug].astro';
+import BlogCategoryPage from './blog/categories/[category].astro';
+
+export async function getStaticPaths() {
+  const paths = [];
+
+  // Add static routes
+  const staticRoutes = [
+    'about',
+    'blog',
+    'cv',
+    'formations'
+  ];
+
+  // Add paths for static routes
+  for (const route of staticRoutes) {
+    paths.push({ params: { slug: route } });
+  }
+
+  // Add blog dynamic routes
+  const posts = await getCollection('blog');
+  for (const post of posts) {
+    paths.push({ params: { slug: `blog/${post.slug}` }, props: { post } });
+  }
+
+  // Add category routes
+  const categories = [...new Set(posts.flatMap(post => post.data.categories))];
+  for (const category of categories) {
+    const categoryPosts = posts.filter(post => 
+      post.data.categories.includes(category)
+    );
+    paths.push({ 
+      params: { 
+        slug: `blog/categories/${category.toLowerCase().replace(/ /g, '-')}` 
+      },
+      props: { category, posts: categoryPosts }
+    });
+  }
+
+  return paths;
+}
+
+const { slug = '' } = Astro.params;
+
+// Map routes to components
+const routeComponentMap = {
+  '': IndexPage,
+  'about': AboutPage,
+  'blog': BlogIndexPage,
+  'cv': CVPage,
+  'formations': FormationsPage
+};
+
+// Determine which component to load
+let Component;
+let props = Astro.props;
+
+try {
+  const path = slug.toString();
+  
+  if (path.startsWith('blog/categories/')) {
+    Component = BlogCategoryPage;
+  } else if (path.startsWith('blog/') && !path.endsWith('index')) {
+    Component = BlogPostPage;
+  } else {
+    const route = path.split('/')[0];
+    Component = routeComponentMap[route] || routeComponentMap[''];
+  }
+} catch (error) {
+  console.error('Error loading component:', error);
+  return Astro.redirect('/404');
+}
+---
+
+<Component {...props} />

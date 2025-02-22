@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const categories = [...new Set(posts.flatMap(post => post.data.categories))];
+  
+  return categories.map(category => {
+    const categoryPosts = posts.filter(post => 
+      post.data.categories.includes(category)
+    );
+    
+    return {
+      params: { category: category.toLowerCase().replace(/ /g, '-') },
+      props: { category, posts: categoryPosts },
+    };
+  });
+}
+
+const { category, posts } = Astro.props;
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout 
+  title={`Articles about ${category} - Fabien Salles`}
+  description={`Discover all my articles about ${category}`}
+>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Articles about {category}</h1>
+
+    <div class="grid gap-8">
+      {sortedPosts.map(post => (
+        <article class="border-b pb-8">
+          <h2 class="text-2xl font-bold mb-2">
+            <a href={`/en/blog/${post.slug}`} class="hover:text-blue-600">
+              {post.data.title}
+            </a>
+          </h2>
+          <div class="flex gap-2 mb-3 text-sm text-gray-600">
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+          </div>
+          <p class="text-gray-700">{post.data.description}</p>
+          <div class="mt-4">
+            <a href={`/en/blog/${post.slug}`} class="text-blue-600 hover:underline">
+              Read more →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</Layout>

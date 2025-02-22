@@ -1,0 +1,75 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+
+const posts = await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+});
+
+const sortedPosts = posts.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].sort();
+---
+
+<Layout title="Blog - Fabien Salles" description="Articles sur l'artisanat logiciel, le développement et les bonnes pratiques">
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">Blog</h1>
+    
+    <div class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Catégories</h2>
+      <div class="flex flex-wrap gap-2">
+        {allCategories.map(category => (
+          <a
+            href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+            class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition-colors"
+          >
+            {category}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <div class="grid gap-8">
+      {sortedPosts.map(post => (
+        <article class="border-b pb-8">
+          <h2 class="text-2xl font-bold mb-2">
+            <a href={`/blog/${post.slug}`} class="hover:text-blue-600 transition-colors">
+              {post.data.title}
+            </a>
+          </h2>
+          <div class="flex gap-2 mb-3 text-sm text-gray-600">
+            <time datetime={post.data.pubDate.toISOString()}>
+              {post.data.pubDate.toLocaleDateString('fr-FR', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            • 
+            <div class="flex gap-2">
+              {post.data.categories.map(category => (
+                <a
+                  href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+                  class="hover:text-blue-600 transition-colors"
+                >
+                  {category}
+                </a>
+              ))}
+            </div>
+          </div>
+          <p class="text-gray-700">{post.data.description}</p>
+          <div class="mt-4">
+            <a href={`/blog/${post.slug}`} class="text-blue-600 hover:text-blue-800 transition-colors">
+              Lire la suite →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <NewsletterForm />
+  </div>
+</Layout>

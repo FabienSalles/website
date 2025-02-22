@@ -1,0 +1,72 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import NewsletterForm from '../../components/NewsletterForm.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: post.data.title }
+];
+---
+
+<Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description}>
+  <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <article>
+      <header class="mb-8">
+        <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+        <div class="flex gap-2 text-gray-600">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('fr-FR', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+          • 
+          <div class="flex gap-2">
+            {post.data.categories.map(category => (
+              <a
+                href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+                class="hover:text-blue-600 transition-colors"
+              >
+                {category}
+              </a>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <div class="prose prose-lg max-w-none">
+        <Content />
+      </div>
+
+      <footer class="mt-12 pt-8 border-t">
+        <div class="flex flex-col gap-4 text-gray-600">
+          <p>
+            Pour échanger sur le sujet, retrouvez{' '}
+            <a href={post.data.linkedinPostUrl} class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">
+              la discussion sur LinkedIn
+            </a>
+          </p>
+        </div>
+      </footer>
+    </article>
+
+    <NewsletterForm />
+  </div>
+</Layout>

@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout 
+  title="About - Fabien Salles" 
+  description="Discover my journey and vision of software craftsmanship"
+>
+  <div class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold mb-8">About</h1>
+
+    <div class="prose prose-lg max-w-none">
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">My Vision of Software Craftsmanship</h2>
+        <p>
+          As a software craftsmanship expert, I am passionate about creating quality software
+          that brings real value to users. I firmly believe that software development is an art
+          that requires not only technical skills but also a thoughtful approach and rigorous practices.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">My Approach</h2>
+        <p>
+          I focus on several key aspects in my work:
+        </p>
+        <ul class="mt-4 space-y-4">
+          <li>
+            <strong>Clean Code</strong> - I believe in the importance of clean, readable, and
+            maintainable code. Well-written code is an investment for the future.
+          </li>
+          <li>
+            <strong>Testing</strong> - Automated tests are essential for ensuring code quality
+            and reliability. I practice and teach TDD (Test-Driven Development).
+          </li>
+          <li>
+            <strong>Architecture</strong> - Good architecture is key to scalable and maintainable
+            software. I favor SOLID principles and hexagonal architecture.
+          </li>
+          <li>
+            <strong>Training</strong> - I share my knowledge through training and technical
+            coaching to help teams progress.
+          </li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold mb-4">Services</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold mb-3">Training</h3>
+            <ul class="space-y-2">
+              <li>Clean Code and best practices</li>
+              <li>Test-Driven Development (TDD)</li>
+              <li>Domain-Driven Design (DDD)</li>
+              <li>Advanced Git</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
+            <h3 class="text-xl font-semibold mb-3">Support</h3>
+            <ul class="space-y-2">
+              <li>Technical coaching</li>
+              <li>Code review</li>
+              <li>Quality process implementation</li>
+              <li>Software architecture</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold mb-4">Contact Me</h2>
+        <p>
+          Want to discuss your project or learn more about my services?
+          Don't hesitate to contact me:
+        </p>
+        <div class="mt-4 flex gap-4">
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="mailto:contact@fabiensalles.dev"
+            class="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+          >
+            Email
+          </a>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>

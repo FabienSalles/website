@@ -1,0 +1,104 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Formations', href: '/formations' },
+  { label: 'Test-Driven Development' }
+];
+---
+
+<Layout 
+  title="Formation Test-Driven Development (TDD) - Fabien Salles" 
+  description="Formation approfondie sur le Test-Driven Development et les bonnes pratiques de test"
+>
+  <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <h1 class="text-4xl font-bold mb-8">Formation Test-Driven Development (TDD)</h1>
+
+    <div class="prose prose-lg mb-12">
+      <p>
+        Maîtrisez l'art du développement piloté par les tests. Cette formation vous donnera
+        les outils et la méthodologie pour écrire du code plus fiable et plus maintenable
+        en suivant l'approche TDD.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold">Informations pratiques</h2>
+        <ul class="space-y-3">
+          <li><strong>Durée :</strong> 2 jours</li>
+          <li><strong>Public :</strong> Développeurs</li>
+          <li><strong>Prérequis :</strong> Bases en programmation</li>
+          <li><strong>Format :</strong> 30% théorie, 70% pratique</li>
+        </ul>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold">Objectifs</h2>
+        <ul class="space-y-3">
+          <li>Comprendre le cycle red-green-refactor</li>
+          <li>Maîtriser les différents types de tests</li>
+          <li>Savoir écrire des tests maintenables</li>
+          <li>Appliquer TDD sur des cas concrets</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Programme détaillé</h2>
+      
+      <div class="space-y-8">
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Jour 1 : Fondamentaux du TDD</h3>
+          <ul class="space-y-2">
+            <li>• Introduction au TDD et ses bénéfices</li>
+            <li>• Le cycle red-green-refactor</li>
+            <li>• Les différents types de tests</li>
+            <li>• Premiers pas avec TDD sur des katas simples</li>
+            <li>• Bonnes pratiques d'écriture de tests</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Jour 2 : TDD avancé</h3>
+          <ul class="space-y-2">
+            <li>• Tests et design</li>
+            <li>• Mocking et doubles de test</li>
+            <li>• TDD sur une application réelle</li>
+            <li>• Patterns de test</li>
+            <li>• Intégration de TDD dans le workflow</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Méthodes pédagogiques</h2>
+      <ul class="space-y-3">
+        <li>• Katas de programmation</li>
+        <li>• Travail sur des cas réels</li>
+        <li>• Sessions de live coding</li>
+        <li>• Exercices en binôme</li>
+        <li>• Support de formation complet</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Intéressé par cette formation ?</h2>
+      <p class="text-gray-600 mb-6">
+        Contactez-moi pour organiser une session dans votre entreprise ou
+        pour plus d'informations sur le contenu.
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+      >
+        Me contacter
+      </a>
+    </div>
+  </div>
+</Layout>

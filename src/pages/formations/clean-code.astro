@@ -1,0 +1,114 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Formations', href: '/formations' },
+  { label: 'Clean Code' }
+];
+---
+
+<Layout 
+  title="Formation Clean Code - Fabien Salles" 
+  description="Formation approfondie sur les principes du Clean Code et les bonnes pratiques de développement"
+>
+  <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={breadcrumbItems} />
+    
+    <h1 class="text-4xl font-bold mb-8">Formation Clean Code</h1>
+
+    <div class="prose prose-lg mb-12">
+      <p>
+        Apprenez à écrire un code plus maintenable, plus lisible et plus robuste. Cette formation
+        intensive vous permettra de maîtriser les principes du Clean Code et de les appliquer
+        dans votre travail quotidien.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold">Informations pratiques</h2>
+        <ul class="space-y-3">
+          <li><strong>Durée :</strong> 3 jours</li>
+          <li><strong>Public :</strong> Développeurs, Tech Leads</li>
+          <li><strong>Prérequis :</strong> 2 ans d'expérience en développement</li>
+          <li><strong>Format :</strong> 40% théorie, 60% pratique</li>
+        </ul>
+      </div>
+
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold">Objectifs</h2>
+        <ul class="space-y-3">
+          <li>Comprendre les principes SOLID</li>
+          <li>Maîtriser les bonnes pratiques de nommage</li>
+          <li>Savoir identifier et corriger le code complexe</li>
+          <li>Apprendre à refactorer efficacement</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Programme détaillé</h2>
+      
+      <div class="space-y-8">
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Jour 1 : Les fondamentaux du Clean Code</h3>
+          <ul class="space-y-2">
+            <li>• Introduction aux principes du Clean Code</li>
+            <li>• Conventions de nommage et bonnes pratiques</li>
+            <li>• Structure et organisation du code</li>
+            <li>• Exercices pratiques sur le nommage et la structure</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Jour 2 : Les principes SOLID</h3>
+          <ul class="space-y-2">
+            <li>• Single Responsibility Principle</li>
+            <li>• Open/Closed Principle</li>
+            <li>• Liskov Substitution Principle</li>
+            <li>• Interface Segregation Principle</li>
+            <li>• Dependency Inversion Principle</li>
+            <li>• Ateliers pratiques sur chaque principe</li>
+          </ul>
+        </div>
+
+        <div class="p-6 bg-gray-50 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Jour 3 : Refactoring et patterns</h3>
+          <ul class="space-y-2">
+            <li>• Identification des "code smells"</li>
+            <li>• Techniques de refactoring</li>
+            <li>• Design patterns courants</li>
+            <li>• Projet pratique de refactoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Méthodes pédagogiques</h2>
+      <ul class="space-y-3">
+        <li>• Alternance de théorie et pratique</li>
+        <li>• Exercices sur des cas concrets</li>
+        <li>• Projet fil rouge sur les 3 jours</li>
+        <li>• Code reviews en groupe</li>
+        <li>• Support de formation détaillé</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 p-8 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Intéressé par cette formation ?</h2>
+      <p class="text-gray-600 mb-6">
+        Contactez-moi pour organiser une session dans votre entreprise ou
+        pour plus d'informations sur le contenu.
+      </p>
+      <a 
+        href="/contact" 
+        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+      >
+        Me contacter
+      </a>
+    </div>
+  </div>
+</Layout>

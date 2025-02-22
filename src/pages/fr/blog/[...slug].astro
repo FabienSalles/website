@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const githubEditUrl = `https://github.com/fabiensalles/website/edit/main/src/content/blog/${post.slug}.md`;
+---
+
+<Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description}>
+  <!-- Le reste du contenu reste inchangé -->
+</Layout>
