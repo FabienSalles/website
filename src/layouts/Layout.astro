@@ -18,6 +18,7 @@ const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
 const aboutEnabled = import.meta.env.ABOUT_ENABLED === 'true';
 const cvEnabled = import.meta.env.CV_ENABLED === 'true';
 const rssEnabled = import.meta.env.RSS_ENABLED === 'true';
+const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
 
 const routeMapping = {
   '/formations': '/en/training',
@@ -68,6 +69,16 @@ if (!alternateLink) {
 
     <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href="/rss.xml" />
     <link rel="alternate" hreflang={isEnglishPath ? 'fr' : 'en'} href={alternateLink} />
+    <script is:inline type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`>
+    </script>
+    <script is:inline type="text/partytown" define:vars={{googleAnalyticsId}}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", googleAnalyticsId);
+    </script>
   </head>
   <body class="min-h-screen bg-white">
     <header class="fixed w-full bg-white z-50 border-b border-gray-100 shadow-sm">
