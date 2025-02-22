@@ -47,14 +47,14 @@ const technologies = [
 const services = [
   {
     title: "Tech Lead / Coach Technique",
-    description: "Je peux contribuer à rassembler des pratiques de développement, faciliter la montée en compétence et venir en support de vos équipes en trouvant des solutions adaptées à vos problématiques et en contribuant au développement de vos produits"
+    description: "Je peux rassembler des pratiques de développement, faciliter la montée en compétence et venir en support de vos équipes en trouvant des solutions adaptées à vos problématiques et en contribuant au développement de vos produits"
   },
   {
-    title: "Formation",
+    title: "Formateur",
     description: "J'ai accompagné des personnes en reconversion et donner des formations pour différents organismes. Je me suis recentré sur 2 formations (Git et PHPUnit) mais je peux répondre à d'autres demandes si celles-ci rejoignent mes domaines d'expertises"
   },
   {
-    title: "Développement",
+    title: "Développeur",
     description: "Que cela soit pour un besoin ponctuel ou pour un projet complet, sur du legacy ou une refonte, j'attache beaucoup d'importance à trouver des solutions adaptés à vos problématiques et à répondre aux mieux à vos besoins"
   }
 ];
@@ -75,38 +75,56 @@ const testimonials = [
 ];
 
 const clients = [
-  { name: "TechCorp", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=TechCorp" },
-  { name: "StartupFlow", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=StartupFlow" },
-  { name: "InnovTech", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=InnovTech" },
-  { name: "DevPro", logo: "https://via.placeholder.com/150x50/e2e8f0/64748b?text=DevPro" }
+  { name: "Hermes", logo: "/clients/hermes.png" },
+  { name: "Eres", logo: "/clients/eres.png" },
+  { name: "Amundi", logo: "/clients/amundi.png" },
+  { name: "Pledg", logo: "/clients/pledg.png" },
+  { name: "plum-kitchen", logo: "clients/plum-kitchen.png"},
+  { name: "Clever-Age", logo: "/clients/clever-age.png" },
+  { name: "Japan-experience", logo: "/clients/japan-experience.png" },
+  { name: "Orsys", logo: "/clients/orsys.png" },
+  { name: "LVMH", logo: "/clients/lvmh.png" },
+  { name: "Jardiland", logo: "/clients/jardiland.png" },
+  { name: "Chaumet", logo: "/clients/chaumet.png" },
+  { name: "MB Expansion", logo: "/clients/mb-expansion.png"},
+  { name: "DFS", logo: "/clients/dfs.png"},
+  { name: "Dismo", logo: "/clients/dismo.jpg"},
+  { name: "Jacadi", logo: "/clients/jacadi.jpg"},
+  { name: "Dior", logo: "/clients/dior.png"},
+  { name: "Aramis Auto", logo: "/clients/aramis-auto.png"},
+  { name: "Wolkswagen", logo: "/clients/wolkswagen.png"},
+  { name: "Total", logo: "/clients/total.png"},
+  { name: "RATP", logo: "/clients/ratp.png"},
+  { name: "We-cook", logo: "/clients/wecook.png"},
+  { name: "meteo-consult", logo: "/clients/meteo-consult.png"}
 ];
 ---
 
 <Layout title="Fabien Salles - Expert en artisanat logiciel | Tech Lead & Formateur">
   <!-- Hero Section -->
-  <section class="relative min-h-[60vh] flex items-center bg-gray-50">
-    <div class="container mx-auto px-4 py-20">
-      <div class="float-right">
-          <img class="h-96" src="/fabiensalles.png" alt="Fabien Salles">
-      </div>
-      <div class="max-w-3xl clear-left">
+  <section class="relative flex items-center bg-gray-50">
+    <div class="container mx-auto px-4 pt-20 grid grid-cols-1 md:grid-cols-2">
+      <div class="max-w-3xl">
           <h1 class="text-4xl md:text-5xl font-semibold mb-6">
               Salut, je suis Fabien !
           </h1>
           <p class="text-xl text-gray-700 mb-8">
-              Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications qui tiennent dans le temps ? Je peux certainement vous aider.
+              Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications web qui tiennent dans le temps ? Je peux certainement vous aider.
           </p>
-          <div>
+          <div class="flex flex-wrap gap-2">
               {technologies.map(technology =>
-                <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300">{technology}</span>
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-blue-50 transition-colors">{technology}</span>
               )}
           </div>
+      </div>
+      <div class="text-right">
+        <img class="h-96 ml-auto" src="/fabiensalles.png" alt="Fabien Salles">
       </div>
     </div>
   </section>
 
   <!-- Services Section -->
-  <section class="py-20">
+  <section class="pt-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Je me positionne en tant que</h2>
       <div class="grid md:grid-cols-3 gap-8">
@@ -121,17 +139,14 @@ const clients = [
   </section>
 
   <!-- Clients Section -->
-  <section class="py-20">
+  <section class="pt-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Ils me font confiance</h2>
+      <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {clients.map(client => (
-          <div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">
-            <img 
-              src={client.logo} 
-              alt={client.name}
-              class="max-w-full h-auto"
-            />
+        {stats.map(stat => (
+          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+              <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
+              <div class="text-gray-600">{stat.label}</div>
           </div>
         ))}
       </div>
@@ -143,10 +158,13 @@ const clients = [
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map(stat => (
-          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
-            <div class="text-gray-600">{stat.label}</div>
+        {clients.map(client => (
+          <div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">
+            <img
+              src={client.logo}
+              alt={client.name}
+              class="max-w-full h-auto"
+            />
           </div>
         ))}
       </div>
@@ -154,7 +172,7 @@ const clients = [
   </section>
 
   <!-- Testimonials Section -->
-  <section class="py-20 bg-gray-50">
+  <section class="pt-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Témoignages</h2>
       <div class="grid md:grid-cols-2 gap-8">
