@@ -6,7 +6,7 @@ interface Props {
 
 const {
   title,
-  description = "Fabien Salles - Expert en artisanat logiciel, tech lead et formateur indépendant"
+  description = "Fabien Salles - Je vous aide à produire des applications pérennes"
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -51,7 +51,9 @@ if (!alternateLink) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -87,7 +89,7 @@ if (!alternateLink) {
           <li>
             <a
               href={isEnglishPath ? '/en' : '/'}
-              class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+              class="text-xl font-semibold text-gray-500 dark:text-gray-400 hover:opacity-80 transition-opacity"
               data-astro-reload
             >
               Fabien Salles

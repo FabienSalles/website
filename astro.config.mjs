@@ -5,7 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown'
 
 export default defineConfig({
-  site: 'https://fabiensalles.dev',
+  site: 'https://fabiensalles.com',
   integrations: [
     tailwind(),
     mdx(),

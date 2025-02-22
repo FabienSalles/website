@@ -2,24 +2,41 @@
 import Layout from '../layouts/Layout.astro';
 
 const stats = [
-  { number: "10+", label: "années d'expérience" },
-  { number: "50+", label: "projets accompagnés" },
-  { number: "200+", label: "développeurs formés" },
-  { number: "15+", label: "entreprises conseillées" }
+  { number: "14+", label: "années d'expérience" },
+  { number: "26+", label: "projets clients" },
+  { number: "20+", label: "formations dispensées" },
+  { number: "98+", label: "personnes formées" }
+];
+
+const technologies = [
+  "TDD",
+  "DDD",
+  "Hexagonal Architecture",
+  "Event Driven Architecture",
+  "Craftsmanship",
+  "Clean Code",
+  "Agile",
+  "PHP",
+  "Symfony",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Git",
+  "PHPUnit"
 ];
 
 const services = [
   {
     title: "Tech Lead / Coach Technique",
-    description: "Accompagnement des équipes, mise en place de bonnes pratiques, et support technique pour améliorer la qualité des développements."
+    description: "Je peux contribuer à rassembler des pratiques de développement, faciliter la montée en compétence et venir en support de vos équipes en trouvant des solutions adaptées à vos problématiques et en contribuant au développement de vos produits"
   },
   {
     title: "Formation",
-    description: "Formations sur mesure dans mes domaines d'expertise : Git, tests unitaires, clean code, et bien plus."
+    description: "J'ai accompagné des personnes en reconversion et donner des formations pour différents organismes. Je me suis recentré sur 2 formations (Git et PHPUnit) mais je peux répondre à d'autres demandes si celles-ci rejoignent mes domaines d'expertises"
   },
   {
     title: "Développement",
-    description: "Contribution au développement de votre produit avec un focus sur la qualité et les bonnes pratiques."
+    description: "Que cela soit pour un besoin ponctuel ou pour un projet complet, sur du legacy ou une refonte, j'attache beaucoup d'importance à trouver des solutions adaptés à vos problématiques et à répondre aux mieux à vos besoins"
   }
 ];
 
@@ -48,38 +65,23 @@ const clients = [
 
 <Layout title="Fabien Salles - Expert en artisanat logiciel | Tech Lead & Formateur">
   <!-- Hero Section -->
-  <section class="relative min-h-[60vh] flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+  <section class="relative min-h-[60vh] flex items-center bg-gray-50">
     <div class="container mx-auto px-4 py-20">
-      <div class="max-w-3xl">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">
-          Expert en artisanat logiciel, tech lead et formateur indépendant
-        </h1>
-        <p class="text-xl text-gray-700 mb-8">
-          Je vous accompagne dans l'amélioration de vos pratiques de développement, 
-          la montée en compétence de vos équipes et le développement de vos produits.
-        </p>
-        <div class="flex gap-4">
-          <a href="/contact" class="btn btn-primary">
-            Me contacter
-          </a>
-          <a href="/about" class="btn btn-outline">
-            En savoir plus
-          </a>
-        </div>
+      <div class="float-right">
+          <img class="rounded-full h-80" src="/fabiensalles.png" alt="Fabien Salles">
       </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map(stat => (
-          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <div class="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
-            <div class="text-gray-600">{stat.label}</div>
+      <div class="max-w-3xl clear-left">
+          <h1 class="text-4xl md:text-5xl font-semibold mb-6">
+              Salut, je suis Fabien !
+          </h1>
+          <p class="text-xl text-gray-700 mb-8">
+              Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications qui tiennent dans le temps ? Je peux certainement vous aider.
+          </p>
+          <div>
+              {technologies.map(technology =>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300">{technology}</span>
+              )}
           </div>
-        ))}
       </div>
     </div>
   </section>
@@ -87,37 +89,12 @@ const clients = [
   <!-- Services Section -->
   <section class="py-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Domaines d'expertise</h2>
+      <h2 class="text-3xl font-bold mb-12 text-center">Je me positionne en tant que</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {services.map(service => (
           <div class="p-6 border rounded-lg hover:shadow-lg transition-all duration-300">
             <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
             <p class="text-gray-600">{service.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Témoignages</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        {testimonials.map(testimonial => (
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-center gap-4 mb-4">
-              <img 
-                src={testimonial.image} 
-                alt={testimonial.name}
-                class="w-12 h-12 rounded-full"
-              />
-              <div>
-                <div class="font-semibold">{testimonial.name}</div>
-                <div class="text-gray-600 text-sm">{testimonial.role}</div>
-              </div>
-            </div>
-            <p class="text-gray-700">{testimonial.content}</p>
           </div>
         ))}
       </div>
@@ -136,6 +113,46 @@ const clients = [
               alt={client.name}
               class="max-w-full h-auto"
             />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Stats Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map(stat => (
+          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="text-4xl font-bold text-blue-600 mb-2">{stat.number}</div>
+            <div class="text-gray-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Témoignages</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {testimonials.map(testimonial => (
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full"
+              />
+              <div>
+                <div class="font-semibold">{testimonial.name}</div>
+                <div class="text-gray-600 text-sm">{testimonial.role}</div>
+              </div>
+            </div>
+            <p class="text-gray-700">{testimonial.content}</p>
           </div>
         ))}
       </div>
