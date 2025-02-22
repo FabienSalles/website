@@ -4,13 +4,20 @@ interface Props {
   description?: string;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Fabien Salles - Expert en artisanat logiciel, tech lead et formateur indépendant"
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const isEnglishPath = currentPath.startsWith('/en');
+const translationEnabled = import.meta.env.TRANSLATION_ENABLED === 'true';
+const blogEnabled = import.meta.env.BLOG_ENABLED === 'true';
+const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
+const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
+const aboutEnabled = import.meta.env.ABOUT_ENABLED === 'true';
+const cvEnabled = import.meta.env.CV_ENABLED === 'true';
+const rssEnabled = import.meta.env.RSS_ENABLED === 'true';
 
 const routeMapping = {
   '/formations': '/en/training',
@@ -49,12 +56,12 @@ if (!alternateLink) {
     <meta name="description" content={description} />
     <meta name="author" content="Fabien Salles" />
     <meta name="keywords" content="Software craftsmanship, craft, architecture, test, TDD, DDD, legacy, refactoring, tech lead, technical coach, trainer" />
-    
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
-    
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -67,29 +74,47 @@ if (!alternateLink) {
       <nav class="container mx-auto px-4 py-4">
         <ul class="flex items-center justify-between">
           <li>
-            <a 
-              href={isEnglishPath ? '/en' : '/'} 
-              class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity" 
+            <a
+              href={isEnglishPath ? '/en' : '/'}
+              class="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity"
               data-astro-reload
             >
               Fabien Salles
             </a>
           </li>
           <div class="flex gap-6 items-center">
-            <li><a href={isEnglishPath ? '/en/blog' : '/blog'} class="nav-link" data-astro-reload>Blog</a></li>
-            <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
-            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
-            <li><a href={isEnglishPath ? '/en/about' : '/about'} class="nav-link" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
-            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="nav-link" data-astro-reload>Contact</a></li>
-            <li>
-              <a 
-                href={alternateLink}
-                class="lang-switch"
-                data-astro-reload
-              >
-                {isEnglishPath ? 'FR' : 'EN'}
-              </a>
-            </li>
+            {
+              blogEnabled &&
+              <li><a href={isEnglishPath ? '/en/blog' : '/blog'} class="nav-link" data-astro-reload>Blog</a></li>
+            }
+            {
+              trainingEnabled &&
+              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+            }
+            {
+              cvEnabled &&
+              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+            }
+            {
+              aboutEnabled &&
+              <li><a href={isEnglishPath ? '/en/about' : '/about'} class="nav-link" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+            }
+            {
+              contactEnabled &&
+              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="nav-link" data-astro-reload>Contact</a></li>
+            }
+            {
+              translationEnabled &&
+                <li>
+                  <a
+                    href={isEnglishPath ? '/' : '/en'}
+                    class="lang-switch"
+                    data-astro-reload
+                  >
+                    {isEnglishPath ? 'FR' : 'EN'}
+                  </a>
+                </li>
+            }
           </div>
         </ul>
       </nav>
@@ -104,20 +129,26 @@ if (!alternateLink) {
         <div class="flex justify-between items-center">
           <p class="text-gray-600">&copy; {new Date().getFullYear()} Fabien Salles</p>
           <div class="flex gap-4">
-            <a 
-              href="https://www.linkedin.com/in/fabiensalles/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://www.linkedin.com/in/fabiensalles/"
+              target="_blank"
+              rel="noopener noreferrer"
               class="social-link"
             >
               LinkedIn
             </a>
-            <a href="/contact" class="social-link">
-              Contact
-            </a>
-            <a href="/rss.xml" class="social-link" title="RSS Feed">
-              RSS
-            </a>
+            {
+              contactEnabled &&
+              <a href="/contact" class="social-link">
+                  Contact
+              </a>
+            }
+            {
+              rssEnabled &&
+              <a href="/rss.xml" class="social-link" title="RSS Feed">
+                RSS
+              </a>
+            }
           </div>
         </div>
       </div>
@@ -198,7 +229,7 @@ if (!alternateLink) {
   .form-input,
   .form-select,
   .form-textarea {
-    @apply w-full px-4 py-3 rounded-lg border border-gray-200 
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200
            focus:ring-2 focus:ring-blue-500 focus:border-blue-500
            bg-white transition-all duration-300;
   }
