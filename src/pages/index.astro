@@ -47,30 +47,37 @@ const technologies = [
 const services = [
   {
     title: "Tech Lead / Coach Technique",
-    description: "Je peux rassembler des pratiques de développement, faciliter la montée en compétence et venir en support de vos équipes en trouvant des solutions adaptées à vos problématiques et en contribuant au développement de vos produits"
-  },
-  {
-    title: "Formateur",
-    description: "J'ai accompagné des personnes en reconversion et donner des formations pour différents organismes. Je me suis recentré sur 2 formations (Git et PHPUnit) mais je peux répondre à d'autres demandes si celles-ci rejoignent mes domaines d'expertises"
+    description: "En venant en renfort de vos équipes, contribuant à l'amélioration de leurs compétences, de la qualité de vos projets et m'assurant de répondre aux mieux à vos attentes tout en respectant vos contraintes"
   },
   {
     title: "Développeur",
-    description: "Que cela soit pour un besoin ponctuel ou pour un projet complet, sur du legacy ou une refonte, j'attache beaucoup d'importance à trouver des solutions adaptés à vos problématiques et à répondre aux mieux à vos besoins"
+    description: "Que cela soit pour un besoin ponctuel ou pour un projet complet, sur du legacy ou des refontes, j'attache beaucoup d'importance à trouver des solutions techniques adaptés à vos problématiques métiers et à livrer continuellement et le plus rapidement possible de la valeur"
+  },
+  {
+    title: "Formateur",
+    description: "J'ai accompagné des personnes en reconversion et donner des formations pour différents organismes. Je me suis recentré sur 2 formations actuellement (Git et PHPUnit) mais je peux répondre à d'autres demandes si celles-ci rejoignent mes domaines d'expertises"
   }
 ];
 
 const testimonials = [
   {
-    name: "Marie Laurent",
-    role: "CTO, TechCorp",
-    content: "L'accompagnement de Fabien a transformé nos pratiques de développement. Notre équipe est plus efficace et notre code plus maintenable.",
-    image: "https://i.pravatar.cc/150?img=1"
+    name: "Jean-Yves Camier",
+    role: "Ingénieur DevOps, Clever Age - 2020",
+    content: "<p>J'ai eu l'opportunité de travailler avec Fabien sur plusieurs projets et je dois dire que j'ai adoré ces moments : sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important à mes yeux.</p>",
+    image: "/recommendations/jean-yves-camier.jpg"
   },
   {
-    name: "Thomas Dubois",
-    role: "Lead Developer, StartupFlow",
-    content: "La formation Clean Code a été un véritable tournant pour notre équipe. Fabien sait transmettre sa passion et son expertise.",
-    image: "https://i.pravatar.cc/150?img=2"
+    name: "Daniel Godin",
+    role: "Développeur web, Clever Age - 2020",
+    content: "<p>Je travaille actuellement avec Fabien au sein de Clever Age.<br />" +
+      "Que puis-je dire de lui, avant toute chose c'est une personne qui met en avant l'humain à travers son ouverture d'esprit.<br />" +
+      "<br />" +
+      "Malgré son jeune âge, Fabien est certainement un des plus talentueux Lead développeur avec qui j'ai pu travailler jusqu'à présent. Il a cette capacité de comprendre rapidement un sujet, qu'il s'agisse des règles métiers complexes ou l'apprentissage d'une nouvelle technologie.<br />" +
+      "<br />" +
+      "Comme tout être humain, il a aussi des défauts, mais honnêtement ça ne représente pas 5% de la personne passionnée et sympathique qu'il est.<br />" +
+      "<br />" +
+      "J'ai la chance de continuer à travailler avec actuellement sur un autre projet où il est encore Lead développeur. Ce qui confirme sa qualité d’écoute et envie de transmettre son savoir faire. C'est un talent rare de nos jours.</p>",
+    image: "/recommendations/daniel-godin.jpg"
   }
 ];
 
@@ -126,7 +133,7 @@ const clients = [
   <!-- Services Section -->
   <section class="pt-20">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Je me positionne en tant que</h2>
+      <h2 class="text-3xl font-bold mb-12 text-center">Je peux prendre le rôle de</h2>
       <div class="grid md:grid-cols-3 gap-8">
         {services.map(service => (
           <div class="p-6 border rounded-lg hover:shadow-lg transition-all duration-300">
@@ -189,7 +196,7 @@ const clients = [
                 <div class="text-gray-600 text-sm">{testimonial.role}</div>
               </div>
             </div>
-            <p class="text-gray-700">{testimonial.content}</p>
+            <Fragment  class="text-gray-700" set:html={testimonial.content} />
           </div>
         ))}
       </div>
