@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const description = "Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications web qui tiennent dans le temps ? Je peux certainement vous aider."
+
 const stats = [
   { number: "14+", label: "années d'expérience" },
   { number: "26+", label: "projets clients" },
@@ -67,6 +69,12 @@ const testimonials = [
     image: "/recommendations/jean-yves-camier.jpg"
   },
   {
+    name: "Luis Campillo Matias",
+    role: "Product Desginer, Hermes - 2023",
+    content: "<p>Ce fut un réel plaisir de travailler avec Fabien. Sa compétence et son expertise ont été un véritable atout dans notre collaboration, apportant une valeur ajoutée indéniable à chaque projet. Toujours à l'écoute, réactif et précis dans ses analyses, il sait trouver des solutions efficaces et pertinentes. Mais au-delà de ses compétences techniques, Fabien est également une personne humaine et bienveillante, ce qui rend le travail avec lui encore plus agréable. Je le recommande sans hésitation !</p>",
+    image: "/recommendations/luis.jpg"
+  },
+  {
     name: "Daniel Godin",
     role: "Développeur web, Clever Age - 2020",
     content: "<p>Je travaille actuellement avec Fabien au sein de Clever Age.<br />" +
@@ -82,7 +90,7 @@ const testimonials = [
 ];
 ---
 
-<Layout title="Fabien Salles - Expert en artisanat logiciel | Tech Lead & Formateur">
+<Layout title="Fabien Salles - Artisant développeur, Tech Lead & Formateur", description={description}>
   <!-- Hero Section -->
   <section class="relative flex items-center bg-gray-50">
     <div class="container mx-auto px-4 pt-20 grid grid-cols-1 md:grid-cols-2">
@@ -91,7 +99,7 @@ const testimonials = [
               Salut, je suis Fabien !
           </h1>
           <p class="text-xl text-gray-700 mb-8">
-              Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications web qui tiennent dans le temps ? Je peux certainement vous aider.
+            {description}
           </p>
           <div class="flex flex-wrap gap-2">
               {technologies.map(technology =>
