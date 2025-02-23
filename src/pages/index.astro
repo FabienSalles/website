@@ -80,31 +80,6 @@ const testimonials = [
     image: "/recommendations/daniel-godin.jpg"
   }
 ];
-
-const clients = [
-  { name: "Hermes", logo: "/clients/hermes.png" },
-  { name: "Eres", logo: "/clients/eres.png" },
-  { name: "Amundi", logo: "/clients/amundi.png" },
-  { name: "Pledg", logo: "/clients/pledg.png" },
-  { name: "plum-kitchen", logo: "clients/plum-kitchen.png"},
-  { name: "Clever-Age", logo: "/clients/clever-age.png" },
-  { name: "Japan-experience", logo: "/clients/japan-experience.png" },
-  { name: "Orsys", logo: "/clients/orsys.png" },
-  { name: "LVMH", logo: "/clients/lvmh.png" },
-  { name: "Jardiland", logo: "/clients/jardiland.png" },
-  { name: "Chaumet", logo: "/clients/chaumet.png" },
-  { name: "MB Expansion", logo: "/clients/mb-expansion.png"},
-  { name: "DFS", logo: "/clients/dfs.png"},
-  { name: "Dismo", logo: "/clients/dismo.jpg"},
-  { name: "Jacadi", logo: "/clients/jacadi.jpg"},
-  { name: "Dior", logo: "/clients/dior.png"},
-  { name: "Aramis Auto", logo: "/clients/aramis-auto.png"},
-  { name: "Wolkswagen", logo: "/clients/wolkswagen.png"},
-  { name: "Total", logo: "/clients/total.png"},
-  { name: "RATP", logo: "/clients/ratp.png"},
-  { name: "We-cook", logo: "/clients/wecook.png"},
-  { name: "meteo-consult", logo: "/clients/meteo-consult.png"}
-];
 ---
 
 <Layout title="Fabien Salles - Expert en artisanat logiciel | Tech Lead & Formateur">
@@ -152,26 +127,10 @@ const clients = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
-              <div class="text-gray-600">{stat.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Stats Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {clients.map(client => (
-          <div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">
-            <img
-              src={client.logo}
-              alt={client.name}
-              class="max-w-full h-auto"
-            />
+              <a class="hover:text-blue-600 transition-colors duration-300" href="/clients" title="Voir mes références">
+                <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
+                <div class="text-gray-600">{stat.label}</div>
+              </a>
           </div>
         ))}
       </div>
