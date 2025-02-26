@@ -8,6 +8,8 @@ interface ImportMetaEnv {
   readonly ABOUT_ENABLED: string;
   readonly CONTACT_ENABLED: string;
   readonly RSS_ENABLED: string;
+  readonly NEWSLETTER_ENABLED: string;
+  readonly GITHUB_BLOG_CONTRIBUTION_BASE_URL: string;
 }
 
 interface ImportMeta {

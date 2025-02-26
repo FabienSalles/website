@@ -1,28 +1,30 @@
 ---
+const newsletterEnabled = import.meta.env.NEWSLETTER_ENABLED === 'true';
 ---
-
-<div class="bg-blue-50 border border-blue-100 rounded-xl p-8 my-12">
-  <div class="max-w-2xl mx-auto text-center">
-    <h3 class="text-2xl font-bold mb-4">Restez informé</h3>
-    <p class="text-gray-600 mb-6">
-      Inscrivez-vous à ma newsletter pour recevoir mes derniers articles et actualités sur l'artisanat logiciel.
-    </p>
-    <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-      <input
-        type="email"
-        placeholder="Votre adresse email"
-        class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-        required
-      />
-      <button
-        type="submit"
-        class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300"
-      >
-        S'inscrire
-      </button>
-    </form>
-    <p class="text-sm text-gray-500 mt-4">
-      Vous pouvez vous désinscrire à tout moment. Pas de spam, promis !
-    </p>
+{ newsletterEnabled &&
+  <div class="bg-blue-50 border border-blue-100 rounded-xl p-8 my-12">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-4">Restez informé</h3>
+      <p class="text-gray-600 mb-6">
+        Inscrivez-vous à ma newsletter pour recevoir mes derniers articles et actualités sur l'artisanat logiciel.
+      </p>
+      <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+        <input
+          type="email"
+          placeholder="Votre adresse email"
+          class="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          required
+        />
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300"
+        >
+          S'inscrire
+        </button>
+      </form>
+      <p class="text-sm text-gray-500 mt-4">
+        Vous pouvez vous désinscrire à tout moment. Pas de spam, promis !
+      </p>
+    </div>
   </div>
-</div>
+}

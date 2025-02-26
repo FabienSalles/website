@@ -14,9 +14,9 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const githubBlogContributionBaseUrl = import.meta.env.GITHUB_BLOG_CONTRIBUTION_BASE_URL;
 
 const breadcrumbItems = [
-  { label: 'Accueil', href: '/' },
   { label: 'Blog', href: '/blog' },
   { label: post.data.title }
 ];
@@ -54,15 +54,22 @@ const breadcrumbItems = [
       <div class="prose prose-lg max-w-none">
         <Content />
       </div>
-
-      <footer class="mt-12 pt-8 border-t">
-        <div class="flex flex-col gap-4 text-gray-600">
-          <p>
-            Pour échanger sur le sujet, retrouvez{' '}
+      <footer class="mt-12 text-gray-600">
+        <div class="flex flex-col gap-4 pb-8">
+          <p class="text-2xl">
+            Vous souhaitez échanger sur le sujet ?{' '}
             <a href={post.data.linkedinPostUrl} class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">
-              la discussion sur LinkedIn
+                Retrouvez la discussion sur LinkedIn
             </a>
           </p>
+        </div>
+        <div class="flex flex-col gap-4 pt-8 border-t">
+            <p>
+                Vous avez repéré une erreur ?{' '}
+                <a href={githubBlogContributionBaseUrl + post.id} class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">
+                    Proposez vos modifications sur GitHub
+                </a>
+            </p>
         </div>
       </footer>
     </article>
