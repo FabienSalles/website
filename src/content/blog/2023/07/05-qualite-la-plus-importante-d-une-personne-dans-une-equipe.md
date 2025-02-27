@@ -7,7 +7,7 @@ linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:708223060
 draft: false
 ---
 
-![Self compassion](/images/blog/2023/07/self-compassion.png)
+<img src="/images/blog/2023/07/self-compassion.png" alt="Self compassion" class="w-1/3 mx-auto" />
 
 Pour moi, cela serait 𝐥’𝐚𝐮𝐭𝐨𝐜𝐨𝐦𝐩𝐚𝐬𝐬𝐢𝐨𝐧 !
 
@@ -35,7 +35,7 @@ L’auto-compassion consiste à se traiter de la même manière que l’on trait
 ✔️  de diminuer l’anxiété, le stress, la honte et la dépression  
 ✔️  d’améliorer la confiance, le bien-être et de véhiculer un climat positif même durant les obstacles
 
-Si vous êtes intéressé pour approfondir l’autocompassion, je vous conseille le livre “Mon cahier d'autocompassion en pleine conscience” et la formation associée : “Mindful Self-Compassion”.
+Si vous êtes intéressé pour approfondir l’autocompassion, je vous conseille le livre [Mon cahier d'autocompassion en pleine conscience](https://amzn.to/3QEiw0O) et la formation associée : “Mindful Self-Compassion”.
 
 Vous choisiriez une autre qualité de votre côté ?
 
