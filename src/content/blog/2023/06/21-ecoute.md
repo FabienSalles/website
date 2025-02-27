@@ -2,7 +2,7 @@
 title: "Dans ma carrière, j’ai souvent eu le sentiment de ne pas être écouté."
 description: "C'étaient les mêmes schémas, à chaque fois, durant de nombreuses années… 👇"
 pubDate: 2023-06-21
-categories: ["mindset"]
+categories: ["mindset", "développement personnel"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7077155685397876736/"
 draft: false
 ---
