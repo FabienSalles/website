@@ -53,7 +53,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
             <div class="flex gap-2">
               {post.data.categories.map(category => (
                 <a
-                  href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')})`)}
+                  href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
                   class="hover:text-blue-600 transition-colors"
                 >
                   {category}
