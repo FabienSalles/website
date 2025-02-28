@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
+import generateUrl from "@utils/url";
 
 const posts = await getCollection('blog', ({ data }) => {
   return import.meta.env.PROD ? !data.draft : true;
@@ -23,7 +24,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
       <div class="flex flex-wrap gap-2">
         {allCategories.map(category => (
           <a
-            href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+            href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
             class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-sm transition-colors"
           >
             {category}
@@ -36,7 +37,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
       {sortedPosts.map(post => (
         <article class="border-b pb-8">
           <h2 class="text-2xl font-bold mb-2">
-            <a href={`/blog/${post.slug}`} class="hover:text-blue-600 transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} class="hover:text-blue-600 transition-colors">
               {post.data.title}
             </a>
           </h2>
@@ -52,7 +53,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
             <div class="flex gap-2">
               {post.data.categories.map(category => (
                 <a
-                  href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+                  href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')})`)}
                   class="hover:text-blue-600 transition-colors"
                 >
                   {category}
@@ -62,7 +63,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
           </div>
           <p class="text-gray-700">{post.data.description}</p>
           <div class="mt-4">
-            <a href={`/blog/${post.slug}`} class="text-blue-600 hover:text-blue-800 transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} class="text-blue-600 hover:text-blue-800 transition-colors">
               Lire la suite →
             </a>
           </div>

@@ -1,4 +1,6 @@
 ---
+import generateUrl from "@utils/url";
+
 interface Props {
   title: string;
   description?: string;
@@ -44,6 +46,7 @@ if (!alternateLink) {
     alternateLink = currentPath.replace('/en', '');
   }
 }
+
 ---
 
 <!doctype html>
@@ -98,7 +101,7 @@ if (!alternateLink) {
           <div class="flex gap-6 items-center">
             {
               blogEnabled &&
-              <li><a href={isEnglishPath ? '/en/blog' : '/blog'} class="nav-link" data-astro-reload>Blog</a></li>
+              <li><a href={generateUrl('/blog')} class="nav-link" data-astro-reload>Blog</a></li>
             }
             {
               trainingEnabled &&

@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import generateUrl from "@utils/url";
 
 const description = "Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications web qui tiennent dans le temps ? Je peux certainement vous aider."
 
@@ -67,7 +68,7 @@ const testimonials = [
     role: "Product Desginer, Hermes",
     year: "2023",
     content: "<p>Ce fut un réel plaisir de travailler avec Fabien. Sa compétence et son expertise ont été un véritable atout dans notre collaboration, apportant une valeur ajoutée indéniable à chaque projet. Toujours à l'écoute, réactif et précis dans ses analyses, il sait trouver des solutions efficaces et pertinentes. Mais au-delà de ses compétences techniques, Fabien est également une personne humaine et bienveillante, ce qui rend le travail avec lui encore plus agréable. Je le recommande sans hésitation !</p>",
-    image: " /images/recommendations/luis.jpg"
+    image: "/images/recommendations/luis.jpg"
   },
   {
     name: "Samuel Antunes",
@@ -169,7 +170,7 @@ const testimonials = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <a class="hover:text-blue-600 transition-colors duration-300" href="/clients" title="Voir mes références">
+              <a class="hover:text-blue-600 transition-colors duration-300" href={generateUrl("/clients")} title="Voir mes références">
                 <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
                 <div class="text-gray-600">{stat.label}</div>
               </a>

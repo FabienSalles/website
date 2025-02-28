@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
+import generateUrl from "@utils/url";
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,7 +18,7 @@ const { Content } = await post.render();
 const githubBlogContributionBaseUrl = import.meta.env.GITHUB_BLOG_CONTRIBUTION_BASE_URL;
 
 const breadcrumbItems = [
-  { label: 'Blog', href: '/blog' },
+  { label: 'Blog', href: generateUrl('/blog') },
   { label: post.data.title }
 ];
 ---
@@ -41,7 +42,7 @@ const breadcrumbItems = [
           <div class="flex gap-2">
             {post.data.categories.map(category => (
               <a
-                href={`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`}
+                href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
                 class="hover:text-blue-600 transition-colors"
               >
                 {category}
