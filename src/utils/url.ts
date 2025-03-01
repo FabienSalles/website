@@ -3,8 +3,12 @@ const getSiteUrl = () => {
     ? "http://localhost:4321"
     : import.meta.env.SITE;
 }
+
+const ensureTrailingSlash = (path: string) => {
+  return path.endsWith("/") ? path : path + "/";
+}
 const generateUrl = (path: string) => {
-  return getSiteUrl() + path;
+  return getSiteUrl() + ensureTrailingSlash(path);
 }
 
 export default generateUrl;
