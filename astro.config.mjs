@@ -7,6 +7,7 @@ import partytown from '@astrojs/partytown'
 
 export default defineConfig({
   site: 'https://fabiensalles.com',
+  trailingSlash: "never",
   integrations: [
     tailwind(),
     react(),
