@@ -1,5 +1,5 @@
 ---
-title: "« J’ai pas le temps pour écrire des tests, je dois livrer rapidement en prod »"
+title: "« J’ai pas le temps pour écrire des tests »"
 description: "L’écriture de tests ne fait  pas perdre du temps, bien au contraindre !"
 pubDate: 2023-06-05
 categories: ["organisation", "tests", "TDD", "mindset"]

@@ -7,8 +7,6 @@ linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_pourquoi-je-me-met
 draft: false
 ---
 
-Pourquoi je me mets à écrire sur Linkedin ?
-
 Jusqu’à récemment, je n’en voyais pas l’intérêt !
 
 1️⃣ La première motivation à ce changement est de continuer à m’épanouir dans mon travail.

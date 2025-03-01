@@ -1,11 +1,13 @@
 ---
-title: "« C’est toi le lead, c’est à toi de réfléchir, pas aux développeurs de ton équipe »"
+title: "« C’est toi le lead, c’est à toi de réfléchir »"
 description: "J’ai déjà entendu cette phrase il y a quelques années et elle m’avait particulièrement choquée. 😱"
 pubDate: 2023-06-09
 categories: ["organisation", "leadership", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_cest-toi-le-lead-cest-à-toi-de-réfléchir-activity-7072823829433077761-iX0e?utm_source=share&utm_medium=member_desktop"
 draft: false
 ---
+
+« C’est toi le lead, c’est à toi de réfléchir, pas aux développeurs de ton équipe »
 
 J’ai déjà entendu cette phrase il y a quelques années et elle m’avait particulièrement choquée. 😱
 

@@ -1,5 +1,5 @@
 ---
-title: "« Cela ne sert à rien d’écrire tests  sur ce projet, il n’y en a aucun et le code est mal conçu »"
+title: "« Cela ne sert à rien d’écrire tests  sur ce projet »"
 description: "Écrire des tests pour écrire des tests ne sert effectivement à rien. Ce n’est qu’un outil, pas une finalité. Par contre, sécuriser une application, améliorer sa fiabilité, sa qualité, limiter les régressions dans le temps et faciliter le développement de nouvelles fonctionnalités sont des vrais gains."
 pubDate: 2023-06-07
 categories: ["tests", "mindset"]
