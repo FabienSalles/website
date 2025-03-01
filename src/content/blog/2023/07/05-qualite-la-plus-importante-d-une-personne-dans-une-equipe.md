@@ -7,7 +7,7 @@ linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:708223060
 draft: false
 ---
 
-<img src="/images/blog/2023/07/self-compassion.png" alt="Self compassion" class="w-1/3 mx-auto" />
+![Self compassion](/images/blog/2023/07/self-compassion.png)
 
 Pour moi, cela serait 𝐥’𝐚𝐮𝐭𝐨𝐜𝐨𝐦𝐩𝐚𝐬𝐬𝐢𝐨𝐧 !
 
