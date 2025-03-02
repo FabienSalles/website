@@ -65,7 +65,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
           </div>
           <p class="text-gray-700">{post.data.description}</p>
           <div class="mt-4">
-            <a href={generateUrl(`/blog/${post.slug}`)} title="Lire la suite" class="text-blue-600 hover:text-blue-800 transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="text-blue-600 hover:text-blue-800 transition-colors">
               Lire la suite →
             </a>
           </div>
