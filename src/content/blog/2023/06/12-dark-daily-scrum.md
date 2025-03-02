@@ -1,5 +1,5 @@
 ---
-title: "Le Daily Scrum n’est pas fait pour suivre ce que font les développeurs"
+title: "Le Daily Scrum n’est pas fait pour suivre les développeurs"
 description: "Le daily est fait pour les développeurs par les développeurs !"
 pubDate: 2023-06-12
 categories: ["organisation", "agilité", "mindset", "scrum"]

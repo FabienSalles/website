@@ -1,5 +1,5 @@
 ---
-title: "Pourquoi tant d’entreprises disent faire de l’agile via Scrum alors qu’elles restent en cycle en V ?"
+title: "Pourquoi tant d’entreprises font du cycle en V avec Scrum ?"
 description: "On pense faire de l’agilité, mais on garde nos vielles habitudes qui ne sont pas agiles !
 Que cela soit la durée d’un sprint ou d’une US, un waterfall itératif reste un waterfall."
 pubDate:  2023-07-03

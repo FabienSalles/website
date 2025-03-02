@@ -1,5 +1,5 @@
 ---
-title: "Quelle est la qualité la plus importante qu’une personne devrait avoir au sein d’une équipe ?"
+title: "Quelle est la meilleure qualité d’un dev dans une équipe ?"
 description: "Pour moi, cela serait 𝐥’𝐚𝐮𝐭𝐨𝐜𝐨𝐦𝐩𝐚𝐬𝐬𝐢𝐨𝐧 !"
 pubDate: 2023-07-05
 categories: ["mindset", "développement personnel"]
