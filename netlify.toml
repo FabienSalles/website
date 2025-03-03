@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/rss.xml"
-  to = "/rss.xml/"
-  status = 301
-  force = true
