@@ -14,12 +14,10 @@ const {
 const currentPath = Astro.url.pathname;
 const isEnglishPath = currentPath.startsWith('/en');
 const translationEnabled = import.meta.env.TRANSLATION_ENABLED === 'true';
-const blogEnabled = import.meta.env.BLOG_ENABLED === 'true';
 const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
 const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
 const aboutEnabled = import.meta.env.ABOUT_ENABLED === 'true';
 const cvEnabled = import.meta.env.CV_ENABLED === 'true';
-const rssEnabled = import.meta.env.RSS_ENABLED === 'true';
 const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
 
 const routeMapping = {
@@ -72,7 +70,7 @@ if (!alternateLink) {
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href={generateUrl('/rss.xml')} />
     <script is:inline type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`>
     </script>
     <script is:inline type="text/partytown" define:vars={{googleAnalyticsId}}>
@@ -99,10 +97,7 @@ if (!alternateLink) {
             </a>
           </li>
           <div class="flex gap-6 items-center">
-            {
-              blogEnabled &&
-              <li><a href={generateUrl('/blog')} title="Blog" class="nav-link" data-astro-reload>Blog</a></li>
-            }
+            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link" data-astro-reload>Blog</a></li>
             {
               trainingEnabled &&
               <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
@@ -160,12 +155,9 @@ if (!alternateLink) {
                   Contact
               </a>
             }
-            {
-              rssEnabled &&
-              <a href="/rss.xml" class="social-link" title="RSS Feed">
-                RSS
-              </a>
-            }
+            <a href={generateUrl('/rss.xml')} class="social-link" title="RSS Feed">
+              RSS
+            </a>
           </div>
         </div>
       </div>
