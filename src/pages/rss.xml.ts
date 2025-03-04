@@ -17,16 +17,16 @@ export async function GET(context: { site: any; }) {
     .slice(0, 20);
 
   return rss({
-    title: 'Fabien Salles - Blog',
-    description: 'Articles sur l\'artisanat logiciel, le développement et les bonnes pratiques',
+    title: "Fabien Salles - Blog",
+    description:"Articles sur l'artisanat logiciel, le développement et les bonnes pratiques",
     site: context.site,
     items: latestPosts,
     xmlns: {
       atom: "http://www.w3.org/2005/Atom",
     },
     customData: `
-        <language>fr</language>
-        <atom:link href="${context.site}rss.xml/" rel="self" type="application/rss+xml"/>
+      <language>fr</language>
+      <atom:link href="${context.site}rss.xml/" rel="self" type="application/rss+xml"/>
     `
   });
 }
