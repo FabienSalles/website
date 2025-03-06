@@ -10,6 +10,7 @@ export default defineConfig({
       reporter: ['text', 'json', 'html'],
       exclude: ['**/node_modules/**', '**/dist/**', '**/.astro/**']
     },
-    globals: true
+    globals: true,
+    silent: true,
   }
 });

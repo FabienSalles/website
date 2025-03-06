@@ -8,6 +8,9 @@ interface ImportMetaEnv {
   readonly CONTACT_ENABLED: string;
   readonly NEWSLETTER_ENABLED: string;
   readonly GITHUB_BLOG_CONTRIBUTION_BASE_URL: string;
+  readonly LINKEDIN_CLIENT_ID: string;
+  readonly LINKEDIN_CLIENT_SECRET: string;
+  readonly LINKEDIN_ENABLED: string;
 }
 
 interface ImportMeta {

@@ -1,5 +1,5 @@
 import {GET} from '@pages/rss.xml';
-import {describe, it, expect} from "vitest";
+import {describe, it, expect, vi} from "vitest";
 import { XMLParser } from 'fast-xml-parser';
 
 vi.mock('astro:content', () => ({

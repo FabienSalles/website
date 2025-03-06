@@ -7,8 +7,10 @@
       "@components/*": ["src/components/*"],
       "@utils/*": ["src/utils/*"],
       "@pages/*": ["src/pages/*"],
+      "@linkedin/api/*": ["src/linkedin/api/*"],
+      "@linkedin": ["src/linkedin/index"],
     },
-    "types": ["vitest"]
+    "types": ["vitest", "vitest/globals", "jest"]
   },
   "exclude": ["dist"]
 }
