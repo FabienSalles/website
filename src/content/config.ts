@@ -7,7 +7,7 @@ const blog = defineCollection({
     description: z.string(),
     pubDate: z.date(),
     categories: z.array(z.string()),
-    linkedinPostUrl: z.string().url(),
+    linkedinPostUrl: z.string().url().optional(),
     draft: z.boolean().default(false),
   }),
 });
