@@ -3,6 +3,7 @@ title: "C'est la rentrée pour l'AFUP Paris !"
 description: "Venez profiter de 2 belles conférences et rencontrer d'autres membres de la communauté 👇"
 pubDate: 2025-09-08
 categories: ["meetup", "afup", "php"]
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7370687875719258112/"
 draft: false
 ---
 
