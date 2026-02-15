@@ -1,108 +1,189 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const formations = [
+  {
+    slug: 'phpunit',
+    title: 'PHPUnit : écrire des tests qui durent',
+    hook: 'Arrête de subir tes tests. Fais-en des alliés.',
+    problem: 'Tes tests cassent sans raison ? Ils prennent trop de temps à écrire et à maintenir ?',
+    promise: 'En 2 jours, apprends à écrire des tests qui te font gagner du temps au lieu d\'en perdre.',
+    highlights: [
+      'Ce qu\'est vraiment un test unitaire',
+      'Maîtriser Mocks, Stubs, Fakes',
+      'Savoir quand et quoi tester',
+      'Écrire des tests qui durent'
+    ],
+    duration: '2 jours',
+    featured: false
+  },
+  {
+    slug: 'git',
+    title: 'Git avancé',
+    hook: 'Arrête de subir Git. Reprends le contrôle de ton historique.',
+    problem: 'Tu utilises Git tous les jours mais tu ne le comprends pas vraiment ?',
+    promise: 'Passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".',
+    highlights: [
+      'Branches, merge et rebase sans stress',
+      'Résoudre les conflits sereinement',
+      'Choisir le bon workflow d\'équipe',
+      'Techniques avancées : squash, fixup, worktree'
+    ],
+    duration: '2 jours',
+    featured: false
+  },
+  {
+    slug: 'ddd',
+    title: 'Domain-Driven Design',
+    hook: 'Arrête de subir ton organisation. Aligne-la avec tes besoins.',
+    problem: 'Le métier et la tech ne se comprennent pas ? Tu subis un couplage qui crée des régressions ?',
+    promise: 'Aligne ton équipe technique et produit pour livrer ce qui compte vraiment.',
+    highlights: [
+      'Aligne équipe tech et produit',
+      'Comprends les problèmes pour trouver les bonnes solutions',
+      'Isole ton code et ton équipe correctement',
+      'Mets en avant la complexité métier et mets de côté celle qui te gêne'
+    ],
+    duration: '3 à 5 jours',
+    featured: false
+  }
+];
+
+const stats = {
+  developers: '98+',
+  sessions: '20+',
+  since: '2017'
+};
 ---
 
-<Layout 
-  title="Formations - Fabien Salles" 
-  description="Découvrez mes formations sur l'artisanat logiciel, le Clean Code, et les bonnes pratiques de développement"
+<Layout
+  title="Formations PHPUnit, Git, DDD - Fabien Salles"
+  description="Des formations pratiques pour arrêter de subir tes outils. PHPUnit, Git, DDD : en 2 à 5 jours, maîtrise vraiment ce que tu utilises tous les jours."
 >
   <div class="container mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-8">Formations</h1>
 
-    <div class="prose prose-lg mb-12">
+    <!-- HERO SECTION -->
+    <section class="text-center py-12 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Arrête de subir ton environnement.<br>
+        <span class="text-blue-600">Maîtrise-le vraiment.</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
+        Des formations pratiques, sans bullshit, pour ceux qui veulent comprendre
+        ce qu'ils font.
+      </p>
+      <!-- Stats inline -->
+      <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600 mb-8">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-bold text-gray-900">{stats.developers}</span>
+          <span>développeurs formés</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-2xl font-bold text-gray-900">{stats.sessions}</span>
+          <span>sessions depuis {stats.since}</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATIONS GRID -->
+    <section id="formations" class="mb-16 scroll-mt-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {formations.map((formation) => (
+          <a
+            href={`/formations/${formation.slug}`}
+            class={`group p-6 border rounded-lg hover:shadow-xl transition-all duration-300 flex flex-col ${formation.featured ? 'border-blue-300 bg-blue-50/30 ring-1 ring-blue-200' : 'border-gray-200 hover:border-blue-300'}`}
+          >
+            {formation.featured && (
+              <div class="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2">
+                Formation phare
+              </div>
+            )}
+
+            <h2 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">
+              {formation.title}
+            </h2>
+
+            <p class="text-blue-600 font-semibold mb-3">
+              {formation.hook}
+            </p>
+
+            <p class="text-gray-600 text-sm mb-4">
+              {formation.problem}
+            </p>
+
+            <p class="text-gray-700 mb-4 flex-grow">
+              {formation.promise}
+            </p>
+
+            <ul class="space-y-2 text-gray-600 text-sm mb-6">
+              {formation.highlights.map((item) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-0.5">✓</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-auto pt-4 border-t border-gray-200 flex items-center justify-between">
+              <span class="text-sm font-medium text-gray-900">
+                {formation.duration}
+              </span>
+              <span class="text-blue-600 group-hover:text-blue-800 font-semibold transition-colors flex items-center gap-1">
+                Découvrir
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- TÉMOIGNAGE COURT -->
+    <section class="mb-16 bg-gray-50 -mx-4 px-4 py-10 md:rounded-lg md:mx-0 md:px-12">
+      <div class="max-w-3xl mx-auto">
+        <blockquote class="text-center">
+          <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+            "Bonne pédagogie. Beaucoup d'informations importantes qui permettent
+            de réfléchir sur l'importance des tests pour clarifier le code."
+          </p>
+          <footer class="text-gray-600">
+            <span class="font-semibold">Igor G.</span> — Participant formation PHPUnit
+          </footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- FORMATION SUR MESURE -->
+    <section class="mb-16">
+      <div class="bg-gradient-to-br from-gray-900 to-gray-800 text-white p-8 md:p-12 rounded-lg">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+            Formation sur mesure
+          </h2>
+          <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+            Je peux adapter mes formations à vos besoins spécifiques et au niveau de votre équipe.
+            N'hésitez pas à me contacter pour discuter de vos objectifs.
+          </p>
+          <a
+            href="/contact?subject=formation-sur-mesure"
+            class="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            On en discute ?
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO NDA (discret mais présent) -->
+    <section class="text-center text-sm text-gray-500 border-t border-gray-200 pt-8">
       <p>
-        Je propose des formations sur mesure pour aider vos équipes à monter en compétences
-        sur les pratiques de l'artisanat logiciel. Mes formations sont pratiques, interactives
-        et adaptées à vos besoins spécifiques.
+        <strong class="text-gray-700">Organisme de formation déclaré</strong> —
+        Numéro de déclaration d'activité (NDA) auprès de la DREETS.
+        Formations exonérées de TVA (article 261-4-4°a du CGI).
       </p>
-    </div>
+    </section>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <a href="/formations/phpunit" class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-        <h2 class="text-xl font-bold mb-4">PHPUnit & Tests</h2>
-        <div class="space-y-4">
-          <p class="text-gray-600">
-            Des tests qui accélèrent ton développement au lieu de le freiner.
-            Maîtrise les techniques pour écrire des tests rentables.
-          </p>
-          <ul class="space-y-2 text-gray-600">
-            <li>• PHPUnit et assertions</li>
-            <li>• Test doubles (Mocks, Stubs, Fakes)</li>
-            <li>• Stratégie de test et ROI</li>
-            <li>• Bonnes pratiques (DAMP, AAA)</li>
-          </ul>
-          <p class="text-sm text-gray-500">Durée : 2 jours</p>
-          <span class="text-blue-600 hover:text-blue-800 transition-colors">
-            En savoir plus →
-          </span>
-        </div>
-      </a>
-
-      <a href="/formations/clean-code" class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-        <h2 class="text-xl font-bold mb-4">Clean Code</h2>
-        <div class="space-y-4">
-          <p class="text-gray-600">
-            Apprenez les principes du Clean Code pour écrire un code plus maintenable,
-            lisible et robuste.
-          </p>
-          <ul class="space-y-2 text-gray-600">
-            <li>• Principes SOLID</li>
-            <li>• Nommage et organisation du code</li>
-            <li>• Refactoring</li>
-            <li>• Dette technique</li>
-          </ul>
-          <p class="text-sm text-gray-500">Durée : 2-3 jours</p>
-          <span class="text-blue-600 hover:text-blue-800 transition-colors">
-            En savoir plus →
-          </span>
-        </div>
-      </a>
-
-      <div class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-        <h2 class="text-xl font-bold mb-4">Architecture Hexagonale</h2>
-        <div class="space-y-4">
-          <p class="text-gray-600">
-            Découvrez comment structurer vos applications pour les rendre plus
-            modulaires et testables.
-          </p>
-          <ul class="space-y-2 text-gray-600">
-            <li>• Principes de l'architecture hexagonale</li>
-            <li>• Domaine métier</li>
-            <li>• Adaptateurs et ports</li>
-            <li>• Cas pratiques</li>
-          </ul>
-          <p class="text-sm text-gray-500">Durée : 2 jours</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-12 p-8 bg-gray-50 rounded-lg">
-      <h2 class="text-2xl font-bold mb-4">Formation sur mesure</h2>
-      <p class="text-gray-600 mb-6">
-        Je peux adapter mes formations à vos besoins spécifiques et au niveau de votre équipe.
-        N'hésitez pas à me contacter pour discuter de vos objectifs.
-      </p>
-      <a
-        href="/contact"
-        class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
-      >
-        Me contacter
-      </a>
-    </div>
-
-    <div class="mt-12 p-8 border border-blue-200 bg-blue-50 rounded-lg">
-      <h2 class="text-2xl font-bold mb-4">Organisme de formation déclaré</h2>
-      <div class="space-y-4 text-gray-700">
-        <p>
-          Je suis déclaré en tant qu'organisme de formation et dispose d'un
-          <strong>numéro de déclaration d'activité (NDA)</strong> auprès de la DREETS.
-        </p>
-        <p>
-          Mes formations sont <strong>exonérées de TVA</strong> conformément à
-          l'article 261-4-4°a du Code Général des Impôts. Les tarifs indiqués
-          sont donc nets et correspondent au montant total facturé.
-        </p>
-      </div>
-    </div>
   </div>
 </Layout>

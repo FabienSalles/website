@@ -1,0 +1,437 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Formations', href: '/formations' },
+  { label: 'Git' }
+];
+---
+
+<Layout
+  title="Formation Git - Arrête de subir Git, maîtrise-le vraiment | Fabien Salles"
+  description="Formation Git de 2 jours : comprends vraiment Git, maîtrise branches et fusions, résous les conflits sans stress. Workflow d'équipe et bonnes pratiques."
+>
+  <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <!-- HERO SECTION -->
+    <section class="text-center py-16 mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Arrête de subir Git.<br>
+        <span class="text-blue-600">Maîtrise-le vraiment.</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
+        Tu utilises Git tous les jours. Mais est-ce que tu le comprends vraiment ?<br>
+        En 2 jours, passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".
+      </p>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+        Beaucoup passent à côté de la puissance de Git. Ils restent sur une utilisation
+        simpliste — add, commit, push — et continuent de faire les mêmes erreurs
+        sans jamais comprendre pourquoi.
+      </p>
+      <a
+        href="#contact"
+        class="inline-block bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+      >
+        On en discute ?
+      </a>
+    </section>
+
+    <!-- SECTION DOULEUR -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-4 text-center">Soyons honnêtes...</h2>
+      <p class="text-xl text-gray-600 text-center mb-12">
+        Git, c'est pas toujours simple.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Bloc 1 - Tu utilises Git mais... -->
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Tu utilises Git mais...</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔥</span>
+              <span>Tu fais <code class="bg-gray-200 px-1 rounded">git push --force</code> "parce que ça marche"</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🌀</span>
+              <span>Tu ne comprends pas vraiment la différence entre merge et rebase</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">😰</span>
+              <span>Les conflits te stressent, tu les résous un peu au hasard</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📜</span>
+              <span>L'historique de ton projet ressemble à un plat de spaghettis</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🙈</span>
+              <span>Tu évites certaines commandes "au cas où ça casse tout"</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bloc 2 - Dans ton équipe... -->
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Dans ton équipe...</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔄</span>
+              <span>Chacun a sa propre façon d'utiliser Git</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">💥</span>
+              <span>Les merge requests deviennent des champs de bataille</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🤷</span>
+              <span>Personne ne sait vraiment qui a fait quoi et pourquoi</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">💀</span>
+              <span>Quelqu'un a écrasé le travail d'un collègue "sans faire exprès"</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🤔</span>
+              <span>Rebase, squash, fixup ? Personne n'utilise ça, c'est trop risqué</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center max-w-3xl mx-auto">
+        <p class="text-lg text-gray-600 mb-4">
+          Ce n'est pas un problème de Git. C'est un problème de compréhension.
+        </p>
+        <p class="text-xl font-semibold mb-6">
+          Git est puissant. Mais sans connaître ses fondations, on ne fait que
+          cliquer sur des boutons en espérant que ça marche.
+        </p>
+        <a
+          href="#programme"
+          class="inline-block text-blue-600 hover:text-blue-800 font-medium transition-colors"
+        >
+          Ça te parle ? Voir le programme ↓
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION DIFFÉRENCIATION -->
+    <section class="mb-20 bg-amber-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-2xl font-bold mb-6">⚠️ Ce n'est pas un tuto Git de plus</h2>
+      <div class="prose prose-lg max-w-none">
+        <p class="text-gray-700">
+          Les tutos Git te montrent les commandes.
+          Ils ne t'expliquent pas comment les utiliser efficacement.
+        </p>
+        <p class="text-gray-700">
+          Résultat : tu connais <code class="bg-amber-100 px-1 rounded">git add</code>,
+          <code class="bg-amber-100 px-1 rounded">git commit</code>,
+          <code class="bg-amber-100 px-1 rounded">git push</code>...
+          mais dès que ça dérape, tu es perdu.
+        </p>
+        <p class="text-gray-900 font-semibold text-xl mt-6">
+          Cette formation est différente.
+        </p>
+        <ul class="space-y-2 text-gray-700 mb-4">
+          <li>Tu vas comprendre <strong>POURQUOI</strong> certaines pratiques posent problème.</li>
+          <li>Tu vas apprendre <strong>COMMENT</strong> travailler efficacement avec les branches et les fusions.</li>
+          <li>Tu vas repartir avec une <strong>STRATÉGIE</strong> de workflow adaptée à ton équipe.</li>
+        </ul>
+        <p class="text-gray-500 text-base border-l-2 border-amber-300 pl-4 mt-6">
+          Ce que j'aime dans cette formation : le moment où quelqu'un réalise
+          que Git n'est pas magique, juste logique. Et que tout devient plus simple.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION BÉNÉFICES -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">Une vraie compréhension de Git, pas juste des commandes</h3>
+          <p class="text-gray-600">Tu comprends ce que tu fais et pourquoi</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">La maîtrise des branches et des fusions</h3>
+          <p class="text-gray-600">Merge, rebase, fast-forward n'ont plus de secrets</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">Un historique propre et lisible</h3>
+          <p class="text-gray-600">Tes collègues (et ton futur toi) te remercieront</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">La confiance pour résoudre n'importe quel conflit</h3>
+          <p class="text-gray-600">Plus de stress, juste de la méthode</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">Un workflow d'équipe adapté à votre contexte</h3>
+          <p class="text-gray-600">Git Flow, GitHub Flow, Trunk Based, Ship/Show/Ask</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <div class="text-green-600 text-2xl mb-3">✅</div>
+          <h3 class="font-bold mb-2">La capacité à récupérer n'importe quelle situation</h3>
+          <p class="text-gray-600">Reflog, reset, revert : tu sais quoi utiliser et quand</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION POUR QUI -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Cette formation est pour toi si...</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Tu utilises déjà Git :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔧</span>
+              <span>Tu fais tes commits mais tu ne comprends pas toujours ce qui se passe</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🧹</span>
+              <span>Tu voudrais nettoyer ton historique mais tu as peur de tout casser</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">⚔️</span>
+              <span>Tu subis les conflits au lieu de les anticiper</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">👥</span>
+              <span>Tu es tech lead et tu veux harmoniser les pratiques de ton équipe</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🧠</span>
+              <span>Tu en as marre d'apprendre des commandes sans comprendre le "pourquoi"</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 p-8 rounded-lg">
+          <h3 class="text-xl font-bold mb-6">Tu découvres Git :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔄</span>
+              <span>Tu viens de SVN ou d'un autre système et Git te semble compliqué</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📚</span>
+              <span>Tu as appris Git "sur le tas" et tu sens qu'il te manque des bases</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🌱</span>
+              <span>Tu veux comprendre Git avant de prendre de mauvaises habitudes</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🚀</span>
+              <span>Tu rejoins une équipe qui utilise Git et tu veux être opérationnel vite</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-gray-100 rounded-lg text-center">
+        <p class="text-lg font-semibold">
+          Cette formation n'est PAS réservée aux experts.<br>
+          Elle est conçue pour te donner une vraie maîtrise de Git,<br>
+          que tu partes de zéro ou que tu veuilles combler tes lacunes.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION PROGRAMME -->
+    <section id="programme" class="mb-28 scroll-mt-8">
+      <h2 class="text-3xl font-bold mb-8 text-center">Programme détaillé : 2 jours pour maîtriser Git</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-center">
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <div class="font-bold">Durée</div>
+          <div class="text-gray-600">2 jours (14 heures)</div>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <div class="font-bold">Format</div>
+          <div class="text-gray-600">50% théorie, 50% pratique</div>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <div class="font-bold">Prérequis</div>
+          <div class="text-gray-600">Utilisation basique de la ligne de commande</div>
+        </div>
+        <div class="p-4 bg-gray-50 rounded-lg">
+          <div class="font-bold">Public</div>
+          <div class="text-gray-600">Développeurs, DevOps, chefs de projet techniques</div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Jour 1 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <div class="bg-blue-600 text-white p-4">
+            <h3 class="text-xl font-bold">Jour 1 : Comprendre et utiliser Git</h3>
+          </div>
+          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="p-6">
+              <h4 class="font-bold text-blue-600 mb-4">MATIN — Comprendre Git en profondeur</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Pourquoi Git ? De RCS à SVN jusqu'aux VCS distribués</li>
+                <li>• Les 3 zones : Working Directory, Index, Repository</li>
+                <li>• Le vocabulaire : commit, branch, merge, HEAD, stash</li>
+                <li>• Configuration : machine, utilisateur, projet</li>
+                <li>• .gitignore : ignorer intelligemment</li>
+                <li>• git status : ton GPS dans Git</li>
+              </ul>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-blue-600 mb-4">APRÈS-MIDI — Branches et fusions</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Créer, naviguer, supprimer des branches</li>
+                <li>• git switch et git restore : les nouvelles commandes</li>
+                <li>• Fast-forward vs True merge : comprendre la différence</li>
+                <li>• Rebase : quand et comment l'utiliser</li>
+                <li>• La règle d'or : ne jamais rebaser ce qui est partagé</li>
+                <li>• <strong>TP :</strong> Résoudre des conflits sans stress</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jour 2 -->
+        <div class="border border-gray-200 rounded-lg overflow-hidden">
+          <div class="bg-blue-600 text-white p-4">
+            <h3 class="text-xl font-bold">Jour 2 : Pratiques avancées et workflows</h3>
+          </div>
+          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="p-6">
+              <h4 class="font-bold text-blue-600 mb-4">MATIN — Nettoyer et gérer l'urgence</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• git reset : soft, mixed, hard (et quand les utiliser)</li>
+                <li>• git commit --amend et rebase interactif</li>
+                <li>• Stash et worktree : gérer les interruptions</li>
+                <li>• Reflog : retrouver ce qu'on croyait perdu</li>
+                <li>• Force push avec précaution : --force-with-lease</li>
+                <li>• <strong>TP :</strong> Nettoyer un historique chaotique</li>
+              </ul>
+            </div>
+            <div class="p-6">
+              <h4 class="font-bold text-blue-600 mb-4">APRÈS-MIDI — Workflows et collaboration</h4>
+              <ul class="space-y-2 text-gray-700">
+                <li>• Conventions de commits (Conventional Commits)</li>
+                <li>• Git Flow, GitHub Flow, Trunk Based Development</li>
+                <li>• Ship / Show / Ask : adapter sa stratégie de PR</li>
+                <li>• Configuration serveur et clés SSH</li>
+                <li>• Git internals : objects, refs, packfiles, hooks</li>
+                <li>• <strong>TP :</strong> Mettre en place un workflow d'équipe</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION COLLABORATION -->
+    <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-2xl font-bold mb-6">Et en équipe ?</h2>
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p>
+          Git est un outil de collaboration. Mais mal utilisé, il devient
+          une source de conflits (et pas que dans le code).
+        </p>
+        <p>
+          Cette formation te donne les clés pour que ton équipe travaille
+          ensemble efficacement :
+        </p>
+        <ul class="space-y-2 mb-4">
+          <li>• Un <strong>vocabulaire commun</strong> (fini les "je sais pas ce que t'as fait")</li>
+          <li>• Des <strong>conventions de commits</strong> partagées</li>
+          <li>• Un <strong>workflow adapté</strong> à votre façon de travailler</li>
+          <li>• Des <strong>règles claires</strong> sur quand merger, rebaser, squasher</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECTION FORMATEUR -->
+    <section class="mb-28">
+      <h2 class="text-2xl font-bold mb-6">Qui donne cette formation ?</h2>
+      <div class="prose prose-lg max-w-none text-gray-700">
+        <p>
+          Je m'appelle Fabien. J'utilise Git au quotidien depuis le début
+          de mon activité professionnelle — et j'ai fait à peu près toutes
+          les erreurs possibles.
+        </p>
+        <p>
+          J'ai commencé à former sur Git en 2019. Pourquoi ? Parce que je
+          voyais les mêmes erreurs et les mêmes problématiques se répéter
+          d'un projet à l'autre, d'une équipe à l'autre. Et je me suis dit
+          qu'il y avait quelque chose à faire.
+        </p>
+        <p class="font-semibold text-gray-900">
+          Ce que je sais, je le partage. Pas parce que j'ai tout compris,
+          mais parce qu'expliquer m'aide également à approfondir les sujets que j'enseigne.
+        </p>
+        <p>
+          Mon objectif : que tu comprennes Git, pas juste que tu l'utilises.
+          Parce que quand tu comprends, tout devient plus simple.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION MODALITÉS -->
+    <section class="mb-28">
+      <h2 class="text-2xl font-bold mb-8">Comment se déroule la formation ?</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg text-center">
+          <div class="text-4xl mb-4">🏢</div>
+          <h3 class="font-bold text-lg mb-3">Intra-entreprise</h3>
+          <p class="text-gray-600">
+            Je me déplace dans tes locaux pour former ton équipe.
+            Idéal pour créer une culture Git commune.
+          </p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg text-center">
+          <div class="text-4xl mb-4">💻</div>
+          <h3 class="font-bold text-lg mb-3">À distance</h3>
+          <p class="text-gray-600">
+            Formation en visioconférence avec les mêmes exercices pratiques.
+            Parfait pour les équipes distribuées.
+          </p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg text-center">
+          <div class="text-4xl mb-4">🎯</div>
+          <h3 class="font-bold text-lg mb-3">Sur mesure</h3>
+          <p class="text-gray-600">
+            Je peux adapter le contenu à ton contexte spécifique,
+            ton stack technique ou tes problématiques.
+          </p>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-gray-600">
+        N'hésite pas à <a href="/contact" class="text-blue-600 hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+      </p>
+    </section>
+
+    <!-- SECTION CTA FINALE -->
+    <section id="contact" class="mb-12">
+      <div class="bg-blue-600 text-white p-12 rounded-lg text-center max-w-3xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4">Envie d'en discuter ?</h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Pas de formulaire automatique. On échange d'abord pour voir
+          si la formation correspond à tes besoins.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors duration-300"
+        >
+          Me contacter →
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>
