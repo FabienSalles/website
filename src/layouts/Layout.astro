@@ -83,43 +83,43 @@ if (!alternateLink) {
     </script>
   </head>
   <body class="min-h-screen bg-white">
-    <header class="fixed w-full bg-white z-50 border-b border-gray-100 shadow-sm">
+    <header class="fixed w-full bg-gradient-to-r from-orange-900 to-orange-800 z-50 shadow-lg">
       <nav class="container mx-auto px-4 py-4">
         <ul class="flex items-center justify-between">
           <li>
             <a
               href={isEnglishPath ? '/en' : '/'}
               title="Accueil"
-              class="text-xl font-semibold text-gray-500 dark:text-gray-400 hover:opacity-80 transition-opacity"
+              class="text-xl font-semibold text-white hover:text-orange-200 transition-colors"
               data-astro-reload
             >
               Fabien Salles
             </a>
           </li>
           <div class="flex gap-6 items-center">
-            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link" data-astro-reload>Blog</a></li>
+            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link-light" data-astro-reload>Blog</a></li>
             {
               trainingEnabled &&
-              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
             }
             {
               cvEnabled &&
-              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
             }
             {
               aboutEnabled &&
-              <li><a href={isEnglishPath ? '/en/about' : '/about'} class="nav-link" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+              <li><a href={isEnglishPath ? '/en/about' : '/about'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
             }
             {
               contactEnabled &&
-              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="nav-link" data-astro-reload>Contact</a></li>
+              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="nav-link-light" data-astro-reload>Contact</a></li>
             }
             {
               translationEnabled &&
                 <li>
                   <a
                     href={isEnglishPath ? '/' : '/en'}
-                    class="lang-switch"
+                    class="lang-switch-light"
                     data-astro-reload
                   >
                     {isEnglishPath ? 'FR' : 'EN'}
@@ -208,6 +208,24 @@ if (!alternateLink) {
 
   .lang-switch {
     @apply relative px-4 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-300 hover:bg-orange-50;
+  }
+
+  /* Navigation styles for dark background */
+  .nav-link-light {
+    @apply relative text-white hover:text-orange-200 transition-colors duration-300;
+  }
+
+  .nav-link-light::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300;
+  }
+
+  .nav-link-light:hover::after {
+    @apply w-full;
+  }
+
+  .lang-switch-light {
+    @apply relative px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-300 hover:bg-orange-700;
   }
 
   /* Social link styles */

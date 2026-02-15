@@ -27,7 +27,12 @@ const services = [
     icon: "🔍",
     title: "Auditer",
     intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
-    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. Tu repars avec un diagnostic honnête et un plan d'action priorisé — pas 50 pages de jargon, juste ce qui compte.",
+    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème.",
+    benefits: [
+      "Évaluation de la dette technique",
+      "Analyse de l'architecture, pratiques de développement",
+      "Rapport détaillé + plan d'action"
+    ],
     love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
     cta: "Demander un diagnostic",
     href: "/contact?service=audit"
@@ -36,7 +41,12 @@ const services = [
     icon: "🎯",
     title: "Accompagner",
     intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder, mais qui transmet ?",
-    description: "J'interviens en régie ou en TMA pour améliorer vos pratiques, réduire la dette technique et faire monter l'équipe en compétence. Pair programming, code reviews, échanges — je m'adapte à votre contexte.",
+    description: "J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.",
+    benefits: [
+      "Intervention en régie ou au forfait",
+      "Amélioration d'un legacy, Refonte progressive",
+      "Support et transfert de compétences"
+    ],
     love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
     cta: "Discuter de ton contexte",
     href: "/contact?service=accompagnement"
@@ -46,9 +56,12 @@ const services = [
     title: "Former",
     intro: "Tes devs codent.<br />Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
     description: "Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.",
-    extra: "Formations disponibles : PHPUnit, Git, DDD — en intra-entreprise, adaptées à ton contexte.",
-    love: "Ce que j'aime dans la formation : le déclic quand quelqu'un comprend pourquoi il faisait différemment, pas juste comment faire autrement.",
-    badge: "98+ développeurs formés depuis 2017. Organisme déclaré.",
+    benefits: [
+      "Formations intra-entreprise, distantiel",
+      "Organisme déclaré (NDA)",
+      "98+ développeurs formés depuis 2017"
+    ],
+    love: "Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique.",
     cta: "Voir les formations",
     href: "/formations"
   },
@@ -56,7 +69,12 @@ const services = [
     icon: "🤖",
     title: "Automatiser",
     intro: "L'IA change notre façon de coder.<br />Mais sans direction, elle amplifie les problèmes autant que les solutions.",
-    description: "Je t'aide à intégrer les outils d'automatisation (Claude Code, agents IA) dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
+    description: "Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
+    benefits: [
+      "Intégration Claude Code / agents IA",
+      "Workflows automatisés",
+      "Garde-fous qualité"
+    ],
     love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
     cta: "Explorer les possibilités",
     href: "/contact?service=automatisation"
@@ -199,18 +217,21 @@ const testimonials = [
             <!-- Description -->
             <p class="text-gray-700 mb-5 leading-relaxed">{service.description}</p>
 
-            {service.extra && (
-              <p class="text-gray-700 mb-5 leading-relaxed">{service.extra}</p>
+            {service.benefits && (
+              <ul class="space-y-2 text-gray-700 mb-5">
+                {service.benefits.map((benefit) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             )}
 
             <!-- Citation "Ce que j'aime" -->
             <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-orange-400">
               <p class="text-gray-600 text-sm italic">{service.love}</p>
             </div>
-
-            {service.badge && (
-              <p class="text-orange-800 text-sm font-medium mb-5">✓ {service.badge}</p>
-            )}
 
             <!-- CTA -->
             <a
