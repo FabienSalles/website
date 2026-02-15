@@ -29,7 +29,7 @@ const services = [
     intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ? Tu as des doutes sur la qualité du code avant d'investir ?",
     description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. Tu repars avec un diagnostic honnête et un plan d'action priorisé — pas 50 pages de jargon, juste ce qui compte.",
     love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
-    cta: "On en parle ?",
+    cta: "Demander un diagnostic",
     href: "/contact?service=audit"
   },
   {
@@ -38,7 +38,7 @@ const services = [
     intro: "Ton équipe a besoin d'un regard extérieur ? D'un renfort qui ne fait pas que coder, mais qui transmet ?",
     description: "J'interviens en régie ou en TMA pour améliorer vos pratiques, réduire la dette technique et faire monter l'équipe en compétence. Pair programming, code reviews, échanges — je m'adapte à votre contexte.",
     love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
-    cta: "En savoir plus",
+    cta: "Discuter de ton contexte",
     href: "/contact?service=accompagnement"
   },
   {
@@ -58,9 +58,20 @@ const services = [
     intro: "L'IA change notre façon de coder. Mais sans direction, elle amplifie les problèmes autant que les solutions.",
     description: "Je t'aide à intégrer les outils d'automatisation (Claude Code, agents IA) dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
     love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
-    cta: "On en discute ?",
+    cta: "Explorer les possibilités",
     href: "/contact?service=automatisation"
   }
+];
+
+const clients = [
+  { name: "Hermès", logo: "/images/clients/hermes.png" },
+  { name: "LVMH", logo: "/images/clients/lvmh.png" },
+  { name: "Dior", logo: "/images/clients/dior.png" },
+  { name: "Chaumet", logo: "/images/clients/chaumet.png" },
+  { name: "Amundi", logo: "/images/clients/amundi.png" },
+  { name: "Total", logo: "/images/clients/total.png" },
+  { name: "RATP", logo: "/images/clients/ratp.png" },
+  { name: "Volkswagen", logo: "/images/clients/wolkswagen.png" }
 ];
 
 const testimonials = [
@@ -119,7 +130,7 @@ const testimonials = [
               href="/contact"
               class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
             >
-              Discutons de ton projet
+              Discutons de ton besoin
             </a>
             <a
               href="/formations"
@@ -201,10 +212,33 @@ const testimonials = [
     </div>
   </section>
 
+  <!-- SECTION CLIENTS -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {clients.map(client => (
+          <div class="flex items-center justify-center p-6 bg-white rounded-lg hover:shadow-md transition-all duration-300">
+            <img
+              src={client.logo}
+              alt={client.name}
+              class="max-h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/clients" class="text-blue-600 font-semibold hover:text-blue-800">
+          Voir toutes les références →
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION STATS -->
   <section class="py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
+      <h2 class="text-3xl font-bold mb-12 text-center">En quelques chiffres</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
@@ -289,7 +323,7 @@ const testimonials = [
           href="/contact"
           class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
         >
-          Me contacter →
+          Prendre contact →
         </a>
       </div>
     </div>
