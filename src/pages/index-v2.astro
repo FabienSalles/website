@@ -170,7 +170,7 @@ const clients = [
     <div class="container mx-auto px-4 py-20 md:py-28">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="text-blue-600 font-semibold mb-4">Artisan développeur, Formateur & Consultant</p>
+          <p class="text-orange-700 font-semibold mb-4">Artisan développeur, Formateur & Consultant</p>
           <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Livrez plus vite.<br>
             <span class="text-gray-500">Avec moins de bugs.</span>
@@ -183,13 +183,13 @@ const clients = [
           <div class="flex flex-wrap gap-4 mb-8">
             <a
               href="/contact"
-              class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
             >
               Discutons de votre projet →
             </a>
             <a
               href="/formations"
-              class="inline-block border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              class="inline-block border-2 border-orange-700 text-orange-700 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
             >
               Voir les formations
             </a>
@@ -236,7 +236,7 @@ const clients = [
         <p class="text-lg text-gray-500 mb-2">↓</p>
         <p class="text-xl font-semibold">
           Ces problèmes ne sont pas une fatalité.<br>
-          <span class="text-blue-600">Ce sont des symptômes d'un manque de pratiques adaptées.</span>
+          <span class="text-orange-700">Ce sont des symptômes d'un manque de pratiques adaptées.</span>
         </p>
       </div>
     </div>
@@ -296,7 +296,7 @@ const clients = [
             </ul>
             <a
               href={service.href}
-              class="inline-block text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+              class="inline-block text-orange-700 font-semibold hover:text-orange-800 transition-colors"
             >
               {service.cta} →
             </a>
@@ -313,7 +313,7 @@ const clients = [
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <a class="hover:text-blue-600 transition-colors duration-300" href={generateUrl("/clients")} title="Voir mes références">
+            <a class="hover:text-orange-700 transition-colors duration-300" href={generateUrl("/clients")} title="Voir mes références">
               <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
               <div class="text-gray-600">{stat.label}</div>
             </a>
@@ -348,7 +348,7 @@ const clients = [
                   class="w-10 h-10 rounded-full"
                 />
               ) : (
-                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold">
+                <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-semibold">
                   {testimonial.name.charAt(0)}
                 </div>
               )}
@@ -362,7 +362,7 @@ const clients = [
       </div>
 
       <div class="text-center mt-8">
-        <a href="/recommendations" class="text-blue-600 font-semibold hover:text-blue-800">
+        <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -382,19 +382,19 @@ const clients = [
   </section>
 
   <!-- SECTION CTA FINALE -->
-  <section class="py-20 bg-blue-600">
+  <section class="py-20 bg-gradient-to-br from-orange-900 to-orange-800">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           Prêt à améliorer la qualité de votre code ?
         </h2>
-        <p class="text-xl text-blue-100 mb-8">
+        <p class="text-xl text-orange-100 mb-8">
           Discutons de vos enjeux. Audit, accompagnement, formation ou projet :
           je vous propose la solution adaptée à votre contexte.
         </p>
         <a
           href="/contact"
-          class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
+          class="inline-block bg-white text-orange-700 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors"
         >
           Prendre contact →
         </a>

@@ -17,7 +17,7 @@ const { data } = cv;
       <h2 class="text-2xl font-bold mb-6">Expériences professionnelles</h2>
       <div class="space-y-8">
         {data.experiences.map((exp) => (
-          <div class="border-l-4 border-blue-600 pl-4 hover:bg-gray-50 transition-colors rounded-r-lg">
+          <div class="border-l-4 border-orange-700 pl-4 hover:bg-gray-50 transition-colors rounded-r-lg">
             <div class="flex justify-between items-start mb-2">
               <div>
                 <h3 class="text-xl font-semibold">{exp.title}</h3>
@@ -48,7 +48,7 @@ const { data } = cv;
             </div>
             <div class="flex flex-wrap gap-2">
               {exp.technologies.map((tech) => (
-                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-blue-50 transition-colors">
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-orange-50 transition-colors">
                   {tech}
                 </span>
               ))}
@@ -66,7 +66,7 @@ const { data } = cv;
             <h3 class="text-xl font-semibold mb-3">{skillGroup.category}</h3>
             <div class="flex flex-wrap gap-2">
               {skillGroup.items.map((skill) => (
-                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-blue-50 transition-colors">
+                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-orange-50 transition-colors">
                   {skill}
                 </span>
               ))}

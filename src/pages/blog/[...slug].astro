@@ -45,7 +45,7 @@ const breadcrumbItems = [
               <a
                 href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
                 title={category}
-                class="hover:text-blue-600 transition-colors"
+                class="hover:text-orange-700 transition-colors"
               >
                 {category}
               </a>
@@ -62,7 +62,7 @@ const breadcrumbItems = [
         <div class="flex flex-col gap-4 pt-8 border-t">
             <p>
                 Vous avez repéré une erreur ?{' '}
-                <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-blue-600 hover:text-blue-800 transition-colors" target="_blank" rel="noopener noreferrer">
+                <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-orange-700 hover:text-orange-800 transition-colors" target="_blank" rel="noopener noreferrer">
                     Contribuez au post sur GitHub
                 </a>
             </p>

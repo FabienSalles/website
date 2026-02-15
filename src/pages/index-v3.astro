@@ -26,7 +26,7 @@ const services = [
   {
     icon: "🔍",
     title: "Auditer",
-    intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ? Tu as des doutes sur la qualité du code avant d'investir ?",
+    intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
     description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. Tu repars avec un diagnostic honnête et un plan d'action priorisé — pas 50 pages de jargon, juste ce qui compte.",
     love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
     cta: "Demander un diagnostic",
@@ -35,7 +35,7 @@ const services = [
   {
     icon: "🎯",
     title: "Accompagner",
-    intro: "Ton équipe a besoin d'un regard extérieur ? D'un renfort qui ne fait pas que coder, mais qui transmet ?",
+    intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder, mais qui transmet ?",
     description: "J'interviens en régie ou en TMA pour améliorer vos pratiques, réduire la dette technique et faire monter l'équipe en compétence. Pair programming, code reviews, échanges — je m'adapte à votre contexte.",
     love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
     cta: "Discuter de ton contexte",
@@ -44,7 +44,7 @@ const services = [
   {
     icon: "🎓",
     title: "Former",
-    intro: "Tes devs codent. Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
+    intro: "Tes devs codent.<br />Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
     description: "Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.",
     extra: "Formations disponibles : PHPUnit, Git, DDD — en intra-entreprise, adaptées à ton contexte.",
     love: "Ce que j'aime dans la formation : le déclic quand quelqu'un comprend pourquoi il faisait différemment, pas juste comment faire autrement.",
@@ -55,7 +55,7 @@ const services = [
   {
     icon: "🤖",
     title: "Automatiser",
-    intro: "L'IA change notre façon de coder. Mais sans direction, elle amplifie les problèmes autant que les solutions.",
+    intro: "L'IA change notre façon de coder.<br />Mais sans direction, elle amplifie les problèmes autant que les solutions.",
     description: "Je t'aide à intégrer les outils d'automatisation (Claude Code, agents IA) dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
     love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
     cta: "Explorer les possibilités",
@@ -128,13 +128,13 @@ const testimonials = [
           <div class="flex flex-wrap gap-4 mb-8">
             <a
               href="/contact"
-              class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
             >
               Discutons de ton besoin
             </a>
             <a
               href="/formations"
-              class="inline-block border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+              class="inline-block border-2 border-orange-700 text-orange-700 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
             >
               Voir les formations
             </a>
@@ -157,10 +157,10 @@ const testimonials = [
   </section>
 
   <!-- SECTION PAIN POINTS (empathique) -->
-  <section class="py-16 bg-gray-50">
+  <section class="pt-4 pb-12">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8">Ça te parle ?</h2>
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">Ça te parle ?</h2>
         <div class="text-lg text-gray-700 space-y-3 mb-8">
           <p>Tu subis les bugs au lieu de les prévenir.</p>
           <p>Tu subis la dette technique au lieu de la réduire.</p>
@@ -170,7 +170,7 @@ const testimonials = [
         <p class="text-gray-600 mb-2">
           Subir, c'est épuisant.
         </p>
-        <p class="text-blue-600 font-semibold">
+        <p class="text-orange-700 font-semibold">
           Mais passer de "subir" à "maîtriser", ça s'apprend.
         </p>
       </div>
@@ -178,31 +178,44 @@ const testimonials = [
   </section>
 
   <!-- SECTION SERVICES -->
-  <section class="py-20">
+  <section class="bg-gradient-to-br from-orange-900 to-orange-800 pt-16 pb-24">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Comment puis-je t'aider ?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Comment puis-je t'aider ?</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-8">
         {services.map(service => (
-          <div class="p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
-            <div class="flex items-start gap-4 mb-4">
+          <div class="p-8 bg-orange-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <!-- Header -->
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-orange-200">
               <span class="text-4xl">{service.icon}</span>
-              <h3 class="text-xl font-bold">{service.title}</h3>
+              <h3 class="text-2xl font-bold text-gray-900">{service.title}</h3>
             </div>
-            <p class="text-gray-700 mb-4 italic">{service.intro}</p>
-            <p class="text-gray-600 mb-4">{service.description}</p>
+
+            <!-- Intro -->
+            <p class="text-gray-800 mb-6 font-medium" set:html={service.intro} />
+
+            <!-- Description -->
+            <p class="text-gray-700 mb-5 leading-relaxed">{service.description}</p>
+
             {service.extra && (
-              <p class="text-gray-600 mb-4">{service.extra}</p>
+              <p class="text-gray-700 mb-5 leading-relaxed">{service.extra}</p>
             )}
-            <p class="text-gray-500 text-sm mb-4 border-l-2 border-blue-200 pl-4">{service.love}</p>
+
+            <!-- Citation "Ce que j'aime" -->
+            <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-orange-400">
+              <p class="text-gray-600 text-sm italic">{service.love}</p>
+            </div>
+
             {service.badge && (
-              <p class="text-gray-500 text-sm mb-4">{service.badge}</p>
+              <p class="text-orange-800 text-sm font-medium mb-5">✓ {service.badge}</p>
             )}
+
+            <!-- CTA -->
             <a
               href={service.href}
-              class="inline-block text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+              class="inline-block bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
             >
               {service.cta} →
             </a>
@@ -213,12 +226,12 @@ const testimonials = [
   </section>
 
   <!-- SECTION CLIENTS -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         {clients.map(client => (
-          <div class="flex items-center justify-center p-6 bg-white rounded-lg hover:shadow-md transition-all duration-300">
+          <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-all duration-300">
             <img
               src={client.logo}
               alt={client.name}
@@ -228,7 +241,7 @@ const testimonials = [
         ))}
       </div>
       <div class="text-center mt-8">
-        <a href="/clients" class="text-blue-600 font-semibold hover:text-blue-800">
+        <a href="/clients" class="text-orange-700 font-semibold hover:text-orange-800">
           Voir toutes les références →
         </a>
       </div>
@@ -236,13 +249,13 @@ const testimonials = [
   </section>
 
   <!-- SECTION STATS -->
-  <section class="py-16">
+  <section class="py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">En quelques chiffres</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <a class="hover:text-blue-600 transition-colors duration-300" href={generateUrl("/recommendations")} title="Voir les recommandations">
+            <a class="hover:text-orange-700 transition-colors duration-300" href={generateUrl("/recommendations")} title="Voir les recommandations">
               <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
               <div class="text-gray-600">{stat.label}</div>
             </a>
@@ -253,36 +266,37 @@ const testimonials = [
   </section>
 
   <!-- SECTION TEMOIGNAGES -->
-  <section class="py-16 bg-gray-50">
+  <section class="py-24 bg-gray-50">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
+      <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce qu'ils en disent</h2>
+        <p class="text-gray-600">Retours de collaborations et formations</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {testimonials.map(testimonial => (
-          <div class="p-6 bg-white rounded-lg shadow-sm">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {testimonials.slice(0, 3).map(testimonial => (
+          <div class="p-8 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
             {testimonial.rating && (
-              <div class="flex gap-1 mb-3 text-yellow-400">
+              <div class="flex gap-1 mb-4 text-yellow-400">
                 {[...Array(testimonial.rating)].map(() => <span>★</span>)}
               </div>
             )}
-            <p class="text-gray-700 mb-4 text-sm">"{testimonial.content}"</p>
-            <div class="flex items-center gap-3">
+            <p class="text-gray-700 mb-6 text-base leading-relaxed">"{testimonial.content}"</p>
+            <div class="flex items-center gap-4">
               {testimonial.image ? (
                 <img
                   src={testimonial.image}
                   alt={testimonial.name}
-                  class="w-10 h-10 rounded-full object-cover"
+                  class="w-12 h-12 rounded-full object-cover"
                 />
               ) : (
-                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold">
+                <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-700 font-semibold text-lg">
                   {testimonial.name.charAt(0)}
                 </div>
               )}
               <div>
-                <div class="font-semibold text-sm">{testimonial.name}</div>
-                <div class="text-gray-500 text-xs">{testimonial.role}</div>
+                <div class="font-semibold">{testimonial.name}</div>
+                <div class="text-gray-500 text-sm">{testimonial.role}</div>
               </div>
             </div>
           </div>
@@ -290,7 +304,7 @@ const testimonials = [
       </div>
 
       <div class="text-center mt-8">
-        <a href="/recommendations" class="text-blue-600 font-semibold hover:text-blue-800">
+        <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -310,18 +324,18 @@ const testimonials = [
   </section>
 
   <!-- SECTION CTA FINALE -->
-  <section class="py-20 bg-blue-600">
+  <section class="py-20 bg-gradient-to-br from-orange-900 to-orange-800">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center text-white">
         <h2 class="text-3xl md:text-4xl font-bold mb-6">
           Envie d'en discuter ?
         </h2>
-        <p class="text-xl text-blue-100 mb-8">
+        <p class="text-xl text-orange-100 mb-8">
           Pas de devis automatique. On échange d'abord pour voir si ça matche.
         </p>
         <a
           href="/contact"
-          class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
+          class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors"
         >
           Prendre contact →
         </a>

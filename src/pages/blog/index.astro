@@ -38,7 +38,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
       {sortedPosts.map(post => (
         <article class="border-b pb-8">
           <h2 class="text-2xl font-bold mb-2">
-            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="hover:text-blue-600 transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="hover:text-orange-700 transition-colors">
               {post.data.title}
             </a>
           </h2>
@@ -56,7 +56,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
                 <a
                   href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
                   title={category}
-                  class="hover:text-blue-600 transition-colors"
+                  class="hover:text-orange-700 transition-colors"
                 >
                   {category}
                 </a>
@@ -65,7 +65,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
           </div>
           <p class="text-gray-700">{post.data.description}</p>
           <div class="mt-4">
-            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="text-blue-600 hover:text-blue-800 transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="text-orange-700 hover:text-orange-800 transition-colors">
               Lire la suite →
             </a>
           </div>
