@@ -1,0 +1,150 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
+  { label: 'Recommandations' }
+];
+
+const collaborations = [
+  {
+    name: "Luis Campillo Matias",
+    role: "Product Designer, Hermès",
+    year: "2023",
+    content: "Ce fut un réel plaisir de travailler avec Fabien. Sa compétence et son expertise ont été un véritable atout dans notre collaboration, apportant une valeur ajoutée indéniable à chaque projet. Toujours à l'écoute, réactif et précis dans ses analyses, il sait trouver des solutions efficaces et pertinentes. Mais au-delà de ses compétences techniques, Fabien est également une personne humaine et bienveillante, ce qui rend le travail avec lui encore plus agréable. Je le recommande sans hésitation !",
+    image: "/images/recommendations/luis.jpg"
+  },
+  {
+    name: "Samuel Antunes",
+    role: "Expert AWS & DevOps, Hermès",
+    year: "2022",
+    content: "Fabien a été une très belle rencontre. Il ne prend jamais rien pour acquis et cherche toujours à améliorer les choses. Super rigoureux dans son approche, il reste malgré tout ouvert aux idées des autres. Sa curiosité est débordante, il est toujours en train d'explorer de nouvelles choses. Ce qui m'a surpris le plus, c'est sa passion sincère pour ce qu'il fait. Il est capable d'apporter une vision totalement différente et de savoir la défendre.",
+    image: "/images/recommendations/samuel-antunes.png"
+  },
+  {
+    name: "Shahbran Khan GHULAM",
+    role: "Ingénieur QA, Hermès",
+    year: "2023",
+    content: "J'ai eu la chance de travailler avec Fabien, et dès mon arrivée dans l'équipe, il a été un élément clé de mon intégration. Grâce à lui, tout s'est fait naturellement : il a pris le temps de m'expliquer les choses, de me mettre à l'aise et de m'inclure dans la dynamique de l'équipe. Sa bienveillance et son esprit d'entraide ont vraiment fait la différence.\n\nMais Fabien, ce n'est pas juste quelqu'un de sympa et accueillant. C'est aussi un vrai pro. Il est extrêmement compétent, toujours pertinent dans ses analyses et redoutablement efficace dans son travail. Il sait prendre du recul, proposer des solutions intelligentes et faire avancer les choses avec une énergie et un engagement impressionnants.\n\nBref, un collègue en or, tant sur le plan humain que professionnel. Travailler avec lui a été un vrai plaisir, et je ne peux que le recommander à 100 % !",
+    image: "/images/recommendations/shahbran-khan-ghulam.png"
+  },
+  {
+    name: "Rodolphe Huot",
+    role: "Développeur Web, Hermès",
+    year: "2022",
+    content: "C'est un plaisir de travailler avec Fabien. Il possède une expertise technique pointue dans le développement et le domaine du craftsmanship. Sa curiosité et son ouverture d'esprit sont des atouts précieux. Il est toujours force de proposition et n'hésite pas à prendre des initiatives à la recherche de l'excellence. Je recommande chaleureusement pour son professionnalisme, ses compétences techniques et son esprit d'équipe.",
+    image: "/images/recommendations/rodolphe-huot.png"
+  },
+  {
+    name: "Jean-Yves Camier",
+    role: "DevOps Technical Lead / Manager, Bedrock Streaming",
+    year: "2020",
+    content: "J'ai eu l'opportunité de travailler avec Fabien sur plusieurs projets et je dois dire que j'ai adoré ces moments : sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important à mes yeux.",
+    image: "/images/recommendations/jean-yves-camier.jpg"
+  },
+  {
+    name: "Daniel Godin",
+    role: "Développeur web, Clever Age",
+    year: "2020",
+    content: "Je travaille actuellement avec Fabien au sein de Clever Age. Que puis-je dire de lui, avant toute chose c'est une personne qui met en avant l'humain à travers son ouverture d'esprit.\n\nMalgré son jeune âge, Fabien est certainement un des plus talentueux Lead développeur avec qui j'ai pu travailler jusqu'à présent. Il a cette capacité de comprendre rapidement un sujet, qu'il s'agisse des règles métiers complexes ou l'apprentissage d'une nouvelle technologie.\n\nComme tout être humain, il a aussi des défauts, mais honnêtement ça ne représente pas 5% de la personne passionnée et sympathique qu'il est.\n\nJ'ai la chance de continuer à travailler avec actuellement sur un autre projet où il est encore Lead développeur. Ce qui confirme sa qualité d'écoute et envie de transmettre son savoir faire. C'est un talent rare de nos jours.",
+    image: "/images/recommendations/daniel-godin.jpg"
+  }
+];
+
+const formations = [
+  {
+    name: "Igor G.",
+    formation: "Formation PHPUnit",
+    rating: 5,
+    content: "Bonne pédagogie de Fabien. Beaucoup d'informations importantes distillées au cours de la formation pour agrémenter le support de cours et qui permettent de réfléchir sur l'importance des tests pour clarifier le code et permettre d'améliorer la compréhension du code pour des personnes arrivant sur un projet."
+  },
+  {
+    name: "Jessica A.",
+    formation: "Formation PHPUnit",
+    rating: 5,
+    content: "Fabien SALLES connait très bien son sujet et est très à l'écoute."
+  },
+  {
+    name: "Paul Jean P.",
+    formation: "Formation PHPUnit",
+    rating: 5,
+    content: "Flexible sur le contenu."
+  }
+];
+---
+
+<Layout
+  title="Recommandations - Fabien Salles"
+  description="Découvrez les témoignages de mes collaborateurs et des participants à mes formations."
+>
+  <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={breadcrumbItems} />
+
+    <h1 class="text-4xl font-bold mb-4">Recommandations</h1>
+    <p class="text-xl text-gray-600 mb-12">
+      Ce que disent les personnes avec qui j'ai travaillé et que j'ai formées.
+    </p>
+
+    <!-- SECTION FORMATIONS -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold mb-8">Retours de formations</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {formations.map(formation => (
+          <div class="p-6 bg-gray-50 rounded-lg">
+            <div class="flex gap-1 mb-3 text-yellow-400">
+              {[...Array(formation.rating)].map(() => <span>★</span>)}
+            </div>
+            <p class="text-gray-700 mb-4">"{formation.content}"</p>
+            <div>
+              <div class="font-semibold">{formation.name}</div>
+              <div class="text-gray-500 text-sm">{formation.formation}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION COLLABORATIONS -->
+    <section>
+      <h2 class="text-2xl font-bold mb-8">Retours de collaborations</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {collaborations.map(collab => (
+          <div class="p-6 bg-white border border-gray-200 rounded-lg">
+            <div class="flex items-center gap-4 mb-4">
+              {collab.image && (
+                <img
+                  src={collab.image}
+                  alt={collab.name}
+                  class="w-14 h-14 rounded-full object-cover"
+                />
+              )}
+              <div>
+                <div class="font-semibold">{collab.name}</div>
+                <div class="text-gray-500 text-sm">{collab.role}</div>
+              </div>
+            </div>
+            <p class="text-gray-700 whitespace-pre-line">{collab.content}</p>
+            <div class="text-gray-400 text-sm text-right mt-4">{collab.year}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 text-center">
+      <div class="bg-blue-600 text-white p-12 rounded-lg max-w-2xl mx-auto">
+        <h2 class="text-2xl font-bold mb-4">Envie de travailler ensemble ?</h2>
+        <p class="text-blue-100 mb-6">
+          Discutons de votre projet, de vos besoins en formation ou d'un accompagnement.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+        >
+          Me contacter →
+        </a>
+      </div>
+    </section>
+  </div>
+</Layout>

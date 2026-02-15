@@ -18,6 +18,26 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <a href="/formations/phpunit" class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
+        <h2 class="text-xl font-bold mb-4">PHPUnit & Tests</h2>
+        <div class="space-y-4">
+          <p class="text-gray-600">
+            Des tests qui accélèrent ton développement au lieu de le freiner.
+            Maîtrise les techniques pour écrire des tests rentables.
+          </p>
+          <ul class="space-y-2 text-gray-600">
+            <li>• PHPUnit et assertions</li>
+            <li>• Test doubles (Mocks, Stubs, Fakes)</li>
+            <li>• Stratégie de test et ROI</li>
+            <li>• Bonnes pratiques (DAMP, AAA)</li>
+          </ul>
+          <p class="text-sm text-gray-500">Durée : 2 jours</p>
+          <span class="text-blue-600 hover:text-blue-800 transition-colors">
+            En savoir plus →
+          </span>
+        </div>
+      </a>
+
       <a href="/formations/clean-code" class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
         <h2 class="text-xl font-bold mb-4">Clean Code</h2>
         <div class="space-y-4">
@@ -32,26 +52,6 @@ import Layout from '../layouts/Layout.astro';
             <li>• Dette technique</li>
           </ul>
           <p class="text-sm text-gray-500">Durée : 2-3 jours</p>
-          <span class="text-blue-600 hover:text-blue-800 transition-colors">
-            En savoir plus →
-          </span>
-        </div>
-      </a>
-
-      <a href="/formations/tdd" class="p-6 border rounded-lg hover:shadow-lg transition-shadow">
-        <h2 class="text-xl font-bold mb-4">Test-Driven Development</h2>
-        <div class="space-y-4">
-          <p class="text-gray-600">
-            Maîtrisez le TDD pour développer des applications plus fiables et
-            plus faciles à maintenir.
-          </p>
-          <ul class="space-y-2 text-gray-600">
-            <li>• Cycle red-green-refactor</li>
-            <li>• Tests unitaires</li>
-            <li>• Tests d'intégration</li>
-            <li>• Mocking et doubles de test</li>
-          </ul>
-          <p class="text-sm text-gray-500">Durée : 2 jours</p>
           <span class="text-blue-600 hover:text-blue-800 transition-colors">
             En savoir plus →
           </span>
@@ -82,12 +82,27 @@ import Layout from '../layouts/Layout.astro';
         Je peux adapter mes formations à vos besoins spécifiques et au niveau de votre équipe.
         N'hésitez pas à me contacter pour discuter de vos objectifs.
       </p>
-      <a 
-        href="/contact" 
+      <a
+        href="/contact"
         class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300"
       >
         Me contacter
       </a>
+    </div>
+
+    <div class="mt-12 p-8 border border-blue-200 bg-blue-50 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">Organisme de formation déclaré</h2>
+      <div class="space-y-4 text-gray-700">
+        <p>
+          Je suis déclaré en tant qu'organisme de formation et dispose d'un
+          <strong>numéro de déclaration d'activité (NDA)</strong> auprès de la DREETS.
+        </p>
+        <p>
+          Mes formations sont <strong>exonérées de TVA</strong> conformément à
+          l'article 261-4-4°a du Code Général des Impôts. Les tarifs indiqués
+          sont donc nets et correspondent au montant total facturé.
+        </p>
+      </div>
     </div>
   </div>
 </Layout>

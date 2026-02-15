@@ -1,0 +1,303 @@
+---
+import Layout from '../layouts/Layout.astro';
+import generateUrl from "@utils/url";
+
+const description = "Artisan développeur, formateur et consultant. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
+
+const stats = [
+  { number: "15+", label: "années d'expérience" },
+  { number: "26+", label: "projets accompagnés" },
+  { number: "98+", label: "développeurs formés" },
+  { number: "20+", label: "formations dispensées" }
+];
+
+const expertise = [
+  "TDD",
+  "Clean Code",
+  "Architecture Hexagonale",
+  "DDD",
+  "Refactoring",
+  "Craftsmanship",
+  "IA & Automatisation",
+  "Claude Code"
+];
+
+const services = [
+  {
+    icon: "🔍",
+    title: "Auditer",
+    intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ? Tu as des doutes sur la qualité du code avant d'investir ?",
+    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. Tu repars avec un diagnostic honnête et un plan d'action priorisé — pas 50 pages de jargon, juste ce qui compte.",
+    love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
+    cta: "On en parle ?",
+    href: "/contact?service=audit"
+  },
+  {
+    icon: "🎯",
+    title: "Accompagner",
+    intro: "Ton équipe a besoin d'un regard extérieur ? D'un renfort qui ne fait pas que coder, mais qui transmet ?",
+    description: "J'interviens en régie ou en TMA pour améliorer vos pratiques, réduire la dette technique et faire monter l'équipe en compétence. Pair programming, code reviews, échanges — je m'adapte à votre contexte.",
+    love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
+    cta: "En savoir plus",
+    href: "/contact?service=accompagnement"
+  },
+  {
+    icon: "🎓",
+    title: "Former",
+    intro: "Tes devs codent. Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
+    description: "Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.",
+    extra: "Formations disponibles : PHPUnit, Git, DDD — en intra-entreprise, adaptées à ton contexte.",
+    love: "Ce que j'aime dans la formation : le déclic quand quelqu'un comprend pourquoi il faisait différemment, pas juste comment faire autrement.",
+    badge: "98+ développeurs formés depuis 2017. Organisme déclaré.",
+    cta: "Voir les formations",
+    href: "/formations"
+  },
+  {
+    icon: "🤖",
+    title: "Automatiser",
+    intro: "L'IA change notre façon de coder. Mais sans direction, elle amplifie les problèmes autant que les solutions.",
+    description: "Je t'aide à intégrer les outils d'automatisation (Claude Code, agents IA) dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
+    love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
+    cta: "On en discute ?",
+    href: "/contact?service=automatisation"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Jean-Yves Camier",
+    role: "DevOps Technical Lead, Bedrock Streaming",
+    content: "Sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important.",
+    image: "/images/recommendations/jean-yves-camier.jpg",
+    type: "collaboration"
+  },
+  {
+    name: "Igor G.",
+    role: "Participant formation PHPUnit",
+    content: "Bonne pédagogie. Beaucoup d'informations importantes qui permettent de réfléchir sur l'importance des tests pour clarifier le code.",
+    image: null,
+    type: "formation",
+    rating: 5
+  },
+  {
+    name: "Rodolphe Huot",
+    role: "Développeur Web, Hermès",
+    content: "Expertise technique pointue dans le développement et le craftsmanship. Toujours force de proposition et à la recherche de l'excellence.",
+    image: "/images/recommendations/rodolphe-huot.png",
+    type: "collaboration"
+  },
+  {
+    name: "Jessica A.",
+    role: "Participante formation PHPUnit",
+    content: "Fabien connaît très bien son sujet et est très à l'écoute.",
+    image: null,
+    type: "formation",
+    rating: 5
+  }
+];
+---
+
+<Layout title="Fabien Salles - Artisan développeur, Formateur & Consultant" description={description}>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4 py-20 md:py-28">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Salut, je suis Fabien.
+          </h1>
+          <p class="text-xl text-gray-700 mb-4 leading-relaxed">
+            Depuis mes 12 ans, je fais ce que j'aime : résoudre des problèmes avec du code.
+          </p>
+          <p class="text-xl text-gray-700 mb-4 leading-relaxed">
+            Aujourd'hui, j'aide les équipes à livrer sereinement — avec des solutions pensées pour durer, pas pour dépanner.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            J'aime transmettre ce que j'apprends : en formation, sur le blog, dans les événements tech, ou juste en discutant avec quelqu'un qui a besoin d'un coup de main.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a
+              href="/contact"
+              class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+            >
+              Discutons de ton projet
+            </a>
+            <a
+              href="/formations"
+              class="inline-block border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+            >
+              Voir les formations
+            </a>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {expertise.map(tech => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
+            ))}
+          </div>
+        </div>
+        <div class="text-center md:text-right">
+          <img
+            class="h-80 md:h-96 mx-auto md:ml-auto md:mr-0 rounded-lg"
+            src="/fabiensalles.png"
+            alt="Fabien Salles"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PAIN POINTS (empathique) -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8">Tu connais peut-être ça.</h2>
+        <div class="text-lg text-gray-700 space-y-3 mb-8">
+          <p>Des tests qui cassent sans qu'on sache pourquoi.</p>
+          <p>Du legacy qu'on n'ose plus toucher.</p>
+          <p>Des releases où on croise les doigts.</p>
+          <p>L'impression de refaire toujours les mêmes erreurs.</p>
+        </div>
+        <p class="text-gray-600 mb-2">
+          C'est normal. La plupart des équipes vivent ça.
+        </p>
+        <p class="text-gray-600 mb-4">
+          Ce n'est pas un problème de compétence — c'est un problème de méthode.
+        </p>
+        <p class="text-blue-600 font-semibold">
+          Et ça se travaille.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION SERVICES -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Comment puis-je t'aider ?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {services.map(service => (
+          <div class="p-8 border border-gray-200 rounded-lg hover:shadow-lg transition-shadow">
+            <div class="flex items-start gap-4 mb-4">
+              <span class="text-4xl">{service.icon}</span>
+              <h3 class="text-xl font-bold">{service.title}</h3>
+            </div>
+            <p class="text-gray-700 mb-4 italic">{service.intro}</p>
+            <p class="text-gray-600 mb-4">{service.description}</p>
+            {service.extra && (
+              <p class="text-gray-600 mb-4">{service.extra}</p>
+            )}
+            <p class="text-gray-500 text-sm mb-4 border-l-2 border-blue-200 pl-4">{service.love}</p>
+            {service.badge && (
+              <p class="text-gray-500 text-sm mb-4">{service.badge}</p>
+            )}
+            <a
+              href={service.href}
+              class="inline-block text-blue-600 font-semibold hover:text-blue-800 transition-colors"
+            >
+              {service.cta} →
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION STATS -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map(stat => (
+          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <a class="hover:text-blue-600 transition-colors duration-300" href={generateUrl("/recommendations")} title="Voir les recommandations">
+              <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
+              <div class="text-gray-600">{stat.label}</div>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TEMOIGNAGES -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce qu'ils en disent</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {testimonials.map(testimonial => (
+          <div class="p-6 bg-white rounded-lg shadow-sm">
+            {testimonial.rating && (
+              <div class="flex gap-1 mb-3 text-yellow-400">
+                {[...Array(testimonial.rating)].map(() => <span>★</span>)}
+              </div>
+            )}
+            <p class="text-gray-700 mb-4 text-sm">"{testimonial.content}"</p>
+            <div class="flex items-center gap-3">
+              {testimonial.image ? (
+                <img
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  class="w-10 h-10 rounded-full object-cover"
+                />
+              ) : (
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-semibold">
+                  {testimonial.name.charAt(0)}
+                </div>
+              )}
+              <div>
+                <div class="font-semibold text-sm">{testimonial.name}</div>
+                <div class="text-gray-500 text-xs">{testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/recommendations" class="text-blue-600 font-semibold hover:text-blue-800">
+          Voir toutes les recommandations →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION NDA -->
+  <section class="py-12 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-gray-600">
+          <strong>Organisme de formation déclaré</strong> — Numéro de déclaration d'activité (NDA)
+          auprès de la DREETS. Formations exonérées de TVA (article 261-4-4°a du CGI).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="py-20 bg-blue-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Envie d'en discuter ?
+        </h2>
+        <p class="text-xl text-blue-100 mb-8">
+          Pas de devis automatique. On échange d'abord pour voir si ça matche.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-50 transition-colors"
+        >
+          Me contacter →
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
