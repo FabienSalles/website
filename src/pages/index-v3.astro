@@ -140,8 +140,10 @@ const testimonials = [
           <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             Salut, je suis Fabien.
           </h1>
-          <p class="text-xl text-gray-700 mb-4 leading-relaxed">
-            Développeur depuis plus de 15 ans.<br>
+          <p class="text-xl text-gray-700 mb-2 leading-relaxed">
+            Développeur depuis plus de 15 ans.
+          </p>
+          <p class="text-xl text-gray-800 font-medium mb-6 leading-relaxed">
             Aujourd'hui, j'aide les équipes à livrer sereinement — avec des solutions pensées pour durer, pas pour dépanner.
           </p>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -179,21 +181,64 @@ const testimonials = [
   </section>
 
   <!-- SECTION PAIN POINTS (empathique) -->
-  <section class="pt-4 pb-12">
+  <section class="pt-8 pb-16">
     <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">Ça te parle ?</h2>
-        <div class="text-lg text-gray-700 space-y-3 mb-8">
-          <p>Tu subis les bugs au lieu de les prévenir.</p>
-          <p>Tu subis la dette technique au lieu de la réduire.</p>
-          <p>Tu subis le flou métier au lieu de clarifier.</p>
-          <p>Tu subis tes tests au lieu d'en faire des alliés.</p>
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ces situations te parlent ?</h2>
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Ces problèmes sont fréquents dans les équipes tech. La bonne nouvelle : ils ont des solutions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🐛</span>
+            <span class="flex flex-col">
+              <span>Tu subis les bugs</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de les prévenir.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu as beau les corriger, d'autres reviennent toujours.</p>
         </div>
-        <p class="text-gray-600 mb-2">
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🐌</span>
+            <span class="flex flex-col">
+              <span>Tu subis la dette technique</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de la réduire.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu sais ce qu'il faudrait faire, mais tu n'as jamais le temps.</p>
+        </div>
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🌫️</span>
+            <span class="flex flex-col">
+              <span>Tu subis le flou métier</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de clarifier.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu livres des features... mais sont-elles vraiment utiles ?</p>
+        </div>
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🧪</span>
+            <span class="flex flex-col">
+              <span>Tu subis tes tests</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu d'en faire des alliés.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Au lieu d'en faire des alliés. Ils cassent, ils ralentissent, ils frustrent.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-xl text-orange-700 mb-2">
           Subir, c'est épuisant.
         </p>
-        <p class="text-orange-700 font-semibold">
-          Mais passer de "subir" à "maîtriser", ça s'apprend.
+        <p class="text-xl font-bold">
+          Mais passer de subir à maîtriser, ça s'apprend.
         </p>
       </div>
     </div>
