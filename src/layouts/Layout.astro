@@ -13,6 +13,15 @@ const {
 
 const currentPath = Astro.url.pathname;
 const isEnglishPath = currentPath.startsWith('/en');
+
+// Helper to check if a nav item is active
+const isActive = (href: string) => {
+  // Exact match
+  if (currentPath === href || currentPath === href + '/') return true;
+  // For formations, also match sub-pages
+  if (href === '/formations' && currentPath.startsWith('/formations/')) return true;
+  return false;
+};
 const translationEnabled = import.meta.env.TRANSLATION_ENABLED === 'true';
 const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
 const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
@@ -111,26 +120,26 @@ if (!alternateLink) {
 
           <!-- Desktop menu -->
           <ul class="hidden md:flex gap-6 items-center">
-            <li><a href="/accompagnement" class="nav-link-light" data-astro-reload>Accompagnement</a></li>
-            <li><a href="/audit" class="nav-link-light" data-astro-reload>Audit</a></li>
+            <li><a href="/accompagnement" class={isActive('/accompagnement') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Accompagnement</a></li>
+            <li><a href="/audit" class={isActive('/audit') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Audit</a></li>
             {
               trainingEnabled &&
-              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class={isActive('/formations') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
             }
-            <li><a href="/automatisation" class="nav-link-light" data-astro-reload>Automatisation</a></li>
-            <li><a href="/partenariat" class="nav-link-light" data-astro-reload>Partenariat</a></li>
-            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link-light" data-astro-reload>Blog</a></li>
+            <li><a href="/automatisation" class={isActive('/automatisation') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Automatisation</a></li>
+            <li><a href="/apport-affaires" class={isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Apport d'affaires</a></li>
+            <li><a href={generateUrl('/blog')} title="Blog" class={isActive('/blog') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Blog</a></li>
             {
               cvEnabled &&
-              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={isActive('/cv') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
             }
             {
               aboutEnabled &&
-              <li><a href={isEnglishPath ? '/en/about' : '/about'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+              <li><a href={isEnglishPath ? '/en/about' : '/about'} class={isActive('/about') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
             }
             {
               contactEnabled &&
-              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="nav-link-light" data-astro-reload>Contact</a></li>
+              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={isActive('/contact') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Contact</a></li>
             }
             {
               translationEnabled &&
@@ -149,26 +158,26 @@ if (!alternateLink) {
 
         <!-- Mobile menu -->
         <ul id="mobile-menu" class="hidden md:hidden flex-col gap-4 pt-4 pb-2">
-          <li><a href="/accompagnement" class="block nav-link-light py-2" data-astro-reload>Accompagnement</a></li>
-          <li><a href="/audit" class="block nav-link-light py-2" data-astro-reload>Audit</a></li>
+          <li><a href="/accompagnement" class={`block py-2 ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Accompagnement</a></li>
+          <li><a href="/audit" class={`block py-2 ${isActive('/audit') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Audit</a></li>
           {
             trainingEnabled &&
-            <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+            <li><a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 ${isActive('/formations') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
           }
-          <li><a href="/automatisation" class="block nav-link-light py-2" data-astro-reload>Automatisation</a></li>
-          <li><a href="/partenariat" class="block nav-link-light py-2" data-astro-reload>Partenariat</a></li>
-          <li><a href={generateUrl('/blog')} class="block nav-link-light py-2" data-astro-reload>Blog</a></li>
+          <li><a href="/automatisation" class={`block py-2 ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Automatisation</a></li>
+          <li><a href="/apport-affaires" class={`block py-2 ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Apport d'affaires</a></li>
+          <li><a href={generateUrl('/blog')} class={`block py-2 ${isActive('/blog') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Blog</a></li>
           {
             cvEnabled &&
-            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 ${isActive('/cv') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
           }
           {
             aboutEnabled &&
-            <li><a href={isEnglishPath ? '/en/about' : '/about'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 ${isActive('/about') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
           }
           {
             contactEnabled &&
-            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="block nav-link-light py-2" data-astro-reload>Contact</a></li>
+            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 ${isActive('/contact') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Contact</a></li>
           }
           {
             translationEnabled &&
@@ -295,6 +304,11 @@ if (!alternateLink) {
 
   .lang-switch-light {
     @apply relative px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-300 hover:bg-orange-700;
+  }
+
+  /* Active navigation state */
+  .nav-link-active {
+    @apply relative px-4 py-2 bg-white text-gray-900 font-medium rounded-full transition-all duration-300;
   }
 
   /* Social link styles */

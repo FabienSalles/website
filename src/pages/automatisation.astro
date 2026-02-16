@@ -1,0 +1,384 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const technologies = [
+  "Claude Code",
+  "Hooks & Commands",
+  "Skills & Sub-agents",
+  "MCP Servers",
+  "RAG",
+  "N8N",
+  "GitHub Copilot",
+  "CI/CD",
+  "Automatisation"
+];
+---
+
+<Layout
+  title="Automatisation IA & Claude Code - Accélérer sans sacrifier la qualité | Fabien Salles"
+  description="Intégrez l'IA dans vos workflows de développement. Claude Code, agents IA, automatisation CI/CD avec garde-fous qualité. Gagnez en productivité sans perdre en qualité."
+>
+  <div class="container mx-auto px-4 py-12">
+
+    <!-- HERO SECTION -->
+    <section class="text-center py-16 mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        L'IA change notre façon de coder.
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
+        Mais sans direction, elle amplifie les problèmes autant que les solutions.
+      </p>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
+        Je t'aide à intégrer l'IA dans tes workflows de développement<br>
+        pour gagner en productivité sans sacrifier la qualité.
+      </p>
+
+      <!-- Statut -->
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
+        <span class="px-3 py-1 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+      </div>
+
+      <!-- Stack tags -->
+      <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-8">
+        {technologies.map(tech => (
+          <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
+        ))}
+      </div>
+
+      <a
+        href="#contact"
+        class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
+      >
+        Explorer les possibilités
+      </a>
+    </section>
+
+    <!-- SECTION DOULEUR / REALITE -->
+    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-4 text-center text-white">La réalité de l'IA en développement</h2>
+      <p class="text-xl text-orange-100 text-center mb-12">
+        L'IA promet d'accélérer tout.<br>
+        Mais accélération sans direction, c'est juste aller plus vite dans le mur.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Bloc 1 - Problèmes actuels -->
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Tu reconnais peut-être ça :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🎰</span>
+              <span><strong>L'IA génère du code vite</strong> — mais est-ce du bon code ? Tu passes du temps à corriger ce qu'elle produit</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🚗</span>
+              <span><strong>Sans garde-fous</strong> — on va plus vite... droit dans le mur. La dette technique s'accumule plus rapidement</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🧩</span>
+              <span><strong>L'équipe utilise l'IA chacun dans son coin</strong> — sans cohérence, sans conventions partagées</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🤷</span>
+              <span><strong>Tu ne sais pas quoi automatiser</strong> — et quoi garder manuel. L'IA partout n'est pas la réponse</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bloc 2 - Questions -->
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Les vraies questions :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">❓</span>
+              <span>Comment intégrer l'IA sans perdre le contrôle sur la qualité du code ?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">❓</span>
+              <span>Comment guider l'IA pour qu'elle respecte les conventions du projet ?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">❓</span>
+              <span>Comment former l'équipe à utiliser ces outils efficacement ?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">❓</span>
+              <span>Quelles tâches automatiser pour un vrai gain de temps ?</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center max-w-3xl mx-auto">
+        <p class="text-lg text-orange-100 mb-4">
+          L'IA est un outil puissant. Mais comme tout outil, elle demande de savoir l'utiliser.
+        </p>
+        <p class="text-xl font-semibold mb-6 text-white">
+          Le vrai enjeu n'est pas d'adopter l'IA.<br>
+          C'est de l'adopter <span class="text-orange-300">intelligemment</span>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION DIFFERENCIATION -->
+    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-2xl font-bold mb-6">Je ne vends pas de la magie IA</h2>
+      <div class="prose prose-lg max-w-none">
+        <p class="text-gray-700">
+          Pas de promesses de "10x productivity" ou de "code qui s'écrit tout seul".
+        </p>
+        <p class="text-gray-700">
+          Ce que je propose, c'est une approche pragmatique :
+        </p>
+        <ul class="space-y-2 text-gray-700 mb-6">
+          <li><strong>Identifier</strong> ce qui peut vraiment être automatisé dans ton contexte</li>
+          <li><strong>Mettre en place les garde-fous</strong> pour que l'IA produise du code de qualité</li>
+          <li><strong>Former ton équipe</strong> à utiliser ces outils efficacement</li>
+        </ul>
+        <p class="text-gray-900 font-semibold text-xl">
+          L'objectif : accélérer sans sacrifier la qualité.
+        </p>
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
+          <p class="text-gray-600 text-sm italic">
+            Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous.
+            Aller vite, mais pas droit dans le mur.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION QUI SUIS-JE -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-8 text-center">Qui suis-je ?</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p>
+            J'utilise l'IA dans mes workflows de développement depuis <strong>3 ans</strong>.<br>
+            Pas pour suivre une tendance — parce que ça m'aide à livrer de la valeur plus vite.
+          </p>
+          <p>
+            J'ai construit une base de <strong>skills solide</strong> qui s'appuie sur mes pratiques,
+            celles de mes clients et celles de mes projets. Hooks, Commands, Plugins, Skills, Sub-agents,
+            N8N, MCP, RAG — ce ne sont pas des buzzwords pour moi. Je m'en sers au quotidien.
+          </p>
+          <p>
+            J'ai automatisé mes propres process internes avec N8N, créé un RAG personnel,
+            configuré des MCP servers pour mes projets. Je ne parle pas de théorie —
+            je parle de ce que j'utilise tous les jours.
+          </p>
+        </div>
+        <div class="bg-orange-50 rounded-lg p-4 mt-6 border-l-4 border-orange-400">
+          <p class="text-gray-600 text-sm italic">
+            Ce que j'aime : quand l'IA devient un vrai accélérateur, pas une source de dette supplémentaire.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CE QUE JE PROPOSE -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que je propose</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">🤖</span>
+            Intégration Claude Code / agents IA
+          </h3>
+          <p class="text-gray-600">Configuration des outils, rules et conventions pour que l'IA respecte l'architecture de ton projet</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">⚙️</span>
+            Workflows automatisés
+          </h3>
+          <p class="text-gray-600">CI/CD, génération de code, tests automatiques, revue de code assistée par IA</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">🛡️</span>
+            Garde-fous qualité
+          </h3>
+          <p class="text-gray-600">Hooks, rules, conventions pour que l'IA produise du code conforme à tes standards</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">🎓</span>
+            Formation équipe
+          </h3>
+          <p class="text-gray-600">Apprendre à utiliser l'IA efficacement : prompts, contexte, itération, validation</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">🔍</span>
+            Audit de vos usages IA
+          </h3>
+          <p class="text-gray-600">Évaluer ce qui fonctionne, ce qui pose problème, et ce qui pourrait être amélioré</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-3xl">🧠</span>
+            RAG & Base de connaissances
+          </h3>
+          <p class="text-gray-600">Connecter l'IA à ta documentation, ton code, tes conventions pour des réponses contextualisées</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION BENEFICES -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Gains de temps sur les tâches répétitives
+          </h3>
+          <p class="text-gray-600">L'IA prend en charge ce qui peut être automatisé, ton équipe se concentre sur la valeur</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Meilleure qualité de delivery
+          </h3>
+          <p class="text-gray-600">L'IA guidée correctement produit du code conforme à tes standards</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Équipe autonome et formée
+          </h3>
+          <p class="text-gray-600">Ton équipe sait utiliser l'IA efficacement, pas juste "essayer des trucs"</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Intégration progressive
+          </h3>
+          <p class="text-gray-600">Pas de big bang, on avance étape par étape en validant chaque gain</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Conventions partagées
+          </h3>
+          <p class="text-gray-600">Toute l'équipe utilise l'IA de la même façon, avec les mêmes garde-fous</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            ROI mesurable
+          </h3>
+          <p class="text-gray-600">On mesure les gains réels, pas les promesses marketing</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION POUR QUI -->
+    <section class="mb-28 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-12 text-center text-white">Pour qui ?</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Équipes qui veulent adopter l'IA intelligemment :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🚀</span>
+              <span>Tu veux accélérer le développement mais tu as peur de perdre en qualité</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🎯</span>
+              <span>Tu veux un cadre clair pour utiliser l'IA, pas le far west</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📈</span>
+              <span>Tu cherches des gains de productivité mesurables</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Équipes qui utilisent déjà l'IA :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🧩</span>
+              <span>Chacun utilise l'IA à sa façon, sans cohérence</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔧</span>
+              <span>Tu passes du temps à corriger ce que l'IA produit</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📚</span>
+              <span>Tu veux former ton équipe à mieux utiliser ces outils</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-white rounded-xl shadow-lg text-center">
+        <p class="text-lg font-semibold text-gray-800">
+          Tech leads, architectes, équipes de développement, équipe produit<br>
+          Si tu veux que l'IA soit un accélérateur et pas un générateur de dette,<br>
+          on peut en discuter.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION TU CHERCHES AUTRE CHOSE -->
+    <section class="mb-16 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <h3 class="text-xl font-bold mb-6">Tu cherches autre chose ?</h3>
+        <div class="flex justify-center gap-3 text-sm">
+          <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🎯</span>
+            <span><strong>Accompagnement</strong></span>
+          </a>
+          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🔍</span>
+            <span><strong>Audit</strong></span>
+          </a>
+          <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🎓</span>
+            <span><strong>Formation</strong></span>
+          </a>
+          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🤝</span>
+            <span><strong>Apport d'affaires</strong></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CTA FINALE -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16 md:rounded-lg">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Envie d'explorer les possibilités ?</h2>
+          <p class="text-xl text-orange-100 mb-8">
+            Pas de solution magique. On échange d'abord pour comprendre ton contexte
+            et voir ce qui peut vraiment t'aider.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="/contact?service=automatisation"
+              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
+            >
+              Explorer les possibilités →
+            </a>
+            <a
+              href="https://www.linkedin.com/in/fabiensalles/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

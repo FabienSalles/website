@@ -1,0 +1,621 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Audit de code PHP - Comprendre dans quoi tu mets les pieds | Fabien Salles"
+  description="Audit de code PHP : Symfony, Sylius, legacy, frameworks maison. Évaluation de la dette technique, analyse d'architecture, rapport détaillé et plan d'action."
+>
+  <div class="container mx-auto px-4 py-12">
+
+    <!-- HERO SECTION -->
+    <section class="text-center py-16 mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Tu reprends un projet<br>
+        <span class="text-orange-700">et tu te demandes dans quoi tu mets les pieds ?</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
+        Tu as des doutes sur la qualité du code avant d'investir ?<br>
+        Avant de prendre une décision, il te faut une vision claire.
+      </p>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-6">
+        Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème.<br>
+        Et je te donne les éléments pour décider sereinement.
+      </p>
+
+      <!-- Statut -->
+      <div class="flex flex-wrap justify-center gap-3 mb-8">
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
+        <span class="px-3 py-1 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+      </div>
+
+      <a
+        href="#contact"
+        class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
+      >
+        Demander un diagnostic
+      </a>
+    </section>
+
+    <!-- SECTION DOULEUR -->
+    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-4 text-center text-white">Soyons honnêtes...</h2>
+      <p class="text-xl text-orange-100 text-center mb-12">
+        Ces situations, je les vois souvent.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Bloc 1 - Reprendre un projet -->
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Tu reprends un projet existant :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📦</span>
+              <span>Tu hérites d'un legacy sans documentation, et personne pour t'expliquer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🤷</span>
+              <span>L'équipe précédente dit "tout va bien" mais les livraisons ralentissent</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🐛</span>
+              <span>Les bugs s'accumulent et tu ne sais pas par où commencer</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🔮</span>
+              <span>Tu dois estimer des évolutions mais tu n'as aucune visibilité sur l'existant</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Bloc 2 - Investir -->
+        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+          <h3 class="text-xl font-bold mb-6">Tu envisages un investissement :</h3>
+          <ul class="space-y-4 text-gray-700">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">💰</span>
+              <span>Tu rachètes une boîte tech sans savoir l'état réel du code</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">📉</span>
+              <span>Tu as perdu confiance dans l'équipe en place et tu veux un regard externe</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">⏱️</span>
+              <span>L'application ne répond plus aux besoins et tu te demandes : refonte ou évolution ?</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl">🎯</span>
+              <span>Tu dois convaincre le board avec des arguments techniques solides</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center max-w-3xl mx-auto">
+        <p class="text-lg text-orange-100 mb-4">
+          Dans tous ces cas, tu as besoin d'une chose :
+        </p>
+        <p class="text-xl font-semibold mb-6 text-white">
+          Une vision claire et objective de ce qui se passe vraiment dans le code.
+        </p>
+        <a
+          href="#ce-que-j-audite"
+          class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-900 transition-colors"
+        >
+          Voir ce que j'audite
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION DIFFÉRENCIATION -->
+    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-2xl font-bold mb-6">Je ne fais pas un audit pour cocher des cases</h2>
+      <div class="prose prose-lg max-w-none">
+        <p class="text-gray-700">
+          Beaucoup d'audits se contentent de lancer des outils et de produire des métriques.
+        </p>
+        <p class="text-gray-700">
+          <strong>Ce n'est pas mon approche.</strong>
+        </p>
+        <p class="text-gray-700">
+          Je plonge dans le code. Je le lis. Je le comprends. Et je cherche les vrais problèmes
+          — ceux qui font mal au quotidien, ceux qui bloquent les évolutions, ceux que personne
+          n'avait encore identifiés.
+        </p>
+        <p class="text-gray-900 font-semibold text-xl mt-6">
+          Mon objectif : te donner les clés pour décider.
+        </p>
+        <ul class="space-y-2 text-gray-700 mb-4">
+          <li>Pas juste des chiffres, mais une <strong>analyse</strong>.</li>
+          <li>Pas juste des problèmes, mais des <strong>recommandations actionnables</strong>.</li>
+          <li>Pas juste un rapport, mais une <strong>base de décision</strong>.</li>
+        </ul>
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
+          <p class="text-gray-600 text-sm italic">
+            Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes
+            que personne n'avait encore identifiés. Et parfois, je découvre aussi
+            que certaines inquiétudes étaient infondées.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CE QUE J'AUDITE -->
+    <section id="ce-que-j-audite" class="mb-28 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que j'audite</h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <!-- Stack technique -->
+        <div class="p-8 border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-3xl">🛠️</span>
+            Stack technique
+          </h3>
+          <p class="text-gray-600 mb-4">Mon expertise est en <strong>PHP</strong> :</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Frameworks modernes</strong> : Symfony, Laravel</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Legacy</strong> : monolithes PHP maison, anciens frameworks, frameworks custom</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Solutions PHP</strong> : Akeneo, Api Platform, Sylius, et toute solution basée sur PHP</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Frontend</strong> : point de vue sur JS, TypeScript, Node.js, accessibilité</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Architectures -->
+        <div class="p-8 border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-3xl">🏗️</span>
+            Architectures
+          </h3>
+          <p class="text-gray-600 mb-4">Les patterns que je sais analyser :</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Architecture Hexagonale</strong> (Ports & Adapters)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>DDD</strong> : Bounded Contexts, Aggregates, ACL</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Event-Driven Architecture</strong>, CQRS</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Microservices</strong>, micro-frontends et monolithes modulaires</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Layered / MVC</strong> : les classiques aussi</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <!-- Échanges et intégrations -->
+        <div class="p-8 border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-3xl">🔄</span>
+            Échanges et intégrations
+          </h3>
+          <p class="text-gray-600 mb-4">Les flux que je sais auditer :</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Message Brokers</strong> : RabbitMQ, SQS, Kafka</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>APIs</strong> : REST, GraphQL, SOAP</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Search</strong> : ElasticSearch, OpenSearch, Algolia</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Webhooks</strong>, fichiers batch, ETL</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Bases de données</strong> : MySQL, MariaDB, MongoDB, PostgreSQL</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Aspects analysés -->
+        <div class="p-8 border border-gray-200 rounded-lg">
+          <h3 class="text-xl font-bold mb-6 flex items-center gap-3">
+            <span class="text-3xl">🔍</span>
+            Aspects analysés
+          </h3>
+          <p class="text-gray-600 mb-4">Une vision complète de la santé du projet :</p>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Architecture</strong> : structure, couplage, séparation des responsabilités</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Pratiques de dev</strong> : conventions, patterns, qualité du code</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Dette technique</strong> : évaluation et priorisation</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Testabilité</strong> : couverture, qualité des tests, maintenabilité</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Sécurité</strong> : vulnérabilités courantes, bonnes pratiques</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600 mt-0.5">✓</span>
+              <span><strong>Performance</strong> : goulots d'étranglement, optimisations</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a
+          href="#tarif"
+          class="inline-flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-lg text-lg font-semibold hover:border-orange-700 hover:text-orange-700 transition-colors duration-300"
+        >
+          Voir mes tarifs
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION BÉNÉFICES -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Une vision claire et objective
+          </h3>
+          <p class="text-gray-600">Fini les suppositions — tu sais exactement où tu en es</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Les vrais problèmes identifiés
+          </h3>
+          <p class="text-gray-600">Pas ceux qu'on imagine, ceux qui impactent vraiment le projet</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Une évaluation de la dette technique
+          </h3>
+          <p class="text-gray-600">Quantifiée et priorisée par criticité</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Un plan d'action concret
+          </h3>
+          <p class="text-gray-600">Des recommandations actionnables, pas des voeux pieux</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Une base pour décider
+          </h3>
+          <p class="text-gray-600">Refonte, amélioration progressive, ou on continue comme ça</p>
+        </div>
+        <div class="p-6 border border-gray-200 rounded-lg">
+          <h3 class="flex items-center gap-3 font-bold mb-2">
+            <span class="text-green-600 text-2xl">✅</span>
+            Des arguments pour convaincre
+          </h3>
+          <p class="text-gray-600">De quoi présenter au board ou au management</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION LIVRABLES -->
+    <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-12 text-center">Les livrables</h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-2">
+            <span class="text-3xl">📄</span>
+            Rapport détaillé
+          </h3>
+          <p class="text-gray-600">
+            Document complet avec l'analyse de chaque aspect : architecture, code,
+            tests, sécurité, performance. Illustré avec des exemples concrets du code.
+          </p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-2">
+            <span class="text-3xl">📊</span>
+            Matrice de priorisation
+          </h3>
+          <p class="text-gray-600">
+            Les problèmes classés par criticité et effort de correction.
+            Tu sais par où commencer et ce qui peut attendre.
+          </p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-2">
+            <span class="text-3xl">🗺️</span>
+            Recommandations actionnables
+          </h3>
+          <p class="text-gray-600">
+            Pas juste "il faudrait améliorer ça" mais des pistes concrètes
+            avec une estimation de l'effort et de l'impact.
+          </p>
+        </div>
+        <div class="p-6 bg-white rounded-lg shadow-sm">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-2">
+            <span class="text-3xl">🎤</span>
+            Présentation (optionnel)
+          </h3>
+          <p class="text-gray-600">
+            Restitution en visio ou en présentiel pour l'équipe, la direction
+            ou le board. Questions-réponses incluses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION POUR QUI -->
+    <section class="mb-28 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-12 text-center text-white">Pour qui ?</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">👨‍💼</div>
+          <h3 class="font-bold text-lg mb-2">CTO</h3>
+          <p class="text-gray-600 text-sm">
+            Tu reprends un poste et tu veux comprendre l'état de l'existant
+            avant de prendre des décisions.
+          </p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">💼</div>
+          <h3 class="font-bold text-lg mb-2">Investisseur</h3>
+          <p class="text-gray-600 text-sm">
+            Tu envisages un rachat et tu veux évaluer le risque technique
+            avant de signer.
+          </p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">🔄</div>
+          <h3 class="font-bold text-lg mb-2">Manager de transition</h3>
+          <p class="text-gray-600 text-sm">
+            Tu arrives sur une mission et tu as besoin d'un état des lieux
+            rapide et fiable.
+          </p>
+        </div>
+        <div class="bg-orange-50 p-6 rounded-xl shadow-lg text-center">
+          <div class="text-4xl mb-4">🏢</div>
+          <h3 class="font-bold text-lg mb-2">Direction / ESN</h3>
+          <p class="text-gray-600 text-sm">
+            Tu as perdu confiance dans l'équipe en place et tu veux
+            un regard externe et objectif.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 p-6 bg-white rounded-xl shadow-lg text-center max-w-2xl mx-auto">
+        <p class="text-lg font-semibold text-gray-800">
+          Pas besoin d'être technique pour bénéficier de l'audit.<br>
+          Je traduis les constats techniques en impacts business.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION COMMENT ÇA SE PASSE -->
+    <section class="mb-28">
+      <h2 class="text-3xl font-bold mb-12 text-center">Comment ça se passe ?</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-8">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-orange-700 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Échange initial</h3>
+              <p class="text-gray-600">
+                On discute de ton contexte, tes inquiétudes, ce que tu attends de l'audit.
+                Je t'explique ma méthode et on définit le périmètre ensemble.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-orange-700 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Accès au code</h3>
+              <p class="text-gray-600">
+                Tu me donnes accès au repository (ou je viens sur site si nécessaire).
+                NDA signé si besoin, confidentialité garantie.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-orange-700 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Analyse approfondie</h3>
+              <p class="text-gray-600">
+                Je plonge dans le code pendant plusieurs jours. Lecture, compréhension,
+                identification des problèmes, mesures, tests.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-orange-700 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+            <div>
+              <h3 class="font-bold text-lg mb-2">Livraison du rapport</h3>
+              <p class="text-gray-600">
+                Tu reçois le rapport complet avec l'analyse, les constats priorisés
+                et les recommandations. On peut planifier une restitution si besoin.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SECTION TARIF -->
+    <section id="tarif" class="mb-20 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-4 text-center">Tarification</h2>
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-orange-50 p-8 rounded-lg border border-orange-100 mb-6">
+          <p class="text-4xl font-bold text-orange-900 mb-2">800 €</p>
+          <p class="text-gray-600">TJM pour un audit</p>
+        </div>
+        <div class="text-gray-600 text-sm space-y-2 mb-8">
+          <p>La durée dépend de la taille et de la complexité du projet.</p>
+          <p>On définit le périmètre ensemble lors de l'échange initial.</p>
+          <p class="mt-4"><strong>Disponibilité :</strong> sur demande — contacte-moi pour voir si je peux intervenir sur ton créneau.</p>
+        </div>
+        <a
+          href="#contact"
+          class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
+        >
+          Demander un diagnostic
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION PREUVES SOCIALES -->
+    <section class="mb-20 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-8 text-center">Retours d'expérience</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600 mb-8">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold text-gray-900">10+</span>
+            <span>applications auditées</span>
+          </div>
+        </div>
+        <p class="text-center text-gray-500 text-sm mb-8">
+          La plupart de mes audits sont couverts par des NDA — je ne peux pas citer les entreprises.<br>
+          Mais voici des exemples de retours :
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <blockquote class="bg-white p-6 rounded-lg shadow-sm">
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Bravo. La présentation de cette partie PHP était très claire et tu as vraiment réussi
+              à sortir l'essentiel en constat et en recommandations, avec le peu de temps que tu avais.
+              Le client était très satisfait. Un grand merci pour ton étude."
+            </p>
+            <footer class="text-gray-500 text-sm">
+              — Retour client, février 2026
+            </footer>
+          </blockquote>
+          <blockquote class="bg-white p-6 rounded-lg shadow-sm">
+            <p class="text-gray-700 mb-4 leading-relaxed">
+              "Bonjour Fabien, je te remercie pour ce travail. Je viens de parcourir ton rapport
+              et je le trouve d'une grande qualité."
+            </p>
+            <footer class="text-gray-500 text-sm">
+              — Retour client, mars 2021
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION QUI RÉALISE L'AUDIT -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-8 text-center">Mon parcours</h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="prose prose-lg max-w-none text-gray-700">
+          <p>
+            Plus de 15 ans de développement, mais surtout une dizaine d'audits réalisés
+            sur des projets très différents : du legacy de 20 ans au greenfield mal parti,
+            du monolithe PHP maison au projet Symfony bien structuré.
+          </p>
+          <p class="text-gray-600">
+            <strong>Secteurs :</strong> E-commerce, Retail, Transports, Gouvernement, Hôtellerie.<br>
+            <strong>Communauté :</strong> Membre actif de l'AFUP Paris depuis 6 ans.
+          </p>
+          <p class="font-semibold text-gray-900">
+            Ce que j'ai appris : chaque codebase a son histoire.
+          </p>
+          <p>
+            Et pour la comprendre, il faut la lire — pas juste lancer des outils.
+          </p>
+          <p>
+            Je ne suis pas là pour juger l'équipe en place. Je suis là pour donner
+            une vision claire et des pistes d'amélioration.
+          </p>
+        </div>
+
+        <!-- Liens vers autres offres -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+          <p class="text-gray-700 mb-4 font-medium">Tu cherches autre chose ?</p>
+          <div class="flex gap-3 text-sm">
+            <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+              <span>🎯</span>
+              <span><strong>Accompagnement</strong></span>
+            </a>
+            <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+              <span>🎓</span>
+              <span><strong>Formation</strong></span>
+            </a>
+            <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+              <span>🤖</span>
+              <span><strong>IA & Automatisation</strong></span>
+            </a>
+            <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
+              <span>🤝</span>
+              <span><strong>Apport d'affaires</strong></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CTA FINALE -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16 scroll-mt-24">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Demander un diagnostic</h2>
+          <p class="text-xl text-orange-100 mb-8">
+            On échange d'abord pour comprendre ton contexte et voir si je peux t'aider.
+            Pas d'engagement, juste une discussion.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="/contact?service=audit"
+              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
+            >
+              Me contacter →
+            </a>
+            <a
+              href="https://www.linkedin.com/in/fabiensalles/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

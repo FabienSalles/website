@@ -57,9 +57,9 @@ const benefits = [
     example: "On livre vite et on répond réellement à un besoin"
   },
   {
-    title: "Zéro friction au départ",
-    description: "Je pars sans laisser de dépendance. Le code reste lisible et maintenable.",
-    example: "Documentation, tests, architecture claire"
+    title: "Collaboration réelle",
+    description: "L'important pour moi : trouver ensemble la bonne solution au bon problème.",
+    example: "On comprend d'abord, on livre ensuite"
   }
 ];
 
@@ -206,32 +206,36 @@ const modalites = [
 ---
 
 <Layout
-  title="Développeur Senior PHP/Symfony Freelance | Fabien Salles"
-  description="Développeur senior PHP/Symfony freelance disponible. TDD, DDD, Clean Code, Architecture Hexagonale. Luxe, Finance, E-commerce. Paris, full remote. TJM 550-800€. 15+ ans d'expérience."
+  title="Accompagnement PHP/Symfony - Artisan Développeur Senior | Fabien Salles"
+  description="Besoin d'un dev senior pour renforcer ton équipe ? Legacy à stabiliser, refonte progressive ou montée en compétences. Je m'intègre, je livre, je transmets."
 >
   <div class="container mx-auto px-4 py-12">
     <!-- SECTION 1 : HERO -->
     <section class="text-center py-16 mb-12">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
         Artisan développeur Senior.<br>
-        <span class="text-orange-700">Avec un truc en plus.</span>
+        <span class="text-orange-700">Et si on allait plus loin ?</span>
       </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6 leading-relaxed">
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed font-medium">
         J'aide les équipes à livrer sereinement<br>
         avec des solutions pensées pour durer, pas pour dépanner.
       </p>
 
       <!-- Le "truc en plus" -->
-      <div class="bg-gray-50 rounded-xl p-6 max-w-2xl mx-auto mb-8">
-        <p class="font-medium text-gray-700">
-          J'apporte un mindset craft, agile, orienté produit,<br>
-          une forte expertise en architecture et bonnes pratiques de développement,<br>
-          et l'envie de laisser l'équipe plus forte qu'avant.
-        </p>
-        <p class="text-sm text-gray-500 mt-4">
-          Que tu cherches un dev en renfort ou un accompagnement plus poussé,<br>on trouve le bon curseur ensemble.
-        </p>
-      </div>
+      <ul class="text-gray-700 max-w-xl mx-auto mb-8 space-y-2">
+        <li class="flex items-center justify-center gap-2">
+          <span class="text-orange-600">•</span>
+          <span>Mindset craft, agile, orienté produit</span>
+        </li>
+        <li class="flex items-center justify-center gap-2">
+          <span class="text-orange-600">•</span>
+          <span>Expertise en architecture et bonnes pratiques</span>
+        </li>
+      </ul>
+      <p class="text-gray-500 text-center mb-8">
+        Que tu cherches un dev en renfort ou un accompagnement plus poussé,<br>
+        on trouve le bon curseur ensemble.
+      </p>
 
       <!-- Stats inline -->
       <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600 mb-6">
@@ -247,12 +251,7 @@ const modalites = [
       <div class="flex flex-wrap justify-center gap-3 mb-6">
         <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
         <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
-        <span class="inline-flex items-center gap-2 text-gray-600 text-sm">
-          <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
-          </svg>
-          Paris — Full remote ou hybride
-        </span>
+        <span class="px-3 py-1 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
       </div>
 
       <!-- Stack tags -->
@@ -479,19 +478,23 @@ const modalites = [
 
       <!-- Liens vers autres offres -->
       <div class="mt-8 pt-6 border-t border-orange-200">
-        <p class="text-gray-700 mb-4 font-medium">Tu cherches une prestation plus spécifique ?</p>
-        <div class="flex flex-wrap gap-4">
-          <a href="/audit" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span class="text-xl">🔍</span>
-            <span><strong>Audit</strong> — Diagnostic de ton existant</span>
+        <p class="text-gray-700 mb-4 font-medium">Tu cherches autre chose ?</p>
+        <div class="flex gap-3 text-sm">
+          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🔍</span>
+            <span><strong>Audit</strong></span>
           </a>
-          <a href="/formations" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span class="text-xl">🎓</span>
-            <span><strong>Formation</strong> — Sessions structurées</span>
+          <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🎓</span>
+            <span><strong>Formation</strong></span>
           </a>
-          <a href="/automatisation" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span class="text-xl">🤖</span>
-            <span><strong>IA & Automatisation</strong> — Claude Code, workflows</span>
+          <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🤖</span>
+            <span><strong>IA & Automatisation</strong></span>
+          </a>
+          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span>🤝</span>
+            <span><strong>Apport d'affaires</strong></span>
           </a>
         </div>
       </div>

@@ -1,222 +1,414 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import generateUrl from "@utils/url";
+import { getStats } from '../data/formations';
 
-const description = "Vous souhaitez optimiser votre delivery, limiter les régressions et avoir des applications web qui tiennent dans le temps ? Je peux certainement vous aider."
+const description = "Artisan développeur, formateur et consultant. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
+
+// Stats dynamiques depuis les données de formations
+const formationStats = getStats();
 
 const stats = [
-  { number: "14+", label: "années d'expérience" },
-  { number: "26+", label: "projets clients" },
-  { number: "20+", label: "formations dispensées" },
-  { number: "98+", label: "personnes formées" }
+  { number: "15+", label: "années d'expérience" },
+  { number: "26+", label: "projets accompagnés" },
+  { number: `${formationStats.participants}+`, label: "développeurs formés" },
+  { number: `${formationStats.sessions}+`, label: "formations dispensées" }
 ];
 
-const technologies = [
-  "TDD",
-  "DDD",
-  "Hexagonal Architecture",
-  "Event Driven Architecture",
-  "Craftsmanship",
-  "Clean Code",
-  "CQRS",
-  "Agile",
+const expertise = [
   "PHP",
   "Symfony",
-  "JavaScript",
   "TypeScript",
   "Node.js",
-  "Git",
-  "PHPUnit",
-  "Akeneo",
-  "Keycloak",
-  "Api Platform",
-  "Sylius",
-  "ElasticSearch",
-  "OpenSearch",
-  "RabbitMQ",
-  "MySql",
-  "MariaDB",
-  "MongoDB",
-  "SQS",
-  "Docker",
-  "Ansible",
-  "Cypress",
-  "React",
-  "Functional Programming",
-  "AWS",
-  "GCP"
+  "TDD",
+  "Clean Code",
+  "Architecture Hexagonale",
+  "DDD",
+  "Refactoring",
+  "Craftsmanship",
+  "IA & Automatisation"
 ];
 
 const services = [
   {
+    icon: "🔍",
+    title: "Auditer",
+    intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
+    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.",
+    benefits: [
+      "Évaluation de la dette technique",
+      "Analyse de l'architecture, pratiques de développement",
+      "Rapport détaillé + plan d'action"
+    ],
+    love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
+    cta: "En savoir plus",
+    href: "/audit"
+  },
+  {
+    icon: "🎯",
     title: "Accompagner",
-    description: "En venant en renfort de vos équipes, contribuant à l'amélioration de leurs compétences, de la qualité de vos projets et m'assurant de répondre aux mieux à vos attentes tout en respectant vos contraintes"
+    intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder, mais qui transmet ?",
+    description: "J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.",
+    benefits: [
+      "Intervention en régie ou au forfait",
+      "Amélioration d'un legacy, Refonte progressive",
+      "Support et transfert de compétences"
+    ],
+    love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
+    cta: "En savoir plus",
+    href: "/accompagnement"
   },
   {
-    title: "Développer",
-    description: "Que cela soit pour un besoin ponctuel ou pour un projet complet, sur du legacy ou des refontes, j'attache beaucoup d'importance à trouver des solutions techniques adaptés à vos problématiques métiers et à livrer continuellement et le plus rapidement possible de la valeur"
-  },
-  {
+    icon: "🎓",
     title: "Former",
-    description: "J'ai accompagné des personnes en reconversion et donner des formations pour différents organismes. Je me suis recentré sur 2 formations actuellement (Git et PHPUnit) mais je peux répondre à d'autres demandes si celles-ci rejoignent mes domaines d'expertises"
+    intro: "Tes devs codent.<br />Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
+    description: "Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.",
+    benefits: [
+      "Formations intra-entreprise, distantiel",
+      "Organisme déclaré (NDA)",
+      `${formationStats.participants}+ développeurs formés depuis 2016`
+    ],
+    love: "Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique.",
+    cta: "Voir les formations",
+    href: "/formations"
+  },
+  {
+    icon: "🤖",
+    title: "Automatiser",
+    intro: "L'IA change notre façon de coder.<br />Mais sans direction, elle amplifie les problèmes autant que les solutions.",
+    description: "Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
+    benefits: [
+      "Intégration Claude Code / agents IA",
+      "Workflows automatisés",
+      "Garde-fous qualité"
+    ],
+    love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
+    cta: "En savoir plus",
+    href: "/automatisation"
   }
+];
+
+const clients = [
+  { name: "Hermès", logo: "/images/clients/hermes.png" },
+  { name: "LVMH", logo: "/images/clients/lvmh.png" },
+  { name: "Dior", logo: "/images/clients/dior.png" },
+  { name: "Chaumet", logo: "/images/clients/chaumet.png" },
+  { name: "Amundi", logo: "/images/clients/amundi.png" },
+  { name: "Total", logo: "/images/clients/total.png" },
+  { name: "RATP", logo: "/images/clients/ratp.png" },
+  { name: "Volkswagen", logo: "/images/clients/wolkswagen.png" }
 ];
 
 const testimonials = [
   {
-    name: "Luis Campillo Matias",
-    role: "Product Desginer, Hermes",
-    year: "2023",
-    content: "<p>Ce fut un réel plaisir de travailler avec Fabien. Sa compétence et son expertise ont été un véritable atout dans notre collaboration, apportant une valeur ajoutée indéniable à chaque projet. Toujours à l'écoute, réactif et précis dans ses analyses, il sait trouver des solutions efficaces et pertinentes. Mais au-delà de ses compétences techniques, Fabien est également une personne humaine et bienveillante, ce qui rend le travail avec lui encore plus agréable. Je le recommande sans hésitation !</p>",
-    image: "/images/recommendations/luis.jpg"
-  },
-  {
-    name: "Samuel Antunes",
-    role: "Expert AWS & DevOps, Hermes",
-    year: "2022",
-    content: "<p>Fabien a été une très belle rencontre. Il ne prend jamais rien pour acquis et cherche toujours à améliorer les choses. Super rigoureux dans son approche, il reste malgré tout ouvert aux idées des autres. Sa curiosité est débordante, il est toujours en train d'explorer de nouvelles choses.. Ce qui m'a surpris le plus, c'est sa passion sincère pour ce qu'il fait. Il est capable d'apporter une vision totalement différente et de savoir la défendre.</p>",
-    image: " /images/recommendations/samuel-antunes.png"
-  },
-  {
     name: "Shahbran Khan GHULAM",
-    role: "Ingénieur QA, Hermes",
-    year: "2023",
-    content: "<p>" +
-      "J’ai eu la chance de travailler avec Fabien, et dès mon arrivée dans l’équipe, il a été un élément clé de mon intégration. Grâce à lui, tout s’est fait naturellement : il a pris le temps de m’expliquer les choses, de me mettre à l’aise et de m’inclure dans la dynamique de l’équipe. Sa bienveillance et son esprit d’entraide ont vraiment fait la différence.<br />" +
-      "<br />" +
-      "Mais Fabien, ce n’est pas juste quelqu’un de sympa et accueillant. C’est aussi un vrai pro. Il est extrêmement compétent, toujours pertinent dans ses analyses et redoutablement efficace dans son travail. Il sait prendre du recul, proposer des solutions intelligentes et faire avancer les choses avec une énergie et un engagement impressionnants.<br />" +
-      "<br />" +
-      "Bref, un collègue en or, tant sur le plan humain que professionnel. Travailler avec lui a été un vrai plaisir, et je ne peux que le recommander à 100 % ! J’espère sincèrement qu’on aura l’occasion de recollaborer un jour." +
-      "</p>",
-    image: " /images/recommendations/shahbran-khan-ghulam.png"
-  },
-  {
-    name: "Rodolphe Huot",
-    role: "Développeur Web, Hermes",
-    year: "2022",
-    content: "<p>C'est un plaisir de travailler avec Fabien. <br />" +
-      "Il possède une expertise technique pointue dans le développement et le domaine du craftsmanship.<br />" +
-      "Sa curiosité et son ouverture d'esprit sont des atouts précieux.<br />" +
-      "Il est toujours force de proposition et n'hésite pas à prendre des initiatives à la recherche de l'excellence.<br />" +
-      "Je recommande chaleureusement pour son professionnalisme, ses compétences techniques et son esprit d'équipe.</p>",
-    image: " /images/recommendations/rodolphe-huot.png"
+    role: "Ingénieur QA, Hermès",
+    content: "Fabien, c'est un vrai pro. Il est extrêmement compétent, toujours pertinent dans ses analyses et redoutablement efficace. Il sait prendre du recul, proposer des solutions intelligentes et faire avancer les choses.",
+    image: "/images/recommendations/shahbran-khan-ghulam.png"
   },
   {
     name: "Jean-Yves Camier",
-    role: "DevOps Technical Lead / Manager, Bedrock Streaming",
-    year: "2020",
-    content: "<p>J'ai eu l'opportunité de travailler avec Fabien sur plusieurs projets et je dois dire que j'ai adoré ces moments : sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important à mes yeux.</p>",
-    image: " /images/recommendations/jean-yves-camier.jpg"
+    role: "DevOps Technical Lead, Bedrock Streaming",
+    content: "Sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important.",
+    image: "/images/recommendations/jean-yves-camier.jpg"
   },
   {
-    name: "Daniel Godin",
-    role: "Développeur web, Clever Age",
-    year: "2020",
-    content: "<p>Je travaille actuellement avec Fabien au sein de Clever Age.<br />" +
-      "Que puis-je dire de lui, avant toute chose c'est une personne qui met en avant l'humain à travers son ouverture d'esprit.<br />" +
-      "<br />" +
-      "Malgré son jeune âge, Fabien est certainement un des plus talentueux Lead développeur avec qui j'ai pu travailler jusqu'à présent. Il a cette capacité de comprendre rapidement un sujet, qu'il s'agisse des règles métiers complexes ou l'apprentissage d'une nouvelle technologie.<br />" +
-      "<br />" +
-      "Comme tout être humain, il a aussi des défauts, mais honnêtement ça ne représente pas 5% de la personne passionnée et sympathique qu'il est.<br />" +
-      "<br />" +
-      "J'ai la chance de continuer à travailler avec actuellement sur un autre projet où il est encore Lead développeur. Ce qui confirme sa qualité d’écoute et envie de transmettre son savoir faire. C'est un talent rare de nos jours.</p>",
-    image: " /images/recommendations/daniel-godin.jpg"
+    name: "Rodolphe Huot",
+    role: "Développeur Web, Hermès",
+    content: "Expertise technique pointue dans le développement et le craftsmanship. Toujours force de proposition et à la recherche de l'excellence. Je recommande chaleureusement.",
+    image: "/images/recommendations/rodolphe-huot.png"
   }
 ];
 ---
 
-<Layout title="Fabien Salles - Artisan développeur, Tech Lead & Formateur", description={description}>
-  <!-- Hero Section -->
-  <section class="relative flex items-center bg-gray-50">
-    <div class="container mx-auto px-4 pt-20 grid grid-cols-1 md:grid-cols-2">
-      <div class="max-w-3xl">
-          <h1 class="text-4xl md:text-5xl font-semibold mb-6">
-              Salut, je suis Fabien !
+<Layout title="Fabien Salles - Artisan développeur, Formateur & Consultant" description={description}>
+
+  <!-- HERO SECTION -->
+  <section class="bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4 py-20 md:py-28">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Salut, je suis Fabien.
           </h1>
-          <p class="text-xl text-gray-700 mb-8">
-            {description}
+          <p class="text-xl text-gray-700 mb-2 leading-relaxed">
+            Développeur depuis plus de 15 ans.
           </p>
-          <div class="flex flex-wrap gap-2">
-              {technologies.map(technology =>
-                <span class="px-3 py-1 bg-gray-100 rounded-full text-sm hover:bg-orange-50 transition-colors">{technology}</span>
-              )}
+          <p class="text-xl text-gray-800 font-medium mb-6 leading-relaxed">
+            Aujourd'hui, j'aide les équipes à livrer sereinement — avec des solutions pensées pour durer, pas pour dépanner.
+          </p>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Je n'ai pas de recette magique — juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
+          </p>
+          <div class="flex flex-wrap gap-4 mb-8">
+            <a
+              href="/contact"
+              class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
+            >
+              Discutons de ton besoin
+            </a>
+            <a
+              href="/formations"
+              class="inline-block border-2 border-orange-700 text-orange-700 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+            >
+              Voir les formations
+            </a>
           </div>
-      </div>
-      <div class="text-right">
-        <img class="h-96 ml-auto" src="/fabiensalles.png" alt="Fabien Salles">
+          <div class="flex flex-wrap gap-2">
+            {expertise.map(tech => (
+              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
+            ))}
+          </div>
+        </div>
+        <div class="text-center md:text-right">
+          <!-- Statut -->
+          <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-4">
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+          </div>
+          <img
+            class="h-80 md:h-96 mx-auto md:ml-auto md:mr-0 rounded-lg"
+            src="/fabiensalles.png"
+            alt="Fabien Salles"
+          />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="pt-20">
+  <!-- SECTION PAIN POINTS (empathique) -->
+  <section class="pt-8 pb-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Mes services</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ces situations te parlent ?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🐛</span>
+            <span class="flex flex-col">
+              <span>Tu subis les bugs</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de les prévenir.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu as beau les corriger, d'autres reviennent toujours.</p>
+        </div>
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🐌</span>
+            <span class="flex flex-col">
+              <span>Tu subis la dette technique</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de la réduire.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu sais ce qu'il faudrait faire, mais cela te semble impossible dans ton contexte.</p>
+        </div>
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🌫️</span>
+            <span class="flex flex-col">
+              <span>Tu subis le flou métier</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu de clarifier.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Tu livres des features... mais sont-elles vraiment utiles ?</p>
+        </div>
+        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
+          <h3 class="font-bold mb-2 flex items-start gap-2">
+            <span class="text-2xl">🧪</span>
+            <span class="flex flex-col">
+              <span>Tu subis tes tests</span>
+              <span class="text-gray-700 font-medium text-sm">au lieu d'en faire des alliés.</span>
+            </span>
+          </h3>
+          <p class="text-gray-600 text-sm">Ils cassent, ils ralentissent, ils frustrent.</p>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-xl text-orange-700 font-medium mb-2">
+          Subir, c'est épuisant.
+        </p>
+        <p class="text-xl font-bold">
+          Mais passer de subir à maîtriser, ça s'apprend.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION SERVICES -->
+  <section class="bg-gradient-to-br from-orange-900 to-orange-800 pt-16 pb-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Comment puis-je t'aider ?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
         {services.map(service => (
-          <div class="p-6 border rounded-lg hover:shadow-lg transition-all duration-300">
-            <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
-            <p class="text-gray-600">{service.description}</p>
+          <div class="p-8 bg-orange-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+            <!-- Header -->
+            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-orange-200">
+              <span class="text-4xl">{service.icon}</span>
+              <h3 class="text-2xl font-bold text-gray-900">{service.title}</h3>
+            </div>
+
+            <!-- Intro -->
+            <p class="text-gray-800 mb-6 font-medium" set:html={service.intro} />
+
+            <!-- Description -->
+            <p class="text-gray-700 mb-5 leading-relaxed">{service.description}</p>
+
+            {service.benefits && (
+              <ul class="space-y-2 text-gray-700 mb-5">
+                {service.benefits.map((benefit) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-orange-600 mt-0.5">✓</span>
+                    <span>{benefit}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <!-- Citation "Ce que j'aime" -->
+            <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-orange-400">
+              <p class="text-gray-600 text-sm italic">{service.love}</p>
+            </div>
+
+            <!-- CTA -->
+            <a
+              href={service.href}
+              class="inline-block bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
+            >
+              {service.cta} →
+            </a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Clients Section -->
-  <section class="pt-20">
+  <!-- SECTION CLIENTS -->
+  <section class="py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {clients.map(client => (
+          <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-all duration-300">
+            <img
+              src={client.logo}
+              alt={client.name}
+              class="max-h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/clients" class="text-orange-700 font-semibold hover:text-orange-800">
+          Voir toutes les références →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION STATS -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">En quelques chiffres</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {stats.map(stat => (
           <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <a class="hover:text-orange-700 transition-colors duration-300" href={generateUrl("/clients")} title="Voir mes références">
-                <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
-                <div class="text-gray-600">{stat.label}</div>
-              </a>
+            <a class="hover:text-orange-700 transition-colors duration-300" href={generateUrl("/recommendations")} title="Voir les recommandations">
+              <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
+              <div class="text-gray-600">{stat.label}</div>
+            </a>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="pt-20 bg-gray-50">
+  <!-- SECTION TEMOIGNAGES -->
+  <section class="py-24 bg-gray-50">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Témoignages</h2>
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce qu'ils en disent</h2>
+        <p class="text-gray-600">Retours de collaborations et formations</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
         {testimonials.map(testimonial => (
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-            <div class="flex items-center gap-4 mb-4">
+          <blockquote class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+            <p class="text-gray-700 mb-4">"{testimonial.content}"</p>
+            <footer class="flex items-center gap-3">
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                class="w-12 h-12 rounded-full"
+                class="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <div class="font-semibold">{testimonial.name}</div>
-                <div class="text-gray-600 text-sm">{testimonial.role}</div>
+                <div class="font-semibold text-sm">{testimonial.name}</div>
+                <div class="text-gray-500 text-xs">{testimonial.role}</div>
               </div>
-            </div>
-            <Fragment  class="text-gray-700" set:html={testimonial.content} />
-            <div class="text-gray-600 text-sm text-right">{testimonial.year} </div>
-          </div>
+            </footer>
+          </blockquote>
         ))}
+      </div>
+
+      <div class="text-center mt-8">
+        <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800">
+          Voir toutes les recommandations →
+        </a>
       </div>
     </div>
   </section>
+
+  <!-- SECTION PARTENAIRES (Alex) -->
+  <section class="py-12 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-xl font-bold mb-4">Tu es freelance ?</h3>
+        <p class="text-gray-600 mb-4">
+          Tu as une mission qui ne te correspond pas ? Je peux peut-être t'aider.<br />
+          Et inversement — quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
+        </p>
+        <a href="/apport-affaires" class="text-orange-700 font-semibold hover:text-orange-800">
+          On en parle →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CTA FINALE -->
+  <section class="py-20 bg-gradient-to-br from-orange-900 to-orange-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Envie d'en discuter ?
+        </h2>
+        <p class="text-xl text-orange-100 mb-8">
+          Pas de devis automatique. On échange d'abord pour voir si ça matche.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/contact"
+            class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors"
+          >
+            Prendre contact →
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
-
-<style>
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 transform;
-  }
-
-  .btn-primary {
-    @apply bg-gradient-to-r from-orange-700 to-orange-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5;
-  }
-
-  .btn-outline {
-    @apply border-2 border-orange-700 text-orange-700 hover:bg-orange-50;
-  }
-</style>
