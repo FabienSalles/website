@@ -1,0 +1,640 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { number: "15+", label: "années d'expérience" },
+  { number: "26+", label: "projets accompagnés" }
+];
+
+const contexts = [
+  {
+    emoji: "💪",
+    title: "Renfort sur un projet",
+    description: "Tu as besoin d'un dev senior pour avancer. Je m'intègre à l'équipe et je livre."
+  },
+  {
+    emoji: "🏚️",
+    title: "Legacy à stabiliser",
+    description: "Un existant qu'on n'ose plus toucher. Je peux aider à le reprendre en main progressivement."
+  },
+  {
+    emoji: "🚀",
+    title: "Nouveau projet from scratch",
+    description: "Tu veux partir sur de bonnes bases. Architecture, pratiques, organisation."
+  },
+  {
+    emoji: "📈",
+    title: "Montée en compétence",
+    description: "L'équipe veut progresser sur le craft. TDD, refactoring, design patterns."
+  },
+  {
+    emoji: "🔄",
+    title: "Refonte progressive",
+    description: "Moderniser sans tout casser. Une migration module par module."
+  },
+  {
+    emoji: "🤝",
+    title: "Regard extérieur",
+    description: "Tu veux juste un avis, un audit, une review. Un œil neuf sur le projet."
+  }
+];
+
+const benefits = [
+  {
+    title: "Montée en compétence",
+    description: "Ton équipe apprend en faisant, pas en écoutant.",
+    example: "Formateur déclaré — voir mes formations",
+    link: "/formations"
+  },
+  {
+    title: "Équipe autonome",
+    description: "À la fin de la mission, elle continue sans moi.",
+    example: "Transfert de compétences à chaque intervention"
+  },
+  {
+    title: "Pratiques durables",
+    description: "Des méthodes qui restent, pas des pansements temporaires.",
+    example: "On livre vite et on répond réellement à un besoin"
+  },
+  {
+    title: "Zéro friction au départ",
+    description: "Je pars sans laisser de dépendance. Le code reste lisible et maintenable.",
+    example: "Documentation, tests, architecture claire"
+  }
+];
+
+const technologies = [
+  "TDD",
+  "DDD",
+  "Hexagonal Architecture",
+  "Event Driven Architecture",
+  "Craftsmanship",
+  "Clean Code",
+  "CQRS",
+  "Agile",
+  "PHP",
+  "Symfony",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Git",
+  "PHPUnit",
+  "Akeneo",
+  "Keycloak",
+  "Api Platform",
+  "Sylius",
+  "ElasticSearch",
+  "OpenSearch",
+  "RabbitMQ",
+  "MySql",
+  "MariaDB",
+  "MongoDB",
+  "SQS",
+  "Docker",
+  "Ansible",
+  "Cypress",
+  "React",
+  "Functional Programming",
+  "AWS",
+  "GCP",
+  "CI/CD",
+  "API REST",
+  "Microservices",
+  "Refactoring",
+  "IA & Automatisation",
+  "Claude Code"
+];
+
+const sectors = [
+  {
+    name: "Luxe",
+    description: "Porter l'artisanat dans la tech autant qu'il se trouve dans le produit.",
+    clients: "Hermès, LVMH, Dior, Chaumet"
+  },
+  {
+    name: "Finance",
+    description: "Forte complexité métier, règles business critiques.",
+    clients: "Amundi, Eres, Pledg"
+  },
+  {
+    name: "Retail",
+    description: "Process métiers spécifiques à chaque enseigne, intégrations complexes.",
+    clients: "DFS, Jardiland, Dismo, Martin Belaysoud"
+  },
+  {
+    name: "E-commerce & Tourisme",
+    description: "Sites sur-mesure quand aucune solution du marché ne répond au besoin.",
+    clients: "Japan Experience, Jacadi"
+  },
+  {
+    name: "Automobile & Transport",
+    description: "Gestion de forts pics de charge et haute disponibilité.",
+    clients: "Volkswagen, RATP, AramisAuto"
+  }
+];
+
+const clients = [
+  { name: "Hermès", logo: "/images/clients/hermes.png" },
+  { name: "LVMH", logo: "/images/clients/lvmh.png" },
+  { name: "Dior", logo: "/images/clients/dior.png" },
+  { name: "Chaumet", logo: "/images/clients/chaumet.png" },
+  { name: "Amundi", logo: "/images/clients/amundi.png" },
+  { name: "Total", logo: "/images/clients/total.png" },
+  { name: "RATP", logo: "/images/clients/ratp.png" },
+  { name: "Volkswagen", logo: "/images/clients/wolkswagen.png" }
+];
+
+const testimonials = [
+  {
+    name: "Shahbran Khan GHULAM",
+    role: "Ingénieur QA, Hermès",
+    content: "Fabien, c'est un vrai pro. Il est extrêmement compétent, toujours pertinent dans ses analyses et redoutablement efficace. Il sait prendre du recul, proposer des solutions intelligentes et faire avancer les choses.",
+    image: "/images/recommendations/shahbran-khan-ghulam.png"
+  },
+  {
+    name: "Jean-Yves Camier",
+    role: "DevOps Technical Lead, Bedrock Streaming",
+    content: "Sa capacité à rester calme malgré la pression, son ouverture au dialogue, sa curiosité, son amour des choses bien faites font de lui un collaborateur particulièrement important.",
+    image: "/images/recommendations/jean-yves-camier.jpg"
+  },
+  {
+    name: "Rodolphe Huot",
+    role: "Développeur Web, Hermès",
+    content: "Expertise technique pointue dans le développement et le craftsmanship. Toujours force de proposition et à la recherche de l'excellence. Je recommande chaleureusement.",
+    image: "/images/recommendations/rodolphe-huot.png"
+  }
+];
+
+const interventionModes = [
+  {
+    emoji: "🛠️",
+    title: "Hands-on",
+    description: "Je code avec l'équipe. Pair programming, mob programming, revues de code en live.",
+    ideal: "Transfert de compétences rapide, montrer par l'exemple, débloquer des situations techniques."
+  },
+  {
+    emoji: "🎯",
+    title: "Hands-off",
+    description: "Je guide, je revois, je conseille — mais c'est l'équipe qui code.",
+    ideal: "Équipes autonomes qui veulent un regard externe, validation d'architecture, audits réguliers."
+  },
+  {
+    emoji: "🧭",
+    title: "Coaching",
+    description: "J'accompagne les individus ou l'équipe dans leur progression.",
+    ideal: "Leads en prise de poste, équipes en transformation, montée en séniorité."
+  }
+];
+
+const modalites = [
+  {
+    emoji: "📅",
+    title: "Régie",
+    description: "Intégration à l'équipe sur la durée. Idéal pour les transformations profondes."
+  },
+  {
+    emoji: "🎯",
+    title: "Forfait",
+    description: "Mission cadrée avec objectifs clairs. Pour des problématiques identifiées."
+  },
+  {
+    emoji: "💻",
+    title: "Hybride",
+    description: "Mix présentiel/distanciel selon tes contraintes."
+  }
+];
+---
+
+<Layout
+  title="Développeur Senior PHP/Symfony Freelance | Fabien Salles"
+  description="Développeur senior PHP/Symfony freelance disponible. TDD, DDD, Clean Code, Architecture Hexagonale. Luxe, Finance, E-commerce. Paris, full remote. TJM 550-800€. 15+ ans d'expérience."
+>
+  <div class="container mx-auto px-4 py-12">
+    <!-- SECTION 1 : HERO -->
+    <section class="text-center py-16 mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Artisan développeur Senior.<br>
+        <span class="text-orange-700">Avec un truc en plus.</span>
+      </h1>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-6 leading-relaxed">
+        J'aide les équipes à livrer sereinement<br>
+        avec des solutions pensées pour durer, pas pour dépanner.
+      </p>
+
+      <!-- Le "truc en plus" -->
+      <div class="bg-gray-50 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+        <p class="font-medium text-gray-700">
+          J'apporte un mindset craft, agile, orienté produit,<br>
+          une forte expertise en architecture et bonnes pratiques de développement,<br>
+          et l'envie de laisser l'équipe plus forte qu'avant.
+        </p>
+        <p class="text-sm text-gray-500 mt-4">
+          Que tu cherches un dev en renfort ou un accompagnement plus poussé,<br>on trouve le bon curseur ensemble.
+        </p>
+      </div>
+
+      <!-- Stats inline -->
+      <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600 mb-6">
+        {stats.map(stat => (
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold text-gray-900">{stat.number}</span>
+            <span>{stat.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <!-- Statut -->
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
+        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
+        <span class="inline-flex items-center gap-2 text-gray-600 text-sm">
+          <svg class="w-4 h-4 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+          </svg>
+          Paris — Full remote ou hybride
+        </span>
+      </div>
+
+      <!-- Stack tags -->
+      <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-8">
+        {technologies.slice(0, 12).map(tech => (
+          <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
+        ))}
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a
+          href="#contact"
+          class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
+        >
+          On en discute ?
+        </a>
+        <a
+          href="#tarifs"
+          class="inline-flex items-center gap-2 border-2 border-gray-300 text-gray-700 px-6 py-4 rounded-lg text-lg font-semibold hover:border-orange-700 hover:text-orange-700 transition-colors duration-300"
+        >
+          Voir mes tarifs
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 2 : MON PARCOURS (+ AFUP intégré) -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-8 text-center">Mon parcours</h2>
+      <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div>
+          <div class="prose prose-lg max-w-none text-gray-700">
+            <p>
+              Plus de 15 ans dans le développement.<br>
+              8 ans dans une ESN en tant que référent technique, tech lead, formateur et auditeur. Aujourd'hui indépendant.
+            </p>
+            <p>
+              Ce qui me fait vibrer : <strong>relever des défis</strong>, <strong>me sentir utile</strong> et l'envie de <strong>toujours m'améliorer</strong>.
+            </p>
+            <p class="text-sm text-gray-500">
+              Membre actif de l'<strong>AFUP Paris</strong> depuis 6 ans — conférences, meetups, échanges avec la communauté PHP.
+            </p>
+          </div>
+          <!-- Liens externes -->
+          <div class="flex flex-wrap gap-4 mt-6">
+            <a
+              href="https://github.com/FabienSalles"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-600 hover:text-orange-700 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a
+              href="https://stackoverflow.com/users/2134945/fabien-salles"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-gray-600 hover:text-orange-700 transition-colors"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M15 21h-10v-2h10v2zm6-11.665l-1.621-9.335-1.993.346 1.62 9.335 1.994-.346zm-5.964 6.937l-9.746-.975-.186 2.016 9.755.879.177-1.92zm.538-2.587l-9.276-2.608-.526 1.954 9.306 2.5.496-1.846zm1.204-2.413l-8.297-4.864-1.029 1.743 8.298 4.865 1.028-1.744zm1.866-1.467l-5.339-7.829-1.672 1.14 5.339 7.829 1.672-1.14zm-2.644 4.195v8h-12v-8h-2v10h16v-10h-2z"/></svg>
+              StackOverflow
+            </a>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-bold text-lg mb-4">Ce qu'on dit de moi</h3>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600">→</span>
+              <span><strong>Calme sous pression</strong> — Je garde la tête froide quand ça chauffe</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600">→</span>
+              <span><strong>Curieux</strong> — J'explore, je teste, je remets en question</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600">→</span>
+              <span><strong>Rigoureux mais ouvert</strong> — J'ai mes convictions, mais j'écoute les autres</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600">→</span>
+              <span><strong>Bienveillant</strong> — Je rassemble plutôt que je divise</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-orange-600">→</span>
+              <span><strong>Comprend vite</strong> — Les règles métiers complexes, j'aime ça</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 : ENGAGEMENT RÉGIE -->
+    <section class="mb-12 bg-blue-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12 border border-blue-100">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">Un freelance engagé sur la durée</h2>
+        <p class="text-gray-700 mb-8">
+          Formations, audits, coaching... oui, je fais tout ça.<br>
+          Mais <strong>mon activité principale reste la régie</strong>.
+        </p>
+
+        <p class="text-sm text-gray-600 mb-4">Jours facturés en mission régie par année :</p>
+        <div class="grid grid-cols-5 gap-3 mb-6 max-w-lg mx-auto">
+          <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+            <p class="text-2xl font-bold text-blue-900">220</p>
+            <p class="text-xs text-gray-500">jours</p>
+            <p class="text-xs text-gray-400">2021</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+            <p class="text-2xl font-bold text-blue-900">217</p>
+            <p class="text-xs text-gray-500">jours</p>
+            <p class="text-xs text-gray-400">2022</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+            <p class="text-2xl font-bold text-blue-900">230</p>
+            <p class="text-xs text-gray-500">jours</p>
+            <p class="text-xs text-gray-400">2023</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+            <p class="text-2xl font-bold text-blue-900">219</p>
+            <p class="text-xs text-gray-500">jours</p>
+            <p class="text-xs text-gray-400">2024</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg text-center shadow-sm">
+            <p class="text-2xl font-bold text-blue-900">209</p>
+            <p class="text-xs text-gray-500">jours</p>
+            <p class="text-xs text-gray-400">2025</p>
+          </div>
+        </div>
+        <p class="text-gray-600">
+          <strong class="text-blue-900 text-lg">219 jours/an</strong> en moyenne sur 5 ans — l'équivalent d'un temps plein.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 4 : TJM -->
+    <section id="tarifs" class="mb-12 scroll-mt-24">
+      <h2 class="text-3xl font-bold mb-4 text-center">Tarification</h2>
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="bg-orange-50 p-8 rounded-lg border border-orange-100 mb-6">
+          <p class="text-4xl font-bold text-orange-900 mb-2">550 — 800 €</p>
+          <p class="text-gray-600">TJM selon l'expertise requise et le contexte</p>
+        </div>
+        <div class="text-gray-600 text-sm space-y-2 mb-6">
+          <p>Le tarif varie en fonction de :</p>
+          <ul class="inline-block text-left">
+            <li class="flex items-center gap-2"><span class="text-orange-600">→</span> Le niveau d'exigence et de responsabilité</li>
+            <li class="flex items-center gap-2"><span class="text-orange-600">→</span> L'alignement avec mes compétences</li>
+            <li class="flex items-center gap-2"><span class="text-orange-600">→</span> La durée de la mission</li>
+            <li class="flex items-center gap-2"><span class="text-orange-600">→</span> L'intérêt du projet 😉</li>
+          </ul>
+        </div>
+        <p class="text-gray-500 text-sm mb-8">
+          Le bon tarif, on le trouve ensemble après avoir compris ton contexte.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
+        >
+          On en discute ?
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 5 : CONTEXTES -->
+    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-3xl font-bold mb-4 text-center text-white">Dans quels contextes ?</h2>
+      <p class="text-xl text-orange-100 text-center mb-12">
+        Quelques situations où on pourrait bosser ensemble.
+      </p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {contexts.map(ctx => (
+          <div class="bg-orange-50 p-6 rounded-xl shadow-lg">
+            <div class="flex items-start gap-3 mb-2">
+              <span class="text-2xl">{ctx.emoji}</span>
+              <h3 class="font-bold text-lg">{ctx.title}</h3>
+            </div>
+            <p class="text-gray-700">{ctx.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION 5 : BÉNÉFICES -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map(benefit => (
+          <div class="p-6 border border-gray-200 rounded-lg text-center">
+            <div class="text-green-600 text-2xl mb-3">✓</div>
+            <h3 class="font-bold mb-2">{benefit.title}</h3>
+            <p class="text-gray-600 mb-3">{benefit.description}</p>
+            {benefit.link ? (
+              <a href={benefit.link} class="text-xs text-orange-700 font-medium hover:text-orange-800 underline">{benefit.example}</a>
+            ) : (
+              <p class="text-xs text-orange-700 font-medium">{benefit.example}</p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION 6 : CE QUE J'APPORTE -->
+    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+      <h2 class="text-2xl font-bold mb-6">Ce que j'apporte en plus</h2>
+      <div class="prose prose-lg max-w-none">
+        <ul class="space-y-2 text-gray-700 mb-6">
+          <li><strong>Une vision architecturale</strong> — Je vois les problèmes de design avant qu'ils deviennent des murs</li>
+          <li><strong>Des pratiques craft</strong> — TDD, BDD, DDD, refactoring... Je m'adapte à ton contexte et je fais du sur-mesure</li>
+          <li><strong>Du transfert de compétences</strong> — J'explique ce que je fais pour que ça reste après mon départ</li>
+          <li><strong>Une posture collaborative</strong> — Je m'intègre à l'équipe, je rassemble plutôt que je divise</li>
+          <li><strong>L'IA comme accélérateur</strong> — Claude Code, automatisation des tâches répétitives, gains de productivité</li>
+        </ul>
+        <p class="text-gray-700">
+          En tant que tech lead / coach technique, formateur ou simplement développeur.
+        </p>
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
+          <p class="text-gray-600 text-sm italic">
+            Ce que j'aime : ne jamais rien prendre pour acquis et toujours chercher à améliorer les choses.
+          </p>
+        </div>
+      </div>
+
+      <!-- Liens vers autres offres -->
+      <div class="mt-8 pt-6 border-t border-orange-200">
+        <p class="text-gray-700 mb-4 font-medium">Tu cherches une prestation plus spécifique ?</p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/audit" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span class="text-xl">🔍</span>
+            <span><strong>Audit</strong> — Diagnostic de ton existant</span>
+          </a>
+          <a href="/formations" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span class="text-xl">🎓</span>
+            <span><strong>Formation</strong> — Sessions structurées</span>
+          </a>
+          <a href="/automatisation" class="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-lg border border-orange-200 text-gray-700 hover:border-orange-400 transition-colors">
+            <span class="text-xl">🤖</span>
+            <span><strong>IA & Automatisation</strong> — Claude Code, workflows</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7 : COMMENT ON TRAVAILLE ENSEMBLE -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-4 text-center">Comment on travaille ensemble ?</h2>
+      <p class="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+        Selon ton contexte et les besoins de l'équipe, je m'adapte.
+      </p>
+
+      <!-- Modalités -->
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
+        {modalites.map(mod => (
+          <div class="p-6 border border-gray-200 rounded-lg text-center">
+            <div class="text-3xl mb-3">{mod.emoji}</div>
+            <h3 class="font-bold text-lg mb-2">{mod.title}</h3>
+            <p class="text-gray-600 text-sm">{mod.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Mode d'intervention -->
+      <div class="bg-gray-50 -mx-4 px-4 py-8 md:rounded-lg md:mx-0 md:px-8">
+        <h3 class="text-xl font-bold mb-6 text-center">Mode d'intervention</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+          {interventionModes.map(mode => (
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="text-3xl mb-3">{mode.emoji}</div>
+              <h4 class="font-bold text-lg mb-2">{mode.title}</h4>
+              <p class="text-gray-600 text-sm mb-3">{mode.description}</p>
+              <p class="text-xs text-gray-500 italic">Idéal pour : {mode.ideal}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8 : STACK TECHNIQUE -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-4 text-center">Stack technique</h2>
+      <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
+        Expertise forte en PHP/Symfony, mais les méthodes et principes s'appliquent partout.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+        {technologies.map(tech => (
+          <span class="px-4 py-2 bg-gray-100 border border-gray-200 rounded-full text-sm hover:bg-orange-50 transition-colors">{tech}</span>
+        ))}
+      </div>
+    </section>
+
+    <!-- SECTION 9 : SECTEURS + PREUVES SOCIALES -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold mb-4 text-center">Ils m'ont fait confiance</h2>
+
+      <!-- Logos clients -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+        {clients.map(client => (
+          <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-all duration-300">
+            <img
+              src={client.logo}
+              alt={client.name}
+              class="max-h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      <!-- Secteurs -->
+      <div class="bg-gray-50 -mx-4 px-4 py-8 md:rounded-lg md:mx-0 md:px-8 mb-12">
+        <h3 class="text-xl font-bold mb-6 text-center">Secteurs d'expérience</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+          {sectors.map(sector => (
+            <div class="bg-white p-5 rounded-lg shadow-sm">
+              <h4 class="font-bold text-base mb-2">{sector.name}</h4>
+              <p class="text-gray-700 text-sm mb-3">{sector.description}</p>
+              <p class="text-sm text-orange-700 font-medium">{sector.clients}</p>
+            </div>
+          ))}
+        </div>
+        <div class="text-center mt-6">
+          <a href="/clients" class="text-orange-700 font-semibold hover:text-orange-800 text-sm">
+            Voir toutes mes références →
+          </a>
+        </div>
+      </div>
+
+      <!-- Témoignages -->
+      <h3 class="text-xl font-bold mb-6 text-center">Ce qu'ils en disent</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        {testimonials.map(testimonial => (
+          <blockquote class="bg-gray-50 p-6 rounded-lg">
+            <p class="text-gray-700 mb-4">"{testimonial.content}"</p>
+            <footer class="flex items-center gap-3">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-10 h-10 rounded-full object-cover"
+              />
+              <div>
+                <div class="font-semibold text-sm">{testimonial.name}</div>
+                <div class="text-gray-500 text-xs">{testimonial.role}</div>
+              </div>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+      <div class="text-center mt-6">
+        <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800 text-sm">
+          Voir toutes les recommandations →
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 10 : CTA FINALE -->
+    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16 md:rounded-lg">
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">On en discute ?</h2>
+          <p class="text-xl text-orange-100 mb-8">
+            Pas de devis automatique. On échange d'abord pour comprendre ton contexte<br>
+            et voir si je peux vraiment t'aider.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a
+              href="/contact?service=accompagnement"
+              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
+            >
+              Prendre contact →
+            </a>
+            <a
+              href="https://www.linkedin.com/in/fabiensalles/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

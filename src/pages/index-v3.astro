@@ -16,14 +16,17 @@ const stats = [
 ];
 
 const expertise = [
+  "PHP",
+  "Symfony",
+  "TypeScript",
+  "Node.js",
   "TDD",
   "Clean Code",
   "Architecture Hexagonale",
   "DDD",
   "Refactoring",
   "Craftsmanship",
-  "IA & Automatisation",
-  "Claude Code"
+  "IA & Automatisation"
 ];
 
 const services = [
@@ -31,15 +34,15 @@ const services = [
     icon: "🔍",
     title: "Auditer",
     intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
-    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème.",
+    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.",
     benefits: [
       "Évaluation de la dette technique",
       "Analyse de l'architecture, pratiques de développement",
       "Rapport détaillé + plan d'action"
     ],
     love: "Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés.",
-    cta: "Demander un diagnostic",
-    href: "/contact?service=audit"
+    cta: "En savoir plus",
+    href: "/audit"
   },
   {
     icon: "🎯",
@@ -52,8 +55,8 @@ const services = [
       "Support et transfert de compétences"
     ],
     love: "Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code.",
-    cta: "Discuter de ton contexte",
-    href: "/contact?service=accompagnement"
+    cta: "En savoir plus",
+    href: "/accompagnement"
   },
   {
     icon: "🎓",
@@ -80,8 +83,8 @@ const services = [
       "Garde-fous qualité"
     ],
     love: "Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur.",
-    cta: "Explorer les possibilités",
-    href: "/contact?service=automatisation"
+    cta: "En savoir plus",
+    href: "/automatisation"
   }
 ];
 
@@ -170,6 +173,12 @@ const testimonials = [
           </div>
         </div>
         <div class="text-center md:text-right">
+          <!-- Statut -->
+          <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-4">
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
+            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+          </div>
           <img
             class="h-80 md:h-96 mx-auto md:ml-auto md:mr-0 rounded-lg"
             src="/fabiensalles.png"
@@ -185,9 +194,6 @@ const testimonials = [
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Ces situations te parlent ?</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Ces problèmes sont fréquents dans les équipes tech. La bonne nouvelle : ils ont des solutions.
-        </p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -376,6 +382,22 @@ const testimonials = [
       <div class="text-center mt-8">
         <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800">
           Voir toutes les recommandations →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PARTENAIRES (Alex) -->
+  <section class="py-12 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h3 class="text-xl font-bold mb-4">Tu es freelance ?</h3>
+        <p class="text-gray-600 mb-4">
+          Tu as une mission qui ne te correspond pas ? Je peux peut-être t'aider.<br />
+          Et inversement — quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
+        </p>
+        <a href="/partenariat" class="text-orange-700 font-semibold hover:text-orange-800">
+          On en parle →
         </a>
       </div>
     </div>
