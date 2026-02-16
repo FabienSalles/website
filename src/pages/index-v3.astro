@@ -1,14 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import generateUrl from "@utils/url";
+import { getStats } from '../data/formations';
 
 const description = "Artisan développeur, formateur et consultant. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
+
+// Stats dynamiques depuis les données de formations
+const formationStats = getStats();
 
 const stats = [
   { number: "15+", label: "années d'expérience" },
   { number: "26+", label: "projets accompagnés" },
-  { number: "98+", label: "développeurs formés" },
-  { number: "20+", label: "formations dispensées" }
+  { number: `${formationStats.participants}+`, label: "développeurs formés" },
+  { number: `${formationStats.sessions}+`, label: "formations dispensées" }
 ];
 
 const expertise = [
@@ -59,7 +63,7 @@ const services = [
     benefits: [
       "Formations intra-entreprise, distantiel",
       "Organisme déclaré (NDA)",
-      "98+ développeurs formés depuis 2017"
+      `${formationStats.participants}+ développeurs formés depuis 2016`
     ],
     love: "Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique.",
     cta: "Voir les formations",
