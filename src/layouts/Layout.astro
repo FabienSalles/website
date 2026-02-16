@@ -85,23 +85,41 @@ if (!alternateLink) {
   <body class="min-h-screen bg-white">
     <header class="fixed w-full bg-gradient-to-r from-orange-900 to-orange-800 z-50 shadow-lg">
       <nav class="container mx-auto px-4 py-4">
-        <ul class="flex items-center justify-between">
-          <li>
-            <a
-              href={isEnglishPath ? '/en' : '/'}
-              title="Accueil"
-              class="text-xl font-semibold text-white hover:text-orange-200 transition-colors"
-              data-astro-reload
-            >
-              Fabien Salles
-            </a>
-          </li>
-          <div class="flex gap-6 items-center">
-            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link-light" data-astro-reload>Blog</a></li>
+        <div class="flex items-center justify-between">
+          <a
+            href={isEnglishPath ? '/en' : '/'}
+            title="Accueil"
+            class="text-xl font-semibold text-white hover:text-orange-200 transition-colors"
+            data-astro-reload
+          >
+            Fabien Salles
+          </a>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-button"
+            class="md:hidden text-white p-2 focus:outline-none"
+            aria-label="Menu"
+          >
+            <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+
+          <!-- Desktop menu -->
+          <ul class="hidden md:flex gap-6 items-center">
+            <li><a href="/accompagnement" class="nav-link-light" data-astro-reload>Accompagnement</a></li>
+            <li><a href="/audit" class="nav-link-light" data-astro-reload>Audit</a></li>
             {
               trainingEnabled &&
               <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
             }
+            <li><a href="/automatisation" class="nav-link-light" data-astro-reload>Automatisation</a></li>
+            <li><a href="/partenariat" class="nav-link-light" data-astro-reload>Partenariat</a></li>
+            <li><a href={generateUrl('/blog')} title="Blog" class="nav-link-light" data-astro-reload>Blog</a></li>
             {
               cvEnabled &&
               <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="nav-link-light" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
@@ -126,10 +144,61 @@ if (!alternateLink) {
                   </a>
                 </li>
             }
-          </div>
+          </ul>
+        </div>
+
+        <!-- Mobile menu -->
+        <ul id="mobile-menu" class="hidden md:hidden flex-col gap-4 pt-4 pb-2">
+          <li><a href="/accompagnement" class="block nav-link-light py-2" data-astro-reload>Accompagnement</a></li>
+          <li><a href="/audit" class="block nav-link-light py-2" data-astro-reload>Audit</a></li>
+          {
+            trainingEnabled &&
+            <li><a href={isEnglishPath ? '/en/training' : '/formations'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+          }
+          <li><a href="/automatisation" class="block nav-link-light py-2" data-astro-reload>Automatisation</a></li>
+          <li><a href="/partenariat" class="block nav-link-light py-2" data-astro-reload>Partenariat</a></li>
+          <li><a href={generateUrl('/blog')} class="block nav-link-light py-2" data-astro-reload>Blog</a></li>
+          {
+            cvEnabled &&
+            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+          }
+          {
+            aboutEnabled &&
+            <li><a href={isEnglishPath ? '/en/about' : '/about'} class="block nav-link-light py-2" data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+          }
+          {
+            contactEnabled &&
+            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class="block nav-link-light py-2" data-astro-reload>Contact</a></li>
+          }
+          {
+            translationEnabled &&
+              <li>
+                <a
+                  href={isEnglishPath ? '/' : '/en'}
+                  class="block lang-switch-light py-2"
+                  data-astro-reload
+                >
+                  {isEnglishPath ? 'FR' : 'EN'}
+                </a>
+              </li>
+          }
         </ul>
       </nav>
     </header>
+
+    <script>
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIconOpen = document.getElementById('menu-icon-open');
+      const menuIconClose = document.getElementById('menu-icon-close');
+
+      mobileMenuButton?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('hidden');
+        mobileMenu?.classList.toggle('flex');
+        menuIconOpen?.classList.toggle('hidden');
+        menuIconClose?.classList.toggle('hidden');
+      });
+    </script>
 
     <main class="pt-20 relative">
       <slot />
