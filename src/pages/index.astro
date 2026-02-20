@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import generateUrl from "@utils/url";
 import { getStats } from '../data/formations';
 
-const description = "Artisan développeur, formateur et consultant. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
+const description = "Expert DDD, TDD & Software Craftsmanship. Audit, accompagnement, formation. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
 
 // Stats dynamiques depuis les données de formations
 const formationStats = getStats();
@@ -121,24 +121,26 @@ const testimonials = [
 ];
 ---
 
-<Layout title="Fabien Salles - Artisan développeur, Formateur & Consultant" description={description}>
+<Layout title="Fabien Salles - Expert DDD, TDD & Software Craftsmanship" description={description}>
 
   <!-- HERO SECTION -->
   <section class="bg-gradient-to-b from-gray-50 to-white">
     <div class="container mx-auto px-4 py-20 md:py-28">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      <div class="grid md:grid-cols-5 gap-8 items-center">
+        <div class="md:col-span-3">
+          <p class="text-3xl md:text-4xl font-bold mb-2 leading-tight">
             Salut, je suis Fabien.
-          </h1>
-          <p class="text-xl text-gray-700 mb-2 leading-relaxed">
-            Développeur depuis plus de 15 ans.
           </p>
+          <div class="text-orange-700 font-semibold mb-6 flex flex-wrap items-baseline gap-x-2">
+            <span>15+ ans d'expérience</span>
+            <span>·</span>
+            <h1 class="inline text-orange-700 font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
+          </div>
           <p class="text-xl text-gray-800 font-medium mb-6 leading-relaxed">
-            Aujourd'hui, j'aide les équipes à livrer sereinement — avec des solutions pensées pour durer, pas pour dépanner.
+            J'aide les équipes tech à livrer sereinement, avec des solutions pensées pour durer. <span class="text-gray-600 whitespace-nowrap">Pas pour dépanner.</span>
           </p>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Je n'ai pas de recette magique — juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
+            Je ne viens pas avec une recette magique. Juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
           </p>
           <div class="flex flex-wrap gap-4 mb-8">
             <a
@@ -148,10 +150,10 @@ const testimonials = [
               Discutons de ton besoin
             </a>
             <a
-              href="/formations"
+              href="#services"
               class="inline-block border-2 border-orange-700 text-orange-700 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
             >
-              Voir les formations
+              Voir les services
             </a>
           </div>
           <div class="flex flex-wrap gap-2">
@@ -160,7 +162,7 @@ const testimonials = [
             ))}
           </div>
         </div>
-        <div class="text-center md:text-right">
+        <div class="md:col-span-2 text-center md:text-right">
           <!-- Statut -->
           <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-4">
             <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
@@ -239,7 +241,7 @@ const testimonials = [
   </section>
 
   <!-- SECTION SERVICES -->
-  <section class="bg-gradient-to-br from-orange-900 to-orange-800 pt-16 pb-24">
+  <section id="services" class="bg-gradient-to-br from-orange-900 to-orange-800 pt-16 pb-24">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Comment puis-je t'aider ?</h2>
@@ -290,7 +292,7 @@ const testimonials = [
   </section>
 
   <!-- SECTION CLIENTS -->
-  <section class="py-20">
+  <section class="py-20 bg-gray-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
