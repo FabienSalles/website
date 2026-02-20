@@ -179,11 +179,12 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- SECTION PAIN POINTS (empathique) -->
+  <!-- SECTION PAIN POINTS (PAS - Problem Agitate Solution) -->
   <section class="pt-8 pb-16">
     <div class="container mx-auto px-4">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ces situations te parlent ?</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">Ces situations te parlent ?</h2>
+        <p class="text-gray-600">(Ou celles de ton client, de tes collègues, de tes équipes...)</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -291,8 +292,100 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- SECTION CLIENTS -->
+  <!-- SECTION POURQUOI MOI -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pourquoi travailler avec moi ?</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Ce qui fait la différence ? L'écoute, l'expérience terrain, et une vraie volonté de comprendre ton contexte avant d'agir.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <!-- Pilier 1: Problème d'abord -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🔍</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Problème d'abord</h3>
+          <p class="text-gray-600 text-sm">Efficience × Efficacité. Comprendre le vrai problème d'abord, trouver la bonne solution ensuite.</p>
+        </div>
+
+        <!-- Pilier 2: Triple casquette -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🎯</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Triple casquette</h3>
+          <p class="text-gray-600 text-sm">Audit, accompagnement, formation : un seul interlocuteur. Pas de relais, pas de perte d'information.</p>
+        </div>
+
+        <!-- Pilier 3: Craft + IA -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🤖</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Craft + IA</h3>
+          <p class="text-gray-600 text-sm">Les bonnes pratiques avec les bons outils. L'IA accélère, le craft garantit la qualité.</p>
+        </div>
+
+        <!-- Pilier 4: Sur-mesure -->
+        <div class="text-center p-6">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl">🧩</span>
+          </div>
+          <h3 class="font-bold text-lg mb-2">Sur-mesure</h3>
+          <p class="text-gray-600 text-sm">Je ne viens pas avec une solution toute faite. Je m'adapte à ton contexte, tes contraintes, ton équipe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION POUR QUI -->
   <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pour qui ?</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">Que tu sois décideur, intermédiaire ou pair — j'ai probablement quelque chose pour toi.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <!-- Persona 1: CTO / Tech Lead -->
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl mb-4">👨‍💻</div>
+          <h3 class="font-bold text-lg mb-2">CTO / Tech Lead</h3>
+          <p class="text-gray-600 text-sm mb-4">Legacy à reprendre, refonte à cadrer, ou nouvelles bases à poser ?</p>
+          <a href="/accompagnement" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir l'accompagnement →</a>
+        </div>
+
+        <!-- Persona 2: Recruteur / ESN -->
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl mb-4">🔍</div>
+          <h3 class="font-bold text-lg mb-2">Recruteur / ESN</h3>
+          <p class="text-gray-600 text-sm mb-4">Tu cherches un profil senior avec une vraie expertise craft ?</p>
+          <a href="/accompagnement" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir l'accompagnement →</a>
+        </div>
+
+        <!-- Persona 3: Responsable formation -->
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl mb-4">🎓</div>
+          <h3 class="font-bold text-lg mb-2">Responsable formation</h3>
+          <p class="text-gray-600 text-sm mb-4">Tu veux des formations craft animées par un praticien, pas un théoricien ?</p>
+          <a href="/formations" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir les formations →</a>
+        </div>
+
+        <!-- Persona 4: Freelance -->
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+          <div class="text-3xl mb-4">🤝</div>
+          <h3 class="font-bold text-lg mb-2">Freelance</h3>
+          <p class="text-gray-600 text-sm mb-4">Une mission qui ne te correspond pas ? On peut s'entraider.</p>
+          <a href="/apport-affaires" class="text-orange-700 font-semibold text-sm hover:text-orange-800">On en parle →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION CLIENTS -->
+  <section class="py-20">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
