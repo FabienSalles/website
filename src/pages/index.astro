@@ -88,17 +88,6 @@ const services = [
   }
 ];
 
-const clients = [
-  { name: "Hermès", logo: "/images/clients/hermes.png" },
-  { name: "LVMH", logo: "/images/clients/lvmh.png" },
-  { name: "Dior", logo: "/images/clients/dior.png" },
-  { name: "Chaumet", logo: "/images/clients/chaumet.png" },
-  { name: "Amundi", logo: "/images/clients/amundi.png" },
-  { name: "Total", logo: "/images/clients/total.png" },
-  { name: "RATP", logo: "/images/clients/ratp.png" },
-  { name: "Volkswagen", logo: "/images/clients/wolkswagen.png" }
-];
-
 const testimonials = [
   {
     name: "Shahbran Khan GHULAM",
@@ -179,6 +168,7 @@ const testimonials = [
     </div>
   </section>
 
+
   <!-- SECTION PAIN POINTS (PAS - Problem Agitate Solution) -->
   <section class="pt-8 pb-16">
     <div class="container mx-auto px-4">
@@ -241,226 +231,415 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- SECTION SERVICES -->
-  <section id="services" class="bg-gradient-to-br from-orange-900 to-orange-800 pt-16 pb-24">
+  <!-- TRANSITION VERS SERVICES -->
+  <section class="py-12 bg-gradient-to-br from-orange-900 to-orange-800">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Comment puis-je t'aider ?</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8">
-        {services.map(service => (
-          <div class="p-8 bg-orange-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
-            <!-- Header -->
-            <div class="flex items-center gap-4 mb-6 pb-4 border-b border-orange-200">
-              <span class="text-4xl">{service.icon}</span>
-              <h3 class="text-2xl font-bold text-gray-900">{service.title}</h3>
-            </div>
-
-            <!-- Intro -->
-            <p class="text-gray-800 mb-6 font-medium" set:html={service.intro} />
-
-            <!-- Description -->
-            <p class="text-gray-700 mb-5 leading-relaxed">{service.description}</p>
-
-            {service.benefits && (
-              <ul class="space-y-2 text-gray-700 mb-5">
-                {service.benefits.map((benefit) => (
-                  <li class="flex items-start gap-2">
-                    <span class="text-orange-600 mt-0.5">✓</span>
-                    <span>{benefit}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-
-            <!-- Citation "Ce que j'aime" -->
-            <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-orange-400">
-              <p class="text-gray-600 text-sm italic">{service.love}</p>
-            </div>
-
-            <!-- CTA -->
-            <a
-              href={service.href}
-              class="inline-block bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
-            >
-              {service.cta} →
-            </a>
-          </div>
-        ))}
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Comment puis-je t'aider ?</h2>
+        <p class="text-orange-100">
+          Tu es
+          <a href="#audit" class="text-white font-semibold hover:underline">CTO / Tech Lead</a> ?
+          <a href="#accompagnement" class="text-white font-semibold hover:underline">Recruteur / ESN</a> ?
+          <a href="#formation" class="text-white font-semibold hover:underline">Responsable formation</a> ?
+          <a href="#freelance" class="text-white font-semibold hover:underline">Freelance</a> ?
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION POURQUOI MOI -->
-  <section class="py-20">
+  <!-- SERVICE 1: AUDIT (Style A : fond blanc, carte grise) -->
+  <section id="audit" class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pourquoi travailler avec moi ?</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Ce qui fait la différence ? L'écoute, l'expérience terrain, et une vraie volonté de comprendre ton contexte avant d'agir.</p>
-      </div>
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-12 gap-0">
+          <!-- Colonne gauche : titre + preuve sociale -->
+          <div class="md:col-span-4 md:border-r md:border-gray-200 md:pr-8">
+            <div class="md:sticky md:top-16">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-3 mb-6">
+                <span>Auditer</span>
+                <span class="text-3xl">🔍</span>
+              </h3>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-        <!-- Pilier 1: Problème d'abord -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🔍</span>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Problème d'abord</h3>
-          <p class="text-gray-600 text-sm">Efficience × Efficacité. Comprendre le vrai problème d'abord, trouver la bonne solution ensuite.</p>
-        </div>
-
-        <!-- Pilier 2: Triple casquette -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🎯</span>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Triple casquette</h3>
-          <p class="text-gray-600 text-sm">Audit, accompagnement, formation : un seul interlocuteur. Pas de relais, pas de perte d'information.</p>
-        </div>
-
-        <!-- Pilier 3: Craft + IA -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🤖</span>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Craft + IA</h3>
-          <p class="text-gray-600 text-sm">Les bonnes pratiques avec les bons outils. L'IA accélère, le craft garantit la qualité.</p>
-        </div>
-
-        <!-- Pilier 4: Sur-mesure -->
-        <div class="text-center p-6">
-          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span class="text-3xl">🧩</span>
-          </div>
-          <h3 class="font-bold text-lg mb-2">Sur-mesure</h3>
-          <p class="text-gray-600 text-sm">Je ne viens pas avec une solution toute faite. Je m'adapte à ton contexte, tes contraintes, ton équipe.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION POUR QUI -->
-  <section class="py-20 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pour qui ?</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">Que tu sois décideur, intermédiaire ou pair — j'ai probablement quelque chose pour toi.</p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        <!-- Persona 1: CTO / Tech Lead -->
-        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div class="text-3xl mb-4">👨‍💻</div>
-          <h3 class="font-bold text-lg mb-2">CTO / Tech Lead</h3>
-          <p class="text-gray-600 text-sm mb-4">Legacy à reprendre, refonte à cadrer, ou nouvelles bases à poser ?</p>
-          <a href="/accompagnement" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir l'accompagnement →</a>
-        </div>
-
-        <!-- Persona 2: Recruteur / ESN -->
-        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div class="text-3xl mb-4">🔍</div>
-          <h3 class="font-bold text-lg mb-2">Recruteur / ESN</h3>
-          <p class="text-gray-600 text-sm mb-4">Tu cherches un profil senior avec une vraie expertise craft ?</p>
-          <a href="/accompagnement" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir l'accompagnement →</a>
-        </div>
-
-        <!-- Persona 3: Responsable formation -->
-        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div class="text-3xl mb-4">🎓</div>
-          <h3 class="font-bold text-lg mb-2">Responsable formation</h3>
-          <p class="text-gray-600 text-sm mb-4">Tu veux des formations craft animées par un praticien, pas un théoricien ?</p>
-          <a href="/formations" class="text-orange-700 font-semibold text-sm hover:text-orange-800">Voir les formations →</a>
-        </div>
-
-        <!-- Persona 4: Freelance -->
-        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-          <div class="text-3xl mb-4">🤝</div>
-          <h3 class="font-bold text-lg mb-2">Freelance</h3>
-          <p class="text-gray-600 text-sm mb-4">Une mission qui ne te correspond pas ? On peut s'entraider.</p>
-          <a href="/apport-affaires" class="text-orange-700 font-semibold text-sm hover:text-orange-800">On en parle →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION CLIENTS -->
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Ils m'ont fait confiance</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-        {clients.map(client => (
-          <div class="flex items-center justify-center p-6 bg-gray-50 rounded-lg hover:shadow-md transition-all duration-300">
-            <img
-              src={client.logo}
-              alt={client.name}
-              class="max-h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
-            />
-          </div>
-        ))}
-      </div>
-      <div class="text-center mt-8">
-        <a href="/clients" class="text-orange-700 font-semibold hover:text-orange-800">
-          Voir toutes les références →
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION STATS -->
-  <section class="py-20">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">En quelques chiffres</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map(stat => (
-          <div class="text-center p-6 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-            <a class="hover:text-orange-700 transition-colors duration-300" href={generateUrl("/recommendations")} title="Voir les recommandations">
-              <div class="text-4xl font-bold text-dark-500 mb-2">{stat.number}</div>
-              <div class="text-gray-600">{stat.label}</div>
-            </a>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION TEMOIGNAGES -->
-  <section class="py-24 bg-gray-50">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ce qu'ils en disent</h2>
-        <p class="text-gray-600">Retours de collaborations et formations</p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-        {testimonials.map(testimonial => (
-          <blockquote class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-            <p class="text-gray-700 mb-4">"{testimonial.content}"</p>
-            <footer class="flex items-center gap-3">
-              <img
-                src={testimonial.image}
-                alt={testimonial.name}
-                class="w-10 h-10 rounded-full object-cover"
-              />
-              <div>
-                <div class="font-semibold text-sm">{testimonial.name}</div>
-                <div class="text-gray-500 text-xs">{testimonial.role}</div>
+              <!-- Chiffre clé -->
+              <div class="mb-6 p-4 bg-orange-50 rounded-lg border border-orange-100">
+                <div class="text-3xl font-bold text-orange-700">10+</div>
+                <div class="text-sm text-gray-600">applications auditées</div>
               </div>
-            </footer>
-          </blockquote>
-        ))}
-      </div>
 
-      <div class="text-center mt-8">
-        <a href="/recommendations" class="text-orange-700 font-semibold hover:text-orange-800">
-          Voir toutes les recommandations →
-        </a>
+              <!-- Expertise -->
+              <div class="mb-6">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">PHP</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Symfony</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Legacy</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Frontend</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Architecture</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Sécurité</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">API</span>
+                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Testabilité</span>
+                </div>
+              </div>
+
+              <!-- Logos clients -->
+              <div class="mb-6">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Audité pour</p>
+                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/clever-age.png" alt="Clever Age" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/cast.png" alt="Cast" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/plum-kitchen.png" alt="Plum Kitchen" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                </a>
+              </div>
+
+              <!-- Recommandation -->
+              <a href="/recommendations" class="block hover:bg-gray-50 rounded-lg transition-colors -mx-2 px-2 py-2">
+                <blockquote class="text-sm border-l-2 border-orange-300 pl-3">
+                  <p class="text-gray-600 italic mb-2">« Le client était très satisfait. Un grand merci pour ton étude. »</p>
+                  <footer class="text-xs text-gray-500">— Retour client, février 2026</footer>
+                </blockquote>
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne droite : contenu -->
+          <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-100">
+              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+                Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?
+                Tu as des doutes sur la qualité du code avant d'investir ?
+              </p>
+
+              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.
+              </p>
+
+              <ul class="space-y-3 text-gray-700 mb-6">
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Évaluation de la dette technique</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Analyse de l'architecture, pratiques de développement</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Rapport détaillé + plan d'action</span>
+                </li>
+              </ul>
+
+              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
+                <p class="text-gray-700 italic">« Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés. »</p>
+              </blockquote>
+
+              <a
+                href="/audit"
+                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+              >
+                En savoir plus →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE 2: ACCOMPAGNEMENT (Style B : fond orange, carte blanche) -->
+  <section id="accompagnement" class="py-16 bg-orange-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-12 gap-0">
+          <!-- Colonne gauche : titre + preuve sociale -->
+          <div class="md:col-span-4 md:border-r md:border-white/20 md:pr-8">
+            <div class="md:sticky md:top-16">
+              <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3 mb-6">
+                <span>Accompagner</span>
+                <span class="text-3xl">🎯</span>
+              </h3>
+
+              <!-- Chiffres clés -->
+              <div class="flex gap-3 mb-6">
+                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
+                  <div class="text-3xl font-bold text-white">15+</div>
+                  <div class="text-sm text-orange-100">années</div>
+                </div>
+                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
+                  <div class="text-3xl font-bold text-white">26+</div>
+                  <div class="text-sm text-orange-100">projets</div>
+                </div>
+              </div>
+
+              <!-- Expertise -->
+              <div class="mb-6">
+                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Expertise</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">DDD</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">TDD</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Agile</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">PHP</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Symfony</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Sylius</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">NodeJS</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">TypeScript</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">React</span>
+                </div>
+              </div>
+
+              <!-- Logos clients -->
+              <div class="mb-6">
+                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Accompagné</p>
+                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/hermes.png" alt="Hermès" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/eres.png" alt="Eres" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/lvmh.png" alt="LVMH" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/japan-experience.png" alt="Japan Experience" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/jardiland.png" alt="Jardiland" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" />
+                </a>
+              </div>
+
+              <!-- Recommandation -->
+              <a href="/recommendations" class="block hover:bg-white/10 rounded-lg transition-colors -mx-2 px-2 py-2">
+                <blockquote class="text-sm border-l-2 border-white/50 pl-3">
+                  <p class="text-orange-100 italic mb-2">« Sa capacité à rester calme malgré la pression, son ouverture au dialogue. »</p>
+                  <footer class="text-xs text-orange-200">— Jean-Yves C., Bedrock</footer>
+                </blockquote>
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne droite : contenu -->
+          <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+                Ton équipe a besoin d'un regard extérieur ?
+                D'un renfort qui ne fait pas que coder, mais qui transmet ?
+              </p>
+
+              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.
+              </p>
+
+              <ul class="space-y-3 text-gray-700 mb-6">
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Intervention en régie ou au forfait</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Amélioration d'un legacy, Refonte progressive</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Support et transfert de compétences</span>
+                </li>
+              </ul>
+
+              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
+                <p class="text-gray-700 italic">« Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code. »</p>
+              </blockquote>
+
+              <a
+                href="/accompagnement"
+                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+              >
+                En savoir plus →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE 3: FORMATION -->
+  <section id="formation" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-12 gap-0">
+          <!-- Colonne gauche : titre + preuve sociale -->
+          <div class="md:col-span-4 md:border-r md:border-gray-200 md:pr-8">
+            <div class="md:sticky md:top-16">
+              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-3 mb-6">
+                <span>Former</span>
+                <span class="text-3xl">🎓</span>
+              </h3>
+
+              <!-- Chiffres clés -->
+              <div class="flex gap-3 mb-6">
+                <div class="flex-1 p-4 bg-orange-50 rounded-lg border border-orange-100">
+                  <div class="text-3xl font-bold text-orange-700">{formationStats.participants}+</div>
+                  <div class="text-sm text-gray-600">développeurs</div>
+                </div>
+                <div class="flex-1 p-4 bg-orange-50 rounded-lg border border-orange-100">
+                  <div class="text-3xl font-bold text-orange-700">{formationStats.sessions}+</div>
+                  <div class="text-sm text-gray-600">sessions</div>
+                </div>
+              </div>
+
+              <!-- Formations -->
+              <div class="mb-6">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Formations</p>
+                <div class="flex flex-wrap gap-2">
+                  <a href="/formations/git" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">Git</a>
+                  <a href="/formations/phpunit" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">PHPUnit</a>
+                  <a href="/formations/ddd" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">DDD</a>
+                </div>
+              </div>
+
+              <!-- Logos clients -->
+              <div class="mb-6">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Formé pour</p>
+                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/clever-age.png" alt="Clever Age" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/orsys.png" alt="Orsys" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                  <img src="/images/clients/esgi.png" alt="ESGI" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" />
+                </a>
+              </div>
+
+              <!-- Recommandation -->
+              <a href="/recommendations#formations" class="block hover:bg-gray-50 rounded-lg transition-colors -mx-2 px-2 py-2">
+                <blockquote class="text-sm border-l-2 border-orange-300 pl-3">
+                  <p class="text-gray-600 italic mb-2">« Contenu très complet et intervenant pédagogue et patient. »</p>
+                  <footer class="text-xs text-gray-500">— Sarah Z., évaluation formation Git</footer>
+                </blockquote>
+              </a>
+            </div>
+          </div>
+
+          <!-- Colonne droite : contenu -->
+          <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-100">
+              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+                Tes devs codent.
+                Mais est-ce qu'ils investissent leur énergie au bon endroit ?
+              </p>
+
+              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.
+              </p>
+
+              <ul class="space-y-3 text-gray-700 mb-6">
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Formations intra-entreprise, distantiel</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Organisme déclaré (NDA)</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Depuis 2016</span>
+                </li>
+              </ul>
+
+              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
+                <p class="text-gray-700 italic">« Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique. »</p>
+              </blockquote>
+
+              <a
+                href="/formations"
+                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+              >
+                Voir les formations →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE 4: AUTOMATISATION (Style B : fond orange, carte blanche) -->
+  <section id="automatisation" class="py-16 bg-orange-900">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-12 gap-0">
+          <!-- Colonne gauche : titre + preuve sociale -->
+          <div class="md:col-span-4 md:border-r md:border-white/20 md:pr-8">
+            <div class="md:sticky md:top-16">
+              <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3 mb-6">
+                <span>Automatiser</span>
+                <span class="text-3xl">🤖</span>
+              </h3>
+
+              <!-- Chiffres clés -->
+              <div class="flex gap-3 mb-6">
+                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
+                  <div class="text-3xl font-bold text-white">3+</div>
+                  <div class="text-sm text-orange-100">années</div>
+                </div>
+                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
+                  <div class="text-3xl font-bold text-white">IA</div>
+                  <div class="text-sm text-orange-100">× Craft</div>
+                </div>
+              </div>
+
+              <!-- Outils -->
+              <div class="mb-6">
+                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Outils maîtrisés</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Claude Code</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">MCP</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Skills</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Hooks</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Commands</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Plugins</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">RAG</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">n8n</span>
+                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">GitHub Copilot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne droite : contenu -->
+          <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
+            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm">
+              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+                L'IA change notre façon de coder.
+                Mais sans direction, elle amplifie les problèmes autant que les solutions.
+              </p>
+
+              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.
+              </p>
+
+              <ul class="space-y-3 text-gray-700 mb-6">
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Intégration Claude Code / agents IA</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Workflows automatisés</span>
+                </li>
+                <li class="flex items-start gap-3 text-lg">
+                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span>Garde-fous qualité</span>
+                </li>
+              </ul>
+
+              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
+                <p class="text-gray-700 italic">« Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur. »</p>
+              </blockquote>
+
+              <a
+                href="/automatisation"
+                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+              >
+                En savoir plus →
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION PARTENAIRES (Alex) -->
-  <section class="py-12 border-t border-gray-200">
+  <section id="freelance" class="py-12 border-t border-gray-200">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
         <h3 class="text-xl font-bold mb-4">Tu es freelance ?</h3>
@@ -470,6 +649,36 @@ const testimonials = [
         </p>
         <a href="/apport-affaires" class="text-orange-700 font-semibold hover:text-orange-800">
           On en parle →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION TÉMOIGNAGES -->
+  <section class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce qu'ils en disent</h2>
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        {testimonials.map(testimonial => (
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+            <div class="flex items-center gap-4 mb-4">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                class="w-12 h-12 rounded-full object-cover"
+              />
+              <div>
+                <div class="font-semibold">{testimonial.name}</div>
+                <div class="text-gray-600 text-sm">{testimonial.role}</div>
+              </div>
+            </div>
+            <blockquote class="text-gray-700 italic">"{testimonial.content}"</blockquote>
+          </div>
+        ))}
+      </div>
+      <div class="text-center mt-8">
+        <a href="/recommendations" class="text-orange-700 hover:text-orange-800 font-medium">
+          Voir toutes les recommandations →
         </a>
       </div>
     </div>
