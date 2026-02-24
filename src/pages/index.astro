@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import generateUrl from "@utils/url";
 import { getStats } from '../data/formations';
 
-const description = "Expert DDD, TDD & Software Craftsmanship. Audit, accompagnement, formation. J'aide les équipes tech à livrer sereinement avec des solutions pensées pour durer."
+const description = "Expert DDD, TDD & Software Craftsmanship. Audit, accompagnement, formation. J'aide tes équipes à livrer sereinement avec des solutions pensées pour durer."
 
 // Stats dynamiques depuis les données de formations
 const formationStats = getStats();
@@ -125,8 +125,11 @@ const testimonials = [
             <span>·</span>
             <h1 class="inline text-orange-700 font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
           </div>
-          <p class="text-xl text-gray-800 font-medium mb-6 leading-relaxed">
-            J'aide les équipes tech à livrer sereinement, avec des solutions pensées pour durer. <span class="text-gray-600 whitespace-nowrap">Pas pour dépanner.</span>
+          <p class="text-xl text-gray-800 font-medium mb-4 leading-relaxed">
+            J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="text-gray-600 whitespace-nowrap">Pas pour dépanner.</span>
+          </p>
+          <p class="text-lg text-orange-700 font-semibold mb-6">
+            Mon approche : Craft × IA × Agile, adaptés à ton contexte.
           </p>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
             Je ne viens pas avec une recette magique. Juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
@@ -169,63 +172,34 @@ const testimonials = [
   </section>
 
 
-  <!-- SECTION PAIN POINTS (PAS - Problem Agitate Solution) -->
-  <section class="pt-8 pb-16">
+  <!-- SECTION PAIN POINTS -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold mb-2">Ces situations te parlent ?</h2>
-        <p class="text-gray-600">(Ou celles de ton client, de tes collègues, de tes équipes...)</p>
-      </div>
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold mb-2">Ces situations te parlent ?</h2>
+        <p class="text-gray-600 mb-8">(Ou celles de ton client, de tes collègues, de tes équipes...)</p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
-          <h3 class="font-bold mb-2 flex items-start gap-2">
-            <span class="text-2xl">🐛</span>
-            <span class="flex flex-col">
-              <span>Tu subis les bugs</span>
-              <span class="text-gray-700 font-medium text-sm">au lieu de les prévenir.</span>
-            </span>
-          </h3>
-          <p class="text-gray-600 text-sm">Tu as beau les corriger, d'autres reviennent toujours.</p>
+        <div class="space-y-3 mb-8 text-left inline-block">
+          <div class="flex items-center gap-3 text-lg">
+            <span class="text-xl">🗑️</span>
+            <span>Du code <strong>jetable</strong> au lieu de <span class="text-gray-400">→</span> <strong class="text-orange-700">durable</strong></span>
+          </div>
+          <div class="flex items-center gap-3 text-lg">
+            <span class="text-xl">🐌</span>
+            <span>Des livraisons <strong>tardives</strong> au lieu d'être <span class="text-gray-400">→</span> <strong class="text-orange-700">itératives</strong></span>
+          </div>
+          <div class="flex items-center gap-3 text-lg">
+            <span class="text-xl">🌫️</span>
+            <span>Des incompréhensions <strong>métier</strong> au lieu d'une <span class="text-gray-400">→</span> <strong class="text-orange-700">vision partagée</strong></span>
+          </div>
+          <div class="flex items-center gap-3 text-lg">
+            <span class="text-xl">🧪</span>
+            <span>Des tests <strong>fragiles</strong> au lieu d'être <span class="text-gray-400">→</span> <strong class="text-orange-700">utiles</strong></span>
+          </div>
         </div>
-        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
-          <h3 class="font-bold mb-2 flex items-start gap-2">
-            <span class="text-2xl">🐌</span>
-            <span class="flex flex-col">
-              <span>Tu subis la dette technique</span>
-              <span class="text-gray-700 font-medium text-sm">au lieu de la réduire.</span>
-            </span>
-          </h3>
-          <p class="text-gray-600 text-sm">Tu sais ce qu'il faudrait faire, mais cela te semble impossible dans ton contexte.</p>
-        </div>
-        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
-          <h3 class="font-bold mb-2 flex items-start gap-2">
-            <span class="text-2xl">🌫️</span>
-            <span class="flex flex-col">
-              <span>Tu subis le flou métier</span>
-              <span class="text-gray-700 font-medium text-sm">au lieu de clarifier.</span>
-            </span>
-          </h3>
-          <p class="text-gray-600 text-sm">Tu livres des features... mais sont-elles vraiment utiles ?</p>
-        </div>
-        <div class="p-6 bg-orange-50 border border-orange-100 rounded-lg">
-          <h3 class="font-bold mb-2 flex items-start gap-2">
-            <span class="text-2xl">🧪</span>
-            <span class="flex flex-col">
-              <span>Tu subis tes tests</span>
-              <span class="text-gray-700 font-medium text-sm">au lieu d'en faire des alliés.</span>
-            </span>
-          </h3>
-          <p class="text-gray-600 text-sm">Ils cassent, ils ralentissent, ils frustrent.</p>
-        </div>
-      </div>
 
-      <div class="text-center">
-        <p class="text-xl text-orange-700 font-medium mb-2">
-          Subir, c'est épuisant.
-        </p>
-        <p class="text-xl font-bold">
-          Mais passer de subir à maîtriser, ça s'apprend.
+        <p class="text-lg">
+          Transformer ces freins en leviers, <strong class="text-orange-700">c'est possible.</strong>
         </p>
       </div>
     </div>

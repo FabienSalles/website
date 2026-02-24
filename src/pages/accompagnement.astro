@@ -165,27 +165,6 @@ const testimonials = [
   }
 ];
 
-const interventionModes = [
-  {
-    emoji: "🛠️",
-    title: "Hands-on",
-    description: "Je code avec l'équipe. Pair programming, mob programming, revues de code en live.",
-    ideal: "Transfert de compétences rapide, montrer par l'exemple, débloquer des situations techniques."
-  },
-  {
-    emoji: "🎯",
-    title: "Hands-off",
-    description: "Je guide, je revois, je conseille — mais c'est l'équipe qui code.",
-    ideal: "Équipes autonomes qui veulent un regard externe, validation d'architecture, audits réguliers."
-  },
-  {
-    emoji: "🧭",
-    title: "Coaching",
-    description: "J'accompagne les individus ou l'équipe dans leur progression.",
-    ideal: "Leads en prise de poste, équipes en transformation, montée en séniorité."
-  }
-];
-
 const modalites = [
   {
     emoji: "📅",
@@ -196,11 +175,6 @@ const modalites = [
     emoji: "🎯",
     title: "Forfait",
     description: "Mission cadrée avec objectifs clairs. Pour des problématiques identifiées."
-  },
-  {
-    emoji: "💻",
-    title: "Hybride",
-    description: "Mix présentiel/distanciel selon tes contraintes."
   }
 ];
 ---
@@ -511,7 +485,7 @@ const modalites = [
       </p>
 
       <!-- Modalités -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="grid md:grid-cols-2 gap-6 mb-6 max-w-2xl mx-auto">
         {modalites.map(mod => (
           <div class="p-6 border border-gray-200 rounded-lg text-center">
             <div class="text-3xl mb-3">{mod.emoji}</div>
@@ -520,25 +494,11 @@ const modalites = [
           </div>
         ))}
       </div>
-
-      <!-- Mode d'intervention -->
-      <div class="bg-gray-50 -mx-4 px-4 py-8 md:rounded-lg md:mx-0 md:px-8">
-        <h3 class="text-xl font-bold mb-6 text-center">Mode d'intervention</h3>
-        <div class="grid md:grid-cols-3 gap-6">
-          {interventionModes.map(mode => (
-            <div class="bg-white p-6 rounded-lg shadow-sm text-center">
-              <div class="text-3xl mb-3">{mode.emoji}</div>
-              <h4 class="font-bold text-lg mb-2">{mode.title}</h4>
-              <p class="text-gray-600 text-sm mb-3">{mode.description}</p>
-              <p class="text-xs text-gray-500 italic">Idéal pour : {mode.ideal}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+      <p class="text-gray-500 text-sm text-center mb-12">Dans les deux cas, le mix présentiel/distanciel selon vos contraintes.</p>
     </section>
 
     <!-- SECTION 8 : STACK TECHNIQUE -->
-    <section class="mb-20">
+    <section class="mb-20 pt-12 border-t border-gray-200">
       <h2 class="text-3xl font-bold mb-4 text-center">Stack technique</h2>
       <p class="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
         Expertise forte en PHP/Symfony, mais les méthodes et principes s'appliquent partout.
@@ -551,7 +511,7 @@ const modalites = [
     </section>
 
     <!-- SECTION 9 : SECTEURS + PREUVES SOCIALES -->
-    <section class="mb-20">
+    <section class="mb-20 pt-12 border-t border-gray-200">
       <h2 class="text-3xl font-bold mb-4 text-center">Ils m'ont fait confiance</h2>
 
       <!-- Logos clients -->
