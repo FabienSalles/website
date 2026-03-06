@@ -3,11 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout 
-  title="Contact - Fabien Salles" 
-  description="Contactez-moi pour discuter de vos projets ou de vos besoins en formation"
+  title="Contactez-moi — Fabien Salles — Expert PHP & Craft"
+  description="Contactez Fabien Salles pour une mission, un audit de code ou une formation PHP/Symfony. Expertise Craft, DDD, TDD. Disponible en remote ou hybride."
 >
-    <div class="container max-w-3xl mx-auto  mx-auto px-4 py-12">
-    <h1 class="text-4xl font-bold mb-8">Contact</h1>
+    <div class="container mx-auto px-4 py-12">
+    <section class="text-center py-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        Contactez-moi<br>
+        <span class="text-orange-700">Mission, Audit, Formation & autres</span>
+      </h1>
+    </section>
+    <div class="max-w-3xl mx-auto">
 
     <div class="prose prose-lg mb-12">
       <p>
@@ -57,9 +63,10 @@ import Layout from '../layouts/Layout.astro';
           class="form-select"
         >
           <option value="">Sélectionnez un sujet</option>
+          <option value="accompagnement">Accompagnement</option>
+          <option value="audit">Audit de code</option>
           <option value="formation">Formation</option>
-          <option value="coaching">Coaching technique</option>
-          <option value="projet">Projet de développement</option>
+          <option value="automatisation">Automatisation</option>
           <option value="autre">Autre</option>
         </select>
       </div>
@@ -100,7 +107,19 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </div>
   </div>
+  </div>
 </Layout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const subject = params.get('subject') || params.get('service');
+  if (subject) {
+    const select = document.getElementById('subject') as HTMLSelectElement;
+    if (select) {
+      select.value = subject;
+    }
+  }
+</script>
 
 <style>
   .form-group {

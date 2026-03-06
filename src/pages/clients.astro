@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-const title = "Mes clients - Fabien Salles";
-const description = "Les entreprises avec qui j'ai travaillé";
+const title = "Références & Clients de Fabien Salles — Hermès, LVMH, Jardiland, RATP...";
+const description = "Fabien Salles a accompagné des entreprises comme Hermès, LVMH, Jardiland et RATP en audit, accompagnement et formation PHP/Symfony.";
 const clients = [
   {name: "Hermes", logo: "/images/clients/hermes.png"},
   {name: "Eres", logo: "/images/clients/eres.png"},
@@ -33,7 +33,7 @@ const clients = [
 <Layout title={title} description={description}>
   <section class="pt-20">
     <div class="container mx-auto px-4">
-      <h1 class="text-3xl font-bold mb-12 text-center">{description}</h1>
+      <h1 class="text-3xl font-bold mb-12 text-center">Références & Clients</h1>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {clients.map(client => (
           <div class="flex items-center justify-center p-4 bg-gray-50 rounded-lg hover:shadow-lg transition-all duration-300">

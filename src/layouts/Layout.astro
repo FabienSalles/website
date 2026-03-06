@@ -97,6 +97,46 @@ if (!alternateLink) {
       gtag("js", new Date());
       gtag("config", googleAnalyticsId);
     </script>
+    <script is:inline type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://fabiensalles.com/#person",
+          "name": "Fabien Salles",
+          "url": "https://fabiensalles.com",
+          "image": "https://fabiensalles.com/fabiensalles.jpg",
+          "jobTitle": "Expert Software Craftsmanship",
+          "description": "Expert DDD, TDD & Software Craftsmanship. Accompagnement, audit de code, formations PHP/Symfony.",
+          "sameAs": [
+            "https://www.linkedin.com/in/fabiensalles/",
+            "https://github.com/fabiensalles"
+          ],
+          "knowsAbout": ["DDD", "TDD", "Software Craftsmanship", "PHP", "Symfony", "Clean Architecture"]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://fabiensalles.com/#website",
+          "url": "https://fabiensalles.com",
+          "name": "Fabien Salles",
+          "publisher": { "@id": "https://fabiensalles.com/#person" }
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Navigation principale",
+          "hasPart": [
+            { "@type": "WebPage", "name": "Accompagnement", "url": "https://fabiensalles.com/accompagnement/" },
+            { "@type": "WebPage", "name": "Audit", "url": "https://fabiensalles.com/audit/" },
+            { "@type": "WebPage", "name": "Formations", "url": "https://fabiensalles.com/formations/" },
+            { "@type": "WebPage", "name": "Automatisation", "url": "https://fabiensalles.com/automatisation/" },
+            { "@type": "WebPage", "name": "Blog", "url": "https://fabiensalles.com/blog/" },
+            { "@type": "WebPage", "name": "Contact", "url": "https://fabiensalles.com/contact/" }
+          ]
+        }
+      ]
+    }
+    </script>
   </head>
   <body class="min-h-screen bg-white">
     <header class="fixed w-full bg-gradient-to-r from-orange-900 to-orange-800 z-50 shadow-lg">
