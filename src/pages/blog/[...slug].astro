@@ -46,7 +46,7 @@ const breadcrumbItems = [
           <div class="flex gap-2">
             {post.data.categories.map(category => (
               <a
-                href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/ /g, '-')}`)}
+                href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
                 title={category}
                 class="hover:text-orange-700 transition-colors"
               >

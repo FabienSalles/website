@@ -41,7 +41,7 @@ export async function getStaticPaths() {
     );
     paths.push({ 
       params: { 
-        slug: `blog/categories/${category.toLowerCase().replace(/ /g, '-')}` 
+        slug: `blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`
       },
       props: { category, posts: categoryPosts }
     });

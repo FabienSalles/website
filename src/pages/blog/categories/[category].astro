@@ -14,7 +14,7 @@ export async function getStaticPaths() {
     );
     
     return {
-      params: { category: category.toLowerCase().replace(/ /g, '-') },
+      params: { category: category.toLowerCase().replace(/[\s/]/g, '-') },
       props: { category, posts: categoryPosts },
     };
   });
