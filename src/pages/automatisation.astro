@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const technologies = [
   "Claude Code",
@@ -19,6 +20,7 @@ const technologies = [
   description="Automatisation IA pour équipes PHP/Symfony. Claude Code, MCP Servers, TDD garde-fous. Confidentialité garantie (option IA locale). Accélérez sans sacrifier la qualité."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Automatisation IA' }]} />
 
     <!-- HERO SECTION -->
     <section class="text-center py-16 mb-16">

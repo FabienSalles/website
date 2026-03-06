@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 ---
 
 <Layout
@@ -7,6 +8,7 @@ import Layout from '../layouts/Layout.astro';
   description="Audit de code PHP par Fabien Salles : ce que les outils ne voient pas. Legacy, Symfony, frameworks custom. Option audit augmenté IA. Confidentialité garantie."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Audit' }]} />
 
     <!-- HERO SECTION -->
     <section class="text-center py-16 mb-16">

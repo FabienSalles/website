@@ -2,12 +2,12 @@
 title: "Un QA ne devrait pas être séparé de l’équipe de développement "
 description: "L’intérêt d’un QA n’est pas juste de faire ce que les devs ne font pas, mais de leur donner la possibilité de faire mieux !"
 pubDate: 2023-07-10
-categories: ["CD", "organisation", "mindset"]
+categories: ["CI/CD", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7084051367056568321/"
 draft: false
 ---
 
-![QA collaboration](/images/blog/2023/07/qa.png)
+![QA collaboration](/images/blog/2023/07/qa.webp)
 
 On voit souvent dans les entreprises les QA totalement dissociées des développeurs-ses.
 

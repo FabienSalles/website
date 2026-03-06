@@ -3,12 +3,12 @@ title: "Pourquoi tant d’entreprises font du cycle en V avec Scrum ?"
 description: "On pense faire de l’agilité, mais on garde nos vielles habitudes qui ne sont pas agiles !
 Que cela soit la durée d’un sprint ou d’une US, un waterfall itératif reste un waterfall."
 pubDate:  2023-07-03
-categories: ["scrum", "agile", "organisation", "mindset"]
+categories: ["agile", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7081509021039386624/"
 draft: false
 ---
 
-![water scrum fall](/images/blog/2023/07/water-scrum-fall.png)
+![water scrum fall](/images/blog/2023/07/water-scrum-fall.webp)
 
 Scrum ne nous impose pas :  
 👉 d’utiliser la complexité pour estimer une durée  

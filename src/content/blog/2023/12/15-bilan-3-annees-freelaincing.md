@@ -2,7 +2,7 @@
 title: "Petit bilan de mes 3 premières années de Freelancing"
 description: "J’arrive à la fin de ma 3ᵉ année en tant que Freelance. Voici un petit bilan avec quelques chiffres pour ceux qui seraient intéressés"
 pubDate: 2023-12-15
-categories: ["freelance", "entrepreneuriat"]
+categories: ["freelance"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7141328554071359489/"
 draft: false
 ---

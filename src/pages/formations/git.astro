@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Faq from '../../components/Faq.astro';
 import { getRecommendationsByFormation } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à Git
@@ -11,6 +13,8 @@ const recommendations = getRecommendationsByFormation('git');
   description="Formation Git avancée par Fabien Salles : rebase interactif, worktree, workflows (GitFlow, Trunk-based), conventions, conflits. 2 jours, 70% pratique."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'Git' }]} />
+
     <!-- HERO SECTION -->
     <section class="text-center py-16 mb-16">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -452,6 +456,26 @@ const recommendations = getRecommendationsByFormation('git');
         N'hésite pas à <a href="/contact" class="text-orange-700 hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </section>
+
+    <!-- FAQ -->
+    <Faq items={[
+      {
+        question: "Quels sont les prérequis pour cette formation ?",
+        answer: "Une utilisation basique de la ligne de commande suffit. Pas besoin d'être expert Git — on reprend les fondamentaux avant d'aller dans l'avancé."
+      },
+      {
+        question: "Est-ce utile si mon équipe utilise déjà Git au quotidien ?",
+        answer: "C'est justement le cas le plus fréquent. La plupart des équipes utilisent Git sans vraiment le comprendre. Cette formation transforme le \"ça marche je sais pas pourquoi\" en \"je sais exactement ce que je fais\"."
+      },
+      {
+        question: "GitFlow, Trunk-Based, GitHub Flow... c'est couvert ?",
+        answer: "Oui. On couvre les principaux workflows (GitFlow, GitHub Flow, Trunk-Based Development) avec leurs trade-offs. L'objectif est que tu comprennes lequel est adapté à ton équipe et pourquoi."
+      },
+      {
+        question: "La formation peut-elle être adaptée à notre contexte ?",
+        answer: "Absolument. Je peux adapter les exercices à vos workflows existants, vos conventions et vos problématiques spécifiques. C'est l'avantage du format intra-entreprise."
+      }
+    ]} />
 
     <!-- SECTION CTA FINALE -->
     <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16">

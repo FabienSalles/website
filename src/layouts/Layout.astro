@@ -5,12 +5,14 @@ interface Props {
   title: string;
   description?: string;
   image?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = "Fabien Salles - Je vous aide à produire des applications pérennes",
-  image = "/fabiensalles.jpg"
+  image = "/fabiensalles.jpg",
+  noindex = false
 } = Astro.props;
 
 const ogImage = new URL(image, Astro.site).href;
@@ -71,6 +73,7 @@ if (!alternateLink) {
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <meta name="author" content="Fabien Salles" />
     <meta name="keywords" content="Software craftsmanship, craft, architecture, test, TDD, DDD, legacy, refactoring, tech lead, technical coach, trainer, formateur, phpunit, artisanat, architecture hexagonal, BDD, clean architecture, PHP, Nodejs, Symfony" />
 

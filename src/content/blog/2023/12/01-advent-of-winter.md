@@ -3,7 +3,7 @@ title: "Advent of Winter"
 description: "Vous souhaitez profiter du mois de décembre pour monter en compétence en développement ?
 C’est le bon moment avec les calendriers de l’avent"
 pubDate: 2023-12-01
-categories: ["advent", "coding", "pratices"]
+categories: ["advent"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7136255133570469888/"
 draft: false
 ---

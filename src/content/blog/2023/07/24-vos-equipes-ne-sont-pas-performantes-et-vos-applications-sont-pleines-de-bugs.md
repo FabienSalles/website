@@ -3,12 +3,12 @@ title: "La culture d'entreprise et la performance des équipes"
 description: "Vos équipes ne sont pas performantes et vos applications sont pleines de bugs ?
 Regarder d'abord votre culture ! "
 pubDate:  2023-07-24
-categories: ["culture", "organisation", "performance", "dora", "westrum"]
+categories: ["organisation", "performance", "qualité"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7089117225705447424/"
 draft: false
 ---
 
-![culture d'entreprise et travaille simon sinek](/images/blog/2023/07/simon-sinek-culture.png)
+![culture d'entreprise et travaille simon sinek](/images/blog/2023/07/simon-sinek-culture.webp)
 Vos équipes ne sont pas performantes et vos applications sont pleines de bugs ?
 Regarder d'abord votre culture ! 👇
 

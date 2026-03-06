@@ -2,7 +2,7 @@
 title: "Utiliser le Daily Scrum pour suivre les devs fait perdre du temps !"
 description: "Plutôt que de s’attarder sur l’avancement de manière individuelle, pourquoi ne pas juste regarder l’avancement des tâches ?"
 pubDate: 2023-06-19
-categories: ["organisation", "agilité", "mindset", "scrum"]
+categories: ["organisation", "agile", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_utiliser-le-daily-scrum-pour-suivre-lavancement-activity-7076425242620874752-EszL/"
 draft: false
 ---

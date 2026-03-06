@@ -2,7 +2,7 @@
 title: "Vous ressentez de la frustration à cause de vos Pull Requests ?"
 description: "Voici 10 cas personnels et des solutions que l’on peut envisager pour y répondre👇 "
 pubDate: 2023-06-14
-categories: ["CI", "PR", "mindset", "organisation"]
+categories: ["CI/CD", "mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7074446162908311553/"
 draft: false
 ---

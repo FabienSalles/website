@@ -19,14 +19,17 @@ const { Content } = await post.render();
 const githubBlogContributionBaseUrl = import.meta.env.GITHUB_BLOG_CONTRIBUTION_BASE_URL;
 
 const breadcrumbItems = [
+  { label: 'Accueil', href: '/' },
   { label: 'Blog', href: generateUrl('/blog') },
-  { label: post.data.title }
+  { label: post.data.title },
 ];
 ---
 
 <Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description}>
-  <div class="container max-w-3xl mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={breadcrumbItems} />
+  </div>
+  <div class="container max-w-3xl mx-auto px-4 pb-12">
 
     <article>
       <header class="mb-8">

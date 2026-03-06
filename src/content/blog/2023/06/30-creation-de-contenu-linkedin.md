@@ -9,7 +9,7 @@ draft: false
 
 Pour ceux que cela peut intéresser, voici mon parcours 👇    
 
-![livre de Nina Ramen et Christopher Piton](/images/blog/2023/06/nina-ramen-christopher-piton.png)
+![livre de Nina Ramen et Christopher Piton](/images/blog/2023/06/nina-ramen-christopher-piton.webp)
 
 1️⃣ J’ai participé au [live de Marouane Ouadah](https://www.linkedin.com/events/7065675968618590208/)
 Cela m’a permis  :  

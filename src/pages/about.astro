@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const title = "Fabien Salles — Développeur PHP/Symfony, Expert Craft & DDD";
 const description = "Fabien Salles, développeur PHP/Symfony passionné par le Software Craftsmanship, DDD et TDD. Découvrez mon parcours et ma vision de l'artisanat logiciel.";
@@ -7,6 +8,7 @@ const description = "Fabien Salles, développeur PHP/Symfony passionné par le S
 
 <Layout title={title} description={description}>
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'À propos' }]} />
     <h1 class="text-4xl font-bold mb-8">Développeur PHP/Symfony, Expert Craft & DDD</h1>
 
     <div class="prose prose-lg max-w-none">

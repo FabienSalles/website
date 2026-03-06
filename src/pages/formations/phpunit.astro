@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Faq from '../../components/Faq.astro';
 import { getRecommendationsByFormation } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à PHPUnit
@@ -11,6 +13,8 @@ const recommendations = getRecommendationsByFormation('phpunit');
   description="Formation PHPUnit par Fabien Salles : tests rapides, maintenables, rentables. Tests Legacy (Golden Master), TDD, Test Doubles. 2 jours, 70% pratique."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'PHPUnit' }]} />
+
     <!-- HERO SECTION -->
     <section class="text-center py-16 mb-16">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
@@ -484,6 +488,30 @@ const recommendations = getRecommendationsByFormation('phpunit');
         N'hésite pas à <a href="/contact" class="text-orange-700 hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </section>
+
+    <!-- FAQ -->
+    <Faq items={[
+      {
+        question: "Quels sont les prérequis pour cette formation ?",
+        answer: "Une bonne connaissance de PHP et de la programmation orientée objet. Pas besoin d'avoir déjà écrit des tests — on part des fondamentaux."
+      },
+      {
+        question: "Quelle est la différence avec un cours PHPUnit en ligne ?",
+        answer: "Les cours en ligne t'apprennent la syntaxe. Cette formation t'apprend <strong>quand, quoi et pourquoi tester</strong>. 50% du temps est consacré à la pratique sur des cas réels, avec un feedback immédiat et personnalisé."
+      },
+      {
+        question: "Est-ce que la formation couvre le code legacy ?",
+        answer: "Oui. On aborde des techniques spécifiques pour sécuriser du code existant sans tests. C'est souvent le cas le plus demandé en entreprise."
+      },
+      {
+        question: "Est-ce qu'on aborde le TDD, le TCR ou les tests avec l'IA ?",
+        answer: "Oui. On couvre le TDD et ses variantes, et on aborde aussi comment l'IA change la donne : comment la guider pour écrire des tests solides, et pourquoi savoir tester devient encore plus critique quand l'IA génère du code à ta place."
+      },
+      {
+        question: "La formation peut-elle être adaptée à notre contexte ?",
+        answer: "Absolument. Je peux adapter les exercices à votre stack, vos problématiques et votre codebase si vous le souhaitez. C'est l'avantage du format intra-entreprise."
+      }
+    ]} />
 
     <!-- SECTION CTA FINALE -->
     <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16">

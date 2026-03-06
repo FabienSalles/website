@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const stats = [
   { number: "15+", label: "années d'expérience" },
@@ -135,13 +136,13 @@ const sectors = [
 
 const clients = [
   { name: "Hermès", logo: "/images/clients/hermes.png" },
-  { name: "LVMH", logo: "/images/clients/lvmh.png" },
-  { name: "Dior", logo: "/images/clients/dior.png" },
-  { name: "Chaumet", logo: "/images/clients/chaumet.png" },
+  { name: "LVMH", logo: "/images/clients/lvmh.webp" },
+  { name: "Dior", logo: "/images/clients/dior.webp" },
+  { name: "Chaumet", logo: "/images/clients/chaumet.webp" },
   { name: "Amundi", logo: "/images/clients/amundi.png" },
   { name: "Total", logo: "/images/clients/total.png" },
   { name: "RATP", logo: "/images/clients/ratp.png" },
-  { name: "Volkswagen", logo: "/images/clients/wolkswagen.png" }
+  { name: "Volkswagen", logo: "/images/clients/wolkswagen.webp" }
 ];
 
 const testimonials = [
@@ -149,7 +150,7 @@ const testimonials = [
     name: "Shahbran Khan GHULAM",
     role: "Ingénieur QA, Hermès",
     content: "Fabien, c'est un vrai pro. Il est extrêmement compétent, toujours pertinent dans ses analyses et redoutablement efficace. Il sait prendre du recul, proposer des solutions intelligentes et faire avancer les choses.",
-    image: "/images/recommendations/shahbran-khan-ghulam.png"
+    image: "/images/recommendations/shahbran-khan-ghulam.webp"
   },
   {
     name: "Jean-Yves Camier",
@@ -161,7 +162,7 @@ const testimonials = [
     name: "Rodolphe Huot",
     role: "Développeur Web, Hermès",
     content: "Expertise technique pointue dans le développement et le craftsmanship. Toujours force de proposition et à la recherche de l'excellence. Je recommande chaleureusement.",
-    image: "/images/recommendations/rodolphe-huot.png"
+    image: "/images/recommendations/rodolphe-huot.webp"
   }
 ];
 
@@ -184,6 +185,8 @@ const modalites = [
   description="Fabien Salles, expert PHP/Symfony craft pour vos équipes. Missions flexibles (temps plein, fractionné). Relation directe, pas d'intermédiaire."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Accompagnement' }]} />
+
     <!-- SECTION 1 : HERO -->
     <section class="text-center py-16 mb-12">
       <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">

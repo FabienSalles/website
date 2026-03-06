@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 import { getAllRecommendations, getStats } from '../data/formations';
 
 // Récupère une recommandation aléatoire pour le témoignage
@@ -79,6 +80,7 @@ const stats = {
   description="Des formations pratiques pour arrêter de subir tes outils. PHPUnit, Git, DDD : en 2 à 5 jours, maîtrise vraiment ce que tu utilises tous les jours."
 >
   <div class="container mx-auto px-4 py-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations' }]} />
 
     <!-- HERO SECTION -->
     <section class="text-center py-12 mb-12">

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import generateUrl from "@utils/url";
 
@@ -16,7 +17,10 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
 ---
 
 <Layout title="Blog - Fabien Salles" description="Articles sur l'artisanat logiciel, le développement et les bonnes pratiques">
-  <div class="container max-w-3xl mx-auto  mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Blog' }]} />
+  </div>
+  <div class="container max-w-3xl mx-auto px-4 pb-12">
     <h1 class="text-4xl font-bold mb-8">Blog</h1>
     
     <div class="mb-8">

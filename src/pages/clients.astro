@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
 
 const title = "Références & Clients de Fabien Salles — Hermès, LVMH, Jardiland, RATP...";
 const description = "Fabien Salles a accompagné des entreprises comme Hermès, LVMH, Jardiland et RATP en audit, accompagnement et formation PHP/Symfony.";
@@ -7,32 +8,33 @@ const clients = [
   {name: "Hermes", logo: "/images/clients/hermes.png"},
   {name: "Eres", logo: "/images/clients/eres.png"},
   {name: "Amundi", logo: "/images/clients/amundi.png"},
-  {name: "Pledg", logo: "/images/clients/pledg.png"},
-  {name: "plum-kitchen", logo: "/images/clients/plum-kitchen.png"},
-  {name: "Clever-Age", logo: "/images/clients/clever-age.png"},
-  {name: "Cast", logo: "/images/clients/cast.png"},
-  {name: "Japan-experience", logo: "/images/clients/japan-experience.png"},
-  {name: "Orsys", logo: "/images/clients/orsys.png"},
-  {name: "ESGI", logo: "/images/clients/esgi.png"},
-  {name: "LVMH", logo: "/images/clients/lvmh.png"},
-  {name: "Jardiland", logo: "/images/clients/jardiland.png"},
-  {name: "Chaumet", logo: "/images/clients/chaumet.png"},
+  {name: "Pledg", logo: "/images/clients/pledg.webp"},
+  {name: "plum-kitchen", logo: "/images/clients/plum-kitchen.webp"},
+  {name: "Clever-Age", logo: "/images/clients/clever-age.webp"},
+  {name: "Cast", logo: "/images/clients/cast.webp"},
+  {name: "Japan-experience", logo: "/images/clients/japan-experience.webp"},
+  {name: "Orsys", logo: "/images/clients/orsys.webp"},
+  {name: "ESGI", logo: "/images/clients/esgi.webp"},
+  {name: "LVMH", logo: "/images/clients/lvmh.webp"},
+  {name: "Jardiland", logo: "/images/clients/jardiland.webp"},
+  {name: "Chaumet", logo: "/images/clients/chaumet.webp"},
   {name: "MB Expansion", logo: "/images/clients/mb-expansion.png"},
-  {name: "DFS", logo: "/images/clients/dfs.png"},
+  {name: "DFS", logo: "/images/clients/dfs.webp"},
   {name: "Dismo", logo: "/images/clients/dismo.jpg"},
   {name: "Jacadi", logo: "/images/clients/jacadi.jpg"},
-  {name: "Dior", logo: "/images/clients/dior.png"},
-  {name: "Aramis Auto", logo: "/images/clients/aramis-auto.png"},
-  {name: "Wolkswagen", logo: "/images/clients/wolkswagen.png"},
+  {name: "Dior", logo: "/images/clients/dior.webp"},
+  {name: "Aramis Auto", logo: "/images/clients/aramis-auto.webp"},
+  {name: "Wolkswagen", logo: "/images/clients/wolkswagen.webp"},
   {name: "Total", logo: "/images/clients/total.png"},
   {name: "RATP", logo: "/images/clients/ratp.png"},
   {name: "We-cook", logo: "/images/clients/wecook.png"},
-  {name: "meteo-consult", logo: "/images/clients/meteo-consult.png"}
+  {name: "meteo-consult", logo: "/images/clients/meteo-consult.webp"}
 ];
 ---
 <Layout title={title} description={description}>
   <section class="pt-20">
     <div class="container mx-auto px-4">
+      <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Références & Clients' }]} />
       <h1 class="text-3xl font-bold mb-12 text-center">Références & Clients</h1>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         {clients.map(client => (

@@ -1,0 +1,49 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+}
+
+const { items, title = "Questions fréquentes" } = Astro.props;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": items.map(item => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+---
+
+<section class="mb-28">
+  <h2 class="text-2xl font-bold mb-8 text-center">{title}</h2>
+  <div class="max-w-3xl mx-auto space-y-4">
+    {items.map(item => (
+      <details class="group border border-gray-200 rounded-lg">
+        <summary class="flex items-center justify-between cursor-pointer p-5 font-semibold text-gray-900 hover:text-orange-700 transition-colors">
+          {item.question}
+          <span class="ml-4 text-gray-400 group-open:rotate-180 transition-transform">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </span>
+        </summary>
+        <div class="px-5 pb-5 text-gray-700 leading-relaxed">
+          <Fragment set:html={item.answer} />
+        </div>
+      </details>
+    ))}
+  </div>
+</section>
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
