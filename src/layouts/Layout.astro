@@ -4,12 +4,16 @@ import generateUrl from "@utils/url";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
 }
 
 const {
   title,
-  description = "Fabien Salles - Je vous aide à produire des applications pérennes"
+  description = "Fabien Salles - Je vous aide à produire des applications pérennes",
+  image = "/fabiensalles.jpg"
 } = Astro.props;
+
+const ogImage = new URL(image, Astro.site).href;
 
 const currentPath = Astro.url.pathname;
 const isEnglishPath = currentPath.startsWith('/en');
@@ -74,11 +78,13 @@ if (!alternateLink) {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content={ogImage} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href={generateUrl('/rss.xml')} />
     <script is:inline type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`>

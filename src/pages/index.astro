@@ -158,11 +158,17 @@ const testimonials = [
             <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
             <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
           </div>
-          <img
-            class="h-80 md:h-96 mx-auto md:ml-auto md:mr-0 rounded-lg"
-            src="/fabiensalles.png"
-            alt="Fabien Salles"
-          />
+          <div class="relative h-80 md:h-96 mx-auto md:ml-auto md:mr-0 overflow-hidden rounded-lg">
+            <img
+              class="w-full h-full object-cover"
+              src="/fabiensalles.jpg"
+              alt="Fabien Salles"
+            />
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent"></div>
+            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent"></div>
+            <div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-white to-transparent"></div>
+          </div>
         </div>
       </div>
     </div>
