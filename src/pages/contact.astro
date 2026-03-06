@@ -120,6 +120,7 @@ import Breadcrumb from '../components/Breadcrumb.astro';
     if (select) {
       select.value = subject;
     }
+    history.replaceState(null, '', window.location.pathname);
   }
 </script>
 
