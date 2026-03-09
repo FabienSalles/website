@@ -25,13 +25,13 @@ const recommendations = getRecommendationsByFormation('git');
           Arrête de subir Git.<br>
           <span class="text-primary">Maîtrise-le vraiment.</span>
         </h1>
-        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+        <p class="text-xl text-foreground-heading font-medium max-w-3xl mx-auto mb-4 leading-relaxed">
           Tu utilises Git tous les jours. Mais est-ce que tu le comprends vraiment ?<br>
           En 2 jours, passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".
         </p>
         <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-6">
           Beaucoup passent à côté de la puissance de Git. Ils restent sur une utilisation
-          simpliste — add, commit, push — et continuent de faire les mêmes erreurs
+          simpliste (add, commit, push) et continuent de faire les mêmes erreurs
           sans jamais comprendre pourquoi.
         </p>
         <div class="flex justify-center mb-8">
@@ -404,7 +404,7 @@ const recommendations = getRecommendationsByFormation('git');
           ))}
         </div>
         <div class="text-center mt-8">
-          <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
+          <a href="/recommendations#formations" class="btn-outline">
             Voir toutes les recommandations →
           </a>
         </div>
@@ -442,7 +442,7 @@ const recommendations = getRecommendationsByFormation('git');
       <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           Je m'appelle Fabien. J'utilise Git au quotidien depuis le début
-          de mon activité professionnelle — et j'ai fait à peu près toutes
+          de mon activité professionnelle, et j'ai fait à peu près toutes
           les erreurs possibles.
         </p>
         <p>
@@ -494,7 +494,7 @@ const recommendations = getRecommendationsByFormation('git');
         </div>
       </div>
       <p class="text-center mt-8 text-foreground-muted">
-        N'hésite pas à <a href="/contact?subject=formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+        N'hésite pas à <a href="/contact?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </div>
   </section>
@@ -505,7 +505,7 @@ const recommendations = getRecommendationsByFormation('git');
       <Faq items={[
         {
           question: "Quels sont les prérequis pour cette formation ?",
-          answer: "Une utilisation basique de la ligne de commande suffit. Pas besoin d'être expert Git — on reprend les fondamentaux avant d'aller dans l'avancé."
+          answer: "Une utilisation basique de la ligne de commande suffit. Pas besoin d'être expert Git, on reprend les fondamentaux avant d'aller dans l'avancé."
         },
         {
           question: "Est-ce utile si mon équipe utilise déjà Git au quotidien ?",
@@ -535,12 +535,14 @@ const recommendations = getRecommendationsByFormation('git');
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
+            title="Me contacter"
             class="btn-primary text-lg"
           >
             Me contacter →
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
+            title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center gap-2"

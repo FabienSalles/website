@@ -5,23 +5,25 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#c2410c',   // orange-700 — brand color
-          hover: '#9a3412',     // orange-800 — hover states
+          DEFAULT: '#c2410c',   // orange-700 — text links, readable
+          hover: '#9a3412',     // orange-800 — text hover
+          cta: '#ea580c',       // orange-600 — button backgrounds, vibrant
+          'cta-hover': '#f97316', // orange-500 — button hover, brighter
           dark: '#7c2d12',      // orange-900 — dark CTA sections
           muted: '#ffedd5',     // orange-100 — badges, tags
         },
         surface: {
-          DEFAULT: '#f8f4f0',   // warm ivory — base background
-          muted: '#f0ebe5',     // warm muted — tech tags
+          DEFAULT: '#fafaf9',   // stone-50 — warm white, modern
+          muted: '#f5f5f4',     // stone-100 — subtle muted
         },
         foreground: {
           DEFAULT: '#374151',   // gray-700 — body text
           heading: '#111827',   // gray-900 — headings
-          muted: '#4a3f31',     // warm brown — captions, meta
+          muted: '#78716c',     // stone-500 — captions, meta
         },
         border: {
-          DEFAULT: '#d8d2cb',   // warm gray — borders
-          light: '#e2dbd3',     // warm light — subtle borders
+          DEFAULT: '#d6d3d1',   // stone-300 — borders
+          light: '#e7e5e4',     // stone-200 — subtle borders
         },
       },
       borderRadius: {

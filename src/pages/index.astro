@@ -35,7 +35,7 @@ const services = [
     icon: "mdi:magnify",
     title: "Auditer",
     intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
-    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.",
+    description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards : Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.",
     benefits: [
       "Évaluation de la dette technique",
       "Analyse de l'architecture, pratiques de développement",
@@ -48,7 +48,7 @@ const services = [
   {
     icon: "mdi:crosshairs-gps",
     title: "Accompagner",
-    intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder, mais qui transmet ?",
+    intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder ?",
     description: "J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.",
     benefits: [
       "Intervention en régie ou au forfait",
@@ -77,7 +77,7 @@ const services = [
     icon: "mdi:robot",
     title: "Automatiser",
     intro: "L'IA change notre façon de coder.<br />Mais sans direction, elle amplifie les problèmes autant que les solutions.",
-    description: "Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
+    description: "Je t'aide à intégrer les outils d'automatisation dans tes workflows pour gagner en productivité sans sacrifier la qualité.",
     benefits: [
       "Intégration Claude Code / agents IA",
       "Workflows automatisés",
@@ -115,9 +115,9 @@ const testimonials = [
 
   <!-- HERO SECTION -->
   <section class="bg-surface">
-    <div class="container mx-auto px-4 py-20 md:py-28">
+    <div class="max-w-5xl mx-auto px-4 py-20 md:py-28">
       <div class="grid md:grid-cols-5 gap-8 items-center">
-        <div class="md:col-span-3">
+        <div class="md:col-span-3 text-center md:text-left">
           <p class="text-3xl md:text-4xl font-bold mb-2 leading-tight">
             Salut, je suis Fabien.
           </p>
@@ -127,14 +127,15 @@ const testimonials = [
             <h1 class="inline text-primary font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
           </div>
           <p class="text-xl text-foreground-heading font-medium mb-6 leading-relaxed">
-            J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="text-foreground-muted whitespace-nowrap">Pas pour dépanner.</span>
+            J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="whitespace-nowrap">Pas pour dépanner.</span>
           </p>
           <p class="text-lg text-foreground-muted mb-8 leading-relaxed">
             Je ne viens pas avec une recette magique. Juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
           </p>
-          <div class="flex flex-wrap gap-4 mb-8">
+          <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
             <a
               href="/contact"
+              title="Me contacter"
               class="btn-primary"
             >
               Discutons de ton besoin
@@ -146,31 +147,26 @@ const testimonials = [
               Voir les services
             </a>
           </div>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap justify-center md:justify-start gap-2">
             {expertise.map(tech => (
               <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm">{tech}</span>
             ))}
           </div>
         </div>
-        <div class="md:col-span-2 text-center md:text-right">
-          <!-- Statut -->
-          <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-4">
-            <span class="badge-status">✓ Freelance</span>
-            <span class="badge-status">✓ Disponible</span>
-            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
-          </div>
-          <div class="relative h-80 md:h-96 mx-auto md:ml-auto md:mr-0 overflow-hidden rounded-lg">
+        <div class="md:col-span-2 flex flex-col items-center">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-border-light mb-4">
             <img
               class="w-full h-full object-cover"
-              src="/fabiensalles.jpg"
+              src="/fabiensalles.webp"
               alt="Fabien Salles"
               width="1024"
               height="768"
             />
-            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-surface to-transparent"></div>
-            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-surface to-transparent"></div>
-            <div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-surface to-transparent"></div>
-            <div class="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-surface to-transparent"></div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="badge-status">✓ Freelance</span>
+            <span class="badge-status">✓ Disponible</span>
+            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
           </div>
         </div>
       </div>
@@ -218,10 +214,10 @@ const testimonials = [
         <h2 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-6">Comment puis-je t'aider ?</h2>
         <p class="text-foreground-muted">
           Tu es
-          <a href="#audit" class="text-primary font-semibold hover:underline">CTO / Tech Lead</a> ?
-          <a href="#accompagnement" class="text-primary font-semibold hover:underline">Recruteur / ESN</a> ?
-          <a href="#formation" class="text-primary font-semibold hover:underline">Responsable formation</a> ?
-          <a href="#freelance" class="text-primary font-semibold hover:underline">Freelance</a> ?
+          <a href="#audit" title="Voir le service Audit" class="text-primary font-semibold hover:underline">CTO / Tech Lead</a> ?
+          <a href="#accompagnement" title="Voir le service Accompagnement" class="text-primary font-semibold hover:underline">Recruteur / ESN</a> ?
+          <a href="#formation" title="Voir le service Formation" class="text-primary font-semibold hover:underline">Responsable formation</a> ?
+          <a href="#freelance" title="Voir l'apport d'affaires" class="text-primary font-semibold hover:underline">Freelance</a> ?
         </p>
       </div>
     </div>
@@ -264,7 +260,7 @@ const testimonials = [
               <!-- Logos clients -->
               <div class="mb-6">
                 <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Audité pour</p>
-                <a href="/clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
+                <a href="/clients" title="Voir tous les clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
                   <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
                   <img src="/images/clients/cast.webp" alt="Cast" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="592" height="231" />
                   <img src="/images/clients/plum-kitchen.webp" alt="Plum Kitchen" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="1000" height="476" />
@@ -272,7 +268,7 @@ const testimonials = [
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
+              <a href="/recommendations" title="Voir toutes les recommandations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
                 <blockquote class="text-sm border-l-2 border-primary pl-3">
                   <p class="text-foreground-muted italic mb-2">« Le client était très satisfait. Un grand merci pour ton étude. »</p>
                   <footer class="text-xs text-foreground-muted">— Retour client, février 2026</footer>
@@ -285,12 +281,12 @@ const testimonials = [
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
             <div class="bg-surface rounded-xl p-6 md:p-8 border border-border-light">
               <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
-                Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?
-                Tu as des doutes sur la qualité du code avant d'investir ?
+                Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br>
+                Tu as des doutes sur la qualité du code ?
               </p>
 
               <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
-                Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.
+                Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards : Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.
               </p>
 
               <ul class="space-y-3 text-foreground mb-6">
@@ -314,6 +310,7 @@ const testimonials = [
 
               <a
                 href="/audit"
+                title="Auditer votre application"
                 class="btn-primary text-lg"
               >
                 En savoir plus →
@@ -369,7 +366,7 @@ const testimonials = [
               <!-- Logos clients -->
               <div class="mb-6">
                 <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Accompagné</p>
-                <a href="/clients" class="flex flex-wrap items-center gap-1 hover:opacity-80 transition-opacity">
+                <a href="/clients" title="Voir tous les clients" class="flex flex-wrap items-center gap-1 hover:opacity-80 transition-opacity">
                   <img src="/images/clients/hermes.png" alt="Hermès" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="3840" height="2160" />
                   <img src="/images/clients/eres.png" alt="Eres" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="1318" height="325" />
                   <img src="/images/clients/lvmh.webp" alt="LVMH" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="2336" height="681" />
@@ -379,7 +376,7 @@ const testimonials = [
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations" class="block bg-white rounded-lg p-3 hover:bg-surface-muted transition-colors -mx-2">
+              <a href="/recommendations" title="Voir toutes les recommandations" class="block bg-white rounded-lg p-3 hover:bg-surface-muted transition-colors -mx-2">
                 <blockquote class="text-sm border-l-2 border-primary pl-3">
                   <p class="text-foreground-muted italic mb-2">« Sa capacité à rester calme malgré la pression, son ouverture au dialogue. »</p>
                   <footer class="text-xs text-foreground-muted">— Jean-Yves C., Bedrock</footer>
@@ -392,8 +389,8 @@ const testimonials = [
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
             <div class="bg-white rounded-xl p-6 md:p-8 border border-border-light">
               <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
-                Ton équipe a besoin d'un regard extérieur ?
-                D'un renfort qui ne fait pas que coder, mais qui transmet ?
+                Ton équipe a besoin d'un regard extérieur ?<br>
+                D'un renfort qui ne fait pas que coder ?
               </p>
 
               <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
@@ -421,6 +418,7 @@ const testimonials = [
 
               <a
                 href="/accompagnement"
+                title="Voir mon accompagnement"
                 class="btn-primary text-lg"
               >
                 En savoir plus →
@@ -461,16 +459,16 @@ const testimonials = [
               <div class="mb-6">
                 <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formations</p>
                 <div class="flex flex-wrap gap-2">
-                  <a href="/formations/git" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">Git</a>
-                  <a href="/formations/phpunit" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">PHPUnit</a>
-                  <a href="/formations/ddd" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">DDD</a>
+                  <a href="/formations/git" title="Formation Git avancé" class="inline-flex items-center px-3 py-1.5 bg-white rounded-lg border border-border-light text-sm text-foreground hover:border-primary transition-colors"><strong>Git</strong></a>
+                  <a href="/formations/phpunit" title="Formation PHPUnit" class="inline-flex items-center px-3 py-1.5 bg-white rounded-lg border border-border-light text-sm text-foreground hover:border-primary transition-colors"><strong>PHPUnit</strong></a>
+                  <a href="/formations/ddd" title="Formation Domain-Driven Design" class="inline-flex items-center px-3 py-1.5 bg-white rounded-lg border border-border-light text-sm text-foreground hover:border-primary transition-colors"><strong>DDD</strong></a>
                 </div>
               </div>
 
               <!-- Logos clients -->
               <div class="mb-6">
                 <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formé pour</p>
-                <a href="/clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
+                <a href="/clients" title="Voir tous les clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
                   <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
                   <img src="/images/clients/orsys.webp" alt="Orsys" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="431" height="151" />
                   <img src="/images/clients/esgi.webp" alt="ESGI" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="300" height="300" />
@@ -478,7 +476,7 @@ const testimonials = [
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations#formations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
+              <a href="/recommendations#formations" title="Voir toutes les recommandations formations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
                 <blockquote class="text-sm border-l-2 border-primary pl-3">
                   <p class="text-foreground-muted italic mb-2">« Contenu très complet et intervenant pédagogue et patient. »</p>
                   <footer class="text-xs text-foreground-muted">— Sarah Z., évaluation formation Git</footer>
@@ -520,6 +518,7 @@ const testimonials = [
 
               <a
                 href="/formations"
+                title="Voir toutes les formations"
                 class="btn-primary text-lg"
               >
                 Voir les formations →
@@ -583,7 +582,7 @@ const testimonials = [
               </p>
 
               <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
-                Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.
+                Je t'aide à intégrer les outils d'automatisation dans tes workflows pour gagner en productivité sans sacrifier la qualité.
               </p>
 
               <ul class="space-y-3 text-foreground mb-6">
@@ -607,6 +606,7 @@ const testimonials = [
 
               <a
                 href="/automatisation"
+                title="Automatiser vos workflows"
                 class="btn-primary text-lg"
               >
                 En savoir plus →
@@ -625,9 +625,9 @@ const testimonials = [
         <h3 class="text-xl font-bold mb-4">Tu es freelance ?</h3>
         <p class="text-foreground-muted mb-4">
           Tu as une mission qui ne te correspond pas ? Je peux peut-être t'aider.<br />
-          Et inversement — quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
+          Et inversement, quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
         </p>
-        <a href="/apport-affaires" class="text-primary font-semibold hover:text-primary-hover">
+        <a href="/apport-affaires" title="Faire de l'apport d'affaires" class="btn-outline">
           On en parle →
         </a>
       </div>
@@ -657,7 +657,7 @@ const testimonials = [
         ))}
       </div>
       <div class="text-center mt-8">
-        <a href="/recommendations" class="text-primary hover:text-primary-hover font-medium">
+        <a href="/recommendations" title="Voir toutes les recommandations" class="btn-outline">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -677,12 +677,14 @@ const testimonials = [
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
+            title="Me contacter"
             class="btn-primary text-lg"
           >
             Prendre contact →
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
+            title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center gap-2"

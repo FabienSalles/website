@@ -11,7 +11,7 @@ interface Props {
 const {
   title,
   description = "Fabien Salles - Je vous aide à produire des applications pérennes",
-  image = "/fabiensalles.jpg",
+  image = "/fabiensalles.webp",
   noindex = false
 } = Astro.props;
 
@@ -109,7 +109,7 @@ if (!alternateLink) {
           "@id": "https://fabiensalles.com/#person",
           "name": "Fabien Salles",
           "url": "https://fabiensalles.com",
-          "image": "https://fabiensalles.com/fabiensalles.jpg",
+          "image": "https://fabiensalles.com/fabiensalles.webp",
           "jobTitle": "Expert Software Craftsmanship",
           "description": "Expert DDD, TDD & Software Craftsmanship. Accompagnement, audit de code, formations PHP/Symfony.",
           "sameAs": [
@@ -377,11 +377,11 @@ if (!alternateLink) {
 
   /* Button styles */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-hover transition-colors;
+    @apply inline-flex items-center justify-center bg-primary-cta text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-cta-hover transition-colors;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center border-2 border-primary text-primary px-6 py-3 rounded-lg font-bold hover:bg-surface-muted transition-colors;
+    @apply inline-flex items-center justify-center border-2 border-primary-cta text-primary-cta px-6 py-3 rounded-lg font-bold hover:border-primary-cta-hover hover:text-primary-cta-hover hover:bg-surface-muted transition-colors;
   }
 
   .btn-light {
@@ -398,7 +398,7 @@ if (!alternateLink) {
   }
 
   .card-elevated {
-    @apply bg-white p-6 rounded-lg border border-border-light hover:border-primary transition-colors;
+    @apply bg-white p-6 rounded-lg border border-border-light;
   }
 
   /* Badge */

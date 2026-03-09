@@ -25,14 +25,14 @@ const recommendations = getRecommendationsByFormation('phpunit');
           Arrête de subir tes tests.<br>
           <span class="text-primary">Fais-en des alliés.</span>
         </h1>
-        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+        <p class="text-xl text-foreground-heading font-medium max-w-3xl mx-auto mb-4 leading-relaxed">
           Des tests qui accélèrent ton développement au lieu de le freiner.<br>
           En 2 jours, maîtrise PHPUnit et les techniques qui transforment
           tes tests en investissement rentable.
         </p>
         <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-8">
           Cette formation, c'est tout ce que j'aurais aimé qu'on m'apprenne
-          quand j'ai commencé à tester — il y a 15 ans.
+          quand j'ai commencé à tester, il y a 15 ans.
         </p>
         <a
           href="#contact"
@@ -87,23 +87,23 @@ const recommendations = getRecommendationsByFormation('phpunit');
           <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
               <Icon name="mdi:clock-outline" class="w-6 h-6 text-primary" />
-              <span><strong>"On n'a pas le temps"</strong> — La pression pour livrer est trop forte, les tests c'est du luxe</span>
+              <span><strong>"On n'a pas le temps"</strong>. La pression pour livrer est trop forte, les tests c'est du luxe</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:home-variant" class="w-6 h-6 text-primary" />
-              <span><strong>"Le projet est trop legacy"</strong> — Trop de couplage, impossible de tester quoi que ce soit</span>
+              <span><strong>"Le projet est trop legacy"</strong>. Trop de couplage, impossible de tester quoi que ce soit</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
-              <span><strong>"On a déjà testé à la main"</strong> — Pourquoi automatiser ce qui fonctionne ?</span>
+              <span><strong>"On a déjà testé à la main"</strong>. Pourquoi automatiser ce qui fonctionne ?</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:head-question" class="w-6 h-6 text-primary" />
-              <span><strong>"Je ne sais pas quand tester"</strong> — Quand tu y penses, le code est déjà écrit et c'est trop tard</span>
+              <span><strong>"Je ne sais pas quand tester"</strong>. Quand tu y penses, le code est déjà écrit et c'est trop tard</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:turtle" class="w-6 h-6 text-primary" />
-              <span><strong>"Les tests ralentissent le développement"</strong> — Alors qu'ils font gagner du temps dès le début</span>
+              <span><strong>"Les tests ralentissent le développement"</strong>. Alors qu'ils font gagner du temps dès le début</span>
             </li>
           </ul>
         </div>
@@ -403,7 +403,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
           ))}
         </div>
         <div class="text-center mt-8">
-          <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
+          <a href="/recommendations#formations" class="btn-outline">
             Voir toutes les recommandations →
           </a>
         </div>
@@ -477,8 +477,8 @@ const recommendations = getRecommendationsByFormation('phpunit');
       <h2 class="text-2xl font-bold mb-6 text-center">Qui donne cette formation ?</h2>
       <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
-          Je m'appelle Fabien. Je teste depuis le début de ma carrière
-          — et j'ai fait à peu près toutes les erreurs possibles.
+          Je m'appelle Fabien. Je teste depuis le début de ma carrière,
+          et j'ai fait à peu près toutes les erreurs possibles.
         </p>
         <p>
           Cette formation, je la donne depuis 2017. Mais ce qui me motive vraiment,
@@ -528,7 +528,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
         </div>
       </div>
       <p class="text-center mt-8 text-foreground-muted">
-        N'hésite pas à <a href="/contact?subject=formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+        N'hésite pas à <a href="/contact?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </div>
   </section>
@@ -539,7 +539,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
       <Faq items={[
         {
           question: "Quels sont les prérequis pour cette formation ?",
-          answer: "Une bonne connaissance de PHP et de la programmation orientée objet. Pas besoin d'avoir déjà écrit des tests — on part des fondamentaux."
+          answer: "Une bonne connaissance de PHP et de la programmation orientée objet. Pas besoin d'avoir déjà écrit des tests, on part des fondamentaux."
         },
         {
           question: "Quelle est la différence avec un cours PHPUnit en ligne ?",
@@ -573,12 +573,14 @@ const recommendations = getRecommendationsByFormation('phpunit');
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
+            title="Me contacter"
             class="btn-primary text-lg"
           >
             Me contacter →
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
+            title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center gap-2"

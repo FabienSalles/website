@@ -169,7 +169,7 @@ const stats = {
               </span>
               <a
                 href={`/formations/${formation.slug}`}
-                class="inline-block bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
+                class="inline-block bg-primary-cta text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors"
               >
                 Découvrir →
               </a>
@@ -193,7 +193,7 @@ const stats = {
           </footer>
         </blockquote>
         <div class="text-center mt-6">
-          <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
+          <a href="/recommendations#formations" class="btn-outline">
             Voir toutes les recommandations →
           </a>
         </div>
@@ -217,12 +217,14 @@ const stats = {
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact?subject=formation"
+            title="Me contacter pour une formation"
             class="btn-primary text-lg"
           >
             On en discute ?
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
+            title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center gap-2"

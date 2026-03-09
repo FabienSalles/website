@@ -32,9 +32,9 @@ const recommendations = getRecommendationsByFormation('ddd');
           "Ce n'est pas un bug" est une phrase que tu entends régulièrement.<br>
           Les équipes se bloquent mutuellement.
         </p>
-        <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-6">
+        <p class="text-lg text-foreground-heading font-medium max-w-2xl mx-auto mb-6">
           Cette formation ne commence pas par les patterns.
-          Elle commence par les problèmes — parce que c'est là que tout se joue.
+          Elle commence par les problèmes, parce que c'est là que tout se joue.
         </p>
         <div class="flex justify-center mb-8">
           <span class="px-4 py-2 bg-surface-muted text-foreground rounded-full text-sm font-medium">
@@ -66,11 +66,11 @@ const recommendations = getRecommendationsByFormation('ddd');
           <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
               <Icon name="mdi:pasta" class="w-6 h-6 text-primary" />
-              <span>Ton code ressemble à une Big Ball of Mud — tout est couplé à tout</span>
+              <span>Ton code ressemble à une Big Ball of Mud, tout est couplé à tout</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
-              <span>Tu ne sais plus où mettre la logique métier — et elle se retrouve dupliquée</span>
+              <span>Tu ne sais plus où mettre la logique métier et elle se retrouve dupliquée</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:autorenew" class="w-6 h-6 text-primary" />
@@ -82,7 +82,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:book-open-variant" class="w-6 h-6 text-primary" />
-              <span>Personne ne comprend vraiment le domaine — même les devs qui l'ont écrit</span>
+              <span>Personne ne comprend vraiment le domaine, même les devs qui l'ont écrit</span>
             </li>
           </ul>
         </div>
@@ -101,7 +101,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:office-building" class="w-6 h-6 text-primary" />
-              <span>L'architecture est technique, pas métier — on ne voit pas le domaine dans le code</span>
+              <span>L'architecture est technique, pas métier. On ne voit pas le domaine dans le code</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:cash-multiple" class="w-6 h-6 text-primary" />
@@ -155,7 +155,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         <ul class="space-y-2 text-foreground mb-4">
           <li>On commence par les <strong>PROBLÈMES</strong>. Pas par les solutions.</li>
           <li>Tu vas <strong>VIVRE</strong> les situations qui rendent le DDD nécessaire.</li>
-          <li>Tu vas comprendre <strong>POURQUOI</strong> chaque outil existe — et quand <strong>NE PAS</strong> l'utiliser.</li>
+          <li>Tu vas comprendre <strong>POURQUOI</strong> chaque outil existe, et quand <strong>NE PAS</strong> l'utiliser.</li>
         </ul>
         <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-primary">
           <p class="text-foreground-muted text-sm italic">
@@ -233,7 +233,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:mirror" class="w-6 h-6 text-primary" />
-              <span>Tu veux que la complexité métier transparaisse dans le code — et non l'inverse</span>
+              <span>Tu veux que la complexité métier transparaisse dans le code, et non l'inverse</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:handshake" class="w-6 h-6 text-primary" />
@@ -279,7 +279,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         </p>
         <p class="text-foreground mb-2">
           La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier,
-          product owners, et directeurs — tous ceux qui veulent mieux collaborer
+          product owners, et directeurs : tous ceux qui veulent mieux collaborer
           avec les équipes techniques et comprendre les enjeux de découpage.
         </p>
         <p class="text-foreground">
@@ -409,7 +409,7 @@ const recommendations = getRecommendationsByFormation('ddd');
 
           <!-- Jour 4 -->
           <div class="border border-border rounded-lg overflow-hidden mb-6">
-            <div class="bg-primary text-white p-4">
+            <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
               <h4 class="text-xl font-bold">Jour 4 : Building Blocks</h4>
             </div>
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
@@ -436,7 +436,7 @@ const recommendations = getRecommendationsByFormation('ddd');
 
           <!-- Jour 5 -->
           <div class="border border-border rounded-lg overflow-hidden">
-            <div class="bg-primary text-white p-4">
+            <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
               <h4 class="text-xl font-bold">Jour 5 : Architecture et patterns avancés</h4>
             </div>
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
@@ -497,7 +497,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         </div>
       )}
       <div class="text-center mt-8">
-        <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
+        <a href="/recommendations#formations" class="btn-outline">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -551,7 +551,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         </p>
         <p class="font-semibold text-foreground-heading">
           Le DDD n'est pas qu'une affaire de patterns. C'est une façon de penser
-          la construction logicielle — de la stratégie d'entreprise jusqu'à la ligne de code.
+          la construction logicielle, de la stratégie d'entreprise jusqu'à la ligne de code.
         </p>
         <p>
           Mon objectif : que tu repartes en sachant QUAND utiliser le DDD,
@@ -592,7 +592,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         </div>
       </div>
       <p class="text-center mt-8 text-foreground-muted">
-        N'hésite pas à <a href="/contact?subject=formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+        N'hésite pas à <a href="/contact?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </div>
   </section>
@@ -603,7 +603,7 @@ const recommendations = getRecommendationsByFormation('ddd');
       <Faq items={[
         {
           question: "Faut-il être développeur pour suivre cette formation ?",
-          answer: "Non ! La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier, product owners, directeurs — tous ceux qui veulent mieux collaborer avec les équipes techniques. Seule la partie Tactical Design (2 jours) nécessite une bonne maîtrise de la POO."
+          answer: "Non ! La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier, product owners, directeurs : tous ceux qui veulent mieux collaborer avec les équipes techniques. Seule la partie Tactical Design (2 jours) nécessite une bonne maîtrise de la POO."
         },
         {
           question: "Peut-on suivre uniquement la partie Strategic Design ?",
@@ -611,7 +611,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         },
         {
           question: "Le DDD est-il adapté à notre petit projet ?",
-          answer: "Le DDD n'est pas une question de taille de projet. Si tu as de la complexité métier — des règles business non triviales, plusieurs parties prenantes, des contextes qui se chevauchent — le DDD t'aide à clarifier et structurer. On aborde aussi les cas où le DDD n'est <strong>pas</strong> pertinent."
+          answer: "Le DDD n'est pas une question de taille de projet. Si tu as de la complexité métier (des règles business non triviales, plusieurs parties prenantes, des contextes qui se chevauchent), le DDD t'aide à clarifier et structurer. On aborde aussi les cas où le DDD n'est <strong>pas</strong> pertinent."
         },
         {
           question: "Dans quel langage sont les exercices de la partie Tactical ?",
@@ -637,12 +637,14 @@ const recommendations = getRecommendationsByFormation('ddd');
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
+            title="Me contacter"
             class="btn-primary text-lg"
           >
             Me contacter →
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
+            title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center gap-2"
