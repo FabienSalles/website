@@ -116,33 +116,56 @@ const testimonials = [
   <!-- HERO SECTION -->
   <section class="bg-surface">
     <div class="max-w-5xl mx-auto px-4 py-20 md:py-28">
-      <div class="grid md:grid-cols-5 gap-8 items-center">
+      <div class="flex flex-col md:grid md:grid-cols-5 gap-6 md:gap-x-8 md:gap-y-0 md:items-center">
+        <!-- Mobile: 1er bloc — Nom + expertise | Desktop: colonne gauche haut -->
         <div class="md:col-span-3 text-center md:text-left">
           <p class="text-3xl md:text-4xl font-bold mb-2 leading-tight">
             Salut, je suis Fabien.
           </p>
-          <div class="text-primary font-semibold mb-6 flex flex-wrap items-baseline gap-x-2">
+          <div class="text-primary font-semibold md:mb-6 flex flex-wrap justify-center md:justify-start items-baseline gap-x-2">
             <span>15+ ans d'expérience</span>
             <span>·</span>
             <h1 class="inline text-primary font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
           </div>
+        </div>
+
+        <!-- Mobile: 2e bloc — Photo + badges desktop | Desktop: colonne droite -->
+        <div class="md:col-span-2 md:col-start-4 md:row-start-1 md:row-span-2 flex flex-col items-center">
+          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-border-light mb-4">
+            <img
+              class="w-full h-full object-cover"
+              src="/fabiensalles.webp"
+              alt="Fabien Salles"
+              width="1024"
+              height="768"
+            />
+          </div>
+          <div class="hidden md:flex flex-wrap justify-center gap-2">
+            <span class="badge-status">✓ Freelance</span>
+            <span class="badge-status">✓ Disponible</span>
+            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
+          </div>
+        </div>
+
+        <!-- Mobile: 3e bloc — Description + CTAs + tech | Desktop: colonne gauche bas -->
+        <div class="md:col-span-3 text-center md:text-left">
           <p class="text-xl text-foreground-heading font-medium mb-6 leading-relaxed">
             J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="whitespace-nowrap">Pas pour dépanner.</span>
           </p>
           <p class="text-lg text-foreground-muted mb-8 leading-relaxed">
             Je ne viens pas avec une recette magique. Juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
           </p>
-          <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+          <div class="grid grid-cols-2 md:flex gap-4 mb-8">
             <a
               href="/contact"
               title="Me contacter"
-              class="btn-primary"
+              class="btn-primary text-center"
             >
               Discutons de ton besoin
             </a>
             <a
               href="#services"
-              class="btn-outline"
+              class="btn-outline text-center"
             >
               Voir les services
             </a>
@@ -153,21 +176,12 @@ const testimonials = [
             ))}
           </div>
         </div>
-        <div class="md:col-span-2 flex flex-col items-center">
-          <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-border-light mb-4">
-            <img
-              class="w-full h-full object-cover"
-              src="/fabiensalles.webp"
-              alt="Fabien Salles"
-              width="1024"
-              height="768"
-            />
-          </div>
-          <div class="flex flex-wrap justify-center gap-2">
-            <span class="badge-status">✓ Freelance</span>
-            <span class="badge-status">✓ Disponible</span>
-            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
-          </div>
+
+        <!-- Mobile: 4e bloc — Badges (masqués en desktop car déjà sous la photo) -->
+        <div class="md:hidden flex flex-wrap justify-center gap-2">
+          <span class="badge-status">✓ Freelance</span>
+          <span class="badge-status">✓ Disponible</span>
+          <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
         </div>
       </div>
     </div>
@@ -311,7 +325,7 @@ const testimonials = [
               <a
                 href="/audit"
                 title="Auditer votre application"
-                class="btn-primary text-lg"
+                class="btn-primary text-lg w-full md:w-auto text-center"
               >
                 En savoir plus →
               </a>
@@ -419,7 +433,7 @@ const testimonials = [
               <a
                 href="/accompagnement"
                 title="Voir mon accompagnement"
-                class="btn-primary text-lg"
+                class="btn-primary text-lg w-full md:w-auto text-center"
               >
                 En savoir plus →
               </a>
@@ -438,13 +452,13 @@ const testimonials = [
           <!-- Colonne gauche : titre + preuve sociale -->
           <div class="md:col-span-4 md:border-r md:border-border md:pr-8">
             <div class="md:sticky md:top-16">
-              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-4">
                 <span>Former</span>
                 <Icon name="mdi:school" class="w-8 h-8 text-primary" />
               </h3>
 
               <!-- Chiffres clés -->
-              <div class="flex gap-3 mb-6">
+              <div class="flex gap-3 mb-4">
                 <div class="flex-1 p-4 bg-surface rounded-lg border border-border-light">
                   <div class="text-3xl font-bold text-primary">{formationStats.participants}+</div>
                   <div class="text-sm text-foreground-muted">développeurs</div>
@@ -456,8 +470,8 @@ const testimonials = [
               </div>
 
               <!-- Formations -->
-              <div class="mb-6">
-                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formations</p>
+              <div class="mb-4">
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-2">Formations</p>
                 <div class="flex flex-wrap gap-2">
                   <a href="/formations/git" title="Formation Git avancé" class="inline-flex items-center px-3 py-1.5 bg-white rounded-lg border border-border-light text-sm text-foreground hover:border-primary transition-colors"><strong>Git</strong></a>
                   <a href="/formations/phpunit" title="Formation PHPUnit" class="inline-flex items-center px-3 py-1.5 bg-white rounded-lg border border-border-light text-sm text-foreground hover:border-primary transition-colors"><strong>PHPUnit</strong></a>
@@ -466,8 +480,8 @@ const testimonials = [
               </div>
 
               <!-- Logos clients -->
-              <div class="mb-6">
-                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formé pour</p>
+              <div class="mb-4">
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-2">Formé pour</p>
                 <a href="/clients" title="Voir tous les clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
                   <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
                   <img src="/images/clients/orsys.webp" alt="Orsys" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="431" height="151" />
@@ -519,7 +533,7 @@ const testimonials = [
               <a
                 href="/formations"
                 title="Voir toutes les formations"
-                class="btn-primary text-lg"
+                class="btn-primary text-lg w-full md:w-auto text-center"
               >
                 Voir les formations →
               </a>
@@ -607,7 +621,7 @@ const testimonials = [
               <a
                 href="/automatisation"
                 title="Automatiser vos workflows"
-                class="btn-primary text-lg"
+                class="btn-primary text-lg w-full md:w-auto text-center"
               >
                 En savoir plus →
               </a>
@@ -627,7 +641,7 @@ const testimonials = [
           Tu as une mission qui ne te correspond pas ? Je peux peut-être t'aider.<br />
           Et inversement, quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
         </p>
-        <a href="/apport-affaires" title="Faire de l'apport d'affaires" class="btn-outline">
+        <a href="/apport-affaires" title="Faire de l'apport d'affaires" class="btn-outline w-full md:w-auto text-center">
           On en parle →
         </a>
       </div>
@@ -657,7 +671,7 @@ const testimonials = [
         ))}
       </div>
       <div class="text-center mt-8">
-        <a href="/recommendations" title="Voir toutes les recommandations" class="btn-outline">
+        <a href="/recommendations" title="Voir toutes les recommandations" class="btn-outline w-full md:w-auto text-center">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -674,11 +688,11 @@ const testimonials = [
         <p class="text-xl text-foreground-muted mb-8">
           Pas de devis automatique. On échange d'abord pour voir si ça matche.
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
+        <div class="grid grid-cols-2 md:flex md:justify-center gap-4">
           <a
             href="/contact"
             title="Me contacter"
-            class="btn-primary text-lg"
+            class="btn-primary text-lg text-center"
           >
             Prendre contact →
           </a>
@@ -687,7 +701,7 @@ const testimonials = [
             title="Profil LinkedIn de Fabien Salles"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-outline text-lg inline-flex items-center gap-2"
+            class="btn-outline text-lg text-center inline-flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn

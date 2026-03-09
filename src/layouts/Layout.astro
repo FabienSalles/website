@@ -212,41 +212,41 @@ if (!alternateLink) {
         </div>
 
         <!-- Mobile menu -->
-        <ul id="mobile-menu" class="hidden md:hidden flex-col gap-4 pt-4 pb-2">
-          <li><a href="/accompagnement" class={`block py-2 ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Accompagnement</a></li>
-          <li><a href="/audit" class={`block py-2 ${isActive('/audit') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Audit</a></li>
+        <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 pt-4 pb-2">
+          <li><a href="/accompagnement" class={`block py-2 px-3 rounded-lg ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Accompagnement</a></li>
+          <li><a href="/audit" class={`block py-2 px-3 rounded-lg ${isActive('/audit') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Audit</a></li>
           {
             trainingEnabled &&
             <li>
-              <a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 ${isActive('/formations') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a>
-              <ul class="pl-4 flex flex-col gap-2 mt-1">
-                <li><a href="/formations/git" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>Git</a></li>
-                <li><a href="/formations/phpunit" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>PHPUnit</a></li>
-                <li><a href="/formations/ddd" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>DDD</a></li>
+              <a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 px-3 rounded-lg ${isActive('/formations') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a>
+              <ul class="pl-4 flex flex-col gap-1 mt-1">
+                <li><a href="/formations/git" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/git') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>Git</a></li>
+                <li><a href="/formations/phpunit" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/phpunit') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>PHPUnit</a></li>
+                <li><a href="/formations/ddd" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/ddd') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>DDD</a></li>
               </ul>
             </li>
           }
-          <li><a href="/automatisation" class={`block py-2 ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Automatisation</a></li>
-          <li><a href="/apport-affaires" class={`block py-2 ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Apport d'affaires</a></li>
-          <li><a href={generateUrl('/blog')} class={`block py-2 ${isActive('/blog') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Blog</a></li>
+          <li><a href="/automatisation" class={`block py-2 px-3 rounded-lg ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Automatisation</a></li>
+          <li><a href="/apport-affaires" class={`block py-2 px-3 rounded-lg ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Apport d'affaires</a></li>
+          <li><a href={generateUrl('/blog')} class={`block py-2 px-3 rounded-lg ${isActive('/blog') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Blog</a></li>
           {
             cvEnabled &&
-            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 ${isActive('/cv') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 px-3 rounded-lg ${isActive('/cv') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
           }
           {
             aboutEnabled &&
-            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 ${isActive('/about') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 px-3 rounded-lg ${isActive('/about') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
           }
           {
             contactEnabled &&
-            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 ${isActive('/contact') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Contact</a></li>
+            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 px-3 rounded-lg ${isActive('/contact') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Contact</a></li>
           }
           {
             translationEnabled &&
               <li>
                 <a
                   href={isEnglishPath ? '/' : '/en'}
-                  class="block lang-switch py-2"
+                  class="block lang-switch py-2 px-3"
                   data-astro-reload
                 >
                   {isEnglishPath ? 'FR' : 'EN'}
@@ -428,6 +428,19 @@ if (!alternateLink) {
   .nav-link-active::after {
     content: '';
     @apply absolute left-0 -bottom-2 w-full h-0.5 bg-foreground-heading;
+  }
+
+  /* Mobile: fond pleine largeur au lieu du underline */
+  @media (max-width: 767px) {
+    .nav-link-active {
+      @apply bg-surface-muted rounded-lg;
+    }
+    .nav-link-active::after {
+      @apply hidden;
+    }
+    .nav-link-sub-active {
+      @apply bg-surface-muted rounded-lg;
+    }
   }
 
   /* Language switch */
