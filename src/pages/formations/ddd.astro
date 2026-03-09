@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Faq from '../../components/Faq.astro';
+import { Icon } from 'astro-icon/components';
 import { getRecommendationsByFormation } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à DDD (sera vide si pas encore de recommandations)
@@ -12,96 +13,102 @@ const recommendations = getRecommendationsByFormation('ddd');
   title="Formation DDD | Collaborative Modeling + Strategic Design + Tactical Patterns | PHP"
   description="Formation DDD par Fabien Salles : Strategic Design (3j, ouvert non-devs) + Tactical Design (2j, PHP). Event Storming, Wardley Mapping, Context Mapping, Bounded Contexts, Aggregates. Expert craft 15+ ans."
 >
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'DDD' }]} />
+  </div>
 
-    <!-- HERO SECTION -->
-    <section class="text-center py-16 mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Arrête de subir ton organisation.<br>
-        <span class="text-orange-700">Aligne-la avec tes besoins.</span>
-      </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-        Tu travailles dur. Mais tu as l'impression de ne pas avancer.<br>
-        Tu développes des features sans en comprendre l'intérêt.<br>
-        Produit et tech ont du mal à se comprendre.<br>
-        "Ce n'est pas un bug" est une phrase que tu entends régulièrement.<br>
-        Les équipes se bloquent mutuellement.
-      </p>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-6">
-        Cette formation ne commence pas par les patterns.
-        Elle commence par les problèmes — parce que c'est là que tout se joue.
-      </p>
-      <div class="flex justify-center mb-8">
-        <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">
-          Ouvert aux non-développeurs (Strategic Design)
-        </span>
+  <!-- HERO SECTION (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Arrête de subir ton organisation.<br>
+          <span class="text-primary">Aligne-la avec tes besoins.</span>
+        </h1>
+        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+          Tu travailles dur. Mais tu as l'impression de ne pas avancer.<br>
+          Tu développes des features sans en comprendre l'intérêt.<br>
+          Produit et tech ont du mal à se comprendre.<br>
+          "Ce n'est pas un bug" est une phrase que tu entends régulièrement.<br>
+          Les équipes se bloquent mutuellement.
+        </p>
+        <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-6">
+          Cette formation ne commence pas par les patterns.
+          Elle commence par les problèmes — parce que c'est là que tout se joue.
+        </p>
+        <div class="flex justify-center mb-8">
+          <span class="px-4 py-2 bg-surface-muted text-foreground rounded-full text-sm font-medium">
+            Ouvert aux non-développeurs (Strategic Design)
+          </span>
+        </div>
+        <a
+          href="#contact"
+          class="btn-primary text-lg"
+        >
+          On en discute ?
+        </a>
       </div>
-      <a
-        href="#contact"
-        class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
-      >
-        On en discute ?
-      </a>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION DOULEUR -->
-    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-4 text-center text-white">Soyons honnêtes...</h2>
-      <p class="text-xl text-orange-100 text-center mb-12">
+  <!-- SECTION DOULEUR (bg-white) -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center text-foreground-heading">Soyons honnêtes...</h2>
+      <p class="text-xl text-foreground-muted text-center mb-12">
         Le code métier, c'est souvent le chaos.
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Bloc 1 - Dans ton code... -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Dans ton code...</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🍝</span>
+              <Icon name="mdi:pasta" class="w-6 h-6 text-primary" />
               <span>Ton code ressemble à une Big Ball of Mud — tout est couplé à tout</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤷</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Tu ne sais plus où mettre la logique métier — et elle se retrouve dupliquée</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔄</span>
+              <Icon name="mdi:autorenew" class="w-6 h-6 text-primary" />
               <span>Chaque nouvelle feature impacte l'existant et crée des effets de bord</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🐛</span>
+              <Icon name="mdi:bug" class="w-6 h-6 text-primary" />
               <span>Les bugs métier sont difficiles à reproduire et à corriger</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📚</span>
+              <Icon name="mdi:book-open-variant" class="w-6 h-6 text-primary" />
               <span>Personne ne comprend vraiment le domaine — même les devs qui l'ont écrit</span>
             </li>
           </ul>
         </div>
 
         <!-- Bloc 2 - Dans ton équipe... -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Dans ton équipe...</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🗣️</span>
+              <Icon name="mdi:account-voice" class="w-6 h-6 text-primary" />
               <span>Les devs et experts métiers ne se comprennent pas et finissent par être opposés au lieu de coconstruire, ensemble, les solutions</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎯</span>
+              <Icon name="mdi:crosshairs-gps" class="w-6 h-6 text-primary" />
               <span>On développe des features... mais est-ce vraiment ce dont le business a besoin ?</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🏗️</span>
+              <Icon name="mdi:office-building" class="w-6 h-6 text-primary" />
               <span>L'architecture est technique, pas métier — on ne voit pas le domaine dans le code</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">💸</span>
+              <Icon name="mdi:cash-multiple" class="w-6 h-6 text-primary" />
               <span>On a l'impression de ne pas avancer et de ne pas produire de la valeur</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔥</span>
+              <Icon name="mdi:fire" class="w-6 h-6 text-primary" />
               <span>On a une grosse inertie organisationnelle, que ce soit dans l'équipe ou avec les autres dont on dépend</span>
             </li>
           </ul>
@@ -109,183 +116,203 @@ const recommendations = getRecommendationsByFormation('ddd');
       </div>
 
       <div class="mt-12 text-center max-w-3xl mx-auto">
-        <p class="text-lg text-orange-100 mb-4">
+        <p class="text-lg text-foreground-muted mb-4">
           Ce n'est pas un problème de compétence technique.
           C'est un problème de méthode, de communication et d'alignement.
         </p>
-        <p class="text-xl font-semibold mb-6 text-white">
+        <p class="text-xl font-semibold mb-6 text-foreground-heading">
           Le DDD existe pour ça : remettre le métier au centre,
           et donner toutes les cartes en mains aux développeurs
           afin qu'ils puissent produire de la valeur et s'investir au bon endroit.
         </p>
         <a
           href="#programme"
-          class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-900 transition-colors"
+          class="btn-outline"
         >
           Ça te parle ? Voir le programme ↓
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION DIFFÉRENCIATION -->
-    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-2xl font-bold mb-6">⚠️ Ce n'est pas une formation théorique de plus</h2>
-      <div class="prose prose-lg max-w-none">
-        <p class="text-gray-700">
+  <!-- SECTION DIFFÉRENCIATION (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center"><Icon name="mdi:alert" class="w-7 h-7 text-primary inline" /> Ce n'est pas une formation théorique de plus</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto">
+        <p class="text-foreground">
           La plupart des formations DDD te bombardent de patterns :
           Aggregates, Value Objects, Bounded Contexts...
         </p>
-        <p class="text-gray-700">
+        <p class="text-foreground">
           Tu arriveras à t'en servir mais est-ce que ce sera au bon endroit ?
           As-tu vraiment besoin de ces patterns sur cette brique applicative ?
           Comment contribuer à créer un avantage différenciant pour ton entreprise ?
         </p>
-        <p class="text-gray-900 font-semibold text-xl mt-6">
+        <p class="text-foreground-heading font-semibold text-xl mt-6">
           Cette formation est différente.
         </p>
-        <ul class="space-y-2 text-gray-700 mb-4">
+        <ul class="space-y-2 text-foreground mb-4">
           <li>On commence par les <strong>PROBLÈMES</strong>. Pas par les solutions.</li>
           <li>Tu vas <strong>VIVRE</strong> les situations qui rendent le DDD nécessaire.</li>
           <li>Tu vas comprendre <strong>POURQUOI</strong> chaque outil existe — et quand <strong>NE PAS</strong> l'utiliser.</li>
         </ul>
-        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
-          <p class="text-gray-600 text-sm italic">
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-primary">
+          <p class="text-foreground-muted text-sm italic">
             Ce que j'aime dans cette formation : lorsque quelqu'un ne fait pas
             juste qu'appliquer bêtement un pattern mais arrive à en comprendre sa raison d'être.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION BÉNÉFICES -->
-    <section class="mb-28">
+  <!-- SECTION BÉNÉFICES (bg-white) -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Une vraie compréhension du DDD, pas juste des patterns</h3>
-          <p class="text-gray-600">Tu sais POURQUOI chaque outil existe et QUAND l'utiliser</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une vraie compréhension du DDD, pas juste des patterns
+          </h3>
+          <p class="text-foreground-muted">Tu sais POURQUOI chaque outil existe et QUAND l'utiliser</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Des techniques pour collaborer avec les experts métier</h3>
-          <p class="text-gray-600">Event Storming, Example Mapping, Impact Mapping</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Des techniques pour collaborer avec les experts métier
+          </h3>
+          <p class="text-foreground-muted">Event Storming, Example Mapping, Impact Mapping</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">La capacité à découper ton système en contextes cohérents</h3>
-          <p class="text-gray-600">Fini le monolithe où tout est mélangé</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            La capacité à découper ton système en contextes cohérents
+          </h3>
+          <p class="text-foreground-muted">Fini le monolithe où tout est mélangé</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Les frontières des équipes et l'impact du pouvoir</h3>
-          <p class="text-gray-600">Context Mapping, Wardley Mapping</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Les frontières des équipes et l'impact du pouvoir
+          </h3>
+          <p class="text-foreground-muted">Context Mapping, Wardley Mapping</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Un code qui parle le langage du métier</h3>
-          <p class="text-gray-600">Entities, Value Objects, Aggregates, Domain Events</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Un code qui parle le langage du métier
+          </h3>
+          <p class="text-foreground-muted">Entities, Value Objects, Aggregates, Domain Events</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Une architecture qui protège ton domaine</h3>
-          <p class="text-gray-600">Hexagonal Architecture, Anti-Corruption Layer</p>
+        <div class="bg-surface p-6 rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une architecture qui protège ton domaine
+          </h3>
+          <p class="text-foreground-muted">Hexagonal Architecture, Anti-Corruption Layer</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION POUR QUI -->
-    <section class="mb-28 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-12 text-center text-white">Cette formation est pour toi si...</h2>
+  <!-- SECTION POUR QUI (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-foreground-heading">Cette formation est pour toi si...</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-white p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Tu veux aligner produit et technique :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎯</span>
+              <Icon name="mdi:crosshairs-gps" class="w-6 h-6 text-primary" />
               <span>Tu veux répondre aux causes, pas aux symptômes</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🪞</span>
+              <Icon name="mdi:mirror" class="w-6 h-6 text-primary" />
               <span>Tu veux que la complexité métier transparaisse dans le code — et non l'inverse</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤝</span>
+              <Icon name="mdi:handshake" class="w-6 h-6 text-primary" />
               <span>Tu veux coconstruire des solutions avec le métier, pas juste exécuter des specs</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">⚖️</span>
+              <Icon name="mdi:scale-balance" class="w-6 h-6 text-primary" />
               <span>Tu veux investir ton énergie au bon endroit, là où ça compte vraiment</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🧭</span>
+              <Icon name="mdi:compass" class="w-6 h-6 text-primary" />
               <span>Tu veux des solutions durables, pas des rustines qui s'accumulent</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-white p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Tu veux aller plus loin :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📖</span>
+              <Icon name="mdi:book-open-page-variant" class="w-6 h-6 text-primary" />
               <span>Tu as lu des articles sur le DDD mais tu ne sais pas par où commencer</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎯</span>
+              <Icon name="mdi:crosshairs-gps" class="w-6 h-6 text-primary" />
               <span>Tu veux comprendre quand le DDD est pertinent (et quand il ne l'est pas)</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔄</span>
+              <Icon name="mdi:autorenew" class="w-6 h-6 text-primary" />
               <span>Tu travailles sur du legacy et tu veux le moderniser progressivement</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🧠</span>
+              <Icon name="mdi:brain" class="w-6 h-6 text-primary" />
               <span>Tu en as marre d'appliquer des patterns sans comprendre le "pourquoi"</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-10 p-6 bg-white rounded-xl shadow-lg">
-        <p class="text-lg font-semibold mb-4 text-gray-800">
+      <div class="mt-10 p-6 bg-white rounded-xl border border-border-light">
+        <p class="text-lg font-semibold mb-4 text-foreground-heading">
           Cette formation n'est PAS réservée aux développeurs !
         </p>
-        <p class="text-gray-700 mb-2">
+        <p class="text-foreground mb-2">
           La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier,
           product owners, et directeurs — tous ceux qui veulent mieux collaborer
           avec les équipes techniques et comprendre les enjeux de découpage.
         </p>
-        <p class="text-gray-700">
+        <p class="text-foreground">
           La partie <strong>Tactical Design (2 jours)</strong> s'adresse aux développeurs
           qui veulent implémenter les patterns dans le code.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION PROGRAMME -->
-    <section id="programme" class="mb-28 scroll-mt-24">
+  <!-- SECTION PROGRAMME (bg-white) -->
+  <section id="programme" class="bg-white py-16 scroll-mt-24">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-8 text-center">Programme détaillé</h2>
 
       <div class="grid md:grid-cols-3 gap-4 mb-10 text-center">
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Durée</div>
-          <div class="text-gray-600">3 à 5 jours selon le format</div>
+          <div class="text-foreground-muted">3 à 5 jours selon le format</div>
         </div>
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Format</div>
-          <div class="text-gray-600">Théorie + ateliers collaboratifs + coding</div>
+          <div class="text-foreground-muted">Théorie + ateliers collaboratifs + coding</div>
         </div>
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Prérequis Tactical</div>
-          <div class="text-gray-600">Bonne maîtrise de la POO</div>
+          <div class="text-foreground-muted">Bonne maîtrise de la POO</div>
         </div>
       </div>
 
-      <div class="mb-6 p-4 bg-orange-50 border border-orange-200 rounded-lg">
-        <p class="text-gray-700">
-          <strong>📌 Deux formats possibles :</strong><br>
+      <div class="mb-6 p-4 bg-surface border border-border-light rounded-lg">
+        <p class="text-foreground">
+          <strong><Icon name="mdi:pin" class="w-5 h-5 text-primary inline" /> Deux formats possibles :</strong><br>
           • <strong>Strategic Design seul (3 jours)</strong> : ouvert à tous (devs, experts métier, PO, directeurs)<br>
           • <strong>Formation complète (5 jours)</strong> : inclut la partie Tactical Design pour les développeurs
         </p>
@@ -294,17 +321,17 @@ const recommendations = getRecommendationsByFormation('ddd');
       <div class="space-y-8">
         <!-- PARTIE 1 : STRATEGIC DESIGN -->
         <div class="mb-12">
-          <h3 class="text-2xl font-bold mb-6 text-orange-700">PARTIE 1 : STRATEGIC DESIGN (3 jours)</h3>
+          <h3 class="text-2xl font-bold mb-6 text-primary">PARTIE 1 : STRATEGIC DESIGN (3 jours)</h3>
 
           <!-- Jour 1 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-            <div class="bg-orange-900 text-white p-4">
+          <div class="border border-border rounded-lg overflow-hidden mb-6">
+            <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
               <h4 class="text-xl font-bold">Jour 1 : Comprendre les enjeux</h4>
             </div>
-            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">MATIN — Pourquoi le DDD ?</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">MATIN — Pourquoi le DDD ?</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Les challenges de la création logicielle</li>
                   <li>• Big Ball of Mud : comprendre comment on en arrive là</li>
                   <li>• Complexité accidentelle vs complexité essentielle</li>
@@ -313,8 +340,8 @@ const recommendations = getRecommendationsByFormation('ddd');
                 </ul>
               </div>
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Domaine et modélisation</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Domaine et modélisation</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Domaine vs Modèle : l'analogie de la carte</li>
                   <li>• Sous-domaines : Core, Supporting, Generic</li>
                   <li>• Où investir son énergie ?</li>
@@ -326,22 +353,22 @@ const recommendations = getRecommendationsByFormation('ddd');
           </div>
 
           <!-- Jour 2 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-            <div class="bg-orange-900 text-white p-4">
+          <div class="border border-border rounded-lg overflow-hidden mb-6">
+            <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
               <h4 class="text-xl font-bold">Jour 2 : Collaborative Modeling</h4>
             </div>
-            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">MATIN — Faire émerger la connaissance</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">MATIN — Faire émerger la connaissance</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Knowledge Crunching : extraire le savoir des experts</li>
                   <li>• Les dynamiques sociales (biais, auto-censure, hiérarchie)</li>
                   <li>• Impact Mapping : relier features et objectifs business</li>
                 </ul>
               </div>
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Event Storming</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Event Storming</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Event Storming : découvrir les événements métier</li>
                   <li>• De la timeline aux Bounded Contexts</li>
                   <li>• Example Mapping : clarifier les règles par des exemples</li>
@@ -351,22 +378,22 @@ const recommendations = getRecommendationsByFormation('ddd');
           </div>
 
           <!-- Jour 3 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <div class="bg-orange-900 text-white p-4">
+          <div class="border border-border rounded-lg overflow-hidden">
+            <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
               <h4 class="text-xl font-bold">Jour 3 : Strategic Patterns</h4>
             </div>
-            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">MATIN — Découper le système</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">MATIN — Découper le système</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Bounded Contexts : les frontières du modèle</li>
                   <li>• Context Mapping : cartographier les relations</li>
                   <li>• Patterns d'intégration : Partnership, Customer/Supplier, ACL...</li>
                 </ul>
               </div>
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Organiser et prioriser</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Organiser et prioriser</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Aller plus loin avec le Core Domain Chart et Wardley Mapping</li>
                   <li>• Aligner les équipes sur les contextes</li>
                   <li>• Stratégies d'allocation des ressources</li>
@@ -378,17 +405,17 @@ const recommendations = getRecommendationsByFormation('ddd');
 
         <!-- PARTIE 2 : TACTICAL DESIGN -->
         <div>
-          <h3 class="text-2xl font-bold mb-6 text-orange-700">PARTIE 2 : TACTICAL DESIGN (2 jours)</h3>
+          <h3 class="text-2xl font-bold mb-6 text-primary">PARTIE 2 : TACTICAL DESIGN (2 jours)</h3>
 
           <!-- Jour 4 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden mb-6">
-            <div class="bg-orange-700 text-white p-4">
+          <div class="border border-border rounded-lg overflow-hidden mb-6">
+            <div class="bg-primary text-white p-4">
               <h4 class="text-xl font-bold">Jour 4 : Building Blocks</h4>
             </div>
-            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">MATIN — Modéliser le domaine</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">MATIN — Modéliser le domaine</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Du modèle au code : transformer les concepts en objets</li>
                   <li>• Value Objects : immuabilité et égalité par valeur</li>
                   <li>• Entities : identité et cycle de vie</li>
@@ -396,8 +423,8 @@ const recommendations = getRecommendationsByFormation('ddd');
                 </ul>
               </div>
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Services et événements</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Services et événements</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Domain Services : logique métier sans état</li>
                   <li>• Specifications : encapsuler les règles métier</li>
                   <li>• Domain Events : communiquer ce qui s'est passé</li>
@@ -408,22 +435,22 @@ const recommendations = getRecommendationsByFormation('ddd');
           </div>
 
           <!-- Jour 5 -->
-          <div class="border border-gray-200 rounded-lg overflow-hidden">
-            <div class="bg-orange-700 text-white p-4">
+          <div class="border border-border rounded-lg overflow-hidden">
+            <div class="bg-primary text-white p-4">
               <h4 class="text-xl font-bold">Jour 5 : Architecture et patterns avancés</h4>
             </div>
-            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+            <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">MATIN — Protéger le domaine</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">MATIN — Protéger le domaine</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Architecture Hexagonale : Ports & Adapters</li>
                   <li>• Anti-Corruption Layer : se protéger des contextes externes</li>
                   <li>• Supple Design : 7 patterns pour un code qui évolue</li>
                 </ul>
               </div>
               <div class="p-6">
-                <h5 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Aller plus loin</h5>
-                <ul class="space-y-2 text-gray-700">
+                <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Aller plus loin</h5>
+                <ul class="space-y-2 text-foreground">
                   <li>• Stratégies de modernisation du legacy</li>
                   <li>• Les 5 pièges courants du DDD</li>
                 </ul>
@@ -432,46 +459,56 @@ const recommendations = getRecommendationsByFormation('ddd');
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- MINI-CTA APRÈS PROGRAMME -->
-    <section class="mb-16 text-center">
-      <p class="text-lg text-gray-600 mb-4">Ce programme te parle ?</p>
-      <a
-        href="#contact"
-        class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
-      >
-        Discutons-en →
-      </a>
-    </section>
+  <!-- MINI-CTA APRÈS PROGRAMME (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <p class="text-lg text-foreground-muted mb-4">Ce programme te parle ?</p>
+        <a
+          href="#contact"
+          class="btn-primary"
+        >
+          Discutons-en →
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- SECTION RECOMMANDATIONS -->
-    <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+  <!-- SECTION RECOMMANDATIONS (bg-white) -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8 text-center">Ce qu'ils en disent</h2>
       {recommendations.length > 0 && (
         <div class="grid md:grid-cols-3 gap-6">
           {recommendations.slice(0, 6).map(reco => (
-            <blockquote class="bg-white p-6 rounded-lg shadow-sm">
-              <div class="flex gap-1 mb-3 text-yellow-400">
-                {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
+            <blockquote class="bg-surface p-6 rounded-lg border border-border-light">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-foreground-heading font-semibold">{reco.name}</span>
+                <div class="flex gap-1 text-yellow-400">
+                  {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
+                </div>
               </div>
-              <p class="text-gray-700 mb-4">"{reco.recommendation}"</p>
-              <footer class="text-gray-900 font-semibold">{reco.name}</footer>
+              <p class="text-foreground">"{reco.recommendation}"</p>
             </blockquote>
           ))}
         </div>
       )}
       <div class="text-center mt-8">
-        <a href="/recommendations#formations" class="text-orange-700 font-semibold hover:text-orange-800">
+        <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
           Voir toutes les recommandations →
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION APPROCHE PÉDAGOGIQUE -->
-    <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-2xl font-bold mb-6">Une approche immersive</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
+  <!-- SECTION APPROCHE PÉDAGOGIQUE (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Une approche immersive</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           Cette formation ne ressemble pas aux autres.
         </p>
@@ -491,17 +528,19 @@ const recommendations = getRecommendationsByFormation('ddd');
           Je peux également m'appuyer sur ton contexte et les problématiques
           que tu rencontres au quotidien pour rendre la formation encore plus concrète.
         </p>
-        <p class="font-semibold text-gray-900">
+        <p class="font-semibold text-foreground-heading">
           À la fin, tu ne connaîtras pas juste les outils.
           Tu sauras QUAND et POURQUOI les utiliser.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION FORMATEUR -->
-    <section class="mb-28">
-      <h2 class="text-2xl font-bold mb-6">Qui donne cette formation ?</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
+  <!-- SECTION FORMATEUR (bg-white) -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Qui donne cette formation ?</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           Je m'appelle Fabien. Je pratique le Domain-Driven Design depuis plus de 12 ans.
         </p>
@@ -510,7 +549,7 @@ const recommendations = getRecommendationsByFormation('ddd');
           sans cesse les mêmes erreurs : des refontes qui menaient à d'autres refontes,
           des solutions techniques déconnectées des vrais besoins.
         </p>
-        <p class="font-semibold text-gray-900">
+        <p class="font-semibold text-foreground-heading">
           Le DDD n'est pas qu'une affaire de patterns. C'est une façon de penser
           la construction logicielle — de la stratégie d'entreprise jusqu'à la ligne de code.
         </p>
@@ -519,94 +558,100 @@ const recommendations = getRecommendationsByFormation('ddd');
           pas juste COMMENT appliquer les patterns.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION MODALITÉS -->
-    <section class="mb-28">
-      <h2 class="text-2xl font-bold mb-8">Comment se déroule la formation ?</h2>
+  <!-- SECTION MODALITÉS (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">Comment se déroule la formation ?</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">🏢</div>
+        <div class="bg-white p-6 rounded-lg border border-border-light text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:office-building" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Intra-entreprise</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Je me déplace dans tes locaux pour former ton équipe.
             Idéal pour créer une culture DDD commune.
           </p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">💻</div>
+        <div class="bg-white p-6 rounded-lg border border-border-light text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:laptop" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">À distance</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Formation en visioconférence avec les mêmes ateliers collaboratifs.
             Parfait pour les équipes distribuées.
           </p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">🎯</div>
+        <div class="bg-white p-6 rounded-lg border border-border-light text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:crosshairs-gps" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Sur mesure</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Je peux adapter le contenu à ton contexte spécifique,
             ton domaine métier ou tes problématiques.
           </p>
         </div>
       </div>
-      <p class="text-center mt-8 text-gray-600">
-        N'hésite pas à <a href="/contact" class="text-orange-700 hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+      <p class="text-center mt-8 text-foreground-muted">
+        N'hésite pas à <a href="/contact?subject=formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <Faq items={[
-      {
-        question: "Faut-il être développeur pour suivre cette formation ?",
-        answer: "Non ! La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier, product owners, directeurs — tous ceux qui veulent mieux collaborer avec les équipes techniques. Seule la partie Tactical Design (2 jours) nécessite une bonne maîtrise de la POO."
-      },
-      {
-        question: "Peut-on suivre uniquement la partie Strategic Design ?",
-        answer: "Oui, c'est même recommandé si ton objectif est d'améliorer la collaboration entre équipes tech et métier. Le Strategic Design (3 jours) se suffit à lui-même et apporte une valeur immédiate."
-      },
-      {
-        question: "Le DDD est-il adapté à notre petit projet ?",
-        answer: "Le DDD n'est pas une question de taille de projet. Si tu as de la complexité métier — des règles business non triviales, plusieurs parties prenantes, des contextes qui se chevauchent — le DDD t'aide à clarifier et structurer. On aborde aussi les cas où le DDD n'est <strong>pas</strong> pertinent."
-      },
-      {
-        question: "Dans quel langage sont les exercices de la partie Tactical ?",
-        answer: "Les exercices sont en PHP, mais les concepts sont agnostiques. Les patterns (Value Objects, Aggregates, Domain Events...) s'appliquent à n'importe quel langage orienté objet."
-      },
-      {
-        question: "La formation peut-elle être adaptée à notre contexte ?",
-        answer: "Absolument. Je peux m'appuyer sur ton domaine métier et tes problématiques réelles pour rendre les ateliers encore plus concrets. C'est l'avantage du format intra-entreprise."
-      }
-    ]} />
+  <!-- FAQ (bg-white) -->
+  <div class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <Faq items={[
+        {
+          question: "Faut-il être développeur pour suivre cette formation ?",
+          answer: "Non ! La partie <strong>Strategic Design (3 jours)</strong> est accessible aux experts métier, product owners, directeurs — tous ceux qui veulent mieux collaborer avec les équipes techniques. Seule la partie Tactical Design (2 jours) nécessite une bonne maîtrise de la POO."
+        },
+        {
+          question: "Peut-on suivre uniquement la partie Strategic Design ?",
+          answer: "Oui, c'est même recommandé si ton objectif est d'améliorer la collaboration entre équipes tech et métier. Le Strategic Design (3 jours) se suffit à lui-même et apporte une valeur immédiate."
+        },
+        {
+          question: "Le DDD est-il adapté à notre petit projet ?",
+          answer: "Le DDD n'est pas une question de taille de projet. Si tu as de la complexité métier — des règles business non triviales, plusieurs parties prenantes, des contextes qui se chevauchent — le DDD t'aide à clarifier et structurer. On aborde aussi les cas où le DDD n'est <strong>pas</strong> pertinent."
+        },
+        {
+          question: "Dans quel langage sont les exercices de la partie Tactical ?",
+          answer: "Les exercices sont en PHP, mais les concepts sont agnostiques. Les patterns (Value Objects, Aggregates, Domain Events...) s'appliquent à n'importe quel langage orienté objet."
+        },
+        {
+          question: "La formation peut-elle être adaptée à notre contexte ?",
+          answer: "Absolument. Je peux m'appuyer sur ton domaine métier et tes problématiques réelles pour rendre les ateliers encore plus concrets. C'est l'avantage du format intra-entreprise."
+        }
+      ]} />
+    </div>
+  </div>
 
-    <!-- SECTION CTA FINALE -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto text-center text-white">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Envie d'en discuter ?</h2>
-          <p class="text-xl text-orange-100 mb-8">
-            Pas de formulaire automatique. On échange d'abord pour voir
-            si la formation correspond à tes besoins.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="/contact"
-              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
-            >
-              Me contacter →
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fabiensalles/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
-            >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
+  <!-- SECTION CTA FINALE (cream) -->
+  <section id="contact" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground-heading">Envie d'en discuter ?</h2>
+        <p class="text-xl text-foreground-muted mb-8">
+          Pas de formulaire automatique. On échange d'abord pour voir
+          si la formation correspond à tes besoins.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/contact"
+            class="btn-primary text-lg"
+          >
+            Me contacter →
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline text-lg inline-flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>

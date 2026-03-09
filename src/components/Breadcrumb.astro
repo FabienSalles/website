@@ -28,17 +28,17 @@ const jsonLd = {
   <ol class="flex items-center space-x-2 text-sm">
     {items.map((item, index) => (
       <li class="flex items-center">
-        {index > 0 && <span class="mx-2 text-gray-400">/</span>}
+        {index > 0 && <span class="mx-2 text-foreground-muted">/</span>}
         {item.href ? (
           <a
             href={item.href}
             title={item.label}
-            class="text-orange-700 hover:text-orange-800 transition-colors"
+            class="text-primary hover:text-primary-hover transition-colors"
           >
             {item.label}
           </a>
         ) : (
-          <span class="text-gray-600">{item.label}</span>
+          <span class="text-foreground-muted">{item.label}</span>
         )}
       </li>
     ))}

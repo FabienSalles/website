@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Faq from '../../components/Faq.astro';
+import { Icon } from 'astro-icon/components';
 import { getRecommendationsByFormation } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à PHPUnit
@@ -12,90 +13,96 @@ const recommendations = getRecommendationsByFormation('phpunit');
   title="Formation PHPUnit | Tests Legacy + TDD + Mocking + bonnes pratiques"
   description="Formation PHPUnit par Fabien Salles : tests rapides, maintenables, rentables. Tests Legacy (Golden Master), TDD, Test Doubles. 2 jours, 70% pratique."
 >
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'PHPUnit' }]} />
+  </div>
 
-    <!-- HERO SECTION -->
-    <section class="text-center py-16 mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Arrête de subir tes tests.<br>
-        <span class="text-orange-700">Fais-en des alliés.</span>
-      </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-        Des tests qui accélèrent ton développement au lieu de le freiner.<br>
-        En 2 jours, maîtrise PHPUnit et les techniques qui transforment
-        tes tests en investissement rentable.
-      </p>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
-        Cette formation, c'est tout ce que j'aurais aimé qu'on m'apprenne
-        quand j'ai commencé à tester — il y a 15 ans.
-      </p>
-      <a
-        href="#contact"
-        class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
-      >
-        On en discute ?
-      </a>
-    </section>
+  <!-- 1. HERO SECTION — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Arrête de subir tes tests.<br>
+          <span class="text-primary">Fais-en des alliés.</span>
+        </h1>
+        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+          Des tests qui accélèrent ton développement au lieu de le freiner.<br>
+          En 2 jours, maîtrise PHPUnit et les techniques qui transforment
+          tes tests en investissement rentable.
+        </p>
+        <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-8">
+          Cette formation, c'est tout ce que j'aurais aimé qu'on m'apprenne
+          quand j'ai commencé à tester — il y a 15 ans.
+        </p>
+        <a
+          href="#contact"
+          class="btn-primary text-lg"
+        >
+          On en discute ?
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- SECTION DOULEUR -->
-    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-4 text-center text-white">Soyons honnêtes...</h2>
-      <p class="text-xl text-orange-100 text-center mb-12">
+  <!-- 2. SECTION DOULEUR — bg-white -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center text-foreground-heading">Soyons honnêtes...</h2>
+      <p class="text-xl text-foreground-muted text-center mb-12">
         Peut-être que tes tests te font perdre du temps.<br>
         Ou peut-être que tu n'en écris pas du tout.
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Bloc 1 - Ceux qui testent -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Si tu as des tests, tu connais peut-être ça :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔴</span>
+              <Icon name="mdi:cancel" class="w-6 h-6 text-primary" />
               <span>Ils cassent à chaque refactoring, même quand tu ne touches pas au comportement</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">⏳</span>
+              <Icon name="mdi:timer-sand" class="w-6 h-6 text-primary" />
               <span>Ta suite de tests prend tellement de temps que tu évites de la lancer</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📖</span>
+              <Icon name="mdi:book-open-page-variant" class="w-6 h-6 text-primary" />
               <span>Relire un test écrit il y a 3 mois te demande autant d'effort que le debug lui-même</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎰</span>
+              <Icon name="mdi:dice-multiple" class="w-6 h-6 text-primary" />
               <span>Certains tests échouent aléatoirement, sans raison apparente</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤨</span>
+              <Icon name="mdi:head-question" class="w-6 h-6 text-primary" />
               <span>Tu te demandes si tout ce temps passé à tester en vaut vraiment la peine</span>
             </li>
           </ul>
         </div>
 
         <!-- Bloc 2 - Ceux qui ne testent pas -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Et si tu ne testes pas, c'est peut-être parce que :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">⏰</span>
+              <Icon name="mdi:clock-outline" class="w-6 h-6 text-primary" />
               <span><strong>"On n'a pas le temps"</strong> — La pression pour livrer est trop forte, les tests c'est du luxe</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🏚️</span>
+              <Icon name="mdi:home-variant" class="w-6 h-6 text-primary" />
               <span><strong>"Le projet est trop legacy"</strong> — Trop de couplage, impossible de tester quoi que ce soit</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤷</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span><strong>"On a déjà testé à la main"</strong> — Pourquoi automatiser ce qui fonctionne ?</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤔</span>
+              <Icon name="mdi:head-question" class="w-6 h-6 text-primary" />
               <span><strong>"Je ne sais pas quand tester"</strong> — Quand tu y penses, le code est déjà écrit et c'est trop tard</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🐢</span>
+              <Icon name="mdi:turtle" class="w-6 h-6 text-primary" />
               <span><strong>"Les tests ralentissent le développement"</strong> — Alors qu'ils font gagner du temps dès le début</span>
             </li>
           </ul>
@@ -103,190 +110,210 @@ const recommendations = getRecommendationsByFormation('phpunit');
       </div>
 
       <div class="mt-12 text-center max-w-3xl mx-auto">
-        <p class="text-lg text-orange-100 mb-4">
+        <p class="text-lg text-foreground-muted mb-4">
           Dans les deux cas, tu n'es pas seul. La plupart des développeurs vivent ça.
         </p>
-        <p class="text-xl font-semibold mb-6 text-white">
+        <p class="text-xl font-semibold mb-6 text-foreground-heading">
           Mais le problème n'est pas "les tests".<br>
-          C'est qu'on ne t'a jamais montré comment en écrire qui <span class="text-orange-300">RAPPORTENT</span> plus qu'ils ne coûtent.
+          C'est qu'on ne t'a jamais montré comment en écrire qui <span class="text-primary">RAPPORTENT</span> plus qu'ils ne coûtent.
         </p>
         <a
           href="#programme"
-          class="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-900 transition-colors"
+          class="btn-outline"
         >
           Ça te parle ? Voir le programme ↓
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION DIFFÉRENCIATION -->
-    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-2xl font-bold mb-6">⚠️ On ne va pas juste apprendre PHPUnit</h2>
-      <div class="prose prose-lg max-w-none">
-        <p class="text-gray-700">
+  <!-- 3. SECTION DIFFÉRENCIATION — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center"><Icon name="mdi:alert" class="w-7 h-7 text-primary inline" /> On ne va pas juste apprendre PHPUnit</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto">
+        <p class="text-foreground">
           La doc officielle le fait très bien !
         </p>
-        <p class="text-gray-700">
+        <p class="text-foreground">
           Ce qui manque, c'est le "pourquoi" et le "comment bien faire" :
         </p>
-        <ul class="space-y-2 text-gray-700 mb-6">
+        <ul class="space-y-2 text-foreground mb-6">
           <li><strong>Par où commencer</strong></li>
           <li><strong>Comment écrire des tests qui durent</strong></li>
         </ul>
-        <p class="text-gray-900 font-semibold text-xl">
+        <p class="text-foreground-heading font-semibold text-xl">
           Cette formation comble ce manque.
         </p>
-        <ul class="space-y-2 text-gray-700 mb-4">
+        <ul class="space-y-2 text-foreground mb-4">
           <li>Tu vas comprendre <strong>POURQUOI</strong> tes tests sont fragiles.</li>
           <li>Tu vas apprendre <strong>COMMENT</strong> en faire des outils qui te font gagner du temps.</li>
           <li>Tu vas repartir avec une <strong>STRATÉGIE</strong> adaptée à ton contexte.</li>
         </ul>
-        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
-          <p class="text-gray-600 text-sm italic">
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-primary">
+          <p class="text-foreground-muted text-sm italic">
             Ce que j'aime dans cette formation : voir des devs arriver en pensant que leurs tests
             sont "normaux" et repartir en comprenant pourquoi ils cassaient tout le temps.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION BÉNÉFICES -->
-    <section class="mb-28">
+  <!-- 4. SECTION BÉNÉFICES — bg-white -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Des tests qui s'exécutent en secondes, pas en minutes</h3>
-          <p class="text-gray-600">Fini d'attendre 10 minutes pour savoir si ton code marche</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Des tests qui s'exécutent en secondes, pas en minutes
+          </h3>
+          <p class="text-foreground-muted">Fini d'attendre 10 minutes pour savoir si ton code marche</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Des tests qui ne cassent que quand il y a un vrai problème</h3>
-          <p class="text-gray-600">Plus de temps perdu sur des faux positifs</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Des tests qui ne cassent que quand il y a un vrai problème
+          </h3>
+          <p class="text-foreground-muted">Plus de temps perdu sur des faux positifs</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Des tests lisibles qui documentent ton code métier</h3>
-          <p class="text-gray-600">Tes tests deviennent la meilleure doc de ton projet</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Des tests lisibles qui documentent ton code métier
+          </h3>
+          <p class="text-foreground-muted">Tes tests deviennent la meilleure doc de ton projet</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">La confiance pour refactorer sans peur</h3>
-          <p class="text-gray-600">Tu oses améliorer le code legacy</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            La confiance pour refactorer sans peur
+          </h3>
+          <p class="text-foreground-muted">Tu oses améliorer le code legacy</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Une stratégie de test claire</h3>
-          <p class="text-gray-600">Tu sais quoi tester, comment, et pourquoi</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une stratégie de test claire
+          </h3>
+          <p class="text-foreground-muted">Tu sais quoi tester, comment, et pourquoi</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
-          <div class="text-green-600 text-2xl mb-3">✅</div>
-          <h3 class="font-bold mb-2">Un investissement rentable dès le premier jour</h3>
-          <p class="text-gray-600">Tes tests te font gagner du temps au lieu d'en perdre</p>
+        <div class="bg-surface p-6 border border-border-light rounded-lg">
+          <h3 class="flex items-center gap-2 font-bold mb-2">
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
+            Un investissement rentable dès le premier jour
+          </h3>
+          <p class="text-foreground-muted">Tes tests te font gagner du temps au lieu d'en perdre</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION POUR QUI -->
-    <section class="mb-28 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-12 text-center text-white">Cette formation est pour toi si...</h2>
+  <!-- 5. SECTION POUR QUI — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-foreground-heading">Cette formation est pour toi si...</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-white p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Tu testes déjà :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔧</span>
+              <Icon name="mdi:wrench" class="w-6 h-6 text-primary" />
               <span>Tu écris des tests PHP mais tu ne sais pas vraiment pourquoi ils cassent tout le temps</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📈</span>
+              <Icon name="mdi:trending-up" class="w-6 h-6 text-primary" />
               <span>Tu veux améliorer ta couverture sans ralentir ta vélocité</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🏗️</span>
+              <Icon name="mdi:office-building" class="w-6 h-6 text-primary" />
               <span>Tu travailles sur du code legacy et tu veux le refactorer en sécurité</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">👥</span>
+              <Icon name="mdi:account-group" class="w-6 h-6 text-primary" />
               <span>Tu es tech lead et tu veux diffuser les bonnes pratiques dans ton équipe</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🧠</span>
+              <Icon name="mdi:brain" class="w-6 h-6 text-primary" />
               <span>Tu en as marre des formations qui t'apprennent la syntaxe sans t'apprendre à réfléchir</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-white p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Tu ne testes pas (encore) :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🗺️</span>
+              <Icon name="mdi:map" class="w-6 h-6 text-primary" />
               <span>Tu bosses sur un projet sans tests et tu ne sais pas par où commencer</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🚀</span>
+              <Icon name="mdi:rocket-launch" class="w-6 h-6 text-primary" />
               <span>Tu es en startup avec la pression de livrer vite, et les tests te semblent être un luxe</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔗</span>
+              <Icon name="mdi:link-variant" class="w-6 h-6 text-primary" />
               <span>Tu es convaincu que ton legacy est "intestable" à cause du couplage</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🖱️</span>
+              <Icon name="mdi:cursor-default-click" class="w-6 h-6 text-primary" />
               <span>Tu testes manuellement et tu ne vois pas l'intérêt d'automatiser</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">❓</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Tu veux enfin comprendre pourquoi tout le monde parle de tests</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-10 p-6 bg-white rounded-xl shadow-lg text-center">
-        <p class="text-lg font-semibold text-gray-800">
+      <div class="mt-10 p-6 bg-white rounded-xl border border-border-light text-center">
+        <p class="text-lg font-semibold text-foreground-heading">
           Cette formation n'est PAS réservée aux experts.<br>
           Elle est conçue pour transformer ta façon de voir les tests,<br>
           que tu partes de zéro ou que tu veuilles améliorer ta pratique.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION PROGRAMME -->
-    <section id="programme" class="mb-28 scroll-mt-24">
+  <!-- 6. SECTION PROGRAMME — bg-white -->
+  <section id="programme" class="bg-white py-16 scroll-mt-24">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-8 text-center">Programme détaillé : 2 jours pour transformer ta pratique</h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-center">
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Durée</div>
-          <div class="text-gray-600">2 jours (14 heures)</div>
+          <div class="text-foreground-muted">2 jours (14 heures)</div>
         </div>
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Format</div>
-          <div class="text-gray-600">50% théorie, 50% pratique</div>
+          <div class="text-foreground-muted">50% théorie, 50% pratique</div>
         </div>
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Prérequis</div>
-          <div class="text-gray-600">Bonne connaissance de PHP et de la POO</div>
+          <div class="text-foreground-muted">Bonne connaissance de PHP et de la POO</div>
         </div>
-        <div class="p-4 bg-gray-50 rounded-lg">
+        <div class="p-4 bg-surface rounded-lg">
           <div class="font-bold">Public</div>
-          <div class="text-gray-600">Développeurs PHP, architectes logiciels</div>
+          <div class="text-foreground-muted">Développeurs PHP, architectes logiciels</div>
         </div>
       </div>
 
       <div class="space-y-8">
         <!-- Jour 1 -->
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <div class="bg-orange-900 text-white p-4">
+        <div class="border border-border rounded-lg overflow-hidden">
+          <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
             <h3 class="text-xl font-bold">Jour 1 : Maîtriser PHPUnit et l'isolation des tests</h3>
           </div>
-          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
             <div class="p-6">
-              <h4 class="font-bold text-orange-700 mb-4">MATIN — Pourquoi et comment tester</h4>
-              <ul class="space-y-2 text-gray-700">
+              <h4 class="font-bold text-primary mb-4">MATIN — Pourquoi et comment tester</h4>
+              <ul class="space-y-2 text-foreground">
                 <li>• Les vraies raisons de tester (et ce n'est pas "parce qu'il faut")</li>
                 <li>• Use case vs Test case : comprendre ce qu'on teste vraiment</li>
                 <li>• Classification des tests : manuel vs auto, statique vs dynamique</li>
@@ -296,8 +323,8 @@ const recommendations = getRecommendationsByFormation('phpunit');
               </ul>
             </div>
             <div class="p-6">
-              <h4 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — PHPUnit et Test Doubles</h4>
-              <ul class="space-y-2 text-gray-700">
+              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — PHPUnit et Test Doubles</h4>
+              <ul class="space-y-2 text-foreground">
                 <li>• Installation et premiers tests avec PHPUnit</li>
                 <li>• Assertions : assertEquals vs assertSame, et toutes les autres</li>
                 <li>• Fixtures : setUp(), tearDown(), et leur bon usage</li>
@@ -310,14 +337,14 @@ const recommendations = getRecommendationsByFormation('phpunit');
         </div>
 
         <!-- Jour 2 -->
-        <div class="border border-gray-200 rounded-lg overflow-hidden">
-          <div class="bg-orange-900 text-white p-4">
+        <div class="border border-border rounded-lg overflow-hidden">
+          <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
             <h3 class="text-xl font-bold">Jour 2 : Stratégies de tests et bonnes pratiques</h3>
           </div>
-          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-200">
+          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
             <div class="p-6">
-              <h4 class="font-bold text-orange-700 mb-4">MATIN — Quand et comment écrire les tests</h4>
-              <ul class="space-y-2 text-gray-700">
+              <h4 class="font-bold text-primary mb-4">MATIN — Quand et comment écrire les tests</h4>
+              <ul class="space-y-2 text-foreground">
                 <li>• Comment lancer ses tests : CLI, CI, automatisation, hooks Git</li>
                 <li>• Quand écrire les tests ? Penser ROI</li>
                 <li>• Golden Master Testing : sécuriser du code legacy sans tests</li>
@@ -326,8 +353,8 @@ const recommendations = getRecommendationsByFormation('phpunit');
               </ul>
             </div>
             <div class="p-6">
-              <h4 class="font-bold text-orange-700 mb-4">APRÈS-MIDI — Code de qualité et tests durables</h4>
-              <ul class="space-y-2 text-gray-700">
+              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — Code de qualité et tests durables</h4>
+              <ul class="space-y-2 text-foreground">
                 <li>• SOLID et testabilité : pourquoi un code bien conçu est facile à tester</li>
                 <li>• Architecture Hexagonale et Domain-Driven Design</li>
                 <li>• Bonnes pratiques de tests : DAMP, AAA/GWT, une assertion par test</li>
@@ -339,46 +366,56 @@ const recommendations = getRecommendationsByFormation('phpunit');
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- MINI-CTA APRÈS PROGRAMME -->
-    <section class="mb-16 text-center">
-      <p class="text-lg text-gray-600 mb-4">Ce programme te parle ?</p>
-      <a
-        href="#contact"
-        class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
-      >
-        Discutons-en →
-      </a>
-    </section>
+  <!-- 7. MINI-CTA APRÈS PROGRAMME — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <p class="text-lg text-foreground-muted mb-4">Ce programme te parle ?</p>
+        <a
+          href="#contact"
+          class="btn-primary"
+        >
+          Discutons-en →
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- SECTION RECOMMANDATIONS -->
-    {recommendations.length > 0 && (
-      <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+  <!-- 8. SECTION RECOMMANDATIONS — bg-white -->
+  {recommendations.length > 0 && (
+    <section class="bg-white py-16">
+      <div class="container mx-auto px-4">
         <h2 class="text-2xl font-bold mb-8 text-center">Ce qu'ils en disent</h2>
         <div class="grid md:grid-cols-3 gap-6">
           {recommendations.slice(0, 6).map(reco => (
-            <blockquote class="bg-white p-6 rounded-lg shadow-sm">
-              <div class="flex gap-1 mb-3 text-yellow-400">
-                {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
+            <blockquote class="bg-surface p-6 rounded-lg border border-border-light">
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-foreground-heading font-semibold">{reco.name}</span>
+                <div class="flex gap-1 text-yellow-400">
+                  {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
+                </div>
               </div>
-              <p class="text-gray-700 mb-4">"{reco.recommendation}"</p>
-              <footer class="text-gray-900 font-semibold">{reco.name}</footer>
+              <p class="text-foreground">"{reco.recommendation}"</p>
             </blockquote>
           ))}
         </div>
         <div class="text-center mt-8">
-          <a href="/recommendations#formations" class="text-orange-700 font-semibold hover:text-orange-800">
+          <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
             Voir toutes les recommandations →
           </a>
         </div>
-      </section>
-    )}
+      </div>
+    </section>
+  )}
 
-    <!-- SECTION TDD -->
-    <section class="mb-28 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-2xl font-bold mb-6">Et le TDD dans tout ça ?</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
+  <!-- 9. SECTION TDD — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Et le TDD dans tout ça ?</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           Tu te demandes peut-être pourquoi cette formation ne s'appelle pas
           "TDD avec PHPUnit" ?
@@ -388,7 +425,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
           repose sur des fondations solides : savoir écrire des tests rapides,
           isolés, et maintenables.
         </p>
-        <p class="font-semibold text-gray-900">
+        <p class="font-semibold text-foreground-heading">
           Cette formation te donne ces fondations.
         </p>
         <p>
@@ -399,12 +436,14 @@ const recommendations = getRecommendationsByFormation('phpunit');
           maîtriseras l'art d'écrire des tests qui ne te freinent pas.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION IA -->
-    <section class="mb-28">
-      <h2 class="text-2xl font-bold mb-6">Et maintenant que l'IA code pour nous ?</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
+  <!-- 10. SECTION IA — bg-white -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Et maintenant que l'IA code pour nous ?</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           L'IA peut être ton meilleur allié... ou ton pire ennemi.
         </p>
@@ -424,17 +463,19 @@ const recommendations = getRecommendationsByFormation('phpunit');
           accélère les catastrophes si les décisions ne reposent pas sur des
           principes de qualité.
         </p>
-        <p class="font-semibold text-gray-900">
+        <p class="font-semibold text-foreground-heading">
           Cette formation te donne les connaissances pour piloter l'IA
           intelligemment quand elle écrit tes tests.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION FORMATEUR -->
-    <section class="mb-28">
-      <h2 class="text-2xl font-bold mb-6">Qui donne cette formation ?</h2>
-      <div class="prose prose-lg max-w-none text-gray-700">
+  <!-- 11. SECTION FORMATEUR — cream (no bg) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Qui donne cette formation ?</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
           Je m'appelle Fabien. Je teste depuis le début de ma carrière
           — et j'ai fait à peu près toutes les erreurs possibles.
@@ -444,7 +485,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
           c'est le moment où quelqu'un comprend <em>pourquoi</em> ses tests cassaient,
           pas juste <em>comment</em> les corriger.
         </p>
-        <p class="font-semibold text-gray-900">
+        <p class="font-semibold text-foreground-heading">
           Former, c'est aussi apprendre. Chaque session me pousse à clarifier
           ce que je croyais acquis.
         </p>
@@ -453,94 +494,100 @@ const recommendations = getRecommendationsByFormation('phpunit');
           applicables sur ton projet du lundi.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION MODALITÉS -->
-    <section class="mb-28">
-      <h2 class="text-2xl font-bold mb-8">Comment se déroule la formation ?</h2>
+  <!-- 12. SECTION MODALITÉS — bg-white -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-8 text-center">Comment se déroule la formation ?</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">🏢</div>
+        <div class="bg-surface p-6 border border-border-light rounded-lg text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:office-building" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Intra-entreprise</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Je me déplace dans tes locaux pour former ton équipe.
             Idéal pour créer une culture de test commune.
           </p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">💻</div>
+        <div class="bg-surface p-6 border border-border-light rounded-lg text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:laptop" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">À distance</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Formation en visioconférence avec les mêmes exercices pratiques.
             Parfait pour les équipes distribuées.
           </p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg text-center">
-          <div class="text-4xl mb-4">🎯</div>
+        <div class="bg-surface p-6 border border-border-light rounded-lg text-center">
+          <div class="mb-4 flex justify-center"><Icon name="mdi:crosshairs-gps" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Sur mesure</h3>
-          <p class="text-gray-600">
+          <p class="text-foreground-muted">
             Je peux adapter le contenu à ton contexte spécifique,
             ton stack technique ou tes problématiques.
           </p>
         </div>
       </div>
-      <p class="text-center mt-8 text-gray-600">
-        N'hésite pas à <a href="/contact" class="text-orange-700 hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+      <p class="text-center mt-8 text-foreground-muted">
+        N'hésite pas à <a href="/contact?subject=formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <!-- FAQ -->
-    <Faq items={[
-      {
-        question: "Quels sont les prérequis pour cette formation ?",
-        answer: "Une bonne connaissance de PHP et de la programmation orientée objet. Pas besoin d'avoir déjà écrit des tests — on part des fondamentaux."
-      },
-      {
-        question: "Quelle est la différence avec un cours PHPUnit en ligne ?",
-        answer: "Les cours en ligne t'apprennent la syntaxe. Cette formation t'apprend <strong>quand, quoi et pourquoi tester</strong>. 50% du temps est consacré à la pratique sur des cas réels, avec un feedback immédiat et personnalisé."
-      },
-      {
-        question: "Est-ce que la formation couvre le code legacy ?",
-        answer: "Oui. On aborde des techniques spécifiques pour sécuriser du code existant sans tests. C'est souvent le cas le plus demandé en entreprise."
-      },
-      {
-        question: "Est-ce qu'on aborde le TDD, le TCR ou les tests avec l'IA ?",
-        answer: "Oui. On couvre le TDD et ses variantes, et on aborde aussi comment l'IA change la donne : comment la guider pour écrire des tests solides, et pourquoi savoir tester devient encore plus critique quand l'IA génère du code à ta place."
-      },
-      {
-        question: "La formation peut-elle être adaptée à notre contexte ?",
-        answer: "Absolument. Je peux adapter les exercices à votre stack, vos problématiques et votre codebase si vous le souhaitez. C'est l'avantage du format intra-entreprise."
-      }
-    ]} />
+  <!-- 13. FAQ — cream (no bg) -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <Faq items={[
+        {
+          question: "Quels sont les prérequis pour cette formation ?",
+          answer: "Une bonne connaissance de PHP et de la programmation orientée objet. Pas besoin d'avoir déjà écrit des tests — on part des fondamentaux."
+        },
+        {
+          question: "Quelle est la différence avec un cours PHPUnit en ligne ?",
+          answer: "Les cours en ligne t'apprennent la syntaxe. Cette formation t'apprend <strong>quand, quoi et pourquoi tester</strong>. 50% du temps est consacré à la pratique sur des cas réels, avec un feedback immédiat et personnalisé."
+        },
+        {
+          question: "Est-ce que la formation couvre le code legacy ?",
+          answer: "Oui. On aborde des techniques spécifiques pour sécuriser du code existant sans tests. C'est souvent le cas le plus demandé en entreprise."
+        },
+        {
+          question: "Est-ce qu'on aborde le TDD, le TCR ou les tests avec l'IA ?",
+          answer: "Oui. On couvre le TDD et ses variantes, et on aborde aussi comment l'IA change la donne : comment la guider pour écrire des tests solides, et pourquoi savoir tester devient encore plus critique quand l'IA génère du code à ta place."
+        },
+        {
+          question: "La formation peut-elle être adaptée à notre contexte ?",
+          answer: "Absolument. Je peux adapter les exercices à votre stack, vos problématiques et votre codebase si vous le souhaitez. C'est l'avantage du format intra-entreprise."
+        }
+      ]} />
+    </div>
+  </section>
 
-    <!-- SECTION CTA FINALE -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto text-center text-white">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Envie d'en discuter ?</h2>
-          <p class="text-xl text-orange-100 mb-8">
-            Pas de formulaire automatique. On échange d'abord pour voir
-            si la formation correspond à tes besoins.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="/contact"
-              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
-            >
-              Me contacter →
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fabiensalles/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
-            >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
+  <!-- 14. SECTION CTA FINALE — bg-white -->
+  <section id="contact" class="bg-white py-16 scroll-mt-24">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-foreground-heading">Envie d'en discuter ?</h2>
+        <p class="text-xl text-foreground-muted mb-8">
+          Pas de formulaire automatique. On échange d'abord pour voir
+          si la formation correspond à tes besoins.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/contact"
+            class="btn-primary text-lg"
+          >
+            Me contacter →
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline text-lg inline-flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>

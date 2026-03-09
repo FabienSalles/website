@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import { Icon } from 'astro-icon/components';
 
 const technologies = [
   "Claude Code",
@@ -19,101 +20,107 @@ const technologies = [
   title="Automatisation IA PHP/Symfony | Claude Code + MCP | Craft + Sécurité"
   description="Automatisation IA pour équipes PHP/Symfony. Claude Code, MCP Servers, TDD garde-fous. Confidentialité garantie (option IA locale). Accélérez sans sacrifier la qualité."
 >
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Automatisation IA' }]} />
+  </div>
 
-    <!-- HERO SECTION -->
-    <section class="text-center py-16 mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        L'IA change notre façon de coder.
-      </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-        Mais sans direction, elle amplifie les problèmes autant que les solutions.
-      </p>
-      <p class="text-lg text-gray-500 max-w-2xl mx-auto mb-8">
-        Je t'aide à intégrer l'IA dans tes workflows de développement<br>
-        pour gagner en productivité sans sacrifier la qualité.
-      </p>
+  <!-- HERO SECTION -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          L'IA change notre façon de coder.
+        </h1>
+        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+          Mais sans direction, elle amplifie les problèmes autant que les solutions.
+        </p>
+        <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-8">
+          Je t'aide à intégrer l'IA dans tes workflows de développement<br>
+          pour gagner en productivité sans sacrifier la qualité.
+        </p>
 
-      <!-- Statut -->
-      <div class="flex flex-wrap justify-center gap-3 mb-6">
-        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
-        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
-        <span class="px-3 py-1 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+        <!-- Statut -->
+        <div class="flex flex-wrap justify-center gap-3 mb-6">
+          <span class="badge-status">✓ Freelance</span>
+          <span class="badge-status">✓ Disponible</span>
+          <span class="px-3 py-1 text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
+        </div>
+
+        <!-- Badge expertise -->
+        <div class="flex justify-center mb-4">
+          <span class="px-4 py-2 bg-white text-foreground rounded-full text-sm font-medium">
+            Expert craft × IA — Stack de prédilection : PHP/Symfony
+          </span>
+        </div>
+
+        <!-- Stack tags -->
+        <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-8">
+          {technologies.map(tech => (
+            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm">{tech}</span>
+          ))}
+        </div>
+
+        <a
+          href="#contact"
+          class="btn-primary text-lg"
+        >
+          Explorer les possibilités
+        </a>
       </div>
+    </div>
+  </section>
 
-      <!-- Badge expertise -->
-      <div class="flex justify-center mb-4">
-        <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">
-          Expert craft × IA — Stack de prédilection : PHP/Symfony
-        </span>
-      </div>
-
-      <!-- Stack tags -->
-      <div class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto mb-8">
-        {technologies.map(tech => (
-          <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
-        ))}
-      </div>
-
-      <a
-        href="#contact"
-        class="inline-block bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-800 transition-colors duration-300"
-      >
-        Explorer les possibilités
-      </a>
-    </section>
-
-    <!-- SECTION DOULEUR / REALITE -->
-    <section class="mb-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-4 text-center text-white">La réalité de l'IA en développement</h2>
-      <p class="text-xl text-orange-100 text-center mb-12">
+  <!-- SECTION DOULEUR / REALITE -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center text-foreground-heading">La réalité de l'IA en développement</h2>
+      <p class="text-xl text-foreground-muted text-center mb-12">
         L'IA promet d'accélérer tout.<br>
         Mais accélération sans direction, c'est juste aller plus vite dans le mur.
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
         <!-- Bloc 1 - Problèmes actuels -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Tu reconnais peut-être ça :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎰</span>
+              <Icon name="mdi:dice-multiple" class="w-6 h-6 text-primary" />
               <span><strong>L'IA génère du code vite</strong> — mais est-ce du bon code ? Tu passes du temps à corriger ce qu'elle produit</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🚗</span>
+              <Icon name="mdi:car" class="w-6 h-6 text-primary" />
               <span><strong>Sans garde-fous</strong> — on va plus vite... droit dans le mur. La dette technique s'accumule plus rapidement</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🧩</span>
+              <Icon name="mdi:puzzle" class="w-6 h-6 text-primary" />
               <span><strong>L'équipe utilise l'IA chacun dans son coin</strong> — sans cohérence, sans conventions partagées</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🤷</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span><strong>Tu ne sais pas quoi automatiser</strong> — et quoi garder manuel. L'IA partout n'est pas la réponse</span>
             </li>
           </ul>
         </div>
 
         <!-- Bloc 2 - Questions -->
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Les vraies questions :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">❓</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Comment intégrer l'IA sans perdre le contrôle sur la qualité du code ?</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">❓</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Comment guider l'IA pour qu'elle respecte les conventions du projet ?</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">❓</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Comment former l'équipe à utiliser ces outils efficacement ?</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">❓</span>
+              <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
               <span>Quelles tâches automatiser pour un vrai gain de temps ?</span>
             </li>
           </ul>
@@ -121,48 +128,52 @@ const technologies = [
       </div>
 
       <div class="mt-12 text-center max-w-3xl mx-auto">
-        <p class="text-lg text-orange-100 mb-4">
+        <p class="text-lg text-foreground-muted mb-4">
           L'IA est un outil puissant. Mais comme tout outil, elle demande de savoir l'utiliser.
         </p>
-        <p class="text-xl font-semibold mb-6 text-white">
+        <p class="text-xl font-semibold mb-6 text-foreground-heading">
           Le vrai enjeu n'est pas d'adopter l'IA.<br>
-          C'est de l'adopter <span class="text-orange-300">intelligemment</span>.
+          C'est de l'adopter <span class="text-primary">intelligemment</span>.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION DIFFERENCIATION -->
-    <section class="mb-20 bg-orange-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-2xl font-bold mb-6">Je ne vends pas de la magie IA</h2>
-      <div class="prose prose-lg max-w-none">
-        <p class="text-gray-700">
+  <!-- SECTION DIFFERENCIATION -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-2xl font-bold mb-6 text-center">Je ne vends pas de la magie IA</h2>
+      <div class="prose prose-lg max-w-3xl mx-auto">
+        <p class="text-foreground">
           Pas de promesses de "10x productivity" ou de "code qui s'écrit tout seul".
         </p>
-        <p class="text-gray-700">
+        <p class="text-foreground">
           Ce que je propose, c'est une approche pragmatique :
         </p>
-        <ul class="space-y-2 text-gray-700 mb-6">
+        <ul class="space-y-2 text-foreground mb-6">
           <li><strong>Identifier</strong> ce qui peut vraiment être automatisé dans ton contexte</li>
           <li><strong>Mettre en place les garde-fous</strong> pour que l'IA produise du code de qualité</li>
           <li><strong>Former ton équipe</strong> à utiliser ces outils efficacement</li>
         </ul>
-        <p class="text-gray-900 font-semibold text-xl">
+        <p class="text-foreground-heading font-semibold text-xl">
           L'objectif : accélérer sans sacrifier la qualité.
         </p>
-        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-orange-400">
-          <p class="text-gray-600 text-sm italic">
+        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-primary">
+          <p class="text-foreground-muted text-sm italic">
             Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous.
             Aller vite, mais pas droit dans le mur.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION QUI SUIS-JE -->
-    <section class="mb-20">
+  <!-- SECTION QUI SUIS-JE -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-8 text-center">Qui suis-je ?</h2>
       <div class="max-w-3xl mx-auto">
-        <div class="prose prose-lg max-w-none text-gray-700">
+        <div class="prose prose-lg max-w-none text-foreground">
           <p>
             J'utilise l'IA dans mes workflows de développement depuis <strong>3 ans</strong>.<br>
             Pas pour suivre une tendance — parce que ça m'aide à livrer de la valeur plus vite.
@@ -178,263 +189,273 @@ const technologies = [
             je parle de ce que j'utilise tous les jours.
           </p>
         </div>
-        <div class="bg-orange-50 rounded-lg p-4 mt-6 border-l-4 border-orange-400">
-          <p class="text-gray-600 text-sm italic">
+        <div class="bg-surface rounded-lg p-4 mt-6 border-l-4 border-primary">
+          <p class="text-foreground-muted text-sm italic">
             Ce que j'aime : quand l'IA devient un vrai accélérateur, pas une source de dette supplémentaire.
           </p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION CE QUE JE PROPOSE -->
-    <section class="mb-28">
+  <!-- SECTION CE QUE JE PROPOSE -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce que je propose</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">🤖</span>
+            <Icon name="mdi:robot" class="w-8 h-8 text-primary" />
             Intégration Claude Code / agents IA
           </h3>
-          <p class="text-gray-600">Configuration des outils, rules et conventions pour que l'IA respecte l'architecture de ton projet</p>
+          <p class="text-foreground-muted">Configuration des outils, rules et conventions pour que l'IA respecte l'architecture de ton projet</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">⚙️</span>
+            <Icon name="mdi:cog" class="w-8 h-8 text-primary" />
             Workflows automatisés
           </h3>
-          <p class="text-gray-600">CI/CD, génération de code, tests automatiques, revue de code assistée par IA</p>
+          <p class="text-foreground-muted">CI/CD, génération de code, tests automatiques, revue de code assistée par IA</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">🛡️</span>
+            <Icon name="mdi:shield" class="w-8 h-8 text-primary" />
             Garde-fous qualité
           </h3>
-          <p class="text-gray-600">Hooks, rules, conventions pour que l'IA produise du code conforme à tes standards</p>
+          <p class="text-foreground-muted">Hooks, rules, conventions pour que l'IA produise du code conforme à tes standards</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">🎓</span>
+            <Icon name="mdi:school" class="w-8 h-8 text-primary" />
             Formation équipe
           </h3>
-          <p class="text-gray-600">Apprendre à utiliser l'IA efficacement : prompts, contexte, itération, validation</p>
+          <p class="text-foreground-muted">Apprendre à utiliser l'IA efficacement : prompts, contexte, itération, validation</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">🔍</span>
+            <Icon name="mdi:magnify" class="w-8 h-8 text-primary" />
             Audit de vos usages IA
           </h3>
-          <p class="text-gray-600">Évaluer ce qui fonctionne, ce qui pose problème, et ce qui pourrait être amélioré</p>
+          <p class="text-foreground-muted">Évaluer ce qui fonctionne, ce qui pose problème, et ce qui pourrait être amélioré</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-white border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-3xl">🧠</span>
+            <Icon name="mdi:brain" class="w-8 h-8 text-primary" />
             RAG & Base de connaissances
           </h3>
-          <p class="text-gray-600">Connecter l'IA à ta documentation, ton code, tes conventions pour des réponses contextualisées</p>
+          <p class="text-foreground-muted">Connecter l'IA à ta documentation, ton code, tes conventions pour des réponses contextualisées</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION BENEFICES -->
-    <section class="mb-28">
+  <!-- SECTION BENEFICES -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             Gains de temps sur les tâches répétitives
           </h3>
-          <p class="text-gray-600">L'IA prend en charge ce qui peut être automatisé, ton équipe se concentre sur la valeur</p>
+          <p class="text-foreground-muted">L'IA prend en charge ce qui peut être automatisé, ton équipe se concentre sur la valeur</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             Meilleure qualité de delivery
           </h3>
-          <p class="text-gray-600">L'IA guidée correctement produit du code conforme à tes standards</p>
+          <p class="text-foreground-muted">L'IA guidée correctement produit du code conforme à tes standards</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             Équipe autonome et formée
           </h3>
-          <p class="text-gray-600">Ton équipe sait utiliser l'IA efficacement, pas juste "essayer des trucs"</p>
+          <p class="text-foreground-muted">Ton équipe sait utiliser l'IA efficacement, pas juste "essayer des trucs"</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             Intégration progressive
           </h3>
-          <p class="text-gray-600">Pas de big bang, on avance étape par étape en validant chaque gain</p>
+          <p class="text-foreground-muted">Pas de big bang, on avance étape par étape en validant chaque gain</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             Conventions partagées
           </h3>
-          <p class="text-gray-600">Toute l'équipe utilise l'IA de la même façon, avec les mêmes garde-fous</p>
+          <p class="text-foreground-muted">Toute l'équipe utilise l'IA de la même façon, avec les mêmes garde-fous</p>
         </div>
-        <div class="p-6 border border-gray-200 rounded-lg">
+        <div class="p-6 bg-surface border border-border-light rounded-lg">
           <h3 class="flex items-center gap-3 font-bold mb-2">
-            <span class="text-green-600 text-2xl">✅</span>
+            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary" />
             ROI mesurable
           </h3>
-          <p class="text-gray-600">On mesure les gains réels, pas les promesses marketing</p>
+          <p class="text-foreground-muted">On mesure les gains réels, pas les promesses marketing</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION SECURITE / CONFIDENTIALITE -->
-    <section class="mb-28 bg-blue-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12 border border-blue-100">
+  <!-- SECTION SECURITE / CONFIDENTIALITE -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
       <h2 class="text-2xl font-bold mb-8 text-center">Et la confidentialité ?</h2>
       <div class="max-w-3xl mx-auto">
-        <p class="text-gray-700 text-center mb-8">
+        <p class="text-foreground text-center mb-8">
           C'est souvent la première question. Et c'est normal.
         </p>
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white p-6 rounded-lg border border-border-light">
             <h3 class="font-bold mb-2 flex items-center gap-2">
-              <span class="text-blue-600">🔒</span> IA locale possible
+              <Icon name="mdi:lock" class="w-5 h-5 text-primary inline" /> IA locale possible
             </h3>
-            <p class="text-gray-600 text-sm">
+            <p class="text-foreground-muted text-sm">
               Ollama, modèles on-premise. Ton code ne sort pas de ton infra si tu le souhaites.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white p-6 rounded-lg border border-border-light">
             <h3 class="font-bold mb-2 flex items-center gap-2">
-              <span class="text-blue-600">🛡️</span> Contexte maîtrisé
+              <Icon name="mdi:shield" class="w-5 h-5 text-primary inline" /> Contexte maîtrisé
             </h3>
-            <p class="text-gray-600 text-sm">
+            <p class="text-foreground-muted text-sm">
               L'IA ne protège pas tes credentials. C'est à toi de ne pas les lui donner !
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white p-6 rounded-lg border border-border-light">
             <h3 class="font-bold mb-2 flex items-center gap-2">
-              <span class="text-blue-600">🚫</span> Pas d'entraînement sur tes données
+              <Icon name="mdi:cancel" class="w-5 h-5 text-primary inline" /> Pas d'entraînement sur tes données
             </h3>
-            <p class="text-gray-600 text-sm">
+            <p class="text-foreground-muted text-sm">
               Avec les bonnes options API, tes données ne servent pas à entraîner les modèles.
             </p>
           </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
+          <div class="bg-white p-6 rounded-lg border border-border-light">
             <h3 class="font-bold mb-2 flex items-center gap-2">
-              <span class="text-blue-600">📋</span> Politique claire
+              <Icon name="mdi:clipboard-text" class="w-5 h-5 text-primary inline" /> Politique claire
             </h3>
-            <p class="text-gray-600 text-sm">
+            <p class="text-foreground-muted text-sm">
               On définit ensemble les règles : quels outils, quelles données, quels accès.
             </p>
           </div>
         </div>
-        <p class="text-gray-500 text-sm text-center mt-6">
+        <p class="text-foreground-muted text-sm text-center mt-6">
           La sécurité n'est pas un frein à l'adoption. C'est une contrainte qu'on intègre dès le départ.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION POUR QUI -->
-    <section class="mb-28 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
-      <h2 class="text-3xl font-bold mb-12 text-center text-white">Pour qui ?</h2>
+  <!-- SECTION POUR QUI -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-12 text-center text-foreground-heading">Pour qui ?</h2>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Équipes qui veulent adopter l'IA intelligemment :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🚀</span>
+              <Icon name="mdi:rocket-launch" class="w-6 h-6 text-primary" />
               <span>Tu veux accélérer le développement mais tu as peur de perdre en qualité</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🎯</span>
+              <Icon name="mdi:crosshairs-gps" class="w-6 h-6 text-primary" />
               <span>Tu veux un cadre clair pour utiliser l'IA, pas le far west</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📈</span>
+              <Icon name="mdi:trending-up" class="w-6 h-6 text-primary" />
               <span>Tu cherches des gains de productivité mesurables</span>
             </li>
           </ul>
         </div>
 
-        <div class="bg-orange-50 p-8 rounded-xl shadow-lg">
+        <div class="bg-surface p-8 rounded-xl border border-border-light">
           <h3 class="text-xl font-bold mb-6">Équipes qui utilisent déjà l'IA :</h3>
-          <ul class="space-y-4 text-gray-700">
+          <ul class="space-y-4 text-foreground">
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🧩</span>
+              <Icon name="mdi:puzzle" class="w-6 h-6 text-primary" />
               <span>Chacun utilise l'IA à sa façon, sans cohérence</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">🔧</span>
+              <Icon name="mdi:wrench" class="w-6 h-6 text-primary" />
               <span>Tu passes du temps à corriger ce que l'IA produit</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="text-2xl">📚</span>
+              <Icon name="mdi:book-open-variant" class="w-6 h-6 text-primary" />
               <span>Tu veux former ton équipe à mieux utiliser ces outils</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="mt-10 p-6 bg-white rounded-xl shadow-lg text-center">
-        <p class="text-lg font-semibold text-gray-800">
+      <div class="mt-10 p-6 bg-surface rounded-xl border border-border-light text-center">
+        <p class="text-lg font-semibold text-foreground-heading">
           Tech leads, architectes, équipes de développement, équipe produit<br>
           Si tu veux que l'IA soit un accélérateur et pas un générateur de dette,<br>
           on peut en discuter.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION TU CHERCHES AUTRE CHOSE -->
-    <section class="mb-16 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+  <!-- SECTION TU CHERCHES AUTRE CHOSE -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-xl font-bold mb-6">Tu cherches autre chose ?</h3>
         <div class="flex flex-wrap justify-center gap-3 text-sm">
-          <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🎯</span>
+          <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:crosshairs-gps" class="w-5 h-5 text-primary" />
             <span><strong>Accompagnement</strong></span>
           </a>
-          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🔍</span>
+          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:magnify" class="w-5 h-5 text-primary" />
             <span><strong>Audit</strong></span>
           </a>
-          <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🎓</span>
+          <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:school" class="w-5 h-5 text-primary" />
             <span><strong>Formation</strong></span>
           </a>
-          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🤝</span>
+          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:handshake" class="w-5 h-5 text-primary" />
             <span><strong>Apport d'affaires</strong></span>
           </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION CTA FINALE -->
-    <section id="contact" class="py-20 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 md:-mx-8 lg:-mx-16 md:rounded-lg">
-      <div class="container mx-auto px-4">
-        <div class="max-w-2xl mx-auto text-center text-white">
-          <h2 class="text-3xl md:text-4xl font-bold mb-6">Envie d'explorer les possibilités ?</h2>
-          <p class="text-xl text-orange-100 mb-8">
-            Pas de solution magique. On échange d'abord pour comprendre ton contexte
-            et voir ce qui peut vraiment t'aider.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="/contact?subject=automatisation"
-              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
-            >
-              Explorer les possibilités →
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fabiensalles/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
-            >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
+  <!-- SECTION CTA FINALE -->
+  <section id="contact" class="bg-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-6">Envie d'explorer les possibilités ?</h2>
+        <p class="text-xl text-foreground-muted mb-8">
+          Pas de solution magique. On échange d'abord pour comprendre ton contexte
+          et voir ce qui peut vraiment t'aider.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/contact?subject=automatisation"
+            class="btn-primary text-lg"
+          >
+            Explorer les possibilités →
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline text-lg inline-flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </Layout>

@@ -141,14 +141,14 @@ if (!alternateLink) {
     }
     </script>
   </head>
-  <body class="min-h-screen bg-white">
-    <header class="fixed w-full bg-gradient-to-r from-orange-900 to-orange-800 z-50 shadow-lg">
+  <body class="min-h-screen bg-surface">
+    <header class="fixed w-full bg-surface border-b-2 border-primary z-50">
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <a
             href={isEnglishPath ? '/en' : '/'}
             title="Accueil"
-            class="text-xl font-semibold text-white hover:text-orange-200 transition-colors"
+            class="text-xl font-semibold text-foreground-heading hover:text-primary transition-colors"
             data-astro-reload
           >
             Fabien Salles
@@ -157,7 +157,7 @@ if (!alternateLink) {
           <!-- Mobile menu button -->
           <button
             id="mobile-menu-button"
-            class="md:hidden text-white p-2 focus:outline-none"
+            class="md:hidden text-foreground-heading p-2 focus:outline-none"
             aria-label="Menu"
           >
             <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -170,33 +170,38 @@ if (!alternateLink) {
 
           <!-- Desktop menu -->
           <ul class="hidden md:flex gap-6 items-center">
-            <li><a href="/accompagnement" class={isActive('/accompagnement') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Accompagnement</a></li>
-            <li><a href="/audit" class={isActive('/audit') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Audit</a></li>
+            <li><a href="/accompagnement" class={isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Accompagnement</a></li>
+            <li><a href="/audit" class={isActive('/audit') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Audit</a></li>
             {
               trainingEnabled &&
-              <li><a href={isEnglishPath ? '/en/training' : '/formations'} class={isActive('/formations') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+              <li id="formations-nav" class="static">
+                <a href={isEnglishPath ? '/en/training' : '/formations'} class={`${isActive('/formations') ? 'nav-link-active' : 'nav-link'} inline-flex items-center gap-1 leading-none`} data-astro-reload>
+                  {isEnglishPath ? 'Training' : 'Formations'}
+                  <svg id="formations-chevron" class="w-2.5 h-2.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+              </li>
             }
-            <li><a href="/automatisation" class={isActive('/automatisation') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Automatisation</a></li>
-            <li><a href="/apport-affaires" class={isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Apport d'affaires</a></li>
-            <li><a href={generateUrl('/blog')} title="Blog" class={isActive('/blog') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Blog</a></li>
+            <li><a href="/automatisation" class={isActive('/automatisation') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Automatisation</a></li>
+            <li><a href="/apport-affaires" class={isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Apport d'affaires</a></li>
+            <li><a href={generateUrl('/blog')} title="Blog" class={isActive('/blog') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Blog</a></li>
             {
               cvEnabled &&
-              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={isActive('/cv') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={isActive('/cv') ? 'nav-link-active' : 'nav-link'} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
             }
             {
               aboutEnabled &&
-              <li><a href={isEnglishPath ? '/en/about' : '/about'} class={isActive('/about') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+              <li><a href={isEnglishPath ? '/en/about' : '/about'} class={isActive('/about') ? 'nav-link-active' : 'nav-link'} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
             }
             {
               contactEnabled &&
-              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={isActive('/contact') ? 'nav-link-active' : 'nav-link-light'} data-astro-reload>Contact</a></li>
+              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={isActive('/contact') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Contact</a></li>
             }
             {
               translationEnabled &&
                 <li>
                   <a
                     href={isEnglishPath ? '/' : '/en'}
-                    class="lang-switch-light"
+                    class="lang-switch"
                     data-astro-reload
                   >
                     {isEnglishPath ? 'FR' : 'EN'}
@@ -208,33 +213,40 @@ if (!alternateLink) {
 
         <!-- Mobile menu -->
         <ul id="mobile-menu" class="hidden md:hidden flex-col gap-4 pt-4 pb-2">
-          <li><a href="/accompagnement" class={`block py-2 ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Accompagnement</a></li>
-          <li><a href="/audit" class={`block py-2 ${isActive('/audit') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Audit</a></li>
+          <li><a href="/accompagnement" class={`block py-2 ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Accompagnement</a></li>
+          <li><a href="/audit" class={`block py-2 ${isActive('/audit') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Audit</a></li>
           {
             trainingEnabled &&
-            <li><a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 ${isActive('/formations') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a></li>
+            <li>
+              <a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 ${isActive('/formations') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a>
+              <ul class="pl-4 flex flex-col gap-2 mt-1">
+                <li><a href="/formations/git" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>Git</a></li>
+                <li><a href="/formations/phpunit" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>PHPUnit</a></li>
+                <li><a href="/formations/ddd" class="block py-1 text-sm text-foreground-muted hover:text-primary transition-colors" data-astro-reload>DDD</a></li>
+              </ul>
+            </li>
           }
-          <li><a href="/automatisation" class={`block py-2 ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Automatisation</a></li>
-          <li><a href="/apport-affaires" class={`block py-2 ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Apport d'affaires</a></li>
-          <li><a href={generateUrl('/blog')} class={`block py-2 ${isActive('/blog') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Blog</a></li>
+          <li><a href="/automatisation" class={`block py-2 ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Automatisation</a></li>
+          <li><a href="/apport-affaires" class={`block py-2 ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Apport d'affaires</a></li>
+          <li><a href={generateUrl('/blog')} class={`block py-2 ${isActive('/blog') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Blog</a></li>
           {
             cvEnabled &&
-            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 ${isActive('/cv') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
+            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 ${isActive('/cv') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
           }
           {
             aboutEnabled &&
-            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 ${isActive('/about') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
+            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 ${isActive('/about') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
           }
           {
             contactEnabled &&
-            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 ${isActive('/contact') ? 'nav-link-active' : 'nav-link-light'}`} data-astro-reload>Contact</a></li>
+            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 ${isActive('/contact') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Contact</a></li>
           }
           {
             translationEnabled &&
               <li>
                 <a
                   href={isEnglishPath ? '/' : '/en'}
-                  class="block lang-switch-light py-2"
+                  class="block lang-switch py-2"
                   data-astro-reload
                 >
                   {isEnglishPath ? 'FR' : 'EN'}
@@ -243,6 +255,47 @@ if (!alternateLink) {
           }
         </ul>
       </nav>
+
+      <!-- Mega menu formations (pleine largeur) -->
+      {trainingEnabled &&
+        <div id="formations-mega" class="hidden bg-white border-t border-border-light">
+          <div class="container mx-auto px-4 py-8">
+            <div class="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
+              <a href="/formations/git" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/git') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-bold text-foreground-heading">Git avancé</span>
+                  <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">2 jours</span>
+                </div>
+                <p class="text-sm text-foreground mb-2">Tu utilises Git tous les jours mais tu ne le comprends pas vraiment ?</p>
+                <p class="text-sm text-foreground-muted italic">Passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".</p>
+                <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
+              </a>
+              <a href="/formations/phpunit" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/phpunit') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-bold text-foreground-heading">PHPUnit</span>
+                  <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">2 jours</span>
+                </div>
+                <p class="text-sm text-foreground mb-2">Tes tests cassent sans raison ? Ils prennent trop de temps à écrire et à maintenir ?</p>
+                <p class="text-sm text-foreground-muted italic">Apprends à écrire des tests qui te font gagner du temps au lieu d'en perdre.</p>
+                <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
+              </a>
+              <a href="/formations/ddd" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/ddd') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+                <div class="flex items-center justify-between mb-2">
+                  <span class="font-bold text-foreground-heading">DDD</span>
+                  <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">3 à 5 jours</span>
+                </div>
+                <p class="text-sm text-foreground mb-2">Le métier et la tech ne se comprennent pas ? Le couplage crée des régressions ?</p>
+                <p class="text-sm text-foreground-muted italic">Aligne ton équipe technique et produit pour livrer ce qui compte vraiment.</p>
+                <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
+              </a>
+            </div>
+            <div class="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-border-light max-w-5xl mx-auto">
+              <span class="text-sm text-foreground-muted">Organisme déclaré · 137+ développeurs formés · Depuis 2016</span>
+              <a href="/formations" class="text-sm text-primary hover:text-primary-hover font-medium transition-colors" data-astro-reload>Toutes les formations →</a>
+            </div>
+          </div>
+        </div>
+      }
     </header>
 
     <script>
@@ -257,16 +310,40 @@ if (!alternateLink) {
         menuIconOpen?.classList.toggle('hidden');
         menuIconClose?.classList.toggle('hidden');
       });
+
+      // Mega menu formations
+      const formationsNav = document.getElementById('formations-nav');
+      const formationsMega = document.getElementById('formations-mega');
+      const formationsChevron = document.getElementById('formations-chevron');
+      let hideTimeout: ReturnType<typeof setTimeout>;
+
+      function showMega() {
+        clearTimeout(hideTimeout);
+        formationsMega?.classList.remove('hidden');
+        formationsChevron?.classList.add('rotate-180');
+      }
+
+      function hideMega() {
+        hideTimeout = setTimeout(() => {
+          formationsMega?.classList.add('hidden');
+          formationsChevron?.classList.remove('rotate-180');
+        }, 150);
+      }
+
+      formationsNav?.addEventListener('mouseenter', showMega);
+      formationsNav?.addEventListener('mouseleave', hideMega);
+      formationsMega?.addEventListener('mouseenter', showMega);
+      formationsMega?.addEventListener('mouseleave', hideMega);
     </script>
 
     <main class="pt-20 relative">
       <slot />
     </main>
 
-    <footer class="mt-20 py-8 bg-gray-50 border-t border-gray-100">
+    <footer class="py-8 bg-surface border-t border-primary">
       <div class="container mx-auto px-4">
         <div class="flex justify-between items-center">
-          <p class="text-gray-600">&copy; {new Date().getFullYear()} Fabien Salles</p>
+          <p class="text-foreground-muted">&copy; {new Date().getFullYear()} Fabien Salles</p>
           <div class="flex gap-4">
             <a
               href="https://www.linkedin.com/in/fabiensalles/"
@@ -298,110 +375,87 @@ if (!alternateLink) {
     scroll-behavior: smooth;
   }
 
-  /* Content container styles */
-  .content-container {
-    @apply relative max-w-4xl mx-auto;
-  }
-
-  .content-block {
-    @apply relative bg-white p-8 md:p-12 rounded-2xl shadow-lg border border-gray-100;
-  }
-
   /* Button styles */
-  .btn {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-medium transition-all duration-300 transform;
-  }
-
   .btn-primary {
-    @apply bg-gradient-to-r from-orange-700 to-orange-800 text-white shadow-lg hover:shadow-xl hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-hover transition-colors;
   }
 
   .btn-outline {
-    @apply border-2 border-orange-700 text-orange-700 hover:bg-orange-50;
+    @apply inline-flex items-center justify-center border-2 border-primary text-primary px-6 py-3 rounded-lg font-bold hover:bg-surface-muted transition-colors;
+  }
+
+  .btn-light {
+    @apply inline-flex items-center justify-center bg-white text-primary-dark px-8 py-4 rounded-lg font-bold hover:bg-surface-muted transition-colors;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg font-bold hover:bg-white/20 transition-colors;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white p-6 rounded-lg border border-border;
+  }
+
+  .card-elevated {
+    @apply bg-white p-6 rounded-lg border border-border-light hover:border-primary transition-colors;
+  }
+
+  /* Badge */
+  .badge-status {
+    @apply px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold;
   }
 
   /* Navigation styles */
   .nav-link {
-    @apply relative text-gray-700 hover:text-orange-700 transition-colors duration-300;
+    @apply relative text-foreground hover:text-foreground-heading transition-colors duration-300;
   }
 
   .nav-link::after {
     content: '';
-    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-orange-700 to-orange-800 transition-all duration-300;
+    @apply absolute left-0 -bottom-2 w-0 h-0.5 bg-primary transition-all duration-300;
   }
 
   .nav-link:hover::after {
     @apply w-full;
   }
 
-  .lang-switch {
-    @apply relative px-4 py-2 text-sm font-medium text-gray-700 rounded-lg transition-all duration-300 hover:bg-orange-50;
-  }
-
-  /* Navigation styles for dark background */
-  .nav-link-light {
-    @apply relative text-white hover:text-orange-200 transition-colors duration-300;
-  }
-
-  .nav-link-light::after {
-    content: '';
-    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-white transition-all duration-300;
-  }
-
-  .nav-link-light:hover::after {
-    @apply w-full;
-  }
-
-  .lang-switch-light {
-    @apply relative px-4 py-2 text-sm font-medium text-white rounded-lg transition-all duration-300 hover:bg-orange-700;
-  }
-
   /* Active navigation state */
   .nav-link-active {
-    @apply relative px-4 py-2 bg-white text-gray-900 font-medium rounded-full transition-all duration-300;
+    @apply relative text-foreground-heading font-medium transition-colors duration-300;
+  }
+
+  .nav-link-active::after {
+    content: '';
+    @apply absolute left-0 -bottom-2 w-full h-0.5 bg-foreground-heading;
+  }
+
+  /* Language switch */
+  .lang-switch {
+    @apply relative px-4 py-2 text-sm font-medium text-foreground rounded-lg transition-all duration-300 hover:bg-surface;
   }
 
   /* Social link styles */
   .social-link {
-    @apply relative text-gray-600 hover:text-orange-700 transition-colors duration-300;
+    @apply relative text-foreground-muted hover:text-primary transition-colors duration-300;
   }
 
   .social-link::after {
     content: '';
-    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-orange-700 to-orange-800 transition-all duration-300;
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
   }
 
   .social-link:hover::after {
     @apply w-full;
   }
 
-  /* Card styles */
-  .card {
-    @apply bg-white p-6 rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300;
-  }
-
-  /* Section styles */
-  .section-title {
-    @apply text-3xl font-bold mb-8 bg-gradient-to-r from-orange-700 to-orange-800 bg-clip-text text-transparent;
-  }
-
   /* Form styles */
   .form-input,
   .form-select,
   .form-textarea {
-    @apply w-full px-4 py-3 rounded-lg border border-gray-200
-           focus:ring-2 focus:ring-orange-500 focus:border-orange-500
+    @apply w-full px-4 py-3 rounded-lg border border-border
+           focus:ring-2 focus:ring-primary focus:border-primary
            bg-white transition-all duration-300;
-  }
-
-  /* Typography */
-  .gradient-text {
-    @apply bg-gradient-to-r from-orange-700 to-orange-800 bg-clip-text text-transparent;
-  }
-
-  /* Page section */
-  .page-section {
-    @apply relative z-10 bg-white rounded-2xl shadow-lg border border-gray-100 p-8 md:p-12 mb-8;
   }
 
   p img {
@@ -409,6 +463,6 @@ if (!alternateLink) {
   }
 
   .image-source {
-      @apply text-xs text-gray-500 italic;
+      @apply text-xs text-foreground-muted italic;
   }
 </style>

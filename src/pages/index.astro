@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import generateUrl from "@utils/url";
+import { Icon } from 'astro-icon/components';
 import { getStats } from '../data/formations';
 
 const description = "Expert DDD, TDD & Software Craftsmanship. Audit, accompagnement, formation. J'aide tes équipes à livrer sereinement avec des solutions pensées pour durer."
@@ -31,7 +32,7 @@ const expertise = [
 
 const services = [
   {
-    icon: "🔍",
+    icon: "mdi:magnify",
     title: "Auditer",
     intro: "Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?<br />Tu as des doutes sur la qualité du code avant d'investir ?",
     description: "Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.",
@@ -45,7 +46,7 @@ const services = [
     href: "/audit"
   },
   {
-    icon: "🎯",
+    icon: "mdi:crosshairs-gps",
     title: "Accompagner",
     intro: "Ton équipe a besoin d'un regard extérieur ?<br />D'un renfort qui ne fait pas que coder, mais qui transmet ?",
     description: "J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.",
@@ -59,7 +60,7 @@ const services = [
     href: "/accompagnement"
   },
   {
-    icon: "🎓",
+    icon: "mdi:school",
     title: "Former",
     intro: "Tes devs codent.<br />Mais est-ce qu'ils investissent leur énergie au bon endroit ?",
     description: "Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.",
@@ -73,7 +74,7 @@ const services = [
     href: "/formations"
   },
   {
-    icon: "🤖",
+    icon: "mdi:robot",
     title: "Automatiser",
     intro: "L'IA change notre façon de coder.<br />Mais sans direction, elle amplifie les problèmes autant que les solutions.",
     description: "Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.",
@@ -113,50 +114,50 @@ const testimonials = [
 <Layout title="Fabien Salles - Expert DDD, TDD & Software Craftsmanship" description={description}>
 
   <!-- HERO SECTION -->
-  <section class="bg-gradient-to-b from-gray-50 to-white">
+  <section class="bg-surface">
     <div class="container mx-auto px-4 py-20 md:py-28">
       <div class="grid md:grid-cols-5 gap-8 items-center">
         <div class="md:col-span-3">
           <p class="text-3xl md:text-4xl font-bold mb-2 leading-tight">
             Salut, je suis Fabien.
           </p>
-          <div class="text-orange-700 font-semibold mb-6 flex flex-wrap items-baseline gap-x-2">
+          <div class="text-primary font-semibold mb-6 flex flex-wrap items-baseline gap-x-2">
             <span>15+ ans d'expérience</span>
             <span>·</span>
-            <h1 class="inline text-orange-700 font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
+            <h1 class="inline text-primary font-semibold text-base md:text-lg">DDD · TDD · Software Craftsmanship</h1>
           </div>
-          <p class="text-xl text-gray-800 font-medium mb-6 leading-relaxed">
-            J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="text-gray-600 whitespace-nowrap">Pas pour dépanner.</span>
+          <p class="text-xl text-foreground-heading font-medium mb-6 leading-relaxed">
+            J'aide tes équipes à livrer sereinement, avec des solutions pensées pour durer. <span class="text-foreground-muted whitespace-nowrap">Pas pour dépanner.</span>
           </p>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+          <p class="text-lg text-foreground-muted mb-8 leading-relaxed">
             Je ne viens pas avec une recette magique. Juste de la curiosité, de la remise en question, et l'envie de solutionner au mieux les problèmes qu'on me confie.
           </p>
           <div class="flex flex-wrap gap-4 mb-8">
             <a
               href="/contact"
-              class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
+              class="btn-primary"
             >
               Discutons de ton besoin
             </a>
             <a
               href="#services"
-              class="inline-block border-2 border-orange-700 text-orange-700 px-6 py-3 rounded-lg font-semibold hover:bg-orange-50 transition-colors"
+              class="btn-outline"
             >
               Voir les services
             </a>
           </div>
           <div class="flex flex-wrap gap-2">
             {expertise.map(tech => (
-              <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">{tech}</span>
+              <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm">{tech}</span>
             ))}
           </div>
         </div>
         <div class="md:col-span-2 text-center md:text-right">
           <!-- Statut -->
           <div class="flex flex-wrap justify-center md:justify-end gap-2 mb-4">
-            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
-            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
-            <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
+            <span class="badge-status">✓ Freelance</span>
+            <span class="badge-status">✓ Disponible</span>
+            <span class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
           </div>
           <div class="relative h-80 md:h-96 mx-auto md:ml-auto md:mr-0 overflow-hidden rounded-lg">
             <img
@@ -166,10 +167,10 @@ const testimonials = [
               width="1024"
               height="768"
             />
-            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white to-transparent"></div>
-            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white to-transparent"></div>
-            <div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-white to-transparent"></div>
-            <div class="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-white to-transparent"></div>
+            <div class="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-surface to-transparent"></div>
+            <div class="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-surface to-transparent"></div>
+            <div class="absolute inset-x-0 top-0 h-3 bg-gradient-to-b from-surface to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-surface to-transparent"></div>
           </div>
         </div>
       </div>
@@ -178,49 +179,49 @@ const testimonials = [
 
 
   <!-- SECTION PAIN POINTS -->
-  <section class="py-12 bg-gray-50 border-t border-gray-200">
+  <section class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-2xl md:text-3xl font-bold mb-2">Ces situations te parlent ?</h2>
-        <p class="text-gray-600 mb-8">(Ou celles de ton client, de tes collègues, de tes équipes...)</p>
+        <p class="text-foreground-muted mb-8">(Ou celles de ton client, de tes collègues, de tes équipes...)</p>
 
         <div class="space-y-3 mb-8 text-left inline-block">
           <div class="flex items-center gap-3 text-lg">
-            <span class="text-xl">🗑️</span>
-            <span>Du code <strong>jetable</strong> au lieu de <span class="text-gray-400">→</span> <strong class="text-orange-700">durable</strong></span>
+            <Icon name="mdi:delete-outline" class="w-6 h-6 text-primary flex-shrink-0" />
+            <span>Du code <strong>jetable</strong> au lieu de <span class="text-foreground-muted">→</span> <strong class="text-primary">durable</strong></span>
           </div>
           <div class="flex items-center gap-3 text-lg">
-            <span class="text-xl">🐌</span>
-            <span>Des livraisons <strong>tardives</strong> au lieu d'être <span class="text-gray-400">→</span> <strong class="text-orange-700">itératives</strong></span>
+            <Icon name="mdi:timer-sand" class="w-6 h-6 text-primary flex-shrink-0" />
+            <span>Des livraisons <strong>tardives</strong> au lieu d'être <span class="text-foreground-muted">→</span> <strong class="text-primary">itératives</strong></span>
           </div>
           <div class="flex items-center gap-3 text-lg">
-            <span class="text-xl">🌫️</span>
-            <span>Des incompréhensions <strong>métier</strong> au lieu d'une <span class="text-gray-400">→</span> <strong class="text-orange-700">vision partagée</strong></span>
+            <Icon name="mdi:weather-fog" class="w-6 h-6 text-primary flex-shrink-0" />
+            <span>Des incompréhensions <strong>métier</strong> au lieu d'une <span class="text-foreground-muted">→</span> <strong class="text-primary">vision partagée</strong></span>
           </div>
           <div class="flex items-center gap-3 text-lg">
-            <span class="text-xl">🧪</span>
-            <span>Des tests <strong>fragiles</strong> au lieu d'être <span class="text-gray-400">→</span> <strong class="text-orange-700">utiles</strong></span>
+            <Icon name="mdi:flask" class="w-6 h-6 text-primary flex-shrink-0" />
+            <span>Des tests <strong>fragiles</strong> au lieu d'être <span class="text-foreground-muted">→</span> <strong class="text-primary">utiles</strong></span>
           </div>
         </div>
 
         <p class="text-lg">
-          Transformer ces freins en leviers, <strong class="text-orange-700">c'est possible.</strong>
+          Transformer ces freins en leviers, <strong class="text-primary">c'est possible.</strong>
         </p>
       </div>
     </div>
   </section>
 
   <!-- TRANSITION VERS SERVICES -->
-  <section class="py-12 bg-gradient-to-br from-orange-900 to-orange-800">
+  <section class="py-12">
     <div class="container mx-auto px-4">
       <div class="text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Comment puis-je t'aider ?</h2>
-        <p class="text-orange-100">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-6">Comment puis-je t'aider ?</h2>
+        <p class="text-foreground-muted">
           Tu es
-          <a href="#audit" class="text-white font-semibold hover:underline">CTO / Tech Lead</a> ?
-          <a href="#accompagnement" class="text-white font-semibold hover:underline">Recruteur / ESN</a> ?
-          <a href="#formation" class="text-white font-semibold hover:underline">Responsable formation</a> ?
-          <a href="#freelance" class="text-white font-semibold hover:underline">Freelance</a> ?
+          <a href="#audit" class="text-primary font-semibold hover:underline">CTO / Tech Lead</a> ?
+          <a href="#accompagnement" class="text-primary font-semibold hover:underline">Recruteur / ESN</a> ?
+          <a href="#formation" class="text-primary font-semibold hover:underline">Responsable formation</a> ?
+          <a href="#freelance" class="text-primary font-semibold hover:underline">Freelance</a> ?
         </p>
       </div>
     </div>
@@ -232,49 +233,49 @@ const testimonials = [
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-12 gap-0">
           <!-- Colonne gauche : titre + preuve sociale -->
-          <div class="md:col-span-4 md:border-r md:border-gray-200 md:pr-8">
+          <div class="md:col-span-4 md:border-r md:border-border md:pr-8">
             <div class="md:sticky md:top-16">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-3 mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-6">
                 <span>Auditer</span>
-                <span class="text-3xl">🔍</span>
+                <Icon name="mdi:magnify" class="w-8 h-8 text-primary" />
               </h3>
 
               <!-- Chiffre clé -->
-              <div class="mb-6 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                <div class="text-3xl font-bold text-orange-700">10+</div>
-                <div class="text-sm text-gray-600">applications auditées</div>
+              <div class="mb-6 p-4 bg-surface rounded-lg border border-border-light">
+                <div class="text-3xl font-bold text-primary">10+</div>
+                <div class="text-sm text-foreground-muted">applications auditées</div>
               </div>
 
               <!-- Expertise -->
               <div class="mb-6">
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Expertise</p>
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Expertise</p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">PHP</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Symfony</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Legacy</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Frontend</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Architecture</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Sécurité</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">API</span>
-                  <span class="px-2 py-1 bg-orange-100 rounded text-sm text-orange-800">Testabilité</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">PHP</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Symfony</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Legacy</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Frontend</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Architecture</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Sécurité</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">API</span>
+                  <span class="px-2 py-1 bg-surface-muted rounded text-sm text-foreground-muted">Testabilité</span>
                 </div>
               </div>
 
               <!-- Logos clients -->
               <div class="mb-6">
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Audité pour</p>
-                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
-                  <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
-                  <img src="/images/clients/cast.webp" alt="Cast" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="592" height="231" />
-                  <img src="/images/clients/plum-kitchen.webp" alt="Plum Kitchen" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="1000" height="476" />
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Audité pour</p>
+                <a href="/clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
+                  <img src="/images/clients/cast.webp" alt="Cast" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="592" height="231" />
+                  <img src="/images/clients/plum-kitchen.webp" alt="Plum Kitchen" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="1000" height="476" />
                 </a>
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations" class="block hover:bg-gray-50 rounded-lg transition-colors -mx-2 px-2 py-2">
-                <blockquote class="text-sm border-l-2 border-orange-300 pl-3">
-                  <p class="text-gray-600 italic mb-2">« Le client était très satisfait. Un grand merci pour ton étude. »</p>
-                  <footer class="text-xs text-gray-500">— Retour client, février 2026</footer>
+              <a href="/recommendations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
+                <blockquote class="text-sm border-l-2 border-primary pl-3">
+                  <p class="text-foreground-muted italic mb-2">« Le client était très satisfait. Un grand merci pour ton étude. »</p>
+                  <footer class="text-xs text-foreground-muted">— Retour client, février 2026</footer>
                 </blockquote>
               </a>
             </div>
@@ -282,38 +283,38 @@ const testimonials = [
 
           <!-- Colonne droite : contenu -->
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
-            <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-100">
-              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+            <div class="bg-surface rounded-xl p-6 md:p-8 border border-border-light">
+              <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
                 Tu reprends un projet et tu te demandes dans quoi tu mets les pieds ?
                 Tu as des doutes sur la qualité du code avant d'investir ?
               </p>
 
-              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
                 Je plonge dans le code, je regarde ce qui tient et ce qui va poser problème. PHP, frameworks maison ou standards — Symfony, Sylius, legacy sans framework, ou même des stacks plus anciennes.
               </p>
 
-              <ul class="space-y-3 text-gray-700 mb-6">
+              <ul class="space-y-3 text-foreground mb-6">
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Évaluation de la dette technique</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Analyse de l'architecture, pratiques de développement</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Rapport détaillé + plan d'action</span>
                 </li>
               </ul>
 
-              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
-                <p class="text-gray-700 italic">« Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés. »</p>
+              <blockquote class="border-l-4 border-primary pl-4 py-3 mb-6 bg-white rounded-r-lg">
+                <p class="text-foreground italic">« Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes que personne n'avait encore identifiés. »</p>
               </blockquote>
 
               <a
                 href="/audit"
-                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+                class="btn-primary text-lg"
               >
                 En savoir plus →
               </a>
@@ -324,64 +325,64 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- SERVICE 2: ACCOMPAGNEMENT (Style B : fond orange, carte blanche) -->
-  <section id="accompagnement" class="py-16 bg-orange-900">
+  <!-- SERVICE 2: ACCOMPAGNEMENT -->
+  <section id="accompagnement" class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-12 gap-0">
           <!-- Colonne gauche : titre + preuve sociale -->
-          <div class="md:col-span-4 md:border-r md:border-white/20 md:pr-8">
+          <div class="md:col-span-4 md:border-r md:border-border md:pr-8">
             <div class="md:sticky md:top-16">
-              <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3 mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-6">
                 <span>Accompagner</span>
-                <span class="text-3xl">🎯</span>
+                <Icon name="mdi:crosshairs-gps" class="w-8 h-8 text-primary" />
               </h3>
 
               <!-- Chiffres clés -->
               <div class="flex gap-3 mb-6">
-                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
-                  <div class="text-3xl font-bold text-white">15+</div>
-                  <div class="text-sm text-orange-100">années</div>
+                <div class="flex-1 p-4 bg-white rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">15+</div>
+                  <div class="text-sm text-foreground-muted">années</div>
                 </div>
-                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
-                  <div class="text-3xl font-bold text-white">26+</div>
-                  <div class="text-sm text-orange-100">projets</div>
+                <div class="flex-1 p-4 bg-white rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">26+</div>
+                  <div class="text-sm text-foreground-muted">projets</div>
                 </div>
               </div>
 
               <!-- Expertise -->
               <div class="mb-6">
-                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Expertise</p>
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Expertise</p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">DDD</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">TDD</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Agile</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">PHP</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Symfony</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Sylius</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">NodeJS</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">TypeScript</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">React</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">DDD</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">TDD</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Agile</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">PHP</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Symfony</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Sylius</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">NodeJS</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">TypeScript</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">React</span>
                 </div>
               </div>
 
               <!-- Logos clients -->
               <div class="mb-6">
-                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Accompagné</p>
-                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
-                  <img src="/images/clients/hermes.png" alt="Hermès" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" width="3840" height="2160" />
-                  <img src="/images/clients/eres.png" alt="Eres" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" width="1318" height="325" />
-                  <img src="/images/clients/lvmh.webp" alt="LVMH" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" width="2336" height="681" />
-                  <img src="/images/clients/japan-experience.webp" alt="Japan Experience" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" width="2059" height="183" />
-                  <img src="/images/clients/jardiland.webp" alt="Jardiland" class="h-5 brightness-0 invert opacity-70 hover:opacity-100 transition-all" width="320" height="118" />
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Accompagné</p>
+                <a href="/clients" class="flex flex-wrap items-center gap-1 hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/hermes.png" alt="Hermès" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="3840" height="2160" />
+                  <img src="/images/clients/eres.png" alt="Eres" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="1318" height="325" />
+                  <img src="/images/clients/lvmh.webp" alt="LVMH" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="2336" height="681" />
+                  <img src="/images/clients/japan-experience.webp" alt="Japan Experience" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="2059" height="183" />
+                  <img src="/images/clients/jardiland.webp" alt="Jardiland" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="320" height="118" />
                 </a>
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations" class="block hover:bg-white/10 rounded-lg transition-colors -mx-2 px-2 py-2">
-                <blockquote class="text-sm border-l-2 border-white/50 pl-3">
-                  <p class="text-orange-100 italic mb-2">« Sa capacité à rester calme malgré la pression, son ouverture au dialogue. »</p>
-                  <footer class="text-xs text-orange-200">— Jean-Yves C., Bedrock</footer>
+              <a href="/recommendations" class="block bg-white rounded-lg p-3 hover:bg-surface-muted transition-colors -mx-2">
+                <blockquote class="text-sm border-l-2 border-primary pl-3">
+                  <p class="text-foreground-muted italic mb-2">« Sa capacité à rester calme malgré la pression, son ouverture au dialogue. »</p>
+                  <footer class="text-xs text-foreground-muted">— Jean-Yves C., Bedrock</footer>
                 </blockquote>
               </a>
             </div>
@@ -389,38 +390,38 @@ const testimonials = [
 
           <!-- Colonne droite : contenu -->
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm">
-              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+            <div class="bg-white rounded-xl p-6 md:p-8 border border-border-light">
+              <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
                 Ton équipe a besoin d'un regard extérieur ?
                 D'un renfort qui ne fait pas que coder, mais qui transmet ?
               </p>
 
-              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
                 J'interviens pour améliorer vos pratiques, réduire la dette technique et transmettre les bonnes méthodes.
               </p>
 
-              <ul class="space-y-3 text-gray-700 mb-6">
+              <ul class="space-y-3 text-foreground mb-6">
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Intervention en régie ou au forfait</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Amélioration d'un legacy, Refonte progressive</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Support et transfert de compétences</span>
                 </li>
               </ul>
 
-              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
-                <p class="text-gray-700 italic">« Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code. »</p>
+              <blockquote class="border-l-4 border-primary pl-4 py-3 mb-6 bg-white rounded-r-lg">
+                <p class="text-foreground italic">« Ce que j'aime dans l'accompagnement : voir une équipe gagner en autonomie et en confiance sur son propre code. »</p>
               </blockquote>
 
               <a
                 href="/accompagnement"
-                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+                class="btn-primary text-lg"
               >
                 En savoir plus →
               </a>
@@ -437,50 +438,50 @@ const testimonials = [
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-12 gap-0">
           <!-- Colonne gauche : titre + preuve sociale -->
-          <div class="md:col-span-4 md:border-r md:border-gray-200 md:pr-8">
+          <div class="md:col-span-4 md:border-r md:border-border md:pr-8">
             <div class="md:sticky md:top-16">
-              <h3 class="text-2xl md:text-3xl font-bold text-gray-900 flex items-center gap-3 mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-6">
                 <span>Former</span>
-                <span class="text-3xl">🎓</span>
+                <Icon name="mdi:school" class="w-8 h-8 text-primary" />
               </h3>
 
               <!-- Chiffres clés -->
               <div class="flex gap-3 mb-6">
-                <div class="flex-1 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                  <div class="text-3xl font-bold text-orange-700">{formationStats.participants}+</div>
-                  <div class="text-sm text-gray-600">développeurs</div>
+                <div class="flex-1 p-4 bg-surface rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">{formationStats.participants}+</div>
+                  <div class="text-sm text-foreground-muted">développeurs</div>
                 </div>
-                <div class="flex-1 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                  <div class="text-3xl font-bold text-orange-700">{formationStats.sessions}+</div>
-                  <div class="text-sm text-gray-600">sessions</div>
+                <div class="flex-1 p-4 bg-surface rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">{formationStats.sessions}+</div>
+                  <div class="text-sm text-foreground-muted">sessions</div>
                 </div>
               </div>
 
               <!-- Formations -->
               <div class="mb-6">
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Formations</p>
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formations</p>
                 <div class="flex flex-wrap gap-2">
-                  <a href="/formations/git" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">Git</a>
-                  <a href="/formations/phpunit" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">PHPUnit</a>
-                  <a href="/formations/ddd" class="px-2 py-1 bg-orange-100 hover:bg-orange-200 rounded text-sm text-orange-800 transition-colors">DDD</a>
+                  <a href="/formations/git" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">Git</a>
+                  <a href="/formations/phpunit" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">PHPUnit</a>
+                  <a href="/formations/ddd" class="px-2 py-1 bg-surface hover:bg-surface-muted rounded text-sm text-foreground transition-colors">DDD</a>
                 </div>
               </div>
 
               <!-- Logos clients -->
               <div class="mb-6">
-                <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Formé pour</p>
-                <a href="/clients" class="flex flex-wrap items-center gap-4 hover:opacity-80 transition-opacity">
-                  <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
-                  <img src="/images/clients/orsys.webp" alt="Orsys" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="431" height="151" />
-                  <img src="/images/clients/esgi.webp" alt="ESGI" class="h-8 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="300" height="300" />
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Formé pour</p>
+                <a href="/clients" class="flex flex-wrap items-center hover:opacity-80 transition-opacity">
+                  <img src="/images/clients/clever-age.webp" alt="Clever Age" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="769" height="537" />
+                  <img src="/images/clients/orsys.webp" alt="Orsys" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="431" height="151" />
+                  <img src="/images/clients/esgi.webp" alt="ESGI" class="h-8 max-w-[100px] object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all" width="300" height="300" />
                 </a>
               </div>
 
               <!-- Recommandation -->
-              <a href="/recommendations#formations" class="block hover:bg-gray-50 rounded-lg transition-colors -mx-2 px-2 py-2">
-                <blockquote class="text-sm border-l-2 border-orange-300 pl-3">
-                  <p class="text-gray-600 italic mb-2">« Contenu très complet et intervenant pédagogue et patient. »</p>
-                  <footer class="text-xs text-gray-500">— Sarah Z., évaluation formation Git</footer>
+              <a href="/recommendations#formations" class="block bg-surface rounded-lg p-3 hover:bg-white transition-colors -mx-2">
+                <blockquote class="text-sm border-l-2 border-primary pl-3">
+                  <p class="text-foreground-muted italic mb-2">« Contenu très complet et intervenant pédagogue et patient. »</p>
+                  <footer class="text-xs text-foreground-muted">— Sarah Z., évaluation formation Git</footer>
                 </blockquote>
               </a>
             </div>
@@ -488,38 +489,38 @@ const testimonials = [
 
           <!-- Colonne droite : contenu -->
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
-            <div class="bg-gray-50 rounded-xl p-6 md:p-8 border border-gray-100">
-              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+            <div class="bg-surface rounded-xl p-6 md:p-8 border border-border-light">
+              <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
                 Tes devs codent.
                 Mais est-ce qu'ils investissent leur énergie au bon endroit ?
               </p>
 
-              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
                 Au-delà des aspects techniques, mes formations visent à transformer le mindset : comprendre où investir pour un vrai gain, produire du code qui dure, et arrêter de perdre du temps sur ce qui n'apporte pas de valeur.
               </p>
 
-              <ul class="space-y-3 text-gray-700 mb-6">
+              <ul class="space-y-3 text-foreground mb-6">
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Formations intra-entreprise, distantiel</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Organisme déclaré (NDA)</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Depuis 2016</span>
                 </li>
               </ul>
 
-              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
-                <p class="text-gray-700 italic">« Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique. »</p>
+              <blockquote class="border-l-4 border-primary pl-4 py-3 mb-6 bg-white rounded-r-lg">
+                <p class="text-foreground italic">« Ce que j'aime dans la formation : voir quelqu'un repartir avec une nouvelle façon de penser, pas juste une nouvelle technique. »</p>
               </blockquote>
 
               <a
                 href="/formations"
-                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+                class="btn-primary text-lg"
               >
                 Voir les formations →
               </a>
@@ -530,44 +531,44 @@ const testimonials = [
     </div>
   </section>
 
-  <!-- SERVICE 4: AUTOMATISATION (Style B : fond orange, carte blanche) -->
-  <section id="automatisation" class="py-16 bg-orange-900">
+  <!-- SERVICE 4: AUTOMATISATION -->
+  <section id="automatisation" class="py-16">
     <div class="container mx-auto px-4">
       <div class="max-w-5xl mx-auto">
         <div class="grid md:grid-cols-12 gap-0">
           <!-- Colonne gauche : titre + preuve sociale -->
-          <div class="md:col-span-4 md:border-r md:border-white/20 md:pr-8">
+          <div class="md:col-span-4 md:border-r md:border-border md:pr-8">
             <div class="md:sticky md:top-16">
-              <h3 class="text-2xl md:text-3xl font-bold text-white flex items-center gap-3 mb-6">
+              <h3 class="text-2xl md:text-3xl font-bold text-foreground-heading flex items-center gap-3 mb-6">
                 <span>Automatiser</span>
-                <span class="text-3xl">🤖</span>
+                <Icon name="mdi:robot" class="w-8 h-8 text-primary" />
               </h3>
 
               <!-- Chiffres clés -->
               <div class="flex gap-3 mb-6">
-                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
-                  <div class="text-3xl font-bold text-white">3+</div>
-                  <div class="text-sm text-orange-100">années</div>
+                <div class="flex-1 p-4 bg-white rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">3+</div>
+                  <div class="text-sm text-foreground-muted">années</div>
                 </div>
-                <div class="flex-1 p-4 bg-white/15 rounded-lg backdrop-blur-sm">
-                  <div class="text-3xl font-bold text-white">IA</div>
-                  <div class="text-sm text-orange-100">× Craft</div>
+                <div class="flex-1 p-4 bg-white rounded-lg border border-border-light">
+                  <div class="text-3xl font-bold text-primary">IA</div>
+                  <div class="text-sm text-foreground-muted">× Craft</div>
                 </div>
               </div>
 
               <!-- Outils -->
               <div class="mb-6">
-                <p class="text-xs text-orange-200 uppercase tracking-wider mb-3">Outils maîtrisés</p>
+                <p class="text-xs text-foreground-muted uppercase tracking-wider mb-3">Outils maîtrisés</p>
                 <div class="flex flex-wrap gap-2">
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Claude Code</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">MCP</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Skills</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Hooks</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Commands</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">Plugins</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">RAG</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">n8n</span>
-                  <span class="px-2 py-1 bg-white/15 rounded text-sm text-white">GitHub Copilot</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Claude Code</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">MCP</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Skills</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Hooks</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Commands</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">Plugins</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">RAG</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">n8n</span>
+                  <span class="px-2 py-1 bg-white rounded text-sm text-foreground-muted">GitHub Copilot</span>
                 </div>
               </div>
             </div>
@@ -575,38 +576,38 @@ const testimonials = [
 
           <!-- Colonne droite : contenu -->
           <div class="md:col-span-8 md:pl-8 mt-8 md:mt-0">
-            <div class="bg-white rounded-xl p-6 md:p-8 shadow-sm">
-              <p class="text-xl md:text-2xl text-gray-900 font-semibold mb-4 leading-relaxed">
+            <div class="bg-white rounded-xl p-6 md:p-8 border border-border-light">
+              <p class="text-xl md:text-2xl text-foreground-heading font-semibold mb-4 leading-relaxed">
                 L'IA change notre façon de coder.
                 Mais sans direction, elle amplifie les problèmes autant que les solutions.
               </p>
 
-              <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+              <p class="text-foreground-muted mb-6 leading-relaxed text-lg">
                 Je t'aide à intégrer les outils d'automatisation dans tes workflows — pour gagner en productivité sans sacrifier la qualité.
               </p>
 
-              <ul class="space-y-3 text-gray-700 mb-6">
+              <ul class="space-y-3 text-foreground mb-6">
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Intégration Claude Code / agents IA</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Workflows automatisés</span>
                 </li>
                 <li class="flex items-start gap-3 text-lg">
-                  <span class="text-orange-600 mt-0.5 text-xl">✓</span>
+                  <span class="text-primary mt-0.5 text-xl">✓</span>
                   <span>Garde-fous qualité</span>
                 </li>
               </ul>
 
-              <blockquote class="border-l-4 border-orange-300 pl-4 py-3 mb-6 bg-orange-50 rounded-r-lg">
-                <p class="text-gray-700 italic">« Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur. »</p>
+              <blockquote class="border-l-4 border-primary pl-4 py-3 mb-6 bg-white rounded-r-lg">
+                <p class="text-foreground italic">« Ce que j'aime dans l'automatisation : trouver le bon équilibre entre vitesse et garde-fous. Aller vite, mais pas droit dans le mur. »</p>
               </blockquote>
 
               <a
                 href="/automatisation"
-                class="inline-block bg-orange-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-800 transition-colors text-lg"
+                class="btn-primary text-lg"
               >
                 En savoir plus →
               </a>
@@ -618,15 +619,15 @@ const testimonials = [
   </section>
 
   <!-- SECTION PARTENAIRES (Alex) -->
-  <section id="freelance" class="py-12 border-t border-gray-200">
+  <section id="freelance" class="py-12 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
         <h3 class="text-xl font-bold mb-4">Tu es freelance ?</h3>
-        <p class="text-gray-600 mb-4">
+        <p class="text-foreground-muted mb-4">
           Tu as une mission qui ne te correspond pas ? Je peux peut-être t'aider.<br />
           Et inversement — quand j'ai un truc qui ne me convient pas, je pense à mon réseau.
         </p>
-        <a href="/apport-affaires" class="text-orange-700 font-semibold hover:text-orange-800">
+        <a href="/apport-affaires" class="text-primary font-semibold hover:text-primary-hover">
           On en parle →
         </a>
       </div>
@@ -634,12 +635,12 @@ const testimonials = [
   </section>
 
   <!-- SECTION TÉMOIGNAGES -->
-  <section class="py-16 bg-gray-50 border-t border-gray-200">
+  <section class="py-16">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce qu'ils en disent</h2>
       <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
         {testimonials.map(testimonial => (
-          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="card-elevated rounded-xl">
             <div class="flex items-center gap-4 mb-4">
               <img
                 src={testimonial.image}
@@ -648,15 +649,15 @@ const testimonials = [
               />
               <div>
                 <div class="font-semibold">{testimonial.name}</div>
-                <div class="text-gray-600 text-sm">{testimonial.role}</div>
+                <div class="text-foreground-muted text-sm">{testimonial.role}</div>
               </div>
             </div>
-            <blockquote class="text-gray-700 italic">"{testimonial.content}"</blockquote>
+            <blockquote class="text-foreground italic">"{testimonial.content}"</blockquote>
           </div>
         ))}
       </div>
       <div class="text-center mt-8">
-        <a href="/recommendations" class="text-orange-700 hover:text-orange-800 font-medium">
+        <a href="/recommendations" class="text-primary hover:text-primary-hover font-medium">
           Voir toutes les recommandations →
         </a>
       </div>
@@ -664,19 +665,19 @@ const testimonials = [
   </section>
 
   <!-- SECTION CTA FINALE -->
-  <section class="py-20 bg-gradient-to-br from-orange-900 to-orange-800">
+  <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
-      <div class="max-w-2xl mx-auto text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-6">
           Envie d'en discuter ?
         </h2>
-        <p class="text-xl text-orange-100 mb-8">
+        <p class="text-xl text-foreground-muted mb-8">
           Pas de devis automatique. On échange d'abord pour voir si ça matche.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a
             href="/contact"
-            class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors"
+            class="btn-primary text-lg"
           >
             Prendre contact →
           </a>
@@ -684,7 +685,7 @@ const testimonials = [
             href="https://www.linkedin.com/in/fabiensalles/"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors"
+            class="btn-outline text-lg inline-flex items-center gap-2"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn

@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import { Icon } from 'astro-icon/components';
 import { getAllRecommendations, getStats } from '../data/formations';
 
 // Récupère une recommandation aléatoire pour le témoignage
@@ -79,90 +80,96 @@ const stats = {
   title="Formations PHPUnit, Git, DDD - Fabien Salles"
   description="Des formations pratiques pour arrêter de subir tes outils. PHPUnit, Git, DDD : en 2 à 5 jours, maîtrise vraiment ce que tu utilises tous les jours."
 >
-  <div class="container mx-auto px-4 py-12">
+  <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations' }]} />
+  </div>
 
-    <!-- HERO SECTION -->
-    <section class="text-center py-12 mb-12">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-        Arrête de subir ton environnement.<br>
-        <span class="text-orange-700">Maîtrise-le vraiment.</span>
-      </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4 leading-relaxed">
-        Des formations pratiques, sans bullshit, pour ceux qui veulent comprendre
-        ce qu'ils font.
-      </p>
-      <!-- Stats inline -->
-      <div class="flex flex-wrap justify-center gap-8 text-sm text-gray-600 mb-6">
-        <div class="flex items-center gap-2">
-          <span class="text-2xl font-bold text-gray-900">{stats.developers}</span>
-          <span>développeurs formés</span>
+  <!-- SECTION 1 : HERO (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          Arrête de subir ton environnement.<br>
+          <span class="text-primary">Maîtrise-le vraiment.</span>
+        </h1>
+        <p class="text-xl text-foreground-muted max-w-3xl mx-auto mb-4 leading-relaxed">
+          Des formations pratiques, sans bullshit, pour ceux qui veulent comprendre
+          ce qu'ils font.
+        </p>
+        <!-- Stats inline -->
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-foreground-muted mb-6">
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold text-primary">{stats.developers}</span>
+            <span>développeurs formés</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-2xl font-bold text-primary">{stats.sessions}</span>
+            <span>sessions depuis {stats.since}</span>
+          </div>
         </div>
-        <div class="flex items-center gap-2">
-          <span class="text-2xl font-bold text-gray-900">{stats.sessions}</span>
-          <span>sessions depuis {stats.since}</span>
+
+        <!-- Statut -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <span class="badge-status">✓ Freelance</span>
+          <span class="badge-status">✓ Disponible</span>
+          <span class="px-3 py-1 text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Statut -->
-      <div class="flex flex-wrap justify-center gap-3 mb-8">
-        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Freelance</span>
-        <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">✓ Disponible</span>
-        <span class="px-3 py-1 text-gray-700 rounded-full text-sm">📍 Paris — Full remote ou hybride</span>
-      </div>
-    </section>
-
-    <!-- FORMATIONS GRID -->
-    <section id="formations" class="mb-16 scroll-mt-8 bg-gradient-to-br from-orange-900 to-orange-800 -mx-4 px-4 py-16 md:rounded-lg md:mx-0 md:px-12">
+  <!-- SECTION 2 : FORMATIONS GRID (white) -->
+  <section id="formations" class="py-16 bg-white scroll-mt-8">
+    <div class="container mx-auto px-4">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {formations.map((formation) => (
-          <div class="p-8 bg-orange-50 rounded-xl shadow-lg hover:shadow-xl transition-shadow flex flex-col">
+          <div class="p-8 bg-surface rounded-xl border border-border-light hover:border-primary transition-colors flex flex-col">
             {formation.featured && (
-              <div class="text-xs font-semibold text-orange-700 uppercase tracking-wide mb-2">
+              <div class="text-xs font-semibold text-primary uppercase tracking-wide mb-2">
                 Formation phare
               </div>
             )}
 
             <!-- Header -->
-            <div class="mb-6 pb-4 border-b border-orange-200">
-              <h2 class="text-2xl font-bold text-gray-900">
+            <div class="mb-6 pb-4 border-b border-border">
+              <h2 class="text-2xl font-bold text-foreground-heading">
                 {formation.title}
               </h2>
             </div>
 
             <!-- Hook -->
-            <p class="text-gray-800 mb-6 font-medium" set:html={formation.hook} />
+            <p class="text-foreground-heading mb-6 font-medium" set:html={formation.hook} />
 
             <!-- Problem -->
-            <p class="text-gray-700 mb-5 leading-relaxed">
+            <p class="text-foreground mb-5 leading-relaxed">
               {formation.problem}
             </p>
 
             <!-- Promise (quote style) -->
-            <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-orange-400">
-              <p class="text-gray-600 text-sm italic">
+            <div class="bg-white rounded-lg p-4 mb-5 border-l-4 border-primary">
+              <p class="text-foreground-muted text-sm italic">
                 {formation.promise}
               </p>
             </div>
 
             <!-- Highlights -->
-            <ul class="space-y-2 text-gray-700 text-sm mb-6 flex-grow">
+            <ul class="space-y-2 text-foreground text-sm mb-6 flex-grow">
               {formation.highlights.map((item) => (
                 <li class="flex items-start gap-2">
-                  <span class="text-orange-600 mt-0.5">✓</span>
+                  <span class="text-primary mt-0.5">✓</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
 
             <!-- Footer -->
-            <div class="mt-auto pt-4 border-t border-orange-200 flex items-center justify-between">
-              <span class="text-sm font-medium text-gray-700">
+            <div class="mt-auto pt-4 border-t border-border flex items-center justify-between">
+              <span class="text-sm font-medium text-foreground">
                 {formation.duration}
               </span>
               <a
                 href={`/formations/${formation.slug}`}
-                class="inline-block bg-orange-700 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-orange-800 transition-colors"
+                class="inline-block bg-primary text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-primary-hover transition-colors"
               >
                 Découvrir →
               </a>
@@ -170,97 +177,102 @@ const stats = {
           </div>
         ))}
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TÉMOIGNAGE COURT -->
-    <section class="mb-16 bg-gray-50 -mx-4 px-4 py-10 md:rounded-lg md:mx-0 md:px-12">
+  <!-- SECTION 3 : TÉMOIGNAGE COURT (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto">
         <blockquote class="text-center">
-          <p class="text-xl text-gray-700 mb-6 leading-relaxed">
+          <p class="text-xl text-foreground mb-6 leading-relaxed">
             "{randomReco.recommendation}"
           </p>
-          <footer class="text-gray-600">
+          <footer class="text-foreground-muted">
             <span class="font-semibold">{randomReco.name}</span> — Participant formation {formationLabels[randomReco.formationName] || randomReco.formationName}
           </footer>
         </blockquote>
         <div class="text-center mt-6">
-          <a href="/recommendations#formations" class="text-orange-700 font-semibold hover:text-orange-800">
+          <a href="/recommendations#formations" class="text-primary font-semibold hover:text-primary-hover">
             Voir toutes les recommandations →
           </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- FORMATION SUR MESURE -->
-    <section class="mb-16">
-      <div class="bg-gradient-to-br from-orange-900 to-orange-800 text-white p-8 md:p-12 rounded-lg">
-        <div class="max-w-3xl mx-auto text-center">
-          <h2 class="text-2xl md:text-3xl font-bold mb-4">
-            Des formations issues du terrain
-          </h2>
-          <p class="text-orange-100 text-lg mb-4 leading-relaxed">
-            Mes formations sont issues de <strong class="text-white">vraies demandes clients</strong>, enrichies de ma touche personnelle et de toute l'expertise acquise en 15+ ans de terrain.
-          </p>
-          <p class="text-orange-100 text-lg mb-8 leading-relaxed">
-            Une idée ? Un besoin spécifique ? Je suis ouvert à améliorer mes formations existantes ou en créer de nouvelles sur-mesure.
-          </p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <a
-              href="/contact?subject=formation"
-              class="inline-block bg-white text-orange-900 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-orange-50 transition-colors duration-300"
-            >
-              On en discute ?
-            </a>
-            <a
-              href="https://www.linkedin.com/in/fabiensalles/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg text-lg font-semibold hover:bg-white/20 transition-colors duration-300"
-            >
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-          </div>
+  <!-- SECTION 4 : FORMATION SUR MESURE + CTA (white) -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-foreground-heading mb-4">
+          Des formations issues du terrain
+        </h2>
+        <p class="text-foreground-muted text-lg mb-4 leading-relaxed">
+          Mes formations sont issues de <strong class="text-foreground-heading">vraies demandes clients</strong>, enrichies de ma touche personnelle et de toute l'expertise acquise en 15+ ans de terrain.
+        </p>
+        <p class="text-foreground-muted text-lg mb-8 leading-relaxed">
+          Une idée ? Un besoin spécifique ? Je suis ouvert à améliorer mes formations existantes ou en créer de nouvelles sur-mesure.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/contact?subject=formation"
+            class="btn-primary text-lg"
+          >
+            On en discute ?
+          </a>
+          <a
+            href="https://www.linkedin.com/in/fabiensalles/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline text-lg inline-flex items-center gap-2"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- INFO NDA -->
-    <section class="mb-16 bg-green-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
-      <div class="max-w-3xl mx-auto text-center">
-        <span class="text-5xl block mb-4">🎓</span>
-        <h3 class="text-xl font-bold text-green-800 mb-2">Organisme de formation déclaré</h3>
-        <p class="text-green-700">
-          Numéro de déclaration d'activité (NDA) auprès de la DREETS.<br>
-          Formations exonérées de TVA (article 261-4-4°a du CGI).
-        </p>
-      </div>
-    </section>
-
-    <!-- Liens vers autres offres -->
-    <section class="mb-16 bg-gray-50 -mx-4 px-4 py-12 md:rounded-lg md:mx-0 md:px-12">
+  <!-- SECTION 5 : TU CHERCHES AUTRE CHOSE (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
         <h3 class="text-xl font-bold mb-6">Tu cherches autre chose ?</h3>
         <div class="flex flex-wrap justify-center gap-3 text-sm">
-          <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🎯</span>
+          <a href="/accompagnement" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:crosshairs-gps" class="w-5 h-5 text-primary" />
             <span><strong>Accompagnement</strong></span>
           </a>
-          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🔍</span>
+          <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:magnify" class="w-5 h-5 text-primary" />
             <span><strong>Audit</strong></span>
           </a>
-          <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🤖</span>
+          <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:robot" class="w-5 h-5 text-primary" />
             <span><strong>IA & Automatisation</strong></span>
           </a>
-          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-gray-200 text-gray-700 hover:border-orange-400 transition-colors">
-            <span>🤝</span>
+          <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <Icon name="mdi:handshake" class="w-5 h-5 text-primary" />
             <span><strong>Apport d'affaires</strong></span>
           </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </div>
+  <!-- SECTION 6 : NDA (white) -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <Icon name="mdi:school" class="w-12 h-12 text-primary mx-auto mb-4" />
+        <h3 class="text-xl font-bold text-foreground-heading mb-2">Organisme de formation déclaré</h3>
+        <p class="text-foreground-muted">
+          Numéro de déclaration d'activité (NDA) auprès de la DREETS.<br>
+          Formations exonérées de TVA (article 261-4-4°a du CGI).
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
