@@ -152,7 +152,7 @@ const recommendations = getRecommendationsByFormation('ddd');
         <p class="text-foreground-heading font-semibold text-xl mt-6">
           Cette formation est différente.
         </p>
-        <ul class="space-y-2 text-foreground mb-4">
+        <ul class="space-y-2 text-foreground-heading mb-4">
           <li>On commence par les <strong>PROBLÈMES</strong>. Pas par les solutions.</li>
           <li>Tu vas <strong>VIVRE</strong> les situations qui rendent le DDD nécessaire.</li>
           <li>Tu vas comprendre <strong>POURQUOI</strong> chaque outil existe, et quand <strong>NE PAS</strong> l'utiliser.</li>
@@ -331,7 +331,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">MATIN — Pourquoi le DDD ?</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Les challenges de la création logicielle</li>
                   <li>• Big Ball of Mud : comprendre comment on en arrive là</li>
                   <li>• Complexité accidentelle vs complexité essentielle</li>
@@ -341,7 +341,7 @@ const recommendations = getRecommendationsByFormation('ddd');
               </div>
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Domaine et modélisation</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Domaine vs Modèle : l'analogie de la carte</li>
                   <li>• Sous-domaines : Core, Supporting, Generic</li>
                   <li>• Où investir son énergie ?</li>
@@ -360,7 +360,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">MATIN — Faire émerger la connaissance</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Knowledge Crunching : extraire le savoir des experts</li>
                   <li>• Les dynamiques sociales (biais, auto-censure, hiérarchie)</li>
                   <li>• Impact Mapping : relier features et objectifs business</li>
@@ -368,7 +368,7 @@ const recommendations = getRecommendationsByFormation('ddd');
               </div>
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Event Storming</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Event Storming : découvrir les événements métier</li>
                   <li>• De la timeline aux Bounded Contexts</li>
                   <li>• Example Mapping : clarifier les règles par des exemples</li>
@@ -385,7 +385,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">MATIN — Découper le système</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Bounded Contexts : les frontières du modèle</li>
                   <li>• Context Mapping : cartographier les relations</li>
                   <li>• Patterns d'intégration : Partnership, Customer/Supplier, ACL...</li>
@@ -393,7 +393,7 @@ const recommendations = getRecommendationsByFormation('ddd');
               </div>
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Organiser et prioriser</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Aller plus loin avec le Core Domain Chart et Wardley Mapping</li>
                   <li>• Aligner les équipes sur les contextes</li>
                   <li>• Stratégies d'allocation des ressources</li>
@@ -415,7 +415,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">MATIN — Modéliser le domaine</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Du modèle au code : transformer les concepts en objets</li>
                   <li>• Value Objects : immuabilité et égalité par valeur</li>
                   <li>• Entities : identité et cycle de vie</li>
@@ -424,7 +424,7 @@ const recommendations = getRecommendationsByFormation('ddd');
               </div>
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Services et événements</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Domain Services : logique métier sans état</li>
                   <li>• Specifications : encapsuler les règles métier</li>
                   <li>• Domain Events : communiquer ce qui s'est passé</li>
@@ -442,7 +442,7 @@ const recommendations = getRecommendationsByFormation('ddd');
             <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">MATIN — Protéger le domaine</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Architecture Hexagonale : Ports & Adapters</li>
                   <li>• Anti-Corruption Layer : se protéger des contextes externes</li>
                   <li>• Supple Design : 7 patterns pour un code qui évolue</li>
@@ -450,7 +450,7 @@ const recommendations = getRecommendationsByFormation('ddd');
               </div>
               <div class="p-6">
                 <h5 class="font-bold text-primary mb-4">APRÈS-MIDI — Aller plus loin</h5>
-                <ul class="space-y-2 text-foreground">
+                <ul class="space-y-2 text-foreground-heading">
                   <li>• Stratégies de modernisation du legacy</li>
                   <li>• Les 5 pièges courants du DDD</li>
                 </ul>

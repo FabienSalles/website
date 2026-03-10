@@ -543,11 +543,11 @@ const modalites = [
       <!-- Logos clients -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
         {clients.map(client => (
-          <div class="flex items-center justify-center p-6 bg-surface rounded-lg border border-border-light hover:border-primary transition-colors">
+          <div class="flex items-center justify-center p-6 bg-surface rounded-lg border border-border-light">
             <img
               src={client.logo}
               alt={client.name}
-              class="max-h-12 w-auto grayscale hover:grayscale-0 transition-all duration-300"
+              class="max-h-12 w-auto grayscale"
             />
           </div>
         ))}
