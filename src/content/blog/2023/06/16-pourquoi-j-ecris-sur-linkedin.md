@@ -4,6 +4,7 @@ description: "Jusqu’à récemment, je n’en voyais pas l’intérêt !"
 pubDate: 2023-06-16
 categories: ["mindset","copywriting"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_pourquoi-je-me-mets-%C3%A0-%C3%A9crire-sur-linkedin-activity-7075353947305037825-Kacq"
+service: "accompagnement"
 draft: false
 ---
 

@@ -4,6 +4,7 @@ description: "En imposant, on se retrouve à faire des actions qui ne sont pas f
 pubDate:  2023-07-20
 categories: ["mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7087665544522280960/"
+service: "accompagnement"
 draft: false
 ---
 

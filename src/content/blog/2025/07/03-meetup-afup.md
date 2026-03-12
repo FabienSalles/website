@@ -4,6 +4,7 @@ description: "On vous donne rendez-vous pour le dernier meetup avant les vacance
 pubDate: 2025-07-03
 categories: ["meetup", "afup", "php"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_meetup-de-juillet-ia-recrutement-et-%C3%A9lection-activity-7346476001888989184-FOKH"
+service: "accompagnement"
 draft: false
 ---
 

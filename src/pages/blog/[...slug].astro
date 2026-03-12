@@ -5,6 +5,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import generateUrl from "@utils/url";
 import LinkedinLink from "../../components/LinkedinLink.astro";
+import ServiceCta from "../../components/ServiceCta.astro";
+import RelatedArticles from "../../components/RelatedArticles.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -29,51 +31,66 @@ const breadcrumbItems = [
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <div class="container max-w-3xl mx-auto px-4 pb-12 my-8">
-    <div class="bg-white rounded-lg p-8 border border-border-light">
-    <article>
-      <header class="mb-8">
-        <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
-        <div class="flex gap-2 text-foreground-muted">
-          <time datetime={post.data.pubDate.toISOString()}>
-            {post.data.pubDate.toLocaleDateString('fr-FR', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
-          • 
-          <div class="flex gap-2">
-            {post.data.categories.map(category => (
-              <a
-                href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
-                title={category}
-                class="hover:text-primary transition-colors"
-              >
-                {category}
-              </a>
-            ))}
+  <div class={`container mx-auto px-4 pb-12 my-8 ${post.data.service ? 'max-w-5xl' : 'max-w-3xl'}`}>
+    <div class={`flex flex-col items-center ${post.data.service ? 'xl:flex-row xl:items-stretch xl:gap-8' : ''}`}>
+      <div class="max-w-3xl w-full bg-white rounded-lg p-8 border border-border-light">
+        <article>
+          <header class="mb-8">
+            <h1 class="text-4xl font-bold mb-4">{post.data.title}</h1>
+            <div class="flex gap-2 text-foreground-muted">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('fr-FR', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+              •
+              <div class="flex gap-2">
+                {post.data.categories.map(category => (
+                  <a
+                    href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
+                    title={category}
+                    class="hover:text-primary transition-colors"
+                  >
+                    {category}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </header>
+
+          <div class="prose prose-lg">
+            <Content />
           </div>
-        </div>
-      </header>
+          <footer class="mt-12 text-foreground-muted">
+            <LinkedinLink linkedinPostUrl={post.data.linkedinPostUrl} />
+            <div class="flex flex-col gap-4 pt-8 border-t border-border-light">
+                <p>
+                    Vous avez repéré une erreur ?{' '}
+                    <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-primary hover:text-primary-hover transition-colors" target="_blank" rel="noopener noreferrer">
+                        Contribuez au post sur GitHub
+                    </a>
+                </p>
+            </div>
+          </footer>
+        </article>
 
-      <div class="prose prose-lg">
-        <Content />
+        <NewsletterForm />
       </div>
-      <footer class="mt-12 text-foreground-muted">
-        <LinkedinLink linkedinPostUrl={post.data.linkedinPostUrl} />
-        <div class="flex flex-col gap-4 pt-8 border-t">
-            <p>
-                Vous avez repéré une erreur ?{' '}
-                <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-primary hover:text-primary-hover transition-colors" target="_blank" rel="noopener noreferrer">
-                    Contribuez au post sur GitHub
-                </a>
-            </p>
-        </div>
-      </footer>
-    </article>
 
-    <NewsletterForm />
+      {post.data.service && (
+        <aside class="w-full max-w-3xl xl:w-72 xl:max-w-none xl:shrink-0 mt-8 xl:mt-0">
+          <div class="xl:sticky xl:top-24 flex flex-col gap-6">
+            <ServiceCta service={post.data.service} />
+            <RelatedArticles
+              currentSlug={post.slug}
+              service={post.data.service}
+              categories={post.data.categories}
+            />
+          </div>
+        </aside>
+      )}
     </div>
   </div>
 </Layout>

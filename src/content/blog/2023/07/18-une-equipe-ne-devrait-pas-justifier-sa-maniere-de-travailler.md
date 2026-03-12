@@ -4,6 +4,7 @@ description: "On voit souvent dans les entreprises, des responsables qui ont la 
 pubDate:  2023-07-18    
 categories: ["mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7086967801919217664/"
+service: "accompagnement"
 draft: false
 ---
 

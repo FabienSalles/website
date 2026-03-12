@@ -11,7 +11,8 @@
     "astro": "astro",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "optimize-image": "node scripts/optimize-image.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",

@@ -8,6 +8,10 @@ const blog = defineCollection({
     pubDate: z.date(),
     categories: z.array(z.string()),
     linkedinPostUrl: z.string().url().optional(),
+    service: z.enum([
+      'formation-phpunit', 'formation-ddd', 'formation-git',
+      'audit', 'accompagnement', 'automatisation',
+    ]).optional(),
     draft: z.boolean().default(false),
   }),
 });

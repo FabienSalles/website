@@ -4,6 +4,7 @@ description: "Cette semaine, j’ai fait un gros plein d’inspiration tech sur 
 pubDate: 2025-10-22
 categories: ["meetup", "afup", "php", "IA"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_2-meetups-2-jours-2-mois-de-veille-ia-activity-7386734243143651328-yL0F"
+service: "automatisation"
 draft: false
 ---
 

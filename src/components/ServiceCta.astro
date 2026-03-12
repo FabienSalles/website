@@ -1,0 +1,58 @@
+---
+interface Props {
+  service: string;
+}
+
+const { service } = Astro.props;
+
+const serviceCtaMap: Record<string, { href: string; title: string; description: string; button: string }> = {
+  'formation-phpunit': {
+    href: '/formations/phpunit',
+    title: 'Formation TDD/PHPUnit',
+    description: 'Tes tests cassent sans raison ? Ils prennent trop de temps à écrire et à maintenir ? Apprends à écrire des tests qui te font gagner du temps au lieu d\'en perdre.',
+    button: 'Découvrir la formation',
+  },
+  'formation-ddd': {
+    href: '/formations/ddd',
+    title: 'Formation DDD',
+    description: 'Le métier et la tech ne se comprennent pas ? Le couplage crée des régressions ? Aligne ton équipe technique et produit pour livrer ce qui compte vraiment.',
+    button: 'Découvrir la formation',
+  },
+  'formation-git': {
+    href: '/formations/git',
+    title: 'Formation Git avancé',
+    description: 'Tu utilises Git tous les jours mais tu ne le comprends pas vraiment ? Passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".',
+    button: 'Découvrir la formation',
+  },
+  'audit': {
+    href: '/audit',
+    title: 'Besoin d\'un audit ?',
+    description: 'Je te donne une vision claire et objective de la santé de ton code, avec des recommandations actionnables pour avancer sereinement.',
+    button: 'Demander un diagnostic',
+  },
+  'accompagnement': {
+    href: '/accompagnement',
+    title: 'Envie de collaborer ?',
+    description: 'J\'aide tes équipes à livrer des applications web stables et durables en transmettant les pratiques qui font la différence au quotidien.',
+    button: 'On en discute ?',
+  },
+  'automatisation': {
+    href: '/automatisation',
+    title: 'Besoin d\'aide ?',
+    description: 'Je t\'aide à intégrer l\'IA dans tes workflows de développement pour gagner en productivité sans sacrifier la qualité.',
+    button: 'En savoir plus',
+  },
+};
+
+const cta = serviceCtaMap[service];
+---
+
+{cta && (
+  <div class="bg-white rounded-lg p-6 border border-border-light">
+    <h3 class="text-lg font-bold text-foreground-heading mb-2">{cta.title}</h3>
+    <p class="text-sm text-foreground mb-4">{cta.description}</p>
+    <a href={cta.href} class="block w-full text-center px-4 py-2 bg-primary-cta text-white rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors duration-300">
+      {cta.button}
+    </a>
+  </div>
+)}

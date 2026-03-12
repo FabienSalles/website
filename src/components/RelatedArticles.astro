@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content';
+import generateUrl from "@utils/url";
+
+interface Props {
+  currentSlug: string;
+  service?: string;
+  categories: string[];
+  max?: number;
+}
+
+const { currentSlug, service, categories, max = 4 } = Astro.props;
+
+const allPosts = (await getCollection('blog'))
+  .filter(p => !p.data.draft && p.slug !== currentSlug);
+
+// Score each post by relevance: same service = 10, each shared category = 1
+const scored = allPosts.map(p => {
+  let score = 0;
+  if (service && p.data.service === service) score += 10;
+  const shared = p.data.categories.filter(c => categories.includes(c));
+  score += shared.length;
+  return { post: p, score };
+})
+.filter(s => s.score > 0)
+.sort((a, b) => b.score - a.score || b.post.data.pubDate.getTime() - a.post.data.pubDate.getTime())
+.slice(0, max);
+
+const related = scored.map(s => s.post);
+---
+
+{related.length > 0 && (
+  <div class="bg-white rounded-lg p-6 border border-border-light">
+    <h3 class="text-sm font-bold text-foreground-heading uppercase tracking-wide mb-4">D'autres posts recommandés</h3>
+    <ul class="flex flex-col gap-3">
+      {related.map(post => (
+        <li>
+          <a
+            href={generateUrl(`/blog/${post.slug}`)}
+            class="block group"
+          >
+            <span class="text-sm text-foreground-heading group-hover:text-primary transition-colors leading-snug">
+              {post.data.title}
+            </span>
+            <span class="block text-xs text-foreground-muted mt-0.5">
+              {post.data.pubDate.toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' })}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}

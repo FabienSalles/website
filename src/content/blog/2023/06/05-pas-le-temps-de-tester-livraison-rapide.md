@@ -4,6 +4,7 @@ description: "L’écriture de tests ne fait  pas perdre du temps, bien au contr
 pubDate: 2023-06-05
 categories: ["organisation", "tests", "TDD", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7071362108411494400/"
+service: "formation-phpunit"
 draft: false
 ---
 C’est sur que si tu as développé ta fonctionnalité en testant manuellement, les tests automatisées perdent de leurs intérêts…

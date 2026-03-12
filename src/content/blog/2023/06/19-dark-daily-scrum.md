@@ -4,6 +4,7 @@ description: "Plutôt que de s’attarder sur l’avancement de manière individ
 pubDate: 2023-06-19
 categories: ["organisation", "agile", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_utiliser-le-daily-scrum-pour-suivre-lavancement-activity-7076425242620874752-EszL/"
+service: "accompagnement"
 draft: false
 ---
 

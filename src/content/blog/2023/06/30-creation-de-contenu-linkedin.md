@@ -4,6 +4,7 @@ description: "Pour ceux que cela peut intéresser, voici mon parcours"
 pubDate: 2023-06-30
 categories: ["copywriting"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7077898488407040000/"
+service: "accompagnement"
 draft: false
 ---
 

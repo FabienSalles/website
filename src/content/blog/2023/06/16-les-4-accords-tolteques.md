@@ -6,6 +6,7 @@ On pourrait penser qu'ils ne sont d'aucun intérêt mais avec du recul, on se re
 pubDate: 2023-06-16
 categories: ["mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7075448919601631232/"
+service: "accompagnement"
 draft: false
 ---
 

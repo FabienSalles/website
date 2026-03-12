@@ -4,6 +4,7 @@ description: "J’ai déjà entendu cette phrase il y a quelques années et elle
 pubDate: 2023-06-09
 categories: ["organisation", "leadership", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_cest-toi-le-lead-cest-à-toi-de-réfléchir-activity-7072823829433077761-iX0e?utm_source=share&utm_medium=member_desktop"
+service: "accompagnement"
 draft: false
 ---
 

@@ -5,6 +5,7 @@ Elle sera forcément bridée et ne pourra pas aller à son plein potentiel."
 pubDate: 2023-06-23
 categories: ["organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7077898488407040000/"
+service: "formation-ddd"
 draft: false
 ---
 

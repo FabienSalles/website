@@ -5,6 +5,7 @@ Que cela soit la durée d’un sprint ou d’une US, un waterfall itératif rest
 pubDate:  2023-07-03
 categories: ["agile", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7081509021039386624/"
+service: "formation-ddd"
 draft: false
 ---
 

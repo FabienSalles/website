@@ -5,6 +5,7 @@ Regarder d'abord votre culture ! "
 pubDate:  2023-07-24
 categories: ["organisation", "performance", "qualité"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7089117225705447424/"
+service: "formation-ddd"
 draft: false
 ---
 

@@ -4,6 +4,7 @@ description: "J’arrive à la fin de ma 3ᵉ année en tant que Freelance. Voic
 pubDate: 2023-12-15
 categories: ["freelance"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7141328554071359489/"
+service: "accompagnement"
 draft: false
 ---
 

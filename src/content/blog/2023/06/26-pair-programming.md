@@ -4,6 +4,7 @@ description: "L’union des talents dépasse la simple addition"
 pubDate: 2023-06-26
 categories: ["pair-programming"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7078963786291802113/"
+service: "accompagnement"
 draft: false
 ---
 

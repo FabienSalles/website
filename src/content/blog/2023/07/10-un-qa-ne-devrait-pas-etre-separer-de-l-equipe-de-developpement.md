@@ -4,6 +4,7 @@ description: "L’intérêt d’un QA n’est pas juste de faire ce que les devs
 pubDate: 2023-07-10
 categories: ["CI/CD", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7084051367056568321/"
+service: "formation-ddd"
 draft: false
 ---
 
