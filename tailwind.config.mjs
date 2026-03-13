@@ -5,25 +5,35 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#c2410c',   // orange-700 — text links, readable
-          hover: '#9a3412',     // orange-800 — text hover
-          cta: '#ea580c',       // orange-600 — button backgrounds, vibrant
-          'cta-hover': '#f97316', // orange-500 — button hover, brighter
-          dark: '#7c2d12',      // orange-900 — dark CTA sections
-          muted: '#ffedd5',     // orange-100 — badges, tags
+          DEFAULT: 'var(--color-primary)',
+          hover: 'var(--color-primary-hover)',
+          cta: 'var(--color-primary-cta)',
+          'cta-hover': 'var(--color-primary-cta-hover)',
+          dark: 'var(--color-primary-dark)',
+          muted: 'var(--color-primary-muted)',
         },
         surface: {
-          DEFAULT: '#fafaf9',   // stone-50 — warm white, modern
-          muted: '#f5f5f4',     // stone-100 — subtle muted
+          DEFAULT: 'var(--color-surface)',
+          muted: 'var(--color-surface-muted)',
+          elevated: 'var(--color-surface-elevated)',
         },
         foreground: {
-          DEFAULT: '#374151',   // gray-700 — body text
-          heading: '#111827',   // gray-900 — headings
-          muted: '#78716c',     // stone-500 — captions, meta
+          DEFAULT: 'var(--color-foreground)',
+          heading: 'var(--color-foreground-heading)',
+          muted: 'var(--color-foreground-muted)',
         },
         border: {
-          DEFAULT: '#d6d3d1',   // stone-300 — borders
-          light: '#e7e5e4',     // stone-200 — subtle borders
+          DEFAULT: 'var(--color-border)',
+          light: 'var(--color-border-light)',
+        },
+        'on-primary': 'var(--color-on-primary)',
+        status: {
+          bg: 'var(--color-status-bg)',
+          text: 'var(--color-status-text)',
+        },
+        linkedin: {
+          DEFAULT: 'var(--color-linkedin)',
+          hover: 'var(--color-linkedin-hover)',
         },
       },
       borderRadius: {
@@ -45,11 +55,35 @@ export default {
         DEFAULT: {
           css: {
             maxWidth: '100ch',
+            color: 'var(--color-foreground)',
             a: {
-              color: '#c2410c',
+              color: 'var(--color-primary)',
               '&:hover': {
-                color: '#9a3412',
+                color: 'var(--color-primary-hover)',
               },
+            },
+            h1: { color: 'var(--color-foreground-heading)' },
+            h2: { color: 'var(--color-foreground-heading)' },
+            h3: { color: 'var(--color-foreground-heading)' },
+            h4: { color: 'var(--color-foreground-heading)' },
+            strong: { color: 'var(--color-foreground-heading)' },
+            blockquote: {
+              color: 'var(--color-foreground)',
+              borderLeftColor: 'var(--color-border)',
+            },
+            code: {
+              color: 'var(--color-foreground-heading)',
+              backgroundColor: 'var(--color-surface-muted)',
+            },
+            'code::before': { content: '""' },
+            'code::after': { content: '""' },
+            hr: { borderColor: 'var(--color-border-light)' },
+            'thead th': {
+              color: 'var(--color-foreground-heading)',
+              borderBottomColor: 'var(--color-border)',
+            },
+            'tbody td': {
+              borderBottomColor: 'var(--color-border-light)',
             },
           },
         },

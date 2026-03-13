@@ -1,5 +1,6 @@
 ---
 import generateUrl from "@utils/url";
+import "../styles/global.css";
 
 interface Props {
   title: string;
@@ -67,6 +68,7 @@ if (!alternateLink) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="color-scheme" content="light dark" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -140,6 +142,16 @@ if (!alternateLink) {
       ]
     }
     </script>
+    <script is:inline>
+      (function() {
+        var theme = localStorage.getItem('theme');
+        if (!theme) {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+        document.querySelector('meta[name="color-scheme"]').setAttribute('content', theme);
+      })();
+    </script>
   </head>
   <body class="min-h-screen bg-surface">
     <header class="fixed w-full bg-surface border-b-2 border-primary z-50">
@@ -154,6 +166,16 @@ if (!alternateLink) {
             Fabien Salles
           </a>
 
+          <div class="flex items-center gap-1">
+          <!-- Theme toggle (mobile) -->
+          <button
+            id="theme-toggle-mobile"
+            class="md:hidden text-foreground-heading p-2 focus:outline-none"
+            aria-label="Changer le thème"
+          >
+            <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            <svg class="theme-icon-moon w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </button>
           <!-- Mobile menu button -->
           <button
             id="mobile-menu-button"
@@ -167,6 +189,7 @@ if (!alternateLink) {
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
+          </div>
 
           <!-- Desktop menu -->
           <ul class="hidden md:flex gap-6 items-center">
@@ -208,6 +231,16 @@ if (!alternateLink) {
                   </a>
                 </li>
             }
+            <li>
+              <button
+                id="theme-toggle"
+                class="text-foreground-heading p-2 rounded-lg hover:bg-surface-muted transition-colors focus:outline-none"
+                aria-label="Changer le thème"
+              >
+                <svg class="theme-icon-sun w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                <svg class="theme-icon-moon w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -258,7 +291,7 @@ if (!alternateLink) {
 
       <!-- Mega menu formations (pleine largeur) -->
       {trainingEnabled &&
-        <div id="formations-mega" class="hidden bg-white border-t border-border-light">
+        <div id="formations-mega" class="hidden bg-surface-elevated border-t border-border-light">
           <div class="container mx-auto px-4 py-8">
             <div class="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
               <a href="/formations/git" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/git') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
@@ -285,56 +318,20 @@ if (!alternateLink) {
                   <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">3 à 5 jours</span>
                 </div>
                 <p class="text-sm text-foreground mb-2">Le métier et la tech ne se comprennent pas ? Le couplage crée des régressions ?</p>
-                <p class="text-sm text-foreground-heading font-semibold">Aligne ton équipe technique et produit pour livrer ce qui compte vraiment.</p>
+                <p class="text-sm text-foreground-heading font-semibold">Aligne-toi correctement pour livrer ce qui compte vraiment.</p>
                 <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
               </a>
             </div>
             <div class="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-border-light max-w-5xl mx-auto">
               <span class="text-sm text-foreground-muted">Organisme déclaré · 137+ développeurs formés · Depuis 2016</span>
-              <a href="/formations" class="text-sm bg-primary-cta text-white px-4 py-1.5 rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors" data-astro-reload>Toutes les formations →</a>
+              <a href="/formations" class="text-sm bg-primary-cta text-on-primary px-4 py-1.5 rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors" data-astro-reload>Toutes les formations →</a>
             </div>
           </div>
         </div>
       }
     </header>
 
-    <script>
-      const mobileMenuButton = document.getElementById('mobile-menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      const menuIconOpen = document.getElementById('menu-icon-open');
-      const menuIconClose = document.getElementById('menu-icon-close');
-
-      mobileMenuButton?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-        mobileMenu?.classList.toggle('flex');
-        menuIconOpen?.classList.toggle('hidden');
-        menuIconClose?.classList.toggle('hidden');
-      });
-
-      // Mega menu formations
-      const formationsNav = document.getElementById('formations-nav');
-      const formationsMega = document.getElementById('formations-mega');
-      const formationsChevron = document.getElementById('formations-chevron');
-      let hideTimeout: ReturnType<typeof setTimeout>;
-
-      function showMega() {
-        clearTimeout(hideTimeout);
-        formationsMega?.classList.remove('hidden');
-        formationsChevron?.classList.add('rotate-180');
-      }
-
-      function hideMega() {
-        hideTimeout = setTimeout(() => {
-          formationsMega?.classList.add('hidden');
-          formationsChevron?.classList.remove('rotate-180');
-        }, 150);
-      }
-
-      formationsNav?.addEventListener('mouseenter', showMega);
-      formationsNav?.addEventListener('mouseleave', hideMega);
-      formationsMega?.addEventListener('mouseenter', showMega);
-      formationsMega?.addEventListener('mouseleave', hideMega);
-    </script>
+    <script src="../scripts/navigation.ts"></script>
 
     <main class="pt-20 relative">
       <slot />
@@ -370,112 +367,3 @@ if (!alternateLink) {
   </body>
 </html>
 
-<style is:global>
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Button styles */
-  .btn-primary {
-    @apply inline-flex items-center justify-center bg-primary-cta text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-cta-hover transition-colors;
-  }
-
-  .btn-outline {
-    @apply inline-flex items-center justify-center border-2 border-primary-cta text-primary-cta px-6 py-3 rounded-lg font-bold hover:border-primary-cta-hover hover:text-primary-cta-hover hover:bg-surface-muted transition-colors;
-  }
-
-  .btn-light {
-    @apply inline-flex items-center justify-center bg-white text-primary-dark px-8 py-4 rounded-lg font-bold hover:bg-surface-muted transition-colors;
-  }
-
-  .btn-ghost {
-    @apply inline-flex items-center justify-center bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg font-bold hover:bg-white/20 transition-colors;
-  }
-
-  /* Card styles */
-  .card {
-    @apply bg-white p-6 rounded-lg border border-border;
-  }
-
-  .card-elevated {
-    @apply bg-white p-6 rounded-lg border border-border-light;
-  }
-
-  /* Badge */
-  .badge-status {
-    @apply px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-bold;
-  }
-
-  /* Navigation styles */
-  .nav-link {
-    @apply relative text-foreground hover:text-foreground-heading transition-colors duration-300;
-  }
-
-  .nav-link::after {
-    content: '';
-    @apply absolute left-0 -bottom-2 w-0 h-0.5 bg-primary transition-all duration-300;
-  }
-
-  .nav-link:hover::after {
-    @apply w-full;
-  }
-
-  /* Active navigation state */
-  .nav-link-active {
-    @apply relative text-foreground-heading font-medium transition-colors duration-300;
-  }
-
-  .nav-link-active::after {
-    content: '';
-    @apply absolute left-0 -bottom-2 w-full h-0.5 bg-foreground-heading;
-  }
-
-  /* Mobile: fond pleine largeur au lieu du underline */
-  @media (max-width: 767px) {
-    .nav-link-active {
-      @apply bg-surface-muted rounded-lg;
-    }
-    .nav-link-active::after {
-      @apply hidden;
-    }
-    .nav-link-sub-active {
-      @apply bg-surface-muted rounded-lg;
-    }
-  }
-
-  /* Language switch */
-  .lang-switch {
-    @apply relative px-4 py-2 text-sm font-medium text-foreground rounded-lg transition-all duration-300 hover:bg-surface;
-  }
-
-  /* Social link styles */
-  .social-link {
-    @apply relative text-foreground-muted hover:text-primary transition-colors duration-300;
-  }
-
-  .social-link::after {
-    content: '';
-    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
-  }
-
-  .social-link:hover::after {
-    @apply w-full;
-  }
-
-  /* Form styles */
-  .form-input,
-  .form-select,
-  .form-textarea {
-    @apply w-full px-4 py-3 rounded-lg border border-border
-           focus:ring-2 focus:ring-primary focus:border-primary
-           bg-white transition-all duration-300;
-  }
-
-  p img {
-    @apply block mx-auto;
-  }
-
-  .image-source {
-      @apply text-xs text-foreground-muted italic;
-  }
-</style>

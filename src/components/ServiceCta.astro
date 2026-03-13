@@ -15,7 +15,7 @@ const serviceCtaMap: Record<string, { href: string; title: string; description: 
   'formation-ddd': {
     href: '/formations/ddd',
     title: 'Formation DDD',
-    description: 'Le métier et la tech ne se comprennent pas ? Le couplage crée des régressions ? Aligne ton équipe technique et produit pour livrer ce qui compte vraiment.',
+    description: 'Le métier et la tech ne se comprennent pas ? Le couplage crée des régressions ? Aligne-toi correctement pour livrer ce qui compte vraiment.',
     button: 'Découvrir la formation',
   },
   'formation-git': {
@@ -48,10 +48,10 @@ const cta = serviceCtaMap[service];
 ---
 
 {cta && (
-  <div class="bg-white rounded-lg p-6 border border-border-light">
+  <div class="bg-surface-elevated rounded-lg p-6 border border-border-light">
     <h3 class="text-lg font-bold text-foreground-heading mb-2">{cta.title}</h3>
     <p class="text-sm text-foreground mb-4">{cta.description}</p>
-    <a href={cta.href} class="block w-full text-center px-4 py-2 bg-primary-cta text-white rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors duration-300">
+    <a href={cta.href} class="block w-full text-center px-4 py-2 bg-primary-cta text-on-primary rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors duration-300">
       {cta.button}
     </a>
   </div>

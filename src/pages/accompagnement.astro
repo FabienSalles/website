@@ -143,7 +143,7 @@ const clients = [
   { name: "Amundi", logo: "/images/clients/amundi.png" },
   { name: "Total", logo: "/images/clients/total.png" },
   { name: "RATP", logo: "/images/clients/ratp.png" },
-  { name: "Volkswagen", logo: "/images/clients/wolkswagen.webp" }
+  { name: "Volkswagen", logo: "/images/clients/wolkswagen.webp", opaque: true }
 ];
 
 const testimonials = [
@@ -261,7 +261,7 @@ const modalites = [
   </section>
 
   <!-- SECTION 2 : MON PARCOURS (white) -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface-elevated">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-8 text-center">Mon parcours</h2>
       <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
@@ -341,27 +341,27 @@ const modalites = [
 
         <p class="text-sm text-foreground-muted mb-4">Jours facturés en mission régie par année :</p>
         <div class="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-3 mb-6 max-w-lg mx-auto">
-          <div class="bg-white p-3 sm:p-4 rounded-lg text-center">
+          <div class="bg-surface-elevated p-3 sm:p-4 rounded-lg text-center">
             <p class="text-xl sm:text-2xl font-bold text-primary">220</p>
             <p class="text-xs text-foreground-muted">jours</p>
             <p class="text-xs text-foreground-muted">2021</p>
           </div>
-          <div class="bg-white p-3 sm:p-4 rounded-lg text-center">
+          <div class="bg-surface-elevated p-3 sm:p-4 rounded-lg text-center">
             <p class="text-xl sm:text-2xl font-bold text-primary">217</p>
             <p class="text-xs text-foreground-muted">jours</p>
             <p class="text-xs text-foreground-muted">2022</p>
           </div>
-          <div class="bg-white p-3 sm:p-4 rounded-lg text-center">
+          <div class="bg-surface-elevated p-3 sm:p-4 rounded-lg text-center">
             <p class="text-xl sm:text-2xl font-bold text-primary">230</p>
             <p class="text-xs text-foreground-muted">jours</p>
             <p class="text-xs text-foreground-muted">2023</p>
           </div>
-          <div class="bg-white p-3 sm:p-4 rounded-lg text-center">
+          <div class="bg-surface-elevated p-3 sm:p-4 rounded-lg text-center">
             <p class="text-xl sm:text-2xl font-bold text-primary">219</p>
             <p class="text-xs text-foreground-muted">jours</p>
             <p class="text-xs text-foreground-muted">2024</p>
           </div>
-          <div class="bg-white p-3 sm:p-4 rounded-lg text-center">
+          <div class="bg-surface-elevated p-3 sm:p-4 rounded-lg text-center">
             <p class="text-xl sm:text-2xl font-bold text-primary">209</p>
             <p class="text-xs text-foreground-muted">jours</p>
             <p class="text-xs text-foreground-muted">2025</p>
@@ -378,7 +378,7 @@ const modalites = [
   </section>
 
   <!-- SECTION 4 : TJM (white) -->
-  <section id="tarifs" class="py-16 bg-white scroll-mt-24">
+  <section id="tarifs" class="py-16 bg-surface-elevated scroll-mt-24">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4 text-center">Tarification</h2>
       <div class="max-w-2xl mx-auto text-center">
@@ -418,7 +418,7 @@ const modalites = [
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {contexts.map(ctx => (
-          <div class="bg-white p-6 rounded-xl border border-border-light">
+          <div class="bg-surface-elevated p-6 rounded-xl border border-border-light">
             <div class="flex items-start gap-3 mb-2">
               <Icon name={ctx.emoji} class="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <h3 class="font-bold text-lg">{ctx.title}</h3>
@@ -431,7 +431,7 @@ const modalites = [
   </section>
 
   <!-- SECTION 6 : BÉNÉFICES (white) -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface-elevated">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -466,7 +466,7 @@ const modalites = [
         <p class="text-foreground">
           En tant que tech lead / coach technique, formateur ou simplement développeur.
         </p>
-        <div class="bg-white rounded-lg p-4 mt-6 border-l-4 border-primary">
+        <div class="bg-surface-elevated rounded-lg p-4 mt-6 border-l-4 border-primary">
           <p class="text-foreground-muted text-sm italic">
             Ce que j'aime : ne jamais rien prendre pour acquis et toujours chercher à améliorer les choses.
           </p>
@@ -476,19 +476,19 @@ const modalites = [
         <div class="mt-8 pt-6 not-prose">
           <p class="text-foreground mb-4 font-medium">Tu cherches autre chose ?</p>
           <div class="flex flex-wrap gap-3 text-sm">
-            <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/audit" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
               <Icon name="mdi:magnify" class="w-5 h-5 text-primary" />
               <span><strong>Audit</strong></span>
             </a>
-            <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/formations" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
               <Icon name="mdi:school" class="w-5 h-5 text-primary" />
               <span><strong>Formation</strong></span>
             </a>
-            <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/automatisation" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
               <Icon name="mdi:robot" class="w-5 h-5 text-primary" />
               <span><strong>IA & Automatisation</strong></span>
             </a>
-            <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-white rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/apport-affaires" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
               <Icon name="mdi:handshake" class="w-5 h-5 text-primary" />
               <span><strong>Apport d'affaires</strong></span>
             </a>
@@ -499,7 +499,7 @@ const modalites = [
   </section>
 
   <!-- SECTION 8 : COMMENT ON TRAVAILLE ENSEMBLE (white) -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface-elevated">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4 text-center">Comment on travaille ensemble ?</h2>
       <p class="text-foreground-muted text-center mb-12 max-w-2xl mx-auto">
@@ -536,18 +536,18 @@ const modalites = [
   </section>
 
   <!-- SECTION 10 : PREUVES SOCIALES (white) -->
-  <section class="py-16 bg-white">
+  <section class="py-16 bg-surface-elevated">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold mb-4 text-center">Ils m'ont fait confiance</h2>
 
       <!-- Logos clients -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 logos-adaptive">
         {clients.map(client => (
           <div class="flex items-center justify-center p-6 bg-surface rounded-lg border border-border-light">
             <img
               src={client.logo}
               alt={client.name}
-              class="max-h-12 w-auto grayscale"
+              class={`max-h-12 w-auto grayscale ${client.opaque ? 'logo-opaque' : ''}`}
             />
           </div>
         ))}
@@ -581,7 +581,7 @@ const modalites = [
       <h2 class="text-3xl font-bold mb-8 text-center">Ce qu'ils en disent</h2>
       <div class="grid md:grid-cols-3 gap-6">
         {testimonials.map(testimonial => (
-          <blockquote class="bg-white p-6 rounded-lg border border-border-light">
+          <blockquote class="bg-surface-elevated p-6 rounded-lg border border-border-light">
             <p class="text-foreground mb-4">"{testimonial.content}"</p>
             <footer class="flex items-center gap-3">
               <img
@@ -606,7 +606,7 @@ const modalites = [
   </section>
 
   <!-- SECTION 11 : CTA FINALE -->
-  <section id="contact" class="py-16 bg-white">
+  <section id="contact" class="py-16 bg-surface-elevated">
     <div class="container mx-auto px-4">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-foreground-heading mb-6">On en discute ?</h2>

@@ -1,0 +1,162 @@
+:root {
+  --color-surface: #fafaf9;
+  --color-surface-muted: #f5f5f4;
+  --color-surface-elevated: #ffffff;
+  --color-foreground: #374151;
+  --color-foreground-heading: #111827;
+  --color-foreground-muted: #78716c;
+  --color-primary: #c2410c;
+  --color-primary-hover: #9a3412;
+  --color-primary-cta: #ea580c;
+  --color-primary-cta-hover: #f97316;
+  --color-primary-dark: #7c2d12;
+  --color-primary-muted: #ffedd5;
+  --color-border: #d6d3d1;
+  --color-border-light: #e7e5e4;
+  --color-on-primary: #ffffff;
+  --color-status-bg: #dcfce7;
+  --color-status-text: #166534;
+  --color-linkedin: #0A66C2;
+  --color-linkedin-hover: #004182;
+}
+
+html[data-theme="dark"] {
+  --color-surface: #18181b;
+  --color-surface-muted: #1c1c20;
+  --color-surface-elevated: #27272a;
+  --color-foreground: #d4d4d8;
+  --color-foreground-heading: #fafafa;
+  --color-foreground-muted: #a1a1aa;
+  --color-primary: #ea580c;
+  --color-primary-hover: #f97316;
+  --color-primary-cta: #ea580c;
+  --color-primary-cta-hover: #f97316;
+  --color-primary-dark: #431407;
+  --color-primary-muted: #431407;
+  --color-border: #3f3f46;
+  --color-border-light: #27272a;
+  --color-on-primary: #ffffff;
+  --color-status-bg: #14532d;
+  --color-status-text: #86efac;
+  --color-linkedin: #2D7DD2;
+  --color-linkedin-hover: #5A9BE6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply inline-flex items-center justify-center bg-primary-cta text-on-primary px-6 py-3 rounded-lg font-bold hover:bg-primary-cta-hover transition-colors;
+}
+
+.btn-outline {
+  @apply inline-flex items-center justify-center border-2 border-primary-cta text-primary-cta px-6 py-3 rounded-lg font-bold hover:border-primary-cta-hover hover:text-primary-cta-hover hover:bg-surface-muted transition-colors;
+}
+
+.btn-light {
+  @apply inline-flex items-center justify-center bg-surface-elevated text-primary-dark px-8 py-4 rounded-lg font-bold hover:bg-surface-muted transition-colors;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center bg-white/10 text-white border-2 border-white/30 px-6 py-4 rounded-lg font-bold hover:bg-white/20 transition-colors;
+}
+
+/* Card styles */
+.card {
+  @apply bg-surface-elevated p-6 rounded-lg border border-border;
+}
+
+.card-elevated {
+  @apply bg-surface-elevated p-6 rounded-lg border border-border-light;
+}
+
+/* Badge */
+.badge-status {
+  @apply px-3 py-1 bg-status-bg text-status-text rounded-full text-sm font-bold;
+}
+
+/* Navigation styles */
+.nav-link {
+  @apply relative text-foreground hover:text-foreground-heading transition-colors duration-300;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute left-0 -bottom-2 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Active navigation state */
+.nav-link-active {
+  @apply relative text-foreground-heading font-medium transition-colors duration-300;
+}
+
+.nav-link-active::after {
+  content: '';
+  @apply absolute left-0 -bottom-2 w-full h-0.5 bg-foreground-heading;
+}
+
+/* Mobile: fond pleine largeur au lieu du underline */
+@media (max-width: 767px) {
+  .nav-link-active {
+    @apply bg-surface-muted rounded-lg;
+  }
+  .nav-link-active::after {
+    @apply hidden;
+  }
+  .nav-link-sub-active {
+    @apply bg-surface-muted rounded-lg;
+  }
+}
+
+/* Language switch */
+.lang-switch {
+  @apply relative px-4 py-2 text-sm font-medium text-foreground rounded-lg transition-all duration-300 hover:bg-surface;
+}
+
+/* Social link styles */
+.social-link {
+  @apply relative text-foreground-muted hover:text-primary transition-colors duration-300;
+}
+
+.social-link::after {
+  content: '';
+  @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.social-link:hover::after {
+  @apply w-full;
+}
+
+/* Form styles */
+.form-input,
+.form-select,
+.form-textarea {
+  @apply w-full px-4 py-3 rounded-lg border border-border
+         focus:ring-2 focus:ring-primary focus:border-primary
+         bg-surface-elevated transition-all duration-300;
+}
+
+p img {
+  @apply block mx-auto;
+}
+
+.image-source {
+    @apply text-xs text-foreground-muted italic;
+}
+
+/* Logo adaptive : inverts dark logos for dark mode visibility */
+html[data-theme="dark"] .logos-adaptive img:not(.logo-opaque) {
+  filter: grayscale(1) brightness(0) invert(1) opacity(0.8) !important;
+}
+html[data-theme="dark"] .logos-adaptive img:not(.logo-opaque):hover {
+  filter: grayscale(0) brightness(0) invert(1) opacity(1) !important;
+}
+html[data-theme="dark"] .logos-adaptive .logo-opaque {
+  border-radius: 0.25rem;
+}
