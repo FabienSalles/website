@@ -57,19 +57,25 @@ Des initiatives comme les [Conventional Comments](https://conventionalcomments.o
 
 ## L'IA : la dernière preuve que rien n'a changé
 
-En février 2025, Andrej Karpathy, l'un des pionniers de l'IA et ancien directeur de l'IA chez Tesla, tweete le terme "vibe coding" : coder en laissant l'IA générer, sans lire le code, en suivant l'intuition. Le tweet fait 4,5 millions de vues.
+En février 2025, Andrej Karpathy, ancien directeur de l'IA chez Tesla, tweete le terme "vibe coding" : coder en laissant l'IA générer, sans lire le code, en suivant l'intuition. Le tweet fait 4,5 millions de vues.
 
-Ce qui suit est prévisible. Chaque outil IA, Cursor, Claude Code, Codex, Copilot, OpenCode, trouve ses évangélistes. Chacun prêche sa méthode. Et ceux qui font autrement sont des hérétiques.
+Les réseaux deviennent alors un théâtre :
 
-Le même schéma se rejoue. Découverte. Enthousiasme. Identité. Dogme.
+- Des produits SaaS créés en quelques heures.
+- Des formations qui promettent à n'importe qui de générer des milliers d'euros par mois.
+- Des prises de position sur Cursor, Claude Code ou Copilot : les autres ont tort.
 
-Derrière le dogmatisme sur les outils IA, il y a un besoin plus profond : le sentiment d'appartenance. Choisir Cursor ou Claude Code, c'est rejoindre une tribu. Et une tribu se définit autant par ce qu'elle défend que par ce qu'elle rejette. L'égo individuel se fond dans l'égo collectif.
+Ce ne sont pas des personnages de mauvaise foi. Ce sont les mêmes réflexes décrits plus haut, appliqués à un nouvel outil.
+
+L'investissement crée la surestimation. La méthode devient identité. Et l'identité rend l'erreur invisible.
+
+Il y a aussi un besoin plus profond : le sentiment d'appartenance. Choisir Cursor ou Claude Code, c'est rejoindre une tribu. Et une tribu se définit autant par ce qu'elle défend que par ce qu'elle rejette. L'égo individuel se fond dans l'égo collectif.
 
 Mais le plus révélateur, c'est l'étude METR (un laboratoire de recherche indépendant spécialisé en évaluation des IA) publiée en 2025. Des chercheurs ont mesuré la productivité réelle de 16 développeurs expérimentés sur 246 tâches, avec et sans IA. Résultat : les développeurs assistés par IA étaient 19% plus lents. Pourtant, ils estimaient être 20% plus rapides.
 
 Ils étaient convaincus d'être plus productifs. Ils ne l'étaient pas.
 
-Et cela va plus loin. En 2025, une étude publiée dans Nature a mesuré que les LLMs sont en moyenne 50% plus sycophantes (enclins à approuver plutôt qu'à contredire) que les humains. OpenAI a dû annuler une mise à jour de GPT-4o : le modèle validait des contenus erronés parce qu'il cherchait à plaire. Ce n'est pas un bug. C'est un comportement par défaut. Notre égo a trouvé un miroir parfait : quelqu'un qui ne dit jamais non.
+Et cela va plus loin. En 2025, une étude publiée dans Nature a mesuré que les LLMs sont en moyenne 50% plus sycophantes (enclins à approuver plutôt qu'à contredire) que les humains. OpenAI a d'ailleurs dû annuler une mise à jour de GPT-4o : le modèle validait des contenus erronés parce qu'il cherchait à plaire. Ce n'est pas un bug. C'est un comportement par défaut. Notre égo a trouvé un miroir parfait : quelqu'un qui ne dit jamais non.
 
 Elle touche aussi à l'identité. Mo Bitar, fondateur de Standard Notes (une application de notes chiffrées), a fait une vidéo sur X avec pratiquement 6M de vues. Il se décrit comme un "10x engineer" et se voit maintenant inutile depuis l'arrivée des assistants IA. Pas inefficace. Inutile.
 
@@ -81,7 +87,7 @@ Le concept d'"egoless programming" a été inventé en 1971. Ça fait plus de 50
 
 Tout le monde connaît le principe. Personne ne l'applique pleinement.
 
-Il existe aussi le principe : "Strong opinions, weakly held" (des convictions fortes, tenues légèrement). L'idée originale de Paul Saffo est saine : avoir des convictions fortes tout en étant prêt à les abandonner face aux preuves. En pratique, on retient "strong opinions" et on oublie "weakly held". Ça devient une permission d'être dogmatique.
+Il existe aussi le principe : "Strong opinions, weakly held" (des convictions fortes, tenues légèrement). L'idée originale de Paul Saffo est saine : avoir des convictions fortes tout en étant prêt à les abandonner face aux épreuves. En pratique, on retient "strong opinions" et on oublie "weakly held". Ça devient une permission d'être dogmatique.
 
 Le coach agile qui impose SA méthode. Le tech lead qui "fait du mentoring" mais n'écoute jamais. Le senior qui prône l'ouverture d'esprit mais refuse de tester l'approche du junior. L'écart entre le discours et la pratique est un classique de l'ego.
 
@@ -89,9 +95,9 @@ Le coach agile qui impose SA méthode. Le tech lead qui "fait du mentoring" mais
 
 Pendant des années, je me suis considéré comme quelqu'un d'ouvert. À l'écoute. Prêt à me remettre en question. J'en étais convaincu.
 
-Jusqu'à une mission où un responsable avec beaucoup d'égo a commencé à remettre en cause mes choix, mon approche, ma façon de faire. Et au lieu de l'écouter, je me suis senti attaqué. Défensif. En justification permanente. Malgré ma lucidité en temps réel, je n'arrivais pas à contrôler ma réaction. L'égo des autres réactivait le mien.
+Jusqu'à une mission où un responsable a commencé à remettre en cause tous mes choix, mon approche, ma façon de faire. Et au lieu de l'écouter, je me suis senti attaqué. Défensif. En justification permanente. Malgré ma lucidité en temps réel, je n'arrivais pas à contrôler ma réaction.
 
-Je n'étais pas egoless. J'avais été remis en question avant, et ça ne posait aucun problème. Ce n'était pas une question de confrontation. C'était le contexte et l'égo de l'autre qui réactivaient le mien. Comme un miroir déformant : face à quelqu'un qui impose, tu te mets à défendre.
+J'avais déjà été remis en question avant, et ça ne posait aucun problème. Ce n'était pas une question de confrontation. C'était le contexte et l'égo de l'autre qui réactivaient le mien. Face à quelqu'un qui impose, tu te mets à défendre.
 
 C'est l'effet miroir. L'égo des autres ne nous agresse pas réellement, il nous révèle. Certains découvrent qu'ils ont aussi besoin d'imposer. D'autres réalisent qu'ils ont besoin de prendre leur place, de revenir à un sentiment d'égalité. Quand toutes les décisions sont prises par une seule personne et que toutes les tiennes sont refusées, ce n'est plus une question d'égo individuel. C'est un climat d'inégalité. Et l'égo qui se réveille à ce moment-là n'est pas toxique. C'est une réaction saine face à un déséquilibre.
 
