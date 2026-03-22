@@ -73,7 +73,7 @@ Mais le plus révélateur, c'est l'étude METR (un laboratoire de recherche ind�
 
 Ils étaient convaincus d'être plus productifs. Ils ne l'étaient pas.
 
-C'est du méta-ego. Même notre perception de notre propre productivité est biaisée. On ne défend pas seulement notre méthode. On défend une illusion de performance.
+Même notre perception de notre propre productivité est biaisée. On ne défend pas seulement notre méthode. On défend une illusion de performance.
 
 Et on est devenu dogmatique sur un sujet où il n'existe encore aucun dogme établi. Les outils changent tous les mois. La méthode "optimale" d'il y a trois mois est peut-être déjà obsolète.
 
@@ -87,7 +87,7 @@ Le concept d'"egoless programming" a été inventé en 1971. Ça fait plus de 50
 
 Tout le monde connaît le principe. Personne ne l'applique pleinement.
 
-Le détournement le plus courant : "Strong opinions, weakly held." L'idée originale de Paul Saffo est saine : avoir des convictions fortes tout en étant prêt à les abandonner face aux preuves. En pratique, on retient "strong opinions" et on oublie "weakly held". Ça devient une permission d'être dogmatique.
+Il existe aussi le principe : "Strong opinions, weakly held" (des convictions fortes, tenues légèrement). L'idée originale de Paul Saffo est saine : avoir des convictions fortes tout en étant prêt à les abandonner face aux preuves. En pratique, on retient "strong opinions" et on oublie "weakly held". Ça devient une permission d'être dogmatique.
 
 Le coach agile qui impose SA méthode. Le tech lead qui "fait du mentoring" mais n'écoute jamais. Le senior qui prône l'ouverture d'esprit mais refuse de tester l'approche du junior. L'écart entre le discours et la pratique est un classique de l'ego.
 
@@ -97,7 +97,7 @@ Pendant des années, je me suis considéré comme quelqu'un d'ouvert. À l'écou
 
 Jusqu'à une mission où un responsable avec beaucoup d'égo a commencé à remettre en cause mes choix, mon approche, ma façon de faire. Et au lieu de l'écouter, je me suis senti attaqué. Défensif. En justification permanente. Malgré ma lucidité en temps réel, je n'arrivais pas à contrôler ma réaction. L'égo des autres réactivait le mien.
 
-Je n'étais pas egoless. J'avais été challengé avant, et ça ne posait aucun problème. Ce n'était pas une question de confrontation. C'était le contexte et l'égo de l'autre qui réactivaient le mien. Comme un miroir déformant : face à quelqu'un qui impose, tu te mets à défendre.
+Je n'étais pas egoless. J'avais été remis en question avant, et ça ne posait aucun problème. Ce n'était pas une question de confrontation. C'était le contexte et l'égo de l'autre qui réactivaient le mien. Comme un miroir déformant : face à quelqu'un qui impose, tu te mets à défendre.
 
 C'est l'effet miroir. L'égo des autres ne nous agresse pas réellement, il nous révèle. Certains découvrent qu'ils ont aussi besoin d'imposer. D'autres réalisent qu'ils ont besoin de prendre leur place, de revenir à un sentiment d'égalité. Quand toutes les décisions sont prises par une seule personne et que toutes les tiennes sont refusées, ce n'est plus une question d'égo individuel. C'est un climat d'inégalité. Et l'égo qui se réveille à ce moment-là n'est pas toxique. C'est une réaction saine face à un déséquilibre.
 
@@ -119,13 +119,13 @@ Ron Westrum a identifié trois types de cultures organisationnelles, du plus tox
 
 La culture générative ne se décrète pas. Elle naît quand chacun peut dire "je me suis trompé" sans craindre les conséquences.
 
-Amy Edmondson a montré que les meilleures équipes hospitalières rapportaient plus d'erreurs, pas moins. Pas parce qu'elles en faisaient plus. Parce qu'elles osaient les partager. La sécurité psychologique, c'est l'exact opposé de l'égo : oser dire "je me suis trompé" sans craindre le jugement.
+Amy Edmondson a montré que les meilleures équipes hospitalières rapportaient plus d'erreurs, pas moins. Pas parce qu'elles en faisaient plus. Parce qu'elles osaient les partager. Oser dire "je me suis trompé" sans craindre le jugement.
 
 Google l'a confirmé avec le Project Aristotle : après avoir étudié 180 équipes pendant 2 ans, la sécurité psychologique est le facteur numéro un des équipes performantes. Pas la compétence technique. Pas les process. La capacité à se montrer vulnérable.
 
 Et Forsgren, Humble et Kim l'ont chiffré dans *Accelerate* : les cultures pilotées par l'égo corrèlent directement avec une mauvaise performance de livraison.
 
-On sait tout ça. Depuis des décennies. On continue.
+On sait tout ça depuis des décennies mais on continue.
 
 ## Conclusion
 
@@ -148,7 +148,7 @@ La prochaine fois que tu examines le code d'un collègue, que tu rentres en réu
 - [Cognitive Biases in Software Development](https://cacm.acm.org/research/cognitive-biases-in-software-development/) — Communications of the ACM
 - [Cognitive Biases in Software Engineering: A Systematic Mapping Study](https://bura.brunel.ac.uk/bitstream/2438/14977/5/FullText.pdf) — Mohanani et al., Brunel University (2017)
 - [The Unbelievable Developer's Ego](https://www.jesuisundev.com/en/the-unbelievable-developers-ego/) — Je suis un dev
-- [Conventional Comments](https://conventionalcomments.org/) — Convention de commentaires de code review
+- [Conventional Comments](https://conventionalcomments.org/) — Convention de commentaires de revue de code
 - [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) — METR Study (2025)
 - [What is Psychological Safety?](https://hbr.org/2023/02/what-is-psychological-safety) — Harvard Business Review
 - Nicole Forsgren, Jez Humble, Gene Kim, *Accelerate* (2018)
