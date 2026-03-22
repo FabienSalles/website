@@ -1,23 +1,19 @@
 ---
 title: "L'ego en développement logiciel : le biais que personne ne veut voir"
-description: "L'ego n'est pas un défaut de caractère. C'est un biais cognitif systémique qui traverse tous nos rituels tech. Et l'IA vient juste de lui donner un nouveau terrain de jeu."
+description: "L'ego n'est pas un défaut de caractère. C'est un biais cognitif systémique qui traverse tous nos rituels tech et cause plus de problèmes que de bienfaits."
 pubDate: 2026-03-21
 categories: ["mindset", "culture", "ego"]
 service: "accompagnement"
 draft: false
 ---
 
-Notre égo a trouvé un nouveau terrain de jeu : l'IA.
+L'égo, on en a tous. Mais peu de personnes voient les dégâts qu'il laisse derrière lui.
 
-Mais il n'a rien inventé. Il a juste reproduit un cycle qu'on connaît par cœur.
+L'Agile, TDD, le Craft, les microservices et maintenant l'IA... : à chaque vague, le même schéma. On découvre un concept. On l'adopte. On en fait une identité. Puis on juge ceux qui font autrement.
 
-L'Agile, TDD, le Craft, les microservices : à chaque vague, le même schéma. On découvre un concept. On l'adopte. On en fait une identité. Puis on juge ceux qui font autrement.
+L'égo est visible partout depuis toujours.
 
-L'IA n'a pas créé ce problème. L'égo est visible partout depuis toujours. L'IA est juste le sujet à la mode sur lequel il se manifeste aujourd'hui.
-
-Et il y a un piège supplémentaire. L'IA nous donne raison. Tu lui poses une question biaisée, elle te répond dans ton sens. Tu lui demandes de valider ton approche, elle la valide. Au lieu de te challenger, elle renforce tes convictions. Notre égo a trouvé le partenaire idéal : quelqu'un qui ne dit jamais non.
-
-L'égo dans nos métiers n'est pas un défaut de caractère. C'est un biais cognitif systémique. Et tant qu'on refuse de le regarder en face, on continuera à tourner en rond.
+Ce n'est pas un défaut de caractère. C'est un réflexe systémique. Et il agit avant même qu'on s'en rende compte.
 
 ## Les biais invisibles qui protègent notre égo
 
@@ -39,17 +35,11 @@ Parmi eux, cinq nourrissent directement l'égo.
 
 Le cercle est vicieux. L'industrie le nourrit. Quand on te répète que tu es un expert incontournable, tu finis par le croire. Et gare à celui qui remet en question ton expertise.
 
-## L'égo au quotidien : pas besoin d'IA pour le voir
+## L'égo au quotidien
 
 L'égo ne se cache pas que dans les débats sur l'IA. Il est dans les rituels de tous les jours.
 
-**Les retours sur le code.** "Fait comme ci." "Ça ne va pas." "Change ça." Sans explication. Sans chercher à comprendre pourquoi le développeur a fait ce choix. Les retours pilotés par l'égo ressemblent à des directives, pas à des échanges. On impose au lieu de questionner. On corrige au lieu de comprendre. Et le développeur en face reçoit le message : ton raisonnement ne m'intéresse pas, seul le résultat compte. Le mien.
-
-Erving Goffman a théorisé ce mécanisme en 1956 : la gestion de la "face", la valeur sociale qu'on projette et qu'on protège dans chaque interaction. En revue de code, votre face, c'est votre réputation de développeur. Et quand un retour la menace, l'égo prend le relais avant même que la raison intervienne.
-
-Paradoxalement, Elliot Aronson a démontré en 1966 l'inverse de ce qu'on croit : admettre une erreur augmente la crédibilité, pas l'inverse. L'effet Pratfall. À une condition : que la compétence soit déjà établie. Les développeurs les plus expérimentés ont donc précisément le plus à gagner à dire "tu avais raison". Et c'est souvent eux qui le font le moins.
-
-Des initiatives comme les [Conventional Comments](https://conventionalcomments.org/) tentent de cadrer le problème. En préfixant chaque commentaire de revue par son intention (suggestion, question, remarque mineure, problème), on force l'auteur de la revue à qualifier son retour avant de l'écrire. "Suggestion : as-tu envisagé X ?" n'a pas le même effet que "change ça". Le cadre réduit l'espace pour l'égo.
+**Les retours sur le code.** "Fait comme ci." "Ça ne va pas." "Change ça." Sans explication. Les retours pilotés par l'égo ressemblent à des directives, pas à des échanges.
 
 **Les décisions d'architecture.** Un responsable qui a choisi une architecture la défendra même quand les preuves montrent le contraire. Pas par incompétence, par identité. C'est "son" architecture. La remettre en question, c'est remettre en question son jugement. Et par extension, sa légitimité.
 
@@ -57,13 +47,19 @@ Des initiatives comme les [Conventional Comments](https://conventionalcomments.o
 
 **Le mentorat inversé.** Le senior qui refait le code du junior au lieu de l'accompagner. Ce n'est pas du mentorat. C'est de l'égo déguisé en aide. Le message implicite : "tu n'es pas capable, laisse-moi faire."
 
+Erving Goffman a théorisé ces mécanismes en 1956 : la gestion de la "face". C'est la valeur sociale qu'on projette et qu'on protège dans chaque interaction. Lorsqu'on questionne votre expertise, votre façon de faire, votre légitimité ; l'égo prend le relais avant même que la raison intervienne.
+
+Paradoxalement, Elliot Aronson a démontré en 1966 l'inverse de ce qu'on croit : admettre une erreur augmente la crédibilité, pas l'inverse. L'effet Pratfall. À une condition : que la compétence soit déjà établie. Les développeurs les plus expérimentés ont donc précisément le plus à gagner à dire "tu avais raison". Et c'est souvent eux qui le font le moins.
+
 Tous ces comportements ont un point commun. Ils ne viennent pas d'une mauvaise intention. Ils viennent d'un réflexe. L'égo se protège avant même qu'on s'en rende compte.
+
+Des initiatives comme les [Conventional Comments](https://conventionalcomments.org/) tentent de cadrer le problème en revue de code. En préfixant chaque commentaire par son intention (suggestion, question, remarque mineure, problème), on force l'auteur à qualifier son retour avant de l'écrire. "Suggestion : as-tu envisagé X ?" n'a pas le même effet que "change ça". Le cadre réduit l'espace pour l'égo.
 
 ## L'IA : la dernière preuve que rien n'a changé
 
 En février 2025, Andrej Karpathy, l'un des pionniers de l'IA et ancien directeur de l'IA chez Tesla, tweete le terme "vibe coding" : coder en laissant l'IA générer, sans lire le code, en suivant l'intuition. Le tweet fait 4,5 millions de vues.
 
-Ce qui suit est prévisible. Chaque outil IA, Cursor, Claude Code, Codex, Copilot, trouve ses évangélistes. Chacun prêche sa méthode. Et ceux qui font autrement sont des hérétiques.
+Ce qui suit est prévisible. Chaque outil IA, Cursor, Claude Code, Codex, Copilot, OpenCode, trouve ses évangélistes. Chacun prêche sa méthode. Et ceux qui font autrement sont des hérétiques.
 
 Le même schéma se rejoue. Découverte. Enthousiasme. Identité. Dogme.
 
@@ -73,13 +69,11 @@ Mais le plus révélateur, c'est l'étude METR (un laboratoire de recherche ind�
 
 Ils étaient convaincus d'être plus productifs. Ils ne l'étaient pas.
 
-Même notre perception de notre propre productivité est biaisée. On ne défend pas seulement notre méthode. On défend une illusion de performance.
+Et cela va plus loin. En 2025, une étude publiée dans Nature a mesuré que les LLMs sont en moyenne 50% plus sycophantes (enclins à approuver plutôt qu'à contredire) que les humains. OpenAI a dû annuler une mise à jour de GPT-4o : le modèle validait des contenus erronés parce qu'il cherchait à plaire. Ce n'est pas un bug. C'est un comportement par défaut. Notre égo a trouvé un miroir parfait : quelqu'un qui ne dit jamais non.
 
-Et on est devenu dogmatique sur un sujet où il n'existe encore aucun dogme établi. Les outils changent tous les mois. La méthode "optimale" d'il y a trois mois est peut-être déjà obsolète.
+Elle touche aussi à l'identité. Mo Bitar, fondateur de Standard Notes (une application de notes chiffrées), a fait une vidéo sur X avec pratiquement 6M de vues. Il se décrit comme un "10x engineer" et se voit maintenant inutile depuis l'arrivée des assistants IA. Pas inefficace. Inutile.
 
-L'IA amplifie ce biais structurellement. En 2025, une étude publiée dans Nature a mesuré que les LLMs sont en moyenne 50% plus sycophantes que les humains. OpenAI a dû annuler une mise à jour de GPT-4o : le modèle validait des contenus erronés parce qu'il cherchait à plaire. Ce n'est pas un bug. C'est un comportement par défaut. Notre égo a trouvé un miroir parfait : quelqu'un qui ne dit jamais non.
-
-Mais la crise va plus loin que la productivité. Elle touche à l'identité. Mo Bitar, fondateur de Standard Notes (une application de notes chiffrées), a fait une vidéo sur X avec pratiquement 6M de vues. Il se décrit comme un "10x engineer" et se voit maintenant inutile depuis l'arrivée des assistants IA. Pas inefficace. Inutile. L'égo technique ne protégeait pas juste une méthode. Il protégeait une rareté : la maîtrise d'une compétence que peu possédaient. Quand l'IA démocratise cette compétence en quelques prompts, ce n'est plus la code review qui menace l'identité. C'est l'outil lui-même.
+L'égo technique ne protégeait pas juste une méthode. Il protégeait une rareté : la maîtrise d'une compétence que peu possédaient. Quand l'IA démocratise cette compétence en quelques prompts, ce n'est plus la revue de code qui menace l'identité. C'est l'outil lui-même.
 
 ## "Egoless" : le mot que tout le monde prononce, personne ne pratique pleinement
 
@@ -150,9 +144,10 @@ La prochaine fois que tu examines le code d'un collègue, que tu rentres en réu
 - [The Unbelievable Developer's Ego](https://www.jesuisundev.com/en/the-unbelievable-developers-ego/) — Je suis un dev
 - [Conventional Comments](https://conventionalcomments.org/) — Convention de commentaires de revue de code
 - [Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) — METR Study (2025)
-- [What is Psychological Safety?](https://hbr.org/2023/02/what-is-psychological-safety) — Harvard Business Review
+- [Amy Edmondson — "Psychological Safety and Learning Behavior in Work Teams"](https://web.mit.edu/curhan/www/docs/Articles/15341_Readings/Group_Performance/Edmondson%20Psychological%20safety.pdf) — *Administrative Science Quarterly*, 44(2), 1999
 - Nicole Forsgren, Jez Humble, Gene Kim, *Accelerate* (2018)
-- [AI chatbots are sycophants — researchers say it's harming science](https://www.nature.com/articles/d41586-025-03390-0) — Nature (2025)
+- [Towards Understanding Sycophancy in Language Models](https://arxiv.org/abs/2310.13548) — Anthropic (2023)
 - [Sycophancy in GPT-4o: What happened and what we're doing about it](https://openai.com/index/sycophancy-in-gpt-4o/) — OpenAI (2025)
-- Erving Goffman, *The Presentation of Self in Everyday Life* (1956)
+- [Paul Saffo — "Strong Opinions, Weakly Held"](https://halfbanana.medium.com/strong-opinions-weakly-held-a-paradox-unpacked-6201fffe797e) — saffo.com (2008)
+- Ron Westrum — ["A typology of organisational cultures"](https://qualitysafety.bmj.com/content/13/suppl_2/ii22) — *Quality and Safety in Health Care*, 2004
 - [La crise existentielle des ingénieurs](https://startup-scaleup.nebra.fr/la-crise-existentielle-des-ingenieurs/) — Mathieu Nebra (2025)
