@@ -23,17 +23,17 @@ L'égo dans nos métiers n'est pas un défaut de caractère. C'est un biais cogn
 
 On aime penser qu'on est rationnel. Que nos choix techniques sont objectifs. Que nos opinions sont fondées sur des faits.
 
-La recherche dit le contraire. Une étude publiée dans Communications of the ACM a identifié 37 biais cognitifs spécifiques à l'ingénierie logicielle. Pas 3 ou 4. Trente-sept.
+La recherche dit le contraire. Une étude publiée dans Communications of the ACM (une revue scientifique de référence en informatique) a identifié 37 biais cognitifs spécifiques à l'ingénierie logicielle.
 
 Parmi eux, cinq nourrissent directement l'égo.
 
-**L'effet IKEA.** On surestime la valeur de ce qu'on a construit soi-même. Ton workflow IA que tu as passé trois semaines à configurer ? Tu le trouves meilleur que celui du voisin. Pas parce qu'il l'est, mais parce que c'est le tien. Ton architecture ? Pareil. Ta façon d'écrire des tests ? Pareil.
+**L'effet IKEA.** On surestime la valeur de ce qu'on a construit soi-même. Ton environnement de travail avec l'IA que tu as passé trois semaines à configurer ? Tu le trouves meilleur que celui du voisin. Pas parce qu'il l'est, mais parce que c'est le tien. Ton architecture ? Pareil. Ta façon d'écrire des tests ? Pareil.
 
 **Le biais de confirmation.** On lit pour valider ce qu'on pense déjà. Quelqu'un partage un post sur une approche différente de la tienne. Au lieu de tester, tu cherches la faille. Tu lis pour confirmer, pas pour apprendre.
 
-**Le sunk cost.** "J'ai investi trois semaines à configurer cette stack, elle DOIT être la bonne approche." L'investissement passé devient un argument. Pas la pertinence actuelle.
+**Le piège de l'investissement passé.** "J'ai investi trois semaines à configurer cette stack, elle DOIT être la bonne approche." L'investissement passé devient un argument. Pas la pertinence actuelle.
 
-**La cognition identitaire.** C'est le plus vicieux. Ta méthode devient ton expertise. Ton expertise devient ton identité. Critiquer ta méthode, c'est te critiquer toi. Le code devient personnel. Et la code review devient une attaque.
+**La fusion identitaire.** C'est le plus vicieux. Ta méthode devient ton expertise. Ton expertise devient ton identité. Critiquer ta méthode, c'est te critiquer toi. Le code devient personnel. Et la revue de code devient une attaque.
 
 **L'aversion à l'erreur.** L'ego transforme l'erreur en menace identitaire. Se tromper, c'est être incompétent. Donc on évite le risque, on ne propose pas, on reste dans le connu. L'aversion à l'erreur n'est pas de la prudence. C'est l'égo qui protège son image.
 
@@ -43,13 +43,13 @@ Le cercle est vicieux. L'industrie le nourrit. Quand on te répète que tu es un
 
 L'égo ne se cache pas que dans les débats sur l'IA. Il est dans les rituels de tous les jours.
 
-**Les retours de PR.** "Fait comme ci." "Ça ne va pas." "Change ça." Sans explication. Sans chercher à comprendre pourquoi le développeur a fait ce choix. Les retours de PR pilotés par l'égo ressemblent à des directives, pas à des échanges. On impose au lieu de questionner. On corrige au lieu de comprendre. Et le développeur en face reçoit le message : ton raisonnement ne m'intéresse pas, seul le résultat compte. Le mien.
+**Les retours sur le code.** "Fait comme ci." "Ça ne va pas." "Change ça." Sans explication. Sans chercher à comprendre pourquoi le développeur a fait ce choix. Les retours pilotés par l'égo ressemblent à des directives, pas à des échanges. On impose au lieu de questionner. On corrige au lieu de comprendre. Et le développeur en face reçoit le message : ton raisonnement ne m'intéresse pas, seul le résultat compte. Le mien.
 
-Erving Goffman a théorisé ce mécanisme en 1956 : la gestion de la "face", la valeur sociale qu'on projette et qu'on protège dans chaque interaction. Sur un écran de PR, votre face, c'est votre réputation de développeur. Et quand un retour la menace, l'égo prend le relais avant même que la raison intervienne.
+Erving Goffman a théorisé ce mécanisme en 1956 : la gestion de la "face", la valeur sociale qu'on projette et qu'on protège dans chaque interaction. En revue de code, votre face, c'est votre réputation de développeur. Et quand un retour la menace, l'égo prend le relais avant même que la raison intervienne.
 
 Paradoxalement, Elliot Aronson a démontré en 1966 l'inverse de ce qu'on croit : admettre une erreur augmente la crédibilité, pas l'inverse. L'effet Pratfall. À une condition : que la compétence soit déjà établie. Les développeurs les plus expérimentés ont donc précisément le plus à gagner à dire "tu avais raison". Et c'est souvent eux qui le font le moins.
 
-Des initiatives comme les [Conventional Comments](https://conventionalcomments.org/) tentent de cadrer le problème. En préfixant chaque commentaire de review par son intention (suggestion, question, nitpick, issue), on force le reviewer à qualifier son feedback avant de l'écrire. "Suggestion : as-tu envisagé X ?" n'a pas le même effet que "change ça". Le cadre réduit l'espace pour l'égo.
+Des initiatives comme les [Conventional Comments](https://conventionalcomments.org/) tentent de cadrer le problème. En préfixant chaque commentaire de revue par son intention (suggestion, question, remarque mineure, problème), on force l'auteur de la revue à qualifier son retour avant de l'écrire. "Suggestion : as-tu envisagé X ?" n'a pas le même effet que "change ça". Le cadre réduit l'espace pour l'égo.
 
 **Les décisions d'architecture.** Un responsable qui a choisi une architecture la défendra même quand les preuves montrent le contraire. Pas par incompétence, par identité. C'est "son" architecture. La remettre en question, c'est remettre en question son jugement. Et par extension, sa légitimité.
 
@@ -61,7 +61,7 @@ Tous ces comportements ont un point commun. Ils ne viennent pas d'une mauvaise i
 
 ## L'IA : la dernière preuve que rien n'a changé
 
-En février 2025, Andrej Karpathy tweete le terme "vibe coding" : coder en laissant l'IA générer, sans lire le code, en suivant l'intuition. Le tweet fait 4,5 millions de vues.
+En février 2025, Andrej Karpathy, l'un des pionniers de l'IA et ancien directeur de l'IA chez Tesla, tweete le terme "vibe coding" : coder en laissant l'IA générer, sans lire le code, en suivant l'intuition. Le tweet fait 4,5 millions de vues.
 
 Ce qui suit est prévisible. Chaque outil IA, Cursor, Claude Code, Codex, Copilot, trouve ses évangélistes. Chacun prêche sa méthode. Et ceux qui font autrement sont des hérétiques.
 
@@ -69,7 +69,7 @@ Le même schéma se rejoue. Découverte. Enthousiasme. Identité. Dogme.
 
 Derrière le dogmatisme sur les outils IA, il y a un besoin plus profond : le sentiment d'appartenance. Choisir Cursor ou Claude Code, c'est rejoindre une tribu. Et une tribu se définit autant par ce qu'elle défend que par ce qu'elle rejette. L'égo individuel se fond dans l'égo collectif.
 
-Mais le plus révélateur, c'est l'étude METR publiée en 2025. Des chercheurs ont mesuré la productivité réelle de 16 développeurs expérimentés sur 246 tâches, avec et sans IA. Résultat : les développeurs assistés par IA étaient 19% plus lents. Pourtant, ils estimaient être 20% plus rapides.
+Mais le plus révélateur, c'est l'étude METR (un laboratoire de recherche indépendant spécialisé en évaluation des IA) publiée en 2025. Des chercheurs ont mesuré la productivité réelle de 16 développeurs expérimentés sur 246 tâches, avec et sans IA. Résultat : les développeurs assistés par IA étaient 19% plus lents. Pourtant, ils estimaient être 20% plus rapides.
 
 Ils étaient convaincus d'être plus productifs. Ils ne l'étaient pas.
 
@@ -79,7 +79,7 @@ Et on est devenu dogmatique sur un sujet où il n'existe encore aucun dogme éta
 
 L'IA amplifie ce biais structurellement. En 2025, une étude publiée dans Nature a mesuré que les LLMs sont en moyenne 50% plus sycophantes que les humains. OpenAI a dû annuler une mise à jour de GPT-4o : le modèle validait des contenus erronés parce qu'il cherchait à plaire. Ce n'est pas un bug. C'est un comportement par défaut. Notre égo a trouvé un miroir parfait : quelqu'un qui ne dit jamais non.
 
-Mais la crise va plus loin que la productivité. Elle touche à l'identité. Mo Bitar a fait une vidéo sur X avec pratiquement 6M de vues. Il se décrit comme un "10x engineer" et se voit maintenant inutile depuis l'arrivée des assistants IA. Pas inefficace. Inutile. L'égo technique ne protégeait pas juste une méthode. Il protégeait une rareté : la maîtrise d'une compétence que peu possédaient. Quand l'IA démocratise cette compétence en quelques prompts, ce n'est plus la code review qui menace l'identité. C'est l'outil lui-même.
+Mais la crise va plus loin que la productivité. Elle touche à l'identité. Mo Bitar, fondateur de Standard Notes (une application de notes chiffrées), a fait une vidéo sur X avec pratiquement 6M de vues. Il se décrit comme un "10x engineer" et se voit maintenant inutile depuis l'arrivée des assistants IA. Pas inefficace. Inutile. L'égo technique ne protégeait pas juste une méthode. Il protégeait une rareté : la maîtrise d'une compétence que peu possédaient. Quand l'IA démocratise cette compétence en quelques prompts, ce n'est plus la code review qui menace l'identité. C'est l'outil lui-même.
 
 ## "Egoless" : le mot que tout le monde prononce, personne ne pratique pleinement
 
@@ -99,7 +99,7 @@ Jusqu'à une mission où un responsable avec beaucoup d'égo a commencé à reme
 
 Je n'étais pas egoless. J'avais été challengé avant, et ça ne posait aucun problème. Ce n'était pas une question de confrontation. C'était le contexte et l'égo de l'autre qui réactivaient le mien. Comme un miroir déformant : face à quelqu'un qui impose, tu te mets à défendre.
 
-C'est l'effet miroir. L'égo des autres ne nous agresse pas, il nous révèle. Certains découvrent qu'ils ont aussi besoin d'imposer. D'autres réalisent qu'ils ont besoin de prendre leur place, de revenir à un sentiment d'égalité. Quand toutes les décisions sont prises par une seule personne et que toutes les tiennes sont refusées, ce n'est plus une question d'égo individuel. C'est un climat d'inégalité. Et l'égo qui se réveille à ce moment-là n'est pas toxique. C'est une réaction saine face à un déséquilibre.
+C'est l'effet miroir. L'égo des autres ne nous agresse pas réellement, il nous révèle. Certains découvrent qu'ils ont aussi besoin d'imposer. D'autres réalisent qu'ils ont besoin de prendre leur place, de revenir à un sentiment d'égalité. Quand toutes les décisions sont prises par une seule personne et que toutes les tiennes sont refusées, ce n'est plus une question d'égo individuel. C'est un climat d'inégalité. Et l'égo qui se réveille à ce moment-là n'est pas toxique. C'est une réaction saine face à un déséquilibre.
 
 Cette expérience a été une des plus formatrices de ma carrière. Non pas parce que l'autre avait raison ou tort. Mais parce que j'ai réalisé que l'égoless n'est pas une qualité individuelle. C'est le produit d'un environnement. Dans un contexte sain, l'égo s'efface naturellement. Dans un contexte toxique, il devient un mécanisme de protection.
 
@@ -109,21 +109,21 @@ Six mois de mob programming dans une autre mission. Zéro bataille d'égo. Les �
 
 L'égoless n'est pas un effort individuel. C'est un résultat collectif. Et il a besoin d'un cadre pour exister.
 
-## Ce que l'égo coûte aux équipes, et pourquoi on le sait depuis 55 ans
+## Ce que l'égo coûte aux équipes
 
-En 1971, Gerald Weinberg publie *The Psychology of Computer Programming*. Il y introduit le concept d'"egoless programming" avec 10 commandements. Le deuxième : "You are not your code." Le huitième : "Fight for your ideas, but accept defeat gracefully."
+Ron Westrum a identifié trois types de cultures organisationnelles, du plus toxique au plus sain :
 
-La même année, Edsger Dijkstra prononce son discours "The Humble Programmer" en recevant le prix Turing : "Le programmeur compétent est pleinement conscient de la taille limitée de son propre crâne." L'ironie ? Alan Kay mesurait l'arrogance en "nano-Dijkstras". L'homme qui prêchait l'humilité n'était pas particulièrement humble.
+- **Pathologique** : l'information est cachée, les messagers sont punis, l'échec est couvert. C'est la culture de l'égo à l'échelle d'une organisation.
+- **Bureaucratique** : les territoires sont protégés, les règles priment sur la coopération.
+- **Générative** : la coopération prime, les risques sont partagés, l'échec mène à l'investigation.
 
-55 ans plus tard, les preuves se sont accumulées.
-
-Ron Westrum a identifié trois types de cultures organisationnelles. La culture pathologique, où l'information est cachée, les messagers sont punis, l'échec est couvert. La culture bureaucratique, où les territoires sont protégés. Et la culture générative, où la coopération prime, les risques sont partagés, l'échec mène à l'investigation. La culture pathologique est une culture d'égo.
+La culture générative ne se décrète pas. Elle naît quand chacun peut dire "je me suis trompé" sans craindre les conséquences.
 
 Amy Edmondson a montré que les meilleures équipes hospitalières rapportaient plus d'erreurs, pas moins. Pas parce qu'elles en faisaient plus. Parce qu'elles osaient les partager. La sécurité psychologique, c'est l'exact opposé de l'égo : oser dire "je me suis trompé" sans craindre le jugement.
 
 Google l'a confirmé avec le Project Aristotle : après avoir étudié 180 équipes pendant 2 ans, la sécurité psychologique est le facteur numéro un des équipes performantes. Pas la compétence technique. Pas les process. La capacité à se montrer vulnérable.
 
-Et Forsgren, Humble et Kim l'ont chiffré dans *Accelerate* : les cultures égo-driven corrèlent directement avec une mauvaise performance de delivery.
+Et Forsgren, Humble et Kim l'ont chiffré dans *Accelerate* : les cultures pilotées par l'égo corrèlent directement avec une mauvaise performance de livraison.
 
 On sait tout ça. Depuis des décennies. On continue.
 
@@ -131,13 +131,13 @@ On sait tout ça. Depuis des décennies. On continue.
 
 L'égo en développement logiciel n'est pas un problème de personnalité. C'est un biais systémique, nourri par nos câblages cognitifs, amplifié par une industrie qui glorifie les héros individuels, et reproduit à chaque nouvelle vague technologique.
 
-Mais reconnaître le problème n'est que la première étape. Dans le prochain article de cette série, on explore les 12 visages concrets que prend l'égo au quotidien : du syndrome de Dunning-Kruger au mythe du 10x developer, en passant par le perfectionnisme déguisé en exigence.
+Mais reconnaître le problème n'est que la première étape. Dans le prochain article de cette série, on explorera des cas concrets où l'égo se manifeste au quotidien : du syndrome de Dunning-Kruger au mythe du 10x developer, en passant par le perfectionnisme déguisé en exigence.
 
 Et dans le troisième, on parle de ce qui marche vraiment pour désarmer l'égo, individuellement et collectivement. De l'écoute active au triangle de Karpman, en passant par les dynamiques de pouvoir invisibles qui le nourrissent.
 
 L'égo ne disparaîtra pas. Et ce n'est pas le but. Le but, c'est de le déceler. Savoir quand il te protège et quand il te bloque. Quand il te donne la confiance de défendre une idée et quand il t'empêche d'écouter celle de l'autre.
 
-La prochaine fois que tu ouvres une PR, que tu rentres en réunion d'architecture, ou que tu lis un post sur une méthode différente de la tienne, pose-toi la question : c'est moi qui parle, ou c'est mon égo ?
+La prochaine fois que tu examines le code d'un collègue, que tu rentres en réunion d'architecture, ou que tu lis un post sur une méthode différente de la tienne, pose-toi la question : c'est moi qui parle, ou c'est mon égo ?
 
 ---
 
