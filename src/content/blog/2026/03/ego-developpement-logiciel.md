@@ -3,6 +3,7 @@ title: "L'ego en développement logiciel : le biais que personne ne veut voir"
 description: "L'ego n'est pas un défaut de caractère. C'est un biais cognitif systémique qui traverse tous nos rituels tech et cause plus de problèmes que de bienfaits."
 pubDate: 2026-03-21
 categories: ["mindset", "culture", "ego"]
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7441744117220392960/"
 service: "accompagnement"
 draft: false
 ---
