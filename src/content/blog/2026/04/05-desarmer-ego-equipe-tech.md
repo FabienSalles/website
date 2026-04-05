@@ -149,7 +149,7 @@ En facilitation, trois postures font la différence : l'écoute active, la neutr
 
 Un principe simple change tout : ne jamais interpeller une personne individuellement devant le groupe. S'adresser au groupe. « Y a-t-il des perspectives alternatives ? » au lieu de « Fabien, tu n'as rien dit, tu en penses quoi ? » La première ouvre l'espace. La seconde met sur le grill.
 
-Quand une décision est prise à la majorité, poser la question : « De quoi auriez-vous besoin pour vous y retrouver ? » Un vote sur le trunk-based development : 7 pour, 2 contre. Au lieu de passer en force, demander aux 2 contre ce qu'il leur faudrait. Réponse : du feature flagging en frontend. Nouveau vote incluant cet aspect : unanimité. La majorité ne suffit pas. L'adhésion, si.
+Quand une décision est prise à la majorité, poser la question : « De quoi auriez-vous besoin pour vous y retrouver ? » Un vote sur le trunk-based development : 7 pour, 2 contre. Au lieu de passer en force, demander aux 2 contre ce qu'il leur faudrait. Réponse : avoir des feature flags en front. Nouveau vote incluant cet aspect : unanimité. La majorité ne suffit pas. L'adhésion, si.
 
 Le rôle du leader est aussi d'attribuer les idées. Quand l'apprenti propose une solution que personne ne relève, c'est au tech lead de dire : « X vient de proposer quelque chose, on en fait quoi ? » Valoriser publiquement les contributions de chacun, quel que soit son niveau, aide à briser ce cycle.
 

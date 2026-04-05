@@ -177,7 +177,7 @@ Les reconnaître, c'est déjà choisir. Choisir quand les laisser agir et quand 
 
 Lequel de ces 12 visages reconnais-tu le plus chez toi ? Si tu oses te répondre honnêtement, tu as déjà commencé à le désarmer.
 
-Dans le prochain article, on ira plus loin : comment désarmer l'égo concrètement, individuellement et collectivement. Des accords toltèques à l'écoute active, en passant par les dynamiques de pouvoir invisibles qui le nourrissent dans les équipes.
+Le [troisième article de cette série](/blog/2026/04/05-desarmer-ego-equipe-tech) va plus loin : comment désarmer l'égo concrètement, individuellement et collectivement. Des accords toltèques à l'écoute active, en passant par les dynamiques de pouvoir invisibles qui le nourrissent dans les équipes.
 
 ## Sources
 

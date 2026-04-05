@@ -132,9 +132,9 @@ On sait tout ça depuis des décennies mais on continue.
 
 L'égo en développement logiciel n'est pas un problème de personnalité. C'est un biais systémique, nourri par nos câblages cognitifs, amplifié par une industrie qui glorifie les héros individuels, et reproduit à chaque nouvelle vague technologique.
 
-Mais reconnaître le problème n'est que la première étape. Dans le prochain article de cette série, on explorera des cas concrets où l'égo se manifeste au quotidien : du syndrome de Dunning-Kruger au mythe du 10x developer, en passant par le perfectionnisme déguisé en exigence.
+Mais reconnaître le problème n'est que la première étape. Le [deuxième article de cette série](/blog/2026/03/12-visages-ego-developpeur) explore des cas concrets où l'égo se manifeste au quotidien : du syndrome de Dunning-Kruger au mythe du 10x developer, en passant par le perfectionnisme déguisé en exigence.
 
-Et dans le troisième, on parle de ce qui marche vraiment pour désarmer l'égo, individuellement et collectivement. De l'écoute active au triangle de Karpman, en passant par les dynamiques de pouvoir invisibles qui le nourrissent.
+Et le [troisième](/blog/2026/04/05-desarmer-ego-equipe-tech) parle de ce qui marche vraiment pour désarmer l'égo, individuellement et collectivement. De l'écoute active au triangle de Karpman, en passant par les dynamiques de pouvoir invisibles qui le nourrissent.
 
 L'égo ne disparaîtra pas. Et ce n'est pas le but. Le but, c'est de le déceler. Savoir quand il te protège et quand il te bloque. Quand il te donne la confiance de défendre une idée et quand il t'empêche d'écouter celle de l'autre.
 
