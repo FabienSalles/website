@@ -179,7 +179,13 @@ J'ai observé ce triangle de manière répétée dans des équipes tech. Le piè
 
 Connaître le triangle change la donne. Identifier la position de l'autre et celle dans laquelle on glisse soi-même permet de prendre du recul avant de réagir. Et surtout, de ne pas alimenter le jeu en répondant par un autre rôle du triangle.
 
-En pratique : quand tu sens que tu juges le travail de l'autre sans chercher à comprendre son raisonnement (Persécuteur), remplacer le jugement par la curiosité. « Pourquoi as-tu choisi cette approche ? » au lieu de « c'est pas comme ça qu'il faut faire. » Quand tu sens que tu prends le clavier pour débloquer plus vite (Sauveur), expliquer le raisonnement et laisser l'autre implémenter. Le temps « perdu » à expliquer est de l'autonomie gagnée. Quand tu sens que tu subis (Victime), nommer ce que tu ressens au lieu de te refermer ou d'accuser l'autre.
+En pratique :
+
+Tu juges le travail de l'autre sans chercher à comprendre son raisonnement ? C'est le Persécuteur. Remplace le jugement par la curiosité. « Pourquoi as-tu choisi cette approche ? » au lieu de « c'est pas comme ça qu'il faut faire. »
+
+Tu prends le clavier pour débloquer plus vite ? C'est le Sauveur. Explique le raisonnement et laisse l'autre implémenter. Le temps « perdu » à expliquer est de l'autonomie gagnée.
+
+Tu subis sans rien dire ? C'est la Victime. Nomme ce que tu ressens au lieu de te refermer ou d'accuser l'autre.
 
 ## Turn up the good : amplifier plutôt que confronter
 
