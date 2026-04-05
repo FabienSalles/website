@@ -25,17 +25,17 @@ L'imposteur inversé surcompense son insécurité par de la certitude. Plus il d
 
 L'égo devient une armure. Et comme toute armure, elle protège autant qu'elle isole. Derrière l'assurance affichée, il y a souvent quelqu'un qui a peur qu'on découvre ses limites.
 
-Le reconnaître chez soi, c'est déjà le début. Avoir le droit de dire "je ne sais pas" devrait être un signe de maturité, pas de faiblesse.
+Le reconnaître chez soi, c'est déjà le début. Avoir le droit de dire « je ne sais pas » devrait être un signe de maturité, pas de faiblesse.
 
 ## 2. L'effet Dunning-Kruger
 
-En 1999, Kruger et Dunning ont publié une étude devenue célèbre : "Unskilled and Unaware of It". Leur découverte : les personnes les moins compétentes dans un domaine surestiment significativement leur performance, tandis que les plus compétentes la sous-estiment légèrement.
+En 1999, Kruger et Dunning ont publié une étude devenue célèbre : « Unskilled and Unaware of It ». Leur découverte : les personnes les moins compétentes dans un domaine surestiment significativement leur performance, tandis que les plus compétentes la sous-estiment légèrement.
 
-La version populaire, "moins on en sait, plus on est confiant", est un raccourci. Ce que l'étude montre réellement, c'est un problème de *métacognition*. Les compétences nécessaires pour produire une bonne réponse sont les mêmes que celles nécessaires pour reconnaître qu'une réponse est bonne.
+La version populaire, « moins on en sait, plus on est confiant », est un raccourci. Ce que l'étude montre réellement, c'est un problème de *métacognition*. Les compétences nécessaires pour produire une bonne réponse sont les mêmes que celles nécessaires pour reconnaître qu'une réponse est bonne.
 
 Quand tu ne maîtrises pas un sujet, tu n'as pas les outils pour évaluer ce que tu ne sais pas. L'égo n'est pas la cause. Mais il s'engouffre dans la brèche : il transforme l'incapacité à évaluer ses limites en certitude.
 
-C'est le junior qui a tout compris en 6 mois. Il a fait un projet, ça a marché, donc il maîtrise le sujet. Ce n'est pas de l'arrogance. C'est un angle mort cognitif. Face à lui, le senior qui répond "ça dépend" à presque toutes les questions, parce qu'il a vu assez de contextes différents pour savoir que les réponses simples sont rarement les bonnes.
+C'est le junior qui a tout compris en 6 mois. Il a fait un projet, ça a marché, donc il maîtrise le sujet. Ce n'est pas de l'arrogance. C'est un angle mort cognitif. Face à lui, le senior qui répond « ça dépend » à presque toutes les questions, parce qu'il a vu assez de contextes différents pour savoir que les réponses simples sont rarement les bonnes.
 
 Après un premier pic de confiance vient un moment où tu réalises l'étendue de ce que tu ne sais pas.
 
@@ -43,13 +43,13 @@ Ce moment est inconfortable. Mais c'est là que la vraie progression commence. L
 
 ## 3. Not Invented Here
 
-Recréer son propre framework plutôt qu'utiliser Symfony ou Laravel. Implémenter son propre système d'authentification au lieu d'utiliser une solution éprouvée. En chiffrement, ça porte un nom : "don't roll your own crypto". Le principe s'applique bien au-delà. Développer son propre CRM parce que "les solutions existantes ne sont pas adaptées à notre contexte".
+Recréer son propre framework plutôt qu'utiliser Symfony ou Laravel. Implémenter son propre système d'authentification au lieu d'utiliser une solution éprouvée. En chiffrement, ça porte un nom : « don't roll your own crypto ». Le principe s'applique bien au-delà. Développer son propre CRM parce que « les solutions existantes ne sont pas adaptées à notre contexte ».
 
-Le syndrome "Not Invented Here" est un biais de rejet des solutions externes. Il peut venir d'un individu : le lead qui refuse d'utiliser une lib parce que "on peut faire mieux". Il peut aussi venir d'un groupe : l'équipe qui développe une fierté identitaire autour de son code maison. Les deux mécanismes sont différents, mais l'égo est au centre des deux.
+Le syndrome « Not Invented Here » est un biais de rejet des solutions externes. Il peut venir d'un individu : le lead qui refuse d'utiliser une lib parce que « on peut faire mieux ». Il peut aussi venir d'un groupe : l'équipe qui développe une fierté identitaire autour de son code maison. Les deux mécanismes sont différents, mais l'égo est au centre des deux.
 
 C'est l'effet IKEA appliqué au code. On surestime la valeur de ce qu'on a construit soi-même. Et on sous-estime le temps passé à réinventer ce qui existe déjà, testé, documenté, maintenu par une communauté.
 
-Ce n'est pas qu'un biais psychologique. C'est neurologique. Erik Dane a montré que plus on devient expert dans un domaine, plus le cerveau creuse des sillons profonds qui filtrent les alternatives avant même qu'on les envisage. Il appelle ça le "cognitive entrenchment", l'ancrage cognitif.
+Ce n'est pas qu'un biais psychologique. C'est neurologique. Erik Dane a montré que plus on devient expert dans un domaine, plus le cerveau creuse des sillons profonds qui filtrent les alternatives avant même qu'on les envisage. Il appelle ça le « cognitive entrenchment », l'ancrage cognitif.
 
 L'expertise qui te rend rapide sur les problèmes connus te rend aveugle aux solutions qui ne viennent pas de toi.
 
@@ -67,7 +67,7 @@ La prochaine fois que tu sens un débat s'éterniser sur un détail, pose-toi la
 
 ## 5. Le golden hammer
 
-"J'ai lu Clean Architecture, donc ce CRUD n'en est pas un et doit avoir 6 couches d'abstraction." "J'ai appris CQRS, donc il faut toujours séparer les lectures des écritures." "On n'est que 3 développeurs, mais il nous faut 20 microservices si on veut répondre correctement à ce besoin."
+« J'ai lu Clean Architecture, donc ce CRUD n'en est pas un et doit avoir 6 couches d'abstraction. » « J'ai appris CQRS, donc il faut toujours séparer les lectures des écritures. » « On n'est que 3 développeurs, mais il nous faut 20 microservices si on veut répondre correctement à ce besoin. »
 
 Quand tu as un marteau, tout ressemble à un clou. L'égo transforme une compétence en identité. Tu ne choisis pas le meilleur outil pour le problème. Tu choisis celui qui confirme ton expertise.
 
@@ -75,27 +75,27 @@ Le golden hammer est confortable parce qu'il te maintient dans ta zone de maîtr
 
 Ton cerveau ne choisit pas le meilleur outil. Il choisit celui qu'il a déjà classé.
 
-La question : "je recommande cet outil parce qu'il est adapté au problème, ou parce que c'est celui que je connais ?"
+La question : « je recommande cet outil parce qu'il est adapté au problème, ou parce que c'est celui que je connais ? »
 
 ## 6. Le mythe du 10x developer
 
-L'industrie glorifie les héros individuels. Le "10x developer" qui vaut dix développeurs normaux. Le mythe vient d'une mauvaise lecture d'une étude de 1968 sur 12 programmeurs. Laurent Bossavit a retracé la chaîne de citations dans *The Leprechauns of Software Engineering* : un résultat exploratoire, exagéré de citation en citation, jusqu'à devenir une vérité absolue.
+L'industrie glorifie les héros individuels. Le « 10x developer » qui vaut dix développeurs normaux. Le mythe vient d'une mauvaise lecture d'une étude de 1968 sur 12 programmeurs. Laurent Bossavit a retracé la chaîne de citations dans *The Leprechauns of Software Engineering* : un résultat exploratoire, exagéré de citation en citation, jusqu'à devenir une vérité absolue.
 
-Cinquante ans plus tard, on y croit encore. L'égo du 10x : "je suis irremplaçable."
+Cinquante ans plus tard, on y croit encore. L'égo du 10x : « je suis irremplaçable. »
 
-Le vrai multiplicateur, ce n'est pas celui qui code 10 fois plus vite. C'est celui qui rend 10 personnes meilleures. Qui partage ses connaissances, qui fait monter l'équipe, qui prend le temps d'expliquer. Celui-là, personne ne l'appelle "rockstar". Parce que son impact est collectif, pas individuel.
+Le vrai multiplicateur, ce n'est pas celui qui code 10 fois plus vite. C'est celui qui rend 10 personnes meilleures. Qui partage ses connaissances, qui fait monter l'équipe, qui prend le temps d'expliquer. Celui-là, personne ne l'appelle « rockstar ». Parce que son impact est collectif, pas individuel.
 
 ## 7. Le perfectionnisme déguisé
 
-"Mon code doit être parfait parce qu'il me représente."
+« Mon code doit être parfait parce qu'il me représente. »
 
-En gestion de projet, ça s'appelle le "gold plating" : perfectionner au-delà du nécessaire une fonctionnalité qui répond déjà au besoin. C'est un sujet que j'aborde dès le jour 1 de ma formation DDD, parce que c'est l'une des formes d'over-engineering les plus courantes. Les phrases d'alerte : "Tant qu'on y est, autant bien faire." "C'est plus propre comme ça." "Ce n'est pas assez élégant."
+En gestion de projet, ça s'appelle le « gold plating » : perfectionner au-delà du nécessaire une fonctionnalité qui répond déjà au besoin. C'est un sujet que j'aborde dès le jour 1 de ma formation DDD, parce que c'est l'une des formes d'over-engineering les plus courantes. Les phrases d'alerte : « Tant qu'on y est, autant bien faire. » « C'est plus propre comme ça. » « Ce n'est pas assez élégant. »
 
-Le refactoring d'un code qui fonctionne et ne changera pas. La réécriture complète pour gagner 5 lignes. La PR qui attend 3 jours parce que "c'est pas encore assez propre". L'égo du perfectionniste préfère ne rien livrer que livrer quelque chose d'imparfait.
+Le refactoring d'un code qui fonctionne et ne changera pas. La réécriture complète pour gagner 5 lignes. La PR qui attend 3 jours parce que « c'est pas encore assez propre ». L'égo du perfectionniste préfère ne rien livrer que livrer quelque chose d'imparfait.
 
 Mais la frontière entre gold plating et exigence légitime est fine. Et elle dépend du contexte, pas de la personne.
 
-Pendant 8 ans, on m'a collé l'étiquette "surqualité". Comme si vouloir bien faire était un défaut. J'ai fini par comprendre : la surqualité n'existe pas. C'est un décalage entre l'exigence individuelle et la culture de l'environnement. Six mois plus tard, dans une autre équipe, mes critères étaient les plus bas.
+Pendant 8 ans, on m'a collé l'étiquette « surqualité ». Comme si vouloir bien faire était un défaut. J'ai fini par comprendre : la surqualité n'existe pas. C'est un décalage entre l'exigence individuelle et la culture de l'environnement. Six mois plus tard, dans une autre équipe, mes critères étaient les plus bas.
 
 Le perfectionnisme n'est pas de l'exigence. C'est de l'égo qui refuse d'être vu comme imparfait.
 
@@ -103,7 +103,7 @@ Le perfectionnisme n'est pas de l'exigence. C'est de l'égo qui refuse d'être v
 
 Le perfectionnisme et l'aversion à l'erreur sont cousins, mais ils ne poussent pas dans la même direction.
 
-Le perfectionnisme dit "ça doit être parfait". L'aversion à l'erreur dit "je ne dois surtout pas me tromper".
+Le perfectionnisme dit « ça doit être parfait ». L'aversion à l'erreur dit « je ne dois surtout pas me tromper ».
 
 L'un pousse à over-engineer. L'autre pousse à ne rien proposer du tout.
 
@@ -113,23 +113,23 @@ L'égo protège son image en évitant tout risque d'échec visible. Le résultat
 
 La recherche en psychologie sociale va plus loin. Baumeister et Leary ont montré que les réactions défensives face à la critique ne viennent pas d'une faible estime de soi. Elles viennent d'une estime de soi **haute et fragile**.
 
-C'est la "Threatened Egotism Theory". Plus tu as construit une image de compétence, plus la critique la menace. Et plus la menace est grande, plus la réaction est violente. Ou silencieuse.
+C'est la « Threatened Egotism Theory ». Plus tu as construit une image de compétence, plus la critique la menace. Et plus la menace est grande, plus la réaction est violente. Ou silencieuse.
 
 ## 9. L'idole et le piédestal
 
-Combien de fois as-tu entendu "Uncle Bob a dit que..." pour clore un débat technique ?
+Combien de fois as-tu entendu « Uncle Bob a dit que... » pour clore un débat technique ?
 
 Mettre quelqu'un sur un piédestal, c'est aussi de l'égo. Tu adoptes ses positions. Tes convictions se mélangent avec les siennes. Ton identité professionnelle intègre ses idées comme si c'étaient les tiennes.
 
-"Robert C. Martin dit que les fonctions doivent faire 5 lignes" n'est pas un argument technique. C'est un appel à l'autorité. Et critiquer l'idole, c'est te critiquer toi, puisque tu t'es identifié à elle. La réaction n'est plus intellectuelle. Elle est défensive.
+« Robert C. Martin dit que les fonctions doivent faire 5 lignes » n'est pas un argument technique. C'est un appel à l'autorité. Et critiquer l'idole, c'est te critiquer toi, puisque tu t'es identifié à elle. La réaction n'est plus intellectuelle. Elle est défensive.
 
 Les experts qu'on admire sont des humains avec un contexte, des biais, et des opinions qui évoluent. Les traiter comme des prophètes, c'est renoncer à penser par soi-même.
 
-Et plus ton masque professionnel se rigidifie autour de ces convictions empruntées, plus ce que tu refoules s'exprime autrement. Agacement disproportionné quand quelqu'un remet en question "ton" approche. Jugements expéditifs. Refus d'écouter.
+Et plus ton masque professionnel se rigidifie autour de ces convictions empruntées, plus ce que tu refoules s'exprime autrement. Agacement disproportionné quand quelqu'un remet en question « ton » approche. Jugements expéditifs. Refus d'écouter.
 
 ## 10. Le mythe de la méritocratie
 
-"Je suis là parce que je suis bon."
+« Je suis là parce que je suis bon. »
 
 Cette croyance nourrit l'égo. Elle n'est pas fausse, mais elle est incomplète. Si le succès ne dépend que du mérite, alors l'échec aussi. Et ça empêche de voir ce qui contribue vraiment aux résultats : le contexte, l'équipe, les circonstances.
 
@@ -143,9 +143,9 @@ La méritocratie pure n'existe pas. Le contexte est un multiplicateur. Le reconn
 
 La migration est en retard de 8 mois. Personne ne veut l'admettre.
 
-En 1976, le psychologue Barry Staw a montré que les personnes personnellement responsables d'une décision qui échoue investissent **plus** de ressources, pas moins. C'est l'escalation of commitment. L'égo refuse d'admettre qu'il s'est trompé, alors il double la mise. "Encore un sprint et ça ira." "Le problème, c'est pas l'architecture, c'est qu'on n'a pas assez de temps."
+En 1976, le psychologue Barry Staw a montré que les personnes personnellement responsables d'une décision qui échoue investissent **plus** de ressources, pas moins. C'est l'escalation of commitment. L'égo refuse d'admettre qu'il s'est trompé, alors il double la mise. « Encore un sprint et ça ira. » « Le problème, c'est pas l'architecture, c'est qu'on n'a pas assez de temps. »
 
-Et quand l'échec devient impossible à ignorer, l'égo change de stratégie. Il externalise. "L'équipe n'a pas bien implémenté." "Les requirements ont changé." "On n'avait pas les bons profils." On s'attribue les succès. On externalise les échecs.
+Et quand l'échec devient impossible à ignorer, l'égo change de stratégie. Il externalise. « L'équipe n'a pas bien implémenté. » « Les requirements ont changé. » « On n'avait pas les bons profils. » On s'attribue les succès. On externalise les échecs.
 
 Les deux mécanismes se renforcent. L'entêtement maintient l'illusion. Le rejet de la faute la protège quand elle s'effondre. Et l'équipe subit les deux.
 
@@ -161,15 +161,15 @@ J'ai vécu ce flow. Six mois de mob programming où l'égo s'effaçait naturelle
 
 C'est la preuve que l'égoless est possible. Mais c'est un état, pas un trait de caractère. Il arrive quand les conditions sont réunies : challenge adapté, feedback immédiat, sécurité psychologique.
 
-Le flow ne se décrète pas. Il se cultive. Et il commence souvent quand on arrête de se demander "qu'est-ce qu'on va penser de moi" pour se concentrer sur "quel problème on essaie de résoudre".
+Le flow ne se décrète pas. Il se cultive. Et il commence souvent quand on arrête de se demander « qu'est-ce qu'on va penser de moi » pour se concentrer sur « quel problème on essaie de résoudre ».
 
 ## L'égo n'est pas l'ennemi
 
 Ces 12 visages ne sont pas une liste de défauts à corriger. Ce sont des réflexes humains. Tu les as. Je les ai. Tout le monde les a.
 
-Ryan Holiday écrit : "Ego is stolen. Confidence is earned." Holiday distingue l'égo destructeur de l'"ego strength". Cette confiance solide qui ne vient pas du besoin de prouver, mais de la connaissance de ses limites.
+Ryan Holiday écrit : « Ego is stolen. Confidence is earned. » Holiday distingue l'égo destructeur de l'« ego strength ». Cette confiance solide qui ne vient pas du besoin de prouver, mais de la connaissance de ses limites.
 
-L'ego strength, c'est le senior qui dit "je ne sais pas" sans que ça le diminue. L'égo toxique, c'est celui qui ne peut pas se le permettre.
+L'ego strength, c'est le senior qui dit « je ne sais pas » sans que ça le diminue. L'égo toxique, c'est celui qui ne peut pas se le permettre.
 
 La différence entre égo toxique et confiance saine, c'est la conscience. Savoir quand ton égo te protège (et c'est légitime) et quand il te bloque (et c'est coûteux).
 
@@ -188,7 +188,7 @@ Dans le prochain article, on ira plus loin : comment désarmer l'égo concrètem
 - [Laurent Bossavit, *The Leprechauns of Software Engineering*](https://leanpub.com/leprechauns) — Démystification du mythe 10x
 - [Threatened Egotism Theory](https://psychology.iresearchnet.com/social-psychology/social-psychology-theories/threatened-egotism-theory/) — iResearchNet — Baumeister & Leary, estime de soi haute et fragile
 - [The Paradox of Meritocracy](https://dspace.mit.edu/handle/1721.1/65884) — MIT Open Access — Castilla & Benard (2010)
-- [Escalation of Commitment](https://en.wikipedia.org/wiki/Escalation_of_commitment) — Wikipedia — Barry Staw (1976), "Knee-Deep in the Big Muddy"
+- [Escalation of Commitment](https://en.wikipedia.org/wiki/Escalation_of_commitment) — Wikipedia — Barry Staw (1976), « Knee-Deep in the Big Muddy »
 - [Flow: The Psychology of Optimal Experience](https://en.wikipedia.org/wiki/Flow_(psychology)) — Wikipedia — Mihaly Csikszentmihalyi (1990)
 - [Mob Programming: A Whole Team Approach](https://www.agilealliance.org/resources/experience-reports/mob-programming-agile2014/) — Agile Alliance — Woody Zuill
 - Ryan Holiday, *Ego Is the Enemy* (2016)
