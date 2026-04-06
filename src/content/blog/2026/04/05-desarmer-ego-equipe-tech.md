@@ -4,6 +4,7 @@ description: "Reconnaître l'égo ne suffit pas. Cet article propose des leviers
 pubDate: 2026-04-05
 categories: ["mindset", "culture", "ego", "organisation"]
 service: "accompagnement"
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7446808541434261504/"
 draft: false
 ---
 
