@@ -1,0 +1,231 @@
+---
+import type { MarkdownHeading } from 'astro';
+import { TOC_MIN_HEADINGS, buildTocSections, shouldRenderToc } from '@utils/toc';
+
+interface Props {
+  headings: MarkdownHeading[];
+  minHeadings?: number;
+}
+
+const { headings, minHeadings = TOC_MIN_HEADINGS } = Astro.props;
+
+const sections = buildTocSections(headings);
+const shouldRender = shouldRenderToc(headings, minHeadings);
+
+// When at least one H2 has H3 children, render the ToC in hierarchical mode
+// (H2 as uppercase section titles, H3 nested below). When all sections are flat
+// (article uses only H2), render a simple flat list — the uppercase styling
+// looks heavy when applied to a long sequence of equal-rank entries.
+const hasNestedSections = sections.some((s) => s.children.length > 0);
+---
+
+{shouldRender && (
+  <nav
+    aria-label="Sommaire de l'article"
+    class="toc-nav bg-surface-elevated rounded-lg p-6 border border-border-light"
+  >
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-sm font-bold uppercase tracking-wider text-foreground-heading">
+        Sommaire
+      </h2>
+      <span class="toc-progress-label text-xs text-foreground-muted tabular-nums" aria-hidden="true">0%</span>
+    </div>
+
+    <div
+      class="h-1 w-full bg-border-light rounded-full mb-5 overflow-hidden"
+      role="progressbar"
+      aria-label="Progression dans la lecture de l'article"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+      aria-valuetext="0 pour cent"
+    >
+      <div class="toc-progress-bar h-full w-0 bg-primary transition-[width] duration-150 ease-out"></div>
+    </div>
+
+    {hasNestedSections ? (
+      <ol class="flex flex-col gap-5 list-none p-0 m-0">
+        {sections.map((section) => (
+          <li class="flex flex-col gap-2">
+            <a
+              href={`#${section.heading.slug}`}
+              class="toc-link text-xs font-bold uppercase tracking-wider text-foreground-heading hover:text-primary transition-colors"
+              data-toc-slug={section.heading.slug}
+            >
+              {section.heading.text}
+            </a>
+            {section.children.length > 0 && (
+              <ol class="flex flex-col gap-1.5 list-none p-0 m-0 border-l border-border-light">
+                {section.children.map((child) => (
+                  <li class="leading-snug">
+                    <a
+                      href={`#${child.slug}`}
+                      class="toc-link block pl-3 -ml-px border-l border-transparent text-sm text-foreground-muted hover:text-primary hover:border-primary/40 transition-colors"
+                      data-toc-slug={child.slug}
+                    >
+                      {child.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <ol class="flex flex-col gap-1.5 list-none p-0 m-0 border-l border-border-light">
+        {sections.map((section) => (
+          <li class="leading-snug">
+            <a
+              href={`#${section.heading.slug}`}
+              class="toc-link block pl-3 -ml-px border-l border-transparent text-sm text-foreground-muted hover:text-primary hover:border-primary/40 transition-colors"
+              data-toc-slug={section.heading.slug}
+            >
+              {section.heading.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    )}
+  </nav>
+)}
+
+<style>
+  .toc-link.is-active {
+    color: var(--color-primary);
+    font-weight: 600;
+    border-left-color: var(--color-primary);
+  }
+  /* Offset for anchor scroll so the heading doesn't hide under fixed header */
+  :global(.prose h2[id]),
+  :global(.prose h3[id]) {
+    scroll-margin-top: 6rem;
+  }
+</style>
+
+<script>
+  // Single source of truth: one rAF-throttled scroll handler that updates
+  // both the progress bar and the active section indicator.
+  const ACTIVE_LINE_RATIO = 0.2; // section becomes active when its top reaches 20% of viewport
+  const READING_CURSOR_RATIO = 0.3; // progress is measured at 30% from the top of the viewport
+
+  function initTableOfContents() {
+    const nav = document.querySelector<HTMLElement>('.toc-nav');
+    if (!nav || nav.dataset.tocReady === 'true') return;
+
+    const article = document.querySelector<HTMLElement>('article');
+    if (!article) return;
+
+    const progressTrack = nav.querySelector<HTMLElement>('[role="progressbar"]');
+    const progressBar = nav.querySelector<HTMLElement>('.toc-progress-bar');
+    const progressLabel = nav.querySelector<HTMLElement>('.toc-progress-label');
+
+    // Resolve { heading element, link element } pairs once. Filter out any
+    // links whose target heading isn't in the DOM (defensive).
+    //
+    // Invariant: `items` is in document order (querySelectorAll preserves it).
+    // The active-section detection below depends on this — do not sort.
+    const links = Array.from(
+      nav.querySelectorAll<HTMLAnchorElement>('a[data-toc-slug]')
+    );
+    const items = links
+      .map((link) => {
+        const slug = link.dataset.tocSlug;
+        const el = slug ? document.getElementById(slug) : null;
+        return el ? { el, link } : null;
+      })
+      .filter((item): item is { el: HTMLElement; link: HTMLAnchorElement } => item !== null);
+
+    if (items.length === 0) return;
+
+    nav.dataset.tocReady = 'true';
+
+    // Cache values that don't change during scroll. Refreshed on resize.
+    let articleHeight = article.offsetHeight;
+    const refreshStaticMetrics = () => {
+      articleHeight = article.offsetHeight;
+    };
+
+    // Active link tracking — O(1) updates instead of iterating every time.
+    // We also keep `aria-current="location"` in sync for assistive tech.
+    let activeLink: HTMLAnchorElement | null = null;
+    const setActive = (link: HTMLAnchorElement | null) => {
+      if (activeLink === link) return;
+      if (activeLink) {
+        activeLink.classList.remove('is-active');
+        activeLink.removeAttribute('aria-current');
+      }
+      if (link) {
+        link.classList.add('is-active');
+        link.setAttribute('aria-current', 'location');
+      }
+      activeLink = link;
+    };
+
+    const update = () => {
+      // Progress: how far the reading cursor has moved through the article body.
+      const articleTopAbsolute = article.getBoundingClientRect().top + window.scrollY;
+      const cursor = window.scrollY + window.innerHeight * READING_CURSOR_RATIO;
+      const ratio = Math.max(0, Math.min(1, (cursor - articleTopAbsolute) / articleHeight));
+      const percent = Math.round(ratio * 100);
+
+      if (progressBar) progressBar.style.width = `${percent}%`;
+      if (progressLabel) progressLabel.textContent = `${percent}%`;
+      if (progressTrack) {
+        progressTrack.setAttribute('aria-valuenow', String(percent));
+        progressTrack.setAttribute('aria-valuetext', `${percent} pour cent`);
+      }
+
+      // Active section: the last heading whose top has crossed the active line.
+      // Iterate in reverse + early-return so we hit the answer in O(1) on average.
+      const activeLine = window.innerHeight * ACTIVE_LINE_RATIO;
+      let current: HTMLAnchorElement | null = null;
+      for (let i = items.length - 1; i >= 0; i--) {
+        if (items[i].el.getBoundingClientRect().top <= activeLine) {
+          current = items[i].link;
+          break;
+        }
+      }
+      setActive(current);
+    };
+
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        update();
+        ticking = false;
+      });
+    };
+
+    const onResize = () => {
+      refreshStaticMetrics();
+      onScroll();
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onResize);
+
+    // Cleanup hook for Astro ViewTransitions, if/when they get enabled.
+    // The `nav` reference is the *old* DOM node by the time this fires —
+    // its dataset doesn't need clearing, only listeners must be detached.
+    const cleanup = () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
+    document.addEventListener('astro:before-swap', cleanup, { once: true });
+
+    // Initial paint (handles the case where the user lands with an anchor in the URL).
+    update();
+  }
+
+  // Astro ViewTransitions emit `astro:page-load`. Without ViewTransitions,
+  // we still need to run on initial DOM ready.
+  document.addEventListener('astro:page-load', initTableOfContents);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTableOfContents, { once: true });
+  } else {
+    initTableOfContents();
+  }
+</script>

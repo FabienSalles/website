@@ -4,9 +4,12 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import NewsletterForm from '../../components/NewsletterForm.astro';
 import generateUrl from "@utils/url";
+import { TOC_MIN_HEADINGS, buildTocSections, shouldRenderToc } from "@utils/toc";
 import LinkedinLink from "../../components/LinkedinLink.astro";
 import ServiceCta from "../../components/ServiceCta.astro";
 import RelatedArticles from "../../components/RelatedArticles.astro";
+import TableOfContents from "../../components/TableOfContents.astro";
+import PostTldr from "../../components/PostTldr.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,7 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content, headings } = await post.render();
 const githubBlogContributionBaseUrl = import.meta.env.GITHUB_BLOG_CONTRIBUTION_BASE_URL;
 
 const breadcrumbItems = [
@@ -25,14 +28,73 @@ const breadcrumbItems = [
   { label: 'Blog', href: generateUrl('/blog') },
   { label: post.data.title },
 ];
+
+const hasToc = shouldRenderToc(headings);
+const hasService = Boolean(post.data.service);
+// Mobile width is always max-w-3xl (ToC is hidden, asides stack vertically).
+// On xl breakpoint, the container expands to fit the visible side panels.
+let containerMaxWidth: string;
+if (hasToc && hasService) {
+  containerMaxWidth = 'max-w-3xl xl:max-w-7xl';
+} else if (hasToc || hasService) {
+  containerMaxWidth = 'max-w-3xl xl:max-w-5xl';
+} else {
+  containerMaxWidth = 'max-w-3xl';
+}
+const wrapperRowClasses = (hasToc || hasService)
+  ? 'xl:flex-row xl:items-stretch xl:gap-8 xl:justify-center'
+  : '';
+
+// Schema.org Article JSON-LD with the table of contents exposed as `hasPart`.
+// This helps Google understand the article's section structure and may surface
+// "On this page" jump links in search results.
+const canonicalUrl = `${Astro.site?.toString().replace(/\/$/, '') ?? 'https://fabiensalles.com'}${Astro.url.pathname}`;
+const tocSections = hasToc ? buildTocSections(headings) : [];
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.pubDate.toISOString(),
+  inLanguage: 'fr-FR',
+  author: { '@id': 'https://fabiensalles.com/#person' },
+  publisher: { '@id': 'https://fabiensalles.com/#person' },
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalUrl,
+  },
+  ...(tocSections.length > 0 && {
+    hasPart: tocSections.map((section) => ({
+      '@type': 'WebPageElement',
+      name: section.heading.text,
+      url: `${canonicalUrl}#${section.heading.slug}`,
+      ...(section.children.length > 0 && {
+        hasPart: section.children.map((child) => ({
+          '@type': 'WebPageElement',
+          name: child.text,
+          url: `${canonicalUrl}#${child.slug}`,
+        })),
+      }),
+    })),
+  }),
+};
 ---
 
 <Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description}>
+  <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={breadcrumbItems} />
   </div>
-  <div class={`container mx-auto px-4 pb-12 my-8 ${post.data.service ? 'max-w-5xl' : 'max-w-3xl'}`}>
-    <div class={`flex flex-col items-center ${post.data.service ? 'xl:flex-row xl:items-stretch xl:gap-8' : ''}`}>
+  <div class={`container mx-auto px-4 pb-12 my-8 ${containerMaxWidth}`}>
+    <div class={`flex flex-col items-center ${wrapperRowClasses}`}>
+      {hasToc && (
+        <aside class="hidden xl:block xl:w-72 xl:shrink-0">
+          <div class="xl:sticky xl:top-24">
+            <TableOfContents headings={headings} minHeadings={TOC_MIN_HEADINGS} />
+          </div>
+        </aside>
+      )}
+
       <div class="max-w-3xl w-full bg-surface-elevated rounded-lg p-8 border border-border-light">
         <article>
           <header class="mb-8">
@@ -60,6 +122,8 @@ const breadcrumbItems = [
             </div>
           </header>
 
+          {post.data.tldr && <PostTldr tldr={post.data.tldr} />}
+
           <div class="prose prose-lg">
             <Content />
           </div>
@@ -79,7 +143,7 @@ const breadcrumbItems = [
         <NewsletterForm />
       </div>
 
-      {post.data.service && (
+      {hasService && (
         <aside class="w-full max-w-3xl xl:w-72 xl:max-w-none xl:shrink-0 mt-8 xl:mt-0">
           <div class="xl:sticky xl:top-24 flex flex-col gap-6">
             <ServiceCta service={post.data.service} />

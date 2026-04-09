@@ -1,0 +1,12 @@
+---
+interface Props {
+  tldr: string;
+}
+
+const { tldr } = Astro.props;
+---
+
+<aside class="not-prose mb-8 rounded-lg border border-border-light border-l-4 border-l-primary bg-surface-elevated p-5">
+  <p class="mb-2 text-xs font-bold uppercase tracking-wider text-primary">En bref</p>
+  <p class="text-base leading-relaxed text-foreground">{tldr}</p>
+</aside>
