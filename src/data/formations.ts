@@ -15,6 +15,65 @@ export interface FormationSession {
 // Données des formations
 export const formationSessions: FormationSession[] = [
   {
+    date: '2026-05',
+    name: 'phpunit',
+    number: 6,
+    recommendations: [
+      {
+        name: 'Enzo B.',
+        note: 4.5,
+        recommendation: "Contenu et explications claires, avec un formateur à l'écoute !"
+      },
+      {
+        name: 'Participant',
+        note: 4.5,
+        recommendation: "J'ai apprécié l'apprentissage de nouvelles connaissances et l'approche par des exemples concrets."
+      },
+      {
+        name: 'Bouchnak Samy',
+        note: 5,
+        recommendation: "Le formateur est à l'écoute et sait s'adapter à mes besoins."
+      },
+      {
+        name: 'Benjamin Renard',
+        note: 5,
+        recommendation: "J'ai apprécié voir des cas de tests sur des projets concrets."
+      },
+      {
+        name: 'Participant',
+        note: 5,
+        recommendation: "Formateur clair et à l'écoute !"
+      },
+      {
+        name: 'Participant',
+        note: 4.5,
+        recommendation: "J'ai apprécié que le formateur maîtrise son sujet. La découpe théorie/exos."
+      }
+    ]
+  },
+  {
+    date: '2026-04',
+    name: 'ddd',
+    number: 3,
+    recommendations: [
+      {
+        name: 'Participant',
+        note: 5,
+        recommendation: "Un bon passage sur les points chauds du dev produit en entreprise. On voit un peu plus comment communiquer avec nos PO ainsi que de préparer la logique du produit avec la technique."
+      },
+      {
+        name: 'Participant',
+        note: 5,
+        recommendation: "Le formateur connaît très bien son sujet et le support de cours est complet et de qualité."
+      },
+      {
+        name: 'Participant',
+        note: 5,
+        recommendation: "Sympa, sûrement une des formations les plus utiles que j'ai suivies."
+      }
+    ]
+  },
+  {
     date: '2026-02',
     name: 'ddd',
     number: 22,
@@ -260,6 +319,23 @@ export function getRecommendationsByFormation(formationName: string): (Recommend
       }))
     )
     .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+/**
+ * Récupère les recommandations pour une page de formation dédiée.
+ * Tri : noms identifiés en premier (alpha asc), "Participant" en dernier,
+ * puis par date desc à nom égal.
+ */
+export function getRecommendationsForFormationPage(formationName: string): (Recommendation & { date: string })[] {
+  return getRecommendationsByFormation(formationName).sort((a, b) => {
+    const aIsAnon = a.name === 'Participant';
+    const bIsAnon = b.name === 'Participant';
+    if (aIsAnon && !bIsAnon) return 1;
+    if (!aIsAnon && bIsAnon) return -1;
+    const nameCompare = a.name.localeCompare(b.name, 'fr');
+    if (nameCompare !== 0) return nameCompare;
+    return b.date.localeCompare(a.date);
+  });
 }
 
 /**

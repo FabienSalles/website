@@ -3,10 +3,10 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Faq from '../../components/Faq.astro';
 import { Icon } from 'astro-icon/components';
-import { getRecommendationsByFormation } from '../../data/formations';
+import { getRecommendationsForFormationPage, formatDate } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à Git
-const recommendations = getRecommendationsByFormation('git');
+const recommendations = getRecommendationsForFormationPage('git');
 ---
 
 <Layout
@@ -393,9 +393,12 @@ const recommendations = getRecommendationsByFormation('git');
         <div class="grid md:grid-cols-3 gap-6">
           {recommendations.slice(0, 6).map(reco => (
             <blockquote class="bg-surface p-6 rounded-lg border border-border-light">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-foreground-heading font-semibold">{reco.name}</span>
-                <div class="flex gap-1 text-yellow-400">
+              <div class="flex items-start justify-between mb-3 gap-3">
+                <div>
+                  <div class="text-foreground-heading font-semibold">{reco.name}</div>
+                  <div class="text-foreground-muted text-sm">{formatDate(reco.date)}</div>
+                </div>
+                <div class="flex gap-1 text-yellow-400 flex-shrink-0">
                   {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
                 </div>
               </div>

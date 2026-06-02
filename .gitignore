@@ -24,3 +24,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Local Claude config (writing style reference, notes)
+.claude/

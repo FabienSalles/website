@@ -3,15 +3,15 @@ import Layout from '../../layouts/Layout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Faq from '../../components/Faq.astro';
 import { Icon } from 'astro-icon/components';
-import { getRecommendationsByFormation } from '../../data/formations';
+import { getRecommendationsForFormationPage, formatDate } from '../../data/formations';
 
 // Récupère les recommandations spécifiques à PHPUnit
-const recommendations = getRecommendationsByFormation('phpunit');
+const recommendations = getRecommendationsForFormationPage('phpunit');
 ---
 
 <Layout
-  title="Formation PHPUnit | Tests Legacy + TDD + Mocking + bonnes pratiques"
-  description="Formation PHPUnit par Fabien Salles : tests rapides, maintenables, rentables. Tests Legacy (Golden Master), TDD, Test Doubles. 2 jours, 70% pratique."
+  title="Formation PHPUnit | Tests Legacy + TDD + Mocking + IA"
+  description="Formation PHPUnit par Fabien Salles : stabiliser, refactorer, cadrer le code généré par IA. Tests Legacy, TDD. 2 jours, 50% pratique."
 >
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'PHPUnit' }]} />
@@ -27,8 +27,9 @@ const recommendations = getRecommendationsByFormation('phpunit');
         </h1>
         <p class="text-xl text-foreground-heading font-medium max-w-3xl mx-auto mb-4 leading-relaxed">
           Des tests qui accélèrent ton développement au lieu de le freiner.<br>
-          En 2 jours, maîtrise PHPUnit et les techniques qui transforment
-          tes tests en investissement rentable.
+          En 2 jours, maîtrise PHPUnit et fais-en un appui fiable : pour
+          stabiliser ton code, le refactorer sans crainte, et cadrer ce que
+          tu génères avec l'IA.
         </p>
         <p class="text-lg text-foreground-muted max-w-2xl mx-auto mb-8">
           Cette formation, c'est tout ce que j'aurais aimé qu'on m'apprenne
@@ -47,10 +48,9 @@ const recommendations = getRecommendationsByFormation('phpunit');
   <!-- 2. SECTION DOULEUR — bg-surface-elevated -->
   <section class="bg-surface-elevated py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-4 text-center text-foreground-heading">Soyons honnêtes...</h2>
+      <h2 class="text-3xl font-bold mb-4 text-center text-foreground-heading">Tes tests, soit ils te ralentissent, soit ils n'existent pas.</h2>
       <p class="text-xl text-foreground-muted text-center mb-12">
-        Peut-être que tes tests te font perdre du temps.<br>
-        Ou peut-être que tu n'en écris pas du tout.
+        Dans les deux cas, tu n'es pas seul.
       </p>
 
       <div class="grid md:grid-cols-2 gap-8">
@@ -64,19 +64,23 @@ const recommendations = getRecommendationsByFormation('phpunit');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:timer-sand" class="w-6 h-6 text-primary" />
-              <span>Ta suite de tests prend tellement de temps que tu évites de la lancer</span>
+              <span>Ils prennent tellement de temps que tu évites de les lancer</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:book-open-page-variant" class="w-6 h-6 text-primary" />
-              <span>Relire un test écrit il y a 3 mois te demande autant d'effort que le debug lui-même</span>
+              <span>Tu perds plus de temps à lire tes tests existants qu'à débugger ton application</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:dice-multiple" class="w-6 h-6 text-primary" />
-              <span>Certains tests échouent aléatoirement, sans raison apparente</span>
+              <span>Certains tests cassent au hasard, sans raison apparente</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <Icon name="mdi:robot-outline" class="w-6 h-6 text-primary" />
+              <span>Les tests générés par l'IA passent au vert, mais laissent filer des régressions</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:head-question" class="w-6 h-6 text-primary" />
-              <span>Tu te demandes si tout ce temps passé à tester en vaut vraiment la peine</span>
+              <span>Tu te demandes si tout ce temps à tester en vaut la peine</span>
             </li>
           </ul>
         </div>
@@ -91,19 +95,19 @@ const recommendations = getRecommendationsByFormation('phpunit');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:home-variant" class="w-6 h-6 text-primary" />
-              <span><strong>"Le projet est trop legacy"</strong>. Trop de couplage, impossible de tester quoi que ce soit</span>
+              <span><strong>"Le projet est trop legacy"</strong>. Tout est couplé, rien n'est testable</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
-              <span><strong>"On a déjà testé à la main"</strong>. Pourquoi automatiser ce qui fonctionne ?</span>
+              <span><strong>"On a déjà testé à la main"</strong>. Pourquoi automatiser ce qui marche ?</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:head-question" class="w-6 h-6 text-primary" />
-              <span><strong>"Je ne sais pas quand tester"</strong>. Quand tu y penses, le code est déjà écrit et c'est trop tard</span>
+              <span><strong>"Je ne sais pas quoi et quand tester"</strong>. Lorsque tu y penses, tout est déjà codé et fonctionnel</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:turtle" class="w-6 h-6 text-primary" />
-              <span><strong>"Les tests ralentissent le développement"</strong>. Alors qu'ils font gagner du temps dès le début</span>
+              <span><strong>"Les tests ralentissent le développement"</strong>. Alors qu'ils peuvent faire gagner du temps dès le départ</span>
             </li>
           </ul>
         </div>
@@ -111,11 +115,11 @@ const recommendations = getRecommendationsByFormation('phpunit');
 
       <div class="mt-12 text-center max-w-3xl mx-auto">
         <p class="text-lg text-foreground-muted mb-4">
-          Dans les deux cas, tu n'es pas seul. La plupart des développeurs vivent ça.
+          La plupart des développeurs vivent ça.
         </p>
         <p class="text-xl font-semibold mb-6 text-foreground-heading">
           Mais le problème n'est pas "les tests".<br>
-          C'est qu'on ne t'a jamais montré comment en écrire qui <span class="text-primary">RAPPORTENT</span> plus qu'ils ne coûtent.
+          C'est qu'on ne t'a jamais montré comment en écrire qui te font gagner du temps au lieu de t'en coûter.
         </p>
         <a
           href="#programme"
@@ -137,23 +141,28 @@ const recommendations = getRecommendationsByFormation('phpunit');
         </p>
         <p class="text-foreground">
           Ce qui manque, c'est le "pourquoi" et le "comment bien faire" :
+          par où commencer, comment écrire des tests qui durent.
         </p>
-        <ul class="space-y-2 text-foreground-heading mb-6">
-          <li><strong>Par où commencer</strong></li>
-          <li><strong>Comment écrire des tests qui durent</strong></li>
-        </ul>
+        <p class="text-foreground">
+          J'ai passé 15 ans à écrire des tests, et une bonne partie de
+          ce temps à corriger ceux que j'avais mal écrits. Toutes les
+          erreurs que j'ai faites n'étaient ni présentes dans les livres
+          ni dans l'aide que je pouvais avoir. J'ai appris par la pratique...
+        </p>
         <p class="text-foreground-heading font-semibold text-xl">
           Cette formation comble ce manque.
         </p>
         <ul class="space-y-2 text-foreground-heading mb-4">
-          <li>Tu vas comprendre <strong>POURQUOI</strong> tes tests sont fragiles.</li>
-          <li>Tu vas apprendre <strong>COMMENT</strong> en faire des outils qui te font gagner du temps.</li>
-          <li>Tu vas repartir avec une <strong>STRATÉGIE</strong> adaptée à ton contexte.</li>
+          <li>Tu vas comprendre <span class="text-primary font-bold">POURQUOI</span> tes tests sont fragiles.</li>
+          <li>Tu vas savoir <strong>nommer</strong> précisément ce que tu testes.</li>
+          <li>Tu vas apprendre <strong>comment</strong> en faire des outils qui te font gagner du temps.</li>
+          <li>Tu vas repartir avec une <strong>stratégie</strong> adaptée à ton contexte.</li>
         </ul>
         <div class="bg-surface-elevated rounded-lg p-4 mt-6 border-l-4 border-primary">
           <p class="text-foreground-muted text-sm italic">
-            Ce que j'aime dans cette formation : voir des devs arriver en pensant que leurs tests
-            sont "normaux" et repartir en comprenant pourquoi ils cassaient tout le temps.
+            Ce que j'aime dans cette formation : voir des devs arriver en pensant
+            que les tests sont un coût, et repartir en comprenant que c'est un gain
+            dès la première ligne écrite.
           </p>
         </div>
       </div>
@@ -163,49 +172,49 @@ const recommendations = getRecommendationsByFormation('phpunit');
   <!-- 4. SECTION BÉNÉFICES — bg-surface-elevated -->
   <section class="bg-surface-elevated py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">Ce que tu vas obtenir</h2>
+      <h2 class="text-3xl font-bold mb-12 text-center">Ce avec quoi tu repars</h2>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            Des tests qui s'exécutent en secondes, pas en minutes
+            <Icon name="mdi:flash" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une suite qui tourne en secondes
           </h3>
           <p class="text-foreground-muted">Fini d'attendre 10 minutes pour savoir si ton code marche</p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            Des tests qui ne cassent que quand il y a un vrai problème
+            <Icon name="mdi:bullseye-arrow" class="w-6 h-6 text-primary flex-shrink-0" />
+            Plus de tests qui cassent pour rien
           </h3>
-          <p class="text-foreground-muted">Plus de temps perdu sur des faux positifs</p>
+          <p class="text-foreground-muted">Faux positifs en moins, vrais problèmes détectés quand ils arrivent</p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            Des tests lisibles qui documentent ton code métier
+            <Icon name="mdi:book-open-page-variant" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une doc vivante de ton code métier
           </h3>
-          <p class="text-foreground-muted">Tes tests deviennent la meilleure doc de ton projet</p>
+          <p class="text-foreground-muted">Tes tests racontent ce que ton appli fait, mieux qu'un README</p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            La confiance pour refactorer sans peur
+            <Icon name="mdi:shield-check" class="w-6 h-6 text-primary flex-shrink-0" />
+            Refactorer sans serrer les fesses
           </h3>
-          <p class="text-foreground-muted">Tu oses améliorer le code legacy</p>
+          <p class="text-foreground-muted">Tu touches au legacy sans crainte de tout casser</p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            Une stratégie de test claire
+            <Icon name="mdi:compass-outline" class="w-6 h-6 text-primary flex-shrink-0" />
+            Une stratégie qui colle à ton projet
           </h3>
-          <p class="text-foreground-muted">Tu sais quoi tester, comment, et pourquoi</p>
+          <p class="text-foreground-muted">Pas de recette dogmatique. Tu choisis quoi tester et comment.</p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg">
           <h3 class="flex items-center gap-2 font-bold mb-2">
-            <Icon name="mdi:check-circle" class="w-6 h-6 text-primary flex-shrink-0" />
-            Un investissement rentable dès le premier jour
+            <Icon name="mdi:robot-outline" class="w-6 h-6 text-primary flex-shrink-0" />
+            Un garde-fou sur le code généré par IA
           </h3>
-          <p class="text-foreground-muted">Tes tests te font gagner du temps au lieu d'en perdre</p>
+          <p class="text-foreground-muted">Je partage mes skills et workflows et t'évite de faire des erreurs.</p>
         </div>
       </div>
     </div>
@@ -237,8 +246,8 @@ const recommendations = getRecommendationsByFormation('phpunit');
               <span>Tu es tech lead et tu veux diffuser les bonnes pratiques dans ton équipe</span>
             </li>
             <li class="flex items-start gap-3">
-              <Icon name="mdi:brain" class="w-6 h-6 text-primary" />
-              <span>Tu en as marre des formations qui t'apprennent la syntaxe sans t'apprendre à réfléchir</span>
+              <Icon name="mdi:robot-outline" class="w-6 h-6 text-primary" />
+              <span>Tu codes avec un agent IA et tu veux que tes tests le guident vers ce qui compte, pas qu'ils servent de décoration</span>
             </li>
           </ul>
         </div>
@@ -252,7 +261,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:rocket-launch" class="w-6 h-6 text-primary" />
-              <span>Tu es en startup avec la pression de livrer vite, et les tests te semblent être un luxe</span>
+              <span>Tu as la pression de livrer vite, et les tests te semblent être un luxe</span>
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:link-variant" class="w-6 h-6 text-primary" />
@@ -264,7 +273,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
             </li>
             <li class="flex items-start gap-3">
               <Icon name="mdi:help-circle-outline" class="w-6 h-6 text-primary" />
-              <span>Tu veux enfin comprendre pourquoi tout le monde parle de tests</span>
+              <span>Tu veux comprendre comment écrire des tests qui servent réellement</span>
             </li>
           </ul>
         </div>
@@ -272,9 +281,9 @@ const recommendations = getRecommendationsByFormation('phpunit');
 
       <div class="mt-10 p-6 bg-surface-elevated rounded-xl border border-border-light text-center">
         <p class="text-lg font-semibold text-foreground-heading">
-          Cette formation n'est PAS réservée aux experts.<br>
-          Elle est conçue pour transformer ta façon de voir les tests,<br>
-          que tu partes de zéro ou que tu veuilles améliorer ta pratique.
+          Pas besoin d'être expert.<br>
+          Que tu écrives ton premier test ou ton millième,<br>
+          tu repartiras avec des techniques que tu pourras appliquer dès ta prochaine PR.
         </p>
       </div>
     </div>
@@ -283,7 +292,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
   <!-- 6. SECTION PROGRAMME — bg-surface-elevated -->
   <section id="programme" class="bg-surface-elevated py-16 scroll-mt-24">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">Programme détaillé : 2 jours pour transformer ta pratique</h2>
+      <h2 class="text-3xl font-bold mb-8 text-center">Programme détaillé : 2 jours, du code à chaque page</h2>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-center">
         <div class="p-4 bg-surface rounded-lg">
@@ -312,25 +321,21 @@ const recommendations = getRecommendationsByFormation('phpunit');
           </div>
           <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
             <div class="p-6">
-              <h4 class="font-bold text-primary mb-4">MATIN — Pourquoi et comment tester</h4>
+              <h4 class="font-bold text-primary mb-4">MATIN — Pourquoi tester et bases de PHPUnit</h4>
               <ul class="space-y-2 text-foreground-heading">
-                <li>• Les vraies raisons de tester (et ce n'est pas "parce qu'il faut")</li>
-                <li>• Use case vs Test case : comprendre ce qu'on teste vraiment</li>
-                <li>• Classification des tests : manuel vs auto, statique vs dynamique</li>
-                <li>• Niveaux de tests : unitaire, intégration, système, acceptation</li>
-                <li>• White box vs Black box : deux approches complémentaires</li>
-                <li>• Ce qu'est un VRAI test unitaire (indice : pas d'I/O)</li>
+                <li>• Les vraies raisons de tester</li>
+                <li>• Typologies et niveaux de tests : qu'appelle-t-on un « test unitaire » ?</li>
+                <li>• Bases de PHPUnit : installation, premiers tests, assertions</li>
+                <li>• Fixtures et data providers</li>
               </ul>
             </div>
             <div class="p-6">
-              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — PHPUnit et Test Doubles</h4>
+              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — Isoler les tests et repérer les pièges du code</h4>
               <ul class="space-y-2 text-foreground-heading">
-                <li>• Installation et premiers tests avec PHPUnit</li>
-                <li>• Assertions : assertEquals vs assertSame, et toutes les autres</li>
-                <li>• Fixtures : setUp(), tearDown(), et leur bon usage</li>
-                <li>• Data providers et attributs PHP 8 : #[Test], #[DataProvider], #[TestWith]</li>
-                <li>• L'art des doublures : Dummy, Stub, Fake, Spy, Mock</li>
-                <li>• Créer des doublures avec et sans PHPUnit</li>
+                <li>• Pourquoi isoler ses tests, et comment le faire</li>
+                <li>• Les doublures : Dummy, Stub, Fake, Spy, Mock</li>
+                <li>• Doublures manuelles, PHPUnit ou Prophecy : quand utiliser quoi</li>
+                <li>• Repérer les erreurs de design et d'architecture qui rendent le code intestable</li>
               </ul>
             </div>
           </div>
@@ -339,28 +344,27 @@ const recommendations = getRecommendationsByFormation('phpunit');
         <!-- Jour 2 -->
         <div class="border border-border rounded-lg overflow-hidden">
           <div class="bg-surface text-foreground-heading border-b-2 border-primary p-4">
-            <h3 class="text-xl font-bold">Jour 2 : Stratégies de tests et bonnes pratiques</h3>
+            <h3 class="text-xl font-bold">Jour 2 : Stratégies de test et code testable</h3>
           </div>
           <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-border-light">
             <div class="p-6">
-              <h4 class="font-bold text-primary mb-4">MATIN — Quand et comment écrire les tests</h4>
+              <h4 class="font-bold text-primary mb-4">MATIN — Stratégie de test et anti-patterns</h4>
               <ul class="space-y-2 text-foreground-heading">
-                <li>• Comment lancer ses tests : CLI, CI, automatisation, hooks Git</li>
-                <li>• Quand écrire les tests ? Penser ROI</li>
-                <li>• Golden Master Testing : sécuriser du code legacy sans tests</li>
-                <li>• TDD et BDD : comprendre les différences et les complémentarités</li>
-                <li>• Refactoring : "Edit and Pray" vs "Cover and Modify"</li>
+                <li>• Quand et comment lancer ses tests : CLI, CI/CD, hooks, agents IA</li>
+                <li>• ROI : quel test mérite d'être écrit</li>
+                <li>• TDD et BDD : approches et différences</li>
+                <li>• Mauvaises pratiques courantes à reconnaître et éviter</li>
+                <li>• Les tests qui freinent au lieu d'aider</li>
               </ul>
             </div>
             <div class="p-6">
-              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — Code de qualité et tests durables</h4>
+              <h4 class="font-bold text-primary mb-4">APRÈS-MIDI — Bonnes pratiques et code testable</h4>
               <ul class="space-y-2 text-foreground-heading">
-                <li>• SOLID et testabilité : pourquoi un code bien conçu est facile à tester</li>
-                <li>• Architecture Hexagonale et Domain-Driven Design</li>
-                <li>• Bonnes pratiques de tests : DAMP, AAA/GWT, une assertion par test</li>
-                <li>• Factory Method, Object Mother, Test Data Builder</li>
-                <li>• "Don't mock what you don't own" : pourquoi et comment</li>
-                <li>• Les 4 piliers d'un bon test (Vladimir Khorikov)</li>
+                <li>• Bonnes pratiques d'écriture : tout ce qui fait qu'un test sert et tient dans le temps</li>
+                <li>• SOLID et découplage : un code bien conçu se teste mieux</li>
+                <li>• Cadrer l'IA et la rendre autonome sur tes tests : skills et workflows</li>
+                <li>• Apprendre à tester et migrer progressivement un legacy</li>
+                <li>• Coverage et mutation testing : mesurer la qualité de tes tests</li>
               </ul>
             </div>
           </div>
@@ -380,6 +384,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
         >
           Discutons-en →
         </a>
+        <p class="text-sm text-foreground-muted mt-4">Un échange court, sans relance commerciale.</p>
       </div>
     </div>
   </section>
@@ -392,9 +397,12 @@ const recommendations = getRecommendationsByFormation('phpunit');
         <div class="grid md:grid-cols-3 gap-6">
           {recommendations.slice(0, 6).map(reco => (
             <blockquote class="bg-surface p-6 rounded-lg border border-border-light">
-              <div class="flex items-center justify-between mb-3">
-                <span class="text-foreground-heading font-semibold">{reco.name}</span>
-                <div class="flex gap-1 text-yellow-400">
+              <div class="flex items-start justify-between mb-3 gap-3">
+                <div>
+                  <div class="text-foreground-heading font-semibold">{reco.name}</div>
+                  <div class="text-foreground-muted text-sm">{formatDate(reco.date)}</div>
+                </div>
+                <div class="flex gap-1 text-yellow-400 flex-shrink-0">
                   {[...Array(Math.round(reco.note))].map(() => <span>★</span>)}
                 </div>
               </div>
@@ -417,23 +425,20 @@ const recommendations = getRecommendationsByFormation('phpunit');
       <h2 class="text-2xl font-bold mb-6 text-center">Et le TDD dans tout ça ?</h2>
       <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
-          Tu te demandes peut-être pourquoi cette formation ne s'appelle pas
-          "TDD avec PHPUnit" ?
-        </p>
-        <p>
-          Le Test-Driven Development est une pratique puissante, mais elle
-          repose sur des fondations solides : savoir écrire des tests rapides,
-          isolés, et maintenables.
+          Tu te demandes pourquoi cette formation ne s'appelle pas
+          "TDD avec PHPUnit" ? Parce que le TDD repose sur des fondations :
+          savoir écrire des tests rapides, isolés, maintenables.
         </p>
         <p class="font-semibold text-foreground-heading">
           Cette formation te donne ces fondations.
         </p>
         <p>
-          À la fin des 2 jours, tu comprendras naturellement pourquoi le TDD
-          fonctionne et comment il peut transformer ta façon de développer.
-          L'intérêt du test-first et d'une boucle de feedback rapide pour
-          designer ton code et tes tests deviendra limpide une fois que tu
-          maîtriseras l'art d'écrire des tests qui ne te freinent pas.
+          Le Jour 2 explore plusieurs écoles et courants de pensée autour
+          du TDD, pour rester pragmatique et adaptable plutôt que rigide
+          et dogmatique. À la fin des 2 jours, tu sauras appliquer ses
+          principes pour développer de manière itérative et maximiser
+          la boucle de feedback, y compris quand le code et les tests
+          sont générés par l'IA.
         </p>
       </div>
     </div>
@@ -442,31 +447,62 @@ const recommendations = getRecommendationsByFormation('phpunit');
   <!-- 10. SECTION IA — bg-surface-elevated -->
   <section class="bg-surface-elevated py-16">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl font-bold mb-6 text-center">Et maintenant que l'IA code pour nous ?</h2>
+      <h2 class="text-2xl font-bold mb-6 text-center">Et l'IA dans tout ça ?</h2>
       <div class="prose prose-lg max-w-3xl mx-auto text-foreground">
         <p>
-          L'IA peut être ton meilleur allié... ou ton pire ennemi.
+          L'IA accélère tes livraisons. Mais sans tests fiables et pérennes,
+          elle accélère aussi les pièges : régressions silencieuses qui
+          passent au vert, tests fragiles qui sautent au premier vent,
+          tests qui valident à côté de la plaque.
         </p>
         <p>
-          Elle génère du code plus vite que jamais. Elle peut aussi écrire
-          tes tests. Mais sans direction appropriée, elle ne fait qu'amplifier
-          les problèmes existants.
+          Un test fiable, c'est un signal sur lequel ton agent peut
+          s'appuyer pour itérer. Un test fragile lui ment au même titre
+          qu'à toi, et tu te retrouves à corriger des bugs qu'il croyait
+          avoir réglés.
         </p>
         <p>
-          Pour que l'IA construise des tests solides, il faut savoir la guider.
-          Il faut pouvoir déceler quels tests sont utiles et lesquels vont te
-          poser problème. Sans cette capacité de jugement, tu vas plus vite...
-          droit dans le mur.
-        </p>
-        <p>
-          L'IA accélère le développement, accélère les livraisons, mais aussi
-          accélère les catastrophes si les décisions ne reposent pas sur des
-          principes de qualité.
+          La formation n'utilise pas l'IA pendant les exercices, mais on
+          en parle. Je couvre les techniques que j'utilise pour fiabiliser,
+          vérifier et contraindre l'IA dans la bonne direction. Si tu
+          veux pousser le focus IA plus loin, je peux adapter le contenu.
         </p>
         <p class="font-semibold text-foreground-heading">
-          Cette formation te donne les connaissances pour piloter l'IA
-          intelligemment quand elle écrit tes tests.
+          Cette formation ne te donne pas des "bases". Elle te transmet
+          mes 15 années d'écriture de tests, pour ne pas reproduire les
+          mêmes erreurs. Avec ou sans IA.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10b. SECTION BONUS SKILLS IA — cream avec card élevée -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto bg-surface-elevated rounded-xl border border-border-light p-8 md:p-10">
+        <h2 class="text-2xl font-bold mb-6 text-center flex items-center justify-center gap-2">
+          <Icon name="mdi:gift-outline" class="w-7 h-7 text-primary" />
+          Mes skills IA, en bonus de fin de formation
+        </h2>
+        <div class="prose prose-lg text-foreground">
+          <p>
+            Je ne m'en sers pas pendant la formation. Je te les présente
+            à la fin, en bonus, une fois que tu as bien intégré les bonnes
+            pratiques de test.
+          </p>
+          <p>
+            L'idée : te permettre de reproduire avec un agent IA tout ce
+            qu'on a vu en deux jours, sans perdre la rigueur. Ces skills,
+            que j'approfondis depuis un an, condensent tout ce que j'ai
+            appris sur le sujet. Ils s'appliquent à n'importe quel agent
+            (Claude Code, Copilot, Codex, Cursor, etc.) et tu pourras les
+            adapter à ta stack.
+          </p>
+          <p class="font-semibold text-foreground-heading">
+            Utiliser les skills des autres, c'est bien. Comprendre comment
+            ils marchent et les adapter à ton projet, c'est mieux.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -481,7 +517,7 @@ const recommendations = getRecommendationsByFormation('phpunit');
           et j'ai fait à peu près toutes les erreurs possibles.
         </p>
         <p>
-          Cette formation, je la donne depuis 2017. Mais ce qui me motive vraiment,
+          Cette formation, je la donne depuis 2017. Ce qui me tient,
           c'est le moment où quelqu'un comprend <em>pourquoi</em> ses tests cassaient,
           pas juste <em>comment</em> les corriger.
         </p>
@@ -506,24 +542,24 @@ const recommendations = getRecommendationsByFormation('phpunit');
           <div class="mb-4 flex justify-center"><Icon name="mdi:office-building" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Intra-entreprise</h3>
           <p class="text-foreground-muted">
-            Je me déplace dans tes locaux pour former ton équipe.
-            Idéal pour créer une culture de test commune.
+            Je me déplace dans tes locaux. Toute l'équipe entend la même
+            chose et repart avec le même vocabulaire.
           </p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg text-center">
           <div class="mb-4 flex justify-center"><Icon name="mdi:laptop" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">À distance</h3>
           <p class="text-foreground-muted">
-            Formation en visioconférence avec les mêmes exercices pratiques.
-            Parfait pour les équipes distribuées.
+            Mêmes exercices, en visio. Pour les équipes éclatées
+            géographiquement.
           </p>
         </div>
         <div class="bg-surface p-6 border border-border-light rounded-lg text-center">
           <div class="mb-4 flex justify-center"><Icon name="mdi:crosshairs-gps" class="w-10 h-10 text-primary" /></div>
           <h3 class="font-bold text-lg mb-3">Sur mesure</h3>
           <p class="text-foreground-muted">
-            Je peux adapter le contenu à ton contexte spécifique,
-            ton stack technique ou tes problématiques.
+            Ta stack, ton legacy, tes vrais cas. On peut bosser sur
+            ton code si tu veux.
           </p>
         </div>
       </div>
@@ -550,12 +586,16 @@ const recommendations = getRecommendationsByFormation('phpunit');
           answer: "Oui. On aborde des techniques spécifiques pour sécuriser du code existant sans tests. C'est souvent le cas le plus demandé en entreprise."
         },
         {
-          question: "Est-ce qu'on aborde le TDD, le TCR ou les tests avec l'IA ?",
-          answer: "Oui. On couvre le TDD et ses variantes, et on aborde aussi comment l'IA change la donne : comment la guider pour écrire des tests solides, et pourquoi savoir tester devient encore plus critique quand l'IA génère du code à ta place."
+          question: "Est-ce qu'on aborde le TDD et le TCR ?",
+          answer: "Oui. Le Jour 2 explore plusieurs écoles autour du TDD (Inside-Out, Outside-In, Diamond, Canon TDD, TCR) pour t'aider à <strong>choisir ce qui colle à ton contexte</strong> plutôt qu'à appliquer une recette par cœur. Le TCR y est abordé comme un cas particulier qui pousse à itérer en très petits pas et à protéger le code à chaque étape."
+        },
+        {
+          question: "Et avec l'IA, qu'est-ce qu'on aborde ?",
+          answer: "<strong>Ce n'est pas une formation d'IA.</strong> Mais on apprend à faire en sorte que l'IA écrive correctement tes tests, et à la rendre plus autonome sur le sujet. Avant de pouvoir bien la piloter, il faut l'expertise suffisante pour lui transmettre les connaissances requises sur tes tests, et repérer ce qu'elle fait mal afin de la corriger."
         },
         {
           question: "La formation peut-elle être adaptée à notre contexte ?",
-          answer: "Absolument. Je peux adapter les exercices à votre stack, vos problématiques et votre codebase si vous le souhaitez. C'est l'avantage du format intra-entreprise."
+          answer: "Oui. Je peux adapter les exercices à votre stack, vos problématiques et votre codebase si vous le souhaitez."
         }
       ]} />
     </div>
@@ -572,11 +612,11 @@ const recommendations = getRecommendationsByFormation('phpunit');
         </p>
         <div class="grid grid-cols-2 md:flex justify-center gap-4">
           <a
-            href="/contact"
-            title="Me contacter"
+            href="/contact?subject=formation"
+            title="Parler de mon contexte"
             class="btn-primary text-lg text-center"
           >
-            Me contacter →
+            Parler de ton contexte →
           </a>
           <a
             href="https://www.linkedin.com/in/fabiensalles/"
