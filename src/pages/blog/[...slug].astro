@@ -12,7 +12,9 @@ import TableOfContents from "../../components/TableOfContents.astro";
 import PostTldr from "../../components/PostTldr.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  });
   return posts.map(post => ({
     params: { slug: post.slug },
     props: { post },

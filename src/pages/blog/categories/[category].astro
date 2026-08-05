@@ -5,7 +5,9 @@ import Breadcrumb from '../../../components/Breadcrumb.astro';
 import generateUrl from "../../../utils/url";
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  });
   const categories = [...new Set(posts.flatMap(post => post.data.categories))];
   
   return categories.map(category => {

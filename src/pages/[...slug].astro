@@ -28,7 +28,9 @@ export async function getStaticPaths() {
   }
 
   // Add blog dynamic routes
-  const posts = await getCollection('blog');
+  const posts = await getCollection('blog', ({ data }) => {
+    return import.meta.env.PROD ? !data.draft : true;
+  });
   for (const post of posts) {
     paths.push({ params: { slug: `blog/${post.slug}` }, props: { post } });
   }
