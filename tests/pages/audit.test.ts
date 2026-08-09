@@ -51,6 +51,40 @@ describe('Audit page (built)', () => {
     }));
   });
 
+  it('answers the real prospect questions in a FAQ mirrored by its FAQPage JSON-LD', () => {
+    const html = auditHtml().replaceAll('&#39;', "'");
+
+    const faqPage = jsonLdBlocks(auditHtml()).find(block => block['@type'] === 'FAQPage');
+    const questions = ((faqPage?.mainEntity ?? []) as {name: string}[]).map(entry => entry.name);
+
+    expect(questions).toEqual([
+      'Combien de temps dure un audit ?',
+      "Comment se passe l'accès au code ?",
+      "Mon code reste-t-il confidentiel avec l'IA ?",
+      "Qu'est-ce que je reçois à la fin ?",
+      "Et après l'audit ?",
+    ]);
+    for (const question of questions) {
+      expect(html).toContain(question);
+    }
+  });
+
+  it('states the honest AI circuit in the confidentiality answer', () => {
+    const html = auditHtml().replaceAll('&#39;', "'");
+
+    expect(html).toContain('entraînement');
+    expect(html).toContain('modèles locaux');
+  });
+
+  it('shows the post-audit continuum with the action plan and the follow-up offer', () => {
+    const html = auditHtml().replaceAll('&#39;', "'");
+
+    expect(html).toContain("Et après l'audit ?");
+    expect(html).toContain("plan d'action");
+    expect(html).not.toContain('90 jours');
+    expect(html).toContain('href="/accompagnement"');
+  });
+
   it('resolves every internal anchor to an existing id', () => {
     const html = auditHtml();
 

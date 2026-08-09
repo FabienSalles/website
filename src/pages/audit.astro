@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
+import Faq from '../components/Faq.astro';
 import { Icon } from 'astro-icon/components';
 
 const serviceJsonLd = {
@@ -578,6 +579,50 @@ const serviceJsonLd = {
     </div>
   </section>
 
+  <!-- SECTION 8b : ET APRÈS L'AUDIT ? (cream) -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center">Et après l'audit ?</h2>
+      <p class="text-xl text-foreground-muted text-center mb-12 max-w-3xl mx-auto">
+        Un rapport qui finit dans un tiroir est un audit raté.<br>
+        Le mien se termine par un plan, pas par une liste de reproches.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:calendar-check" class="w-8 h-8 text-primary" />
+            Un plan d'action inclus dans le rapport
+          </h3>
+          <p class="text-foreground-muted">
+            Quoi corriger d'abord, quoi surveiller, quoi laisser tranquille.
+            Priorisé par impact et par effort.
+          </p>
+        </div>
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:account-group" class="w-8 h-8 text-primary" />
+            Tes équipes restent aux commandes
+          </h3>
+          <p class="text-foreground-muted">
+            Le plan est fait pour être déroulé en autonomie.
+            Pas de dépendance à un prestataire pour avancer.
+          </p>
+        </div>
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:handshake" class="w-8 h-8 text-primary" />
+            Un appui si tu en veux un
+          </h3>
+          <p class="text-foreground-muted">
+            Pour la mise en œuvre, je peux accompagner ton équipe :
+            <a href="/accompagnement" class="text-primary font-semibold hover:underline">découvre l'accompagnement</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 9 : TARIFICATION (cream) -->
   <section id="tarif" class="py-16 scroll-mt-24">
     <div class="container mx-auto px-4">
@@ -695,6 +740,34 @@ const serviceJsonLd = {
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SECTION 11b : FAQ (cream) -->
+  <section class="py-12">
+    <div class="container mx-auto px-4">
+      <Faq items={[
+        {
+          question: "Combien de temps dure un audit ?",
+          answer: "Entre 3 et 5 jours en moyenne, selon la taille du code et le périmètre défini ensemble. Au TJM de 850 €, tu connais l'enveloppe avant de commencer."
+        },
+        {
+          question: "Comment se passe l'accès au code ?",
+          answer: "Un accès en lecture au repository suffit (GitHub, GitLab, Bitbucket ou archive). Si ta politique interne l'exige, je peux intervenir sur site ou sur un poste que tu fournis. NDA signé avant tout accès si besoin."
+        },
+        {
+          question: "Mon code reste-t-il confidentiel avec l'IA ?",
+          answer: "Oui. J'utilise des outils d'IA via des offres professionnelles dont les conditions excluent l'entraînement sur tes données. Le code ne quitte pas mon poste autrement. Et si ton service juridique l'interdit, je travaille avec des modèles locaux, ou sans IA du tout."
+        },
+        {
+          question: "Qu'est-ce que je reçois à la fin ?",
+          answer: "Un rapport complet illustré d'exemples tirés de ton code, une matrice de priorisation par criticité et effort, et un plan d'action. Une restitution orale peut suivre, pour l'équipe, la direction ou le board."
+        },
+        {
+          question: "Et après l'audit ?",
+          answer: "Le plan d'action est fait pour être déroulé par tes équipes, en autonomie. Si tu veux un appui pour le mettre en œuvre, c'est le rôle de <a href=\"/accompagnement\" class=\"text-primary font-semibold hover:underline\">l'accompagnement</a>."
+        }
+      ]} />
     </div>
   </section>
 
