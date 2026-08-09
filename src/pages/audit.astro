@@ -2,12 +2,39 @@
 import Layout from '../layouts/Layout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import { Icon } from 'astro-icon/components';
+
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Audit de code PHP',
+  serviceType: 'Audit de code PHP',
+  description: "Audit de code PHP et Symfony : architecture, dette technique, sécurité, performance. Audit augmenté par l'IA, chaque constat validé par un senior.",
+  url: 'https://fabiensalles.com/audit/',
+  areaServed: 'FR',
+  provider: {
+    '@type': 'Person',
+    name: 'Fabien Salles',
+    url: 'https://fabiensalles.com',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '850',
+    priceCurrency: 'EUR',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '850',
+      priceCurrency: 'EUR',
+      unitText: 'jour',
+    },
+  },
+};
 ---
 
 <Layout
-  title="Audit PHP | Legacy, Symfony, Dette Technique | Option Audit IA"
-  description="Audit de code PHP par Fabien Salles : ce que les outils ne voient pas. Legacy, Symfony, frameworks custom. Option audit augmenté IA. Confidentialité garantie."
+  title="Audit PHP | Legacy, Symfony, Dette Technique | Audit augmenté IA"
+  description="Audit de code PHP : ce que les outils ne voient pas. Legacy, Symfony, frameworks custom. Audit augmenté par l'IA, chaque constat validé par un senior."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Audit' }]} />
   </div>
@@ -33,7 +60,7 @@ import { Icon } from 'astro-icon/components';
         <div class="flex flex-wrap justify-center gap-3 mb-8">
           <span class="badge-status">✓ Freelance</span>
           <span class="badge-status">✓ Disponible</span>
-          <span class="px-3 py-1 text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris — Full remote ou hybride</span>
+          <span class="px-3 py-1 text-foreground rounded-full text-sm inline-flex items-center gap-1"><Icon name="mdi:map-marker" class="w-4 h-4" /> Paris · Full remote ou hybride</span>
         </div>
 
         <a
@@ -148,6 +175,59 @@ import { Icon } from 'astro-icon/components';
             Ce que j'aime dans l'audit : c'est souvent là que je vois des problèmes
             que personne n'avait encore identifiés. Et parfois, je découvre aussi
             que certaines inquiétudes étaient infondées.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3b : AUDIT AUGMENTÉ IA (cream) -->
+  <section id="audit-ia" class="py-16 scroll-mt-24">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-4 text-center">Un audit augmenté par l'IA</h2>
+      <p class="text-xl text-foreground-muted text-center mb-12 max-w-3xl mx-auto">
+        Je mène mes audits avec des outils d'IA en appui.<br>
+        Pas pour aller plus vite : pour couvrir plus large.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:radar" class="w-8 h-8 text-primary" />
+            L'IA couvre large
+          </h3>
+          <p class="text-foreground-muted">
+            Elle parcourt l'ensemble du code, les dépendances, l'historique git.
+            Bien au-delà de ce qu'un humain peut lire en quelques jours.
+          </p>
+        </div>
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:account-check" class="w-8 h-8 text-primary" />
+            Je valide tout
+          </h3>
+          <p class="text-foreground-muted">
+            Chaque constat remonté par un outil est relu dans le code.
+            Ce qui ne tient pas la relecture ne va pas dans le rapport.
+          </p>
+        </div>
+        <div class="p-6 bg-surface-elevated rounded-lg border border-border-light">
+          <h3 class="flex items-center gap-3 font-bold text-lg mb-3">
+            <Icon name="mdi:filter-check" class="w-8 h-8 text-primary" />
+            Le recul en plus
+          </h3>
+          <p class="text-foreground-muted">
+            Les outils ressortent des symptômes, et parfois des faux positifs.
+            Mon travail : trier ce qui te coûte de ce qui peut attendre.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-10 max-w-3xl mx-auto">
+        <div class="bg-surface-elevated rounded-lg p-4 border-l-4 border-primary">
+          <p class="text-foreground-heading text-sm italic">
+            L'IA se trompe, parfois avec aplomb. C'est pour ça que rien ne part
+            dans le rapport sans être passé par mes yeux.
           </p>
         </div>
       </div>
@@ -504,8 +584,11 @@ import { Icon } from 'astro-icon/components';
       <h2 class="text-3xl font-bold mb-4 text-center">Tarification</h2>
       <div class="max-w-2xl mx-auto text-center">
         <div class="bg-surface-elevated p-8 rounded-lg border border-border-light mb-6">
-          <p class="text-4xl font-bold text-primary mb-2">800 €</p>
-          <p class="text-foreground-muted">TJM pour un audit</p>
+          <p class="text-4xl font-bold text-primary mb-2">850 € / jour</p>
+          <p class="text-foreground-muted mb-4">Un audit dure en moyenne 3 à 5 jours.</p>
+          <p class="text-lg text-foreground-heading">
+            Soit une enveloppe indicative de <strong>2 550 € à 4 250 €</strong>.
+          </p>
         </div>
         <div class="text-foreground-muted text-sm space-y-2 mb-8">
           <p>La durée dépend de la taille et de la complexité du projet.</p>
