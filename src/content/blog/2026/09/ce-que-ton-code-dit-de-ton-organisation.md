@@ -11,7 +11,7 @@ Dans [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-
 
 Reste une question concrète. Comment lit-on ce cadre dans le code, quand on n'est pas dans la salle de réunion où il a été décidé ?
 
-C'est l'objet de cet article. Le code, l'historique git, les patterns récurrents racontent l'organisation qui les a produits, à condition de savoir quoi regarder. Et d'accepter de regarder sans juger.
+C'est l'objet de cet article. Et la lecture portera moins sur les lignes de code elles-mêmes que sur tout ce qui les entoure : l'historique git, les patterns récurrents, la manière dont le logiciel a grandi. C'est là que l'organisation se raconte, à condition de savoir quoi regarder. Et d'accepter de regarder sans juger.
 
 ## Le code, miroir de l'organisation
 
@@ -107,15 +107,11 @@ Elle raconte qui a la main sur la prod. Dans beaucoup d'organisations en difficu
 
 ### Les cycles de montées de version
 
-Ils racontent la capacité à se maintenir à niveau. On l'avait évoqué dans l'article sur les limites des outils : un projet qui n'a fait aucune montée de version pendant des années et qui s'y met soudain en bloc, c'est le symptôme d'une organisation qui ne sait pas absorber l'amélioration continue. À l'inverse, des montées intégrées au fil des développements, ou automatisées via des outils comme Renovate ou Dependabot : signe d'une équipe qui a fait de la maintenance technique un sujet continu plutôt qu'un sujet exceptionnel. Bien menée, cette maintenance ne coûte presque rien : elle se fond dans le flow normal de l'équipe.
+Ils racontent la capacité à se maintenir à niveau. Le rattrapage en bloc après des années d'immobilisme, déjà évoqué dans l'article sur les limites des outils, en est le symptôme le plus visible. Son contraire se lit aussi : des montées de version intégrées au fil des développements, ou automatisées via Renovate ou Dependabot, signent une équipe qui a fait de la maintenance un sujet continu. Bien menée, elle se fond dans le flow normal et ne coûte presque rien.
 
 ### Les tests tardifs ou mal écrits
 
-Ils racontent le rapport au filet de sécurité. Une vague massive de tests ajoutés sur du code déjà en production : à un moment, quelqu'un a demandé de la couverture sans demander de la qualité. Des tests qui valident l'implémentation plutôt que le comportement attendu : ils pètent à la moindre refacto, l'équipe finit par les désactiver, et le filet de sécurité s'effrite sans que personne le revendique.
-
-### L'évolution maintenance / nouvelles fonctionnalités
-
-Elle raconte la santé du produit. Plus la part de maintenance grossit, plus l'équipe est aspirée par l'urgence, jusqu'au jour où le ratio bascule et où personne ne change la trajectoire : on ajoute des développeurs pour absorber la charge. On a vu plus haut où ça mène.
+Ils racontent le rapport au filet de sécurité. Au-delà de la couverture gonflée après coup, le signal le plus parlant est plus discret : des tests qui valident l'implémentation plutôt que le comportement attendu. Ils pètent à la moindre refacto, l'équipe finit par les désactiver, et le filet de sécurité s'effrite sans que personne le revendique.
 
 ### Les traces de roadmaps inachevées
 
@@ -163,26 +159,43 @@ La conversation reste indispensable. Parler à l'équipe, écouter ce qu'elle vi
 
 Le code est le miroir de ton organisation. Mais un miroir ne se lit pas en passant. Il demande qu'on s'arrête, qu'on regarde, qu'on comprenne ce qu'on voit avant d'agir.
 
-Les hotspots, le couplage temporel, le Bus Factor, le langage du code, l'historique des commits : autant de signaux que les scores de qualité ne racontent pas, et qui en disent plus sur la santé d'une organisation que n'importe quel dashboard.
+Les hotspots, le couplage temporel, le Bus Factor, le langage du code, l'historique des commits : autant de signaux que les scores de qualité ne racontent pas, et qui en disent long sur la santé d'une organisation.
 
 Au lieu de juger le code, cherche à comprendre le contexte qui a permis sa mise en place. Un audit utile ne demande pas à l'équipe de justifier ce qu'elle a écrit. Il essaie de remonter à ce qui, dans son environnement de travail, a rendu ce code possible.
 
 Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audit peut t'apporter. [Discutons de ton contexte](/audit).
 
+## Glossaire
+
+- **Behavioral code analysis** : analyse de la manière dont l'équipe travaille sur le code (fréquence des changements, auteurs, zones touchées ensemble) à partir de l'historique git, en complément de l'analyse statique du code lui-même.
+- **Hotspot** : zone de code à la fois complexe et fréquemment modifiée. C'est là que l'équipe dépense le plus d'effort.
+- **Couplage temporel** : deux fichiers qui changent systématiquement ensemble dans l'historique, signe d'une dépendance cachée, technique ou organisationnelle.
+- **Bus Factor** : nombre de personnes qui connaissent une zone du code. À 1, la connaissance disparaît avec un seul départ.
+- **TMA (tierce maintenance applicative)** : contrat par lequel un prestataire assure la maintenance corrective et évolutive d'une application après sa livraison.
+- **Customer/Supplier et Conformist** : patterns du DDD qui décrivent la relation entre deux équipes ou systèmes. Customer/Supplier : la négociation existe. Conformist : l'aval subit le modèle de l'amont sans pouvoir d'influence.
+- **Anti-Corruption Layer (ACL)** : couche de traduction qui protège un modèle des concepts d'un système tiers, pour que le vocabulaire de l'un ne contamine pas l'autre.
+- **Charge cognitive** : quantité de sujets qu'une équipe doit maîtriser en même temps. Au-delà d'un seuil, la qualité et le rythme chutent (Team Topologies).
+- **Trunk-based development** : intégration continue de tout le travail sur la branche principale, par petits incréments, plutôt que via de longues branches.
+- **Langage ubiquitaire** : vocabulaire unique partagé entre le métier et le code (DDD) : les mots des réunions produit sont ceux des classes et des méthodes.
+- **Feature flag** : interrupteur qui sépare la mise en production du code de l'activation de la fonctionnalité.
+- **ADR (Architecture Decision Record)** : note courte qui consigne une décision d'architecture, son contexte et les alternatives écartées, au moment où on la prend.
+
 ## Sources
 
 - *Your Code as a Crime Scene* — Adam Tornhill — behavioral code analysis, hotspots, couplage temporel
+- [code-maat](https://github.com/adam-tornhill/code-maat) — Adam Tornhill — l'outil open source pour analyser soi-même son historique git (hotspots, couplage, auteurs)
 - [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
 - *Learning Domain-Driven Design* — Vlad Khononov (O'Reilly, 2021) — complexité essentielle vs accidentelle, ch. 11
 - [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Melvin Conway (1968)
 - [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) — Martin Fowler — bliki
-- *The Goal* — Eliyahu Goldratt (1984) — théorie des contraintes
+- *Le But* — Eliyahu Goldratt (1984, traduction française AFNOR) — la théorie des contraintes
 - *Domain-Driven Design* — Eric Evans (Addison-Wesley, 2003) — context mapping : Customer/Supplier, Conformist, Anti-Corruption Layer
 - *Team Topologies* — Matthew Skelton, Manuel Pais (IT Revolution, 2019) — charge cognitive, modes d'interaction entre équipes
 - [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) — DORA — la pratique et ses prérequis
 - [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html) — Pete Hodgson (martinfowler.com) — séparer déploiement et activation
 - [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) — Michael Nygard (2011) — le format ADR
 - [Knowledge Hiding in Organizations](https://onlinelibrary.wiley.com/doi/10.1002/job.737) — Connelly et al. — Journal of Organizational Behavior (2012)
-- [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022)
+- [Facteur d'autobus](https://fr.wikipedia.org/wiki/Facteur_d%27autobus) — Wikipédia (FR) — le concept de Bus Factor
+- [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022) — l'étude empirique
 - [CodeScene — Measure Conway's Law](https://codescene.com/blog/measure-conways-law/) — l'outil d'analyse comportementale dont cet article se différencie
 - Alberto Brandolini — « Merge the people, split the software » ; « Software development is a learning process, working code is a side effect » (Event Storming)
