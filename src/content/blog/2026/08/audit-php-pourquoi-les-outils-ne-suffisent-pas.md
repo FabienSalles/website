@@ -6,6 +6,7 @@ pubDate: 2026-08-05
 categories: [organisation]
 service: audit
 ---
+
 Sur le papier, tout va bien : PHPStan au niveau max, des tests automatisés, les métriques DORA en place. Et pourtant, l'équipe galère.
 
 Les fonctionnalités prennent de plus en plus de temps à sortir. Ou l'inverse : depuis l'arrivée de l'IA, on livre plus vite que jamais, mais ce qu'on livre produit de moins en moins de valeur. La dette s'accumule, la plateforme devient instable, et plus personne ne sait où va le produit ni où va la tech. Les deux visions étaient alignées au départ ; elles se sont perdues en route.
@@ -16,11 +17,11 @@ Les outils mesurent. Ils ne comprennent pas. Voyons les angles morts de chaque f
 
 ## L'analyse statique voit les symptômes, pas les causes
 
-Ils trouvent les erreurs de typage, le code mort, la complexité cyclomatique excessive, les violations de règles configurées. C'est précieux. C'est même le filet de sécurité minimal de toute équipe qui veut produire du code maintenable.
+Ils trouvent les erreurs de typage, le code mort, la complexité cyclomatique<sup>[1](#glossaire)</sup> excessive, les violations de règles configurées. C'est précieux. C'est même le filet de sécurité minimal de toute équipe qui veut produire du code maintenable.
 
 Mais ces outils ont un angle mort fondamental : ils ne savent pas pourquoi ton code est comme ça.
 
-Un couplage fort entre deux modules peut être :
+Un couplage fort<sup>[2](#glossaire)</sup> entre deux modules peut être :
 
 - un choix d'architecture assumé, qu'on documente et qu'on accepte de payer plus tard
 - un accident historique, accumulé sans intention, sans personne pour décider
@@ -53,13 +54,13 @@ Une vélocité en baisse peut être :
 
 Le chiffre est le même. Les causes sont opposées. La décision à prendre aussi.
 
-Ajoutez à ça la loi de Goodhart : « quand une mesure devient un objectif, elle cesse d'être une bonne mesure ». Une équipe pressurée sur sa vélocité va gonfler les story points. Une équipe pressurée sur le deployment frequency va découper en micro-déploiements artificiels. Le chiffre monte, la valeur livrée stagne.
+Ajoutez à ça la loi de Goodhart<sup>[3](#glossaire)</sup> : « quand une mesure devient un objectif, elle cesse d'être une bonne mesure ». Une équipe pressurée sur sa vélocité va gonfler les story points. Une équipe pressurée sur le deployment frequency va découper en micro-déploiements artificiels. Le chiffre monte, la valeur livrée stagne.
 
 Plus profondément, le problème vient de ce qu'on mesure. Presque toutes les métriques que je croise en entreprise sont des métriques de delivery, jamais des métriques d'impact. Nombre de commits, nombre de déploiements, tickets fermés, et désormais prompts générés ou tokens consommés. C'est mesurable, c'est rassurant. C'est aussi du bruit si on avance dans la mauvaise direction.
 
 On peut aller très vite et faire la mauvaise chose. Aller plus vite n'aide pas si on s'est trompé de cap.
 
-Les vrais critères devraient être reliés à l'impact. Est-ce qu'on répond au besoin de l'utilisateur ? Est-ce qu'un indicateur produit qui compte vraiment a bougé ? Des frameworks récents commencent à poser ce cadre. Le DX Core 4 ajoute explicitement une dimension Impact (le pourcentage du temps R&amp;D consacré à de nouvelles capabilities). SPACE, dans sa lecture la plus exigeante, demande d'aller au-delà du temps de cycle pour évaluer comment le logiciel répond aux besoins métier.
+Les vrais critères devraient être reliés à l'impact. Est-ce qu'on répond au besoin de l'utilisateur ? Est-ce qu'un indicateur produit qui compte vraiment a bougé ? Des frameworks récents commencent à poser ce cadre. Le DX Core 4 ajoute explicitement une dimension Impact (le pourcentage du temps R&D consacré à de nouvelles capabilities). SPACE, dans sa lecture la plus exigeante, demande d'aller au-delà du temps de cycle pour évaluer comment le logiciel répond aux besoins métier.
 
 Mais aucun de ces cadres ne dispense d'analyser le besoin, de challenger le problème et la solution, et parfois d'accepter qu'il faut changer d'angle. Cette analyse, elle, est humaine.
 
@@ -81,13 +82,13 @@ L'IA peut mal interpréter un pattern. Elle diagnostique parfois un problème l�
 
 À ça s'ajoutent des erreurs d'un nouveau genre : hallucinations subtiles, raccourcis silencieux, fausses affirmations qui ressemblent à de vraies analyses détaillées. Le format est plus convaincant qu'avant. Le tri devient plus difficile, pas plus facile.
 
-Une prise de recul, un regard externe, une expertise capable de dire « ce signal-là, en pratique, n'a pas d'impact dans ton contexte » ou encore « ce que tu dis est faux »  : c'est ce qui fait la différence entre un rapport bruité de 500 lignes et un diagnostic actionnable de 30.
+Une prise de recul, un regard externe, une expertise capable de dire « ce signal-là, en pratique, n'a pas d'impact dans ton contexte » ou encore « ce que tu dis est faux » : c'est ce qui fait la différence entre un rapport bruité de 500 lignes et un diagnostic actionnable de 30.
 
 Le rapport public d'Anthropic sur l'évaluation des risques d'alignement formule clairement le cadre :
 
 > « If AI models were routinely used to carry out significant technical workflows with very little human oversight (...) then we believe the impact of concern would be higher. »
 
-Anthropic, dans son propre rapport, indique qu'utiliser ses modèles sans supervision humaine augmente le risque. 
+Anthropic, dans son propre rapport, indique qu'utiliser ses modèles sans supervision humaine augmente le risque.
 
 Ce point structurel est traité en profondeur dans un autre article de cette série. Pour ce qu'il faut retenir ici : l'IA n'échappe pas à la règle. Elle l'amplifie.
 
@@ -110,7 +111,7 @@ Un couplage fort entre deux modules en dit plus sur les équipes qui les ont éc
 
 Cette dimension est traitée en profondeur dans un autre article de la série. Ce qu'il faut acter ici : aucun outil automatisé ne lit cette couche. Elle se lit avec un humain qui parle à l'équipe, qui regarde le git log, qui croise les données et les zones de friction, et qui en tire une interprétation.
 
-J'ai vu ces impacts à profils égaux mais dans des contextes opposés. Deux projets PHP. Le premier : forfait, pression sur les délais, équipe sous-staffée. Code spaghetti, dette qui s'accumule, sentiment d'impuissance. Le second : carte blanche, équipe autonome, contact direct avec le métier. Trunk-based, déploiement continu, qualité élevée.
+J'ai vu ces impacts à profils égaux mais dans des contextes opposés. Deux projets PHP. Le premier : forfait, pression sur les délais, équipe sous-staffée. Code spaghetti, dette qui s'accumule, sentiment d'impuissance. Le second : carte blanche, équipe autonome, contact direct avec le métier. Trunk-based<sup>[4](#glossaire)</sup>, déploiement continu, qualité élevée.
 
 Aucun outil ne voit la différence entre ces deux contextes. Pourtant, c'est cette différence qui détermine la majeure partie du résultat dans le code.
 
@@ -142,7 +143,7 @@ Un audit, c'est d'abord des conversations. Avec l'équipe, avec la direction, et
 
 Les échanges informels sont souvent les plus riches : une pause café, un aparté après un point d'équipe, et des non-dits remontent à la surface. Une contrainte que tout le monde subit sans jamais l'avoir écrite, un désaccord ancien qui structure encore les choix techniques d'aujourd'hui. Ces éléments ne figurent dans aucun document ; ils pèsent pourtant plus que bien des schémas d'architecture.
 
-L'Event Storming a un nom pour ça : les unknown unknowns, ces choses qu'on ne sait pas qu'on ne sait pas. Aucune spec ne les mentionnera, puisque personne n'a conscience de les porter. Elles n'émergent que quand on met les bonnes personnes dans la même pièce et qu'on les fait parler du même flux métier. Un atelier de deux heures révèle parfois un malentendu que le code paie depuis deux ans.
+L'Event Storming<sup>[5](#glossaire)</sup> a un nom pour ça : les unknown unknowns, ces choses qu'on ne sait pas qu'on ne sait pas. Aucune spec ne les mentionnera, puisque personne n'a conscience de les porter. Elles n'émergent que quand on met les bonnes personnes dans la même pièce et qu'on les fait parler du même flux métier. Un atelier de deux heures révèle parfois un malentendu que le code paie depuis deux ans.
 
 Faire converger ces perceptions divergentes vers une vision commune, c'est le premier livrable d'un audit. L'outil, lui, ne fait pas de réunion. Il ne lit pas les tensions d'une roadmap, et il ne sait pas que le tech lead et le PO ne se parlent plus depuis trois mois.
 
@@ -176,7 +177,7 @@ C'est un acte de pouvoir, pas d'analyse. Quelqu'un doit assumer le « ignorer »
 
 ### 5. Découpler au bon endroit
 
-Extraire un sous-domaine feuille, poser un Anti-Corruption Layer, choisir où passe la frontière entre l'ancien et le nouveau (les termes de cette section sont définis dans le glossaire en fin d'article).
+Extraire un sous-domaine feuille<sup>[6](#glossaire)</sup>, poser un Anti-Corruption Layer<sup>[7](#glossaire)</sup>, choisir où passe la frontière entre l'ancien et le nouveau.
 
 Ces décisions sont des choix de design, pas des résultats de mesure. Elles supposent une lecture stratégique du métier et de la trajectoire produit.
 
@@ -206,8 +207,8 @@ Quand je signe une recommandation, c'est ce que je remonte. Pas pour désigner u
 
 Ce n'est pas un article anti-outils.
 
-De l'analyse statique, des tests, de l'observabilité, des KPI et maintenant l'IA...  
-Les outils sont le socle. Ils libèrent du temps humain pour ce qui compte vraiment : l'arbitrage, la priorisation, l'interprétation.   
+De l'analyse statique, des tests, de l'observabilité, des KPI et maintenant l'IA...
+Les outils sont le socle. Ils libèrent du temps humain pour ce qui compte vraiment : l'arbitrage, la priorisation, l'interprétation. 
 Sans outils, tu passes tes journées à faire ce qu'une machine ferait mieux.
 
 L'erreur n'est pas d'utiliser des outils. C'est de croire qu'ils suffisent. C'est de penser qu'un score au vert dispense d'avoir un humain qui comprend, qui décide, qui assume.
@@ -218,9 +219,9 @@ Les outils mesurent. L'expert comprend.
 
 Un audit utile lance les outils, bien sûr. Mais ce n'est jamais l'essentiel. L'essentiel, c'est tout ce que l'outil ne fait pas seul : parler à l'équipe, écouter la vision tech et la vision produit, rassembler les informations qui ne sont nulle part dans le code, comprendre le contexte avant d'interpréter les chiffres.
 
-Sans cette couche humaine, l'outil reste interprété sur la base de suppositions qui comblent les trous. Et une supposition mal posée, c'est un diagnostic faux. 
+Sans cette couche humaine, l'outil reste interprété sur la base de suppositions qui comblent les trous. Et une supposition mal posée, c'est un diagnostic faux.
 
-Les outils servent à confirmer ou infirmer des hypothèses humaines, pas à produire des rapports en pilotage automatique. A la fin, c'est un humain qui finit par lire ce rapport. Autant ne pas noyer le poisson.
+Les outils servent à confirmer ou infirmer des hypothèses humaines, pas à produire des rapports en pilotage automatique. À la fin, c'est un humain qui finit par lire ce rapport. Autant ne pas noyer le poisson.
 
 C'est cette lecture humaine que je propose dans [mes audits](/audit). Pas un rapport de 500 lignes généré par un outil. Un diagnostic qui distingue le voulu de l'accidentel, qui priorise par impact business, qui assume les décisions qu'il propose.
 
@@ -228,13 +229,14 @@ Si ton équipe galère malgré des dashboards au vert, c'est probablement qu'il 
 
 ## Glossaire
 
-- **Sous-domaine feuille** : dans la décomposition d'un métier en sous-domaines, le niveau terminal qu'on ne découpe plus. C'est la bonne granularité pour extraire un module autonome, car les dépendances entrantes y sont les plus faibles.
-- **Anti-Corruption Layer (ACL)** : couche de traduction entre un nouveau modèle et un système existant, pour que les concepts de l'ancien ne contaminent pas le nouveau.
-- **Couplage** : degré de dépendance entre deux modules. Plus il est fort, plus une modification de l'un force une modification de l'autre.
-- **Complexité cyclomatique** : nombre de chemins d'exécution indépendants dans une fonction. Plus il est élevé, plus la fonction est difficile à tester et à faire évoluer.
-- **Trunk-based development** : intégration continue de tout le travail sur la branche principale, par petits incréments, plutôt que via de longues branches.
-- **Event Storming** : atelier collaboratif (Alberto Brandolini) qui cartographie un processus métier par ses événements, en réunissant toutes les parties prenantes dans la même pièce.
-- **Loi de Goodhart** : « quand une mesure devient un objectif, elle cesse d'être une bonne mesure. »
+1. **Complexité cyclomatique** : nombre de chemins d'exécution indépendants dans une fonction. Plus il est élevé, plus la fonction est difficile à tester et à faire évoluer.
+2. **Couplage** : degré de dépendance entre deux modules. Plus il est fort, plus une modification de l'un force une modification de l'autre.
+3. **Loi de Goodhart** : « quand une mesure devient un objectif, elle cesse d'être une bonne mesure. »
+4. **Trunk-based development** : intégration continue de tout le travail sur la branche principale, par petits incréments, plutôt que via de longues branches.
+5. **Event Storming** : atelier collaboratif (Alberto Brandolini) qui cartographie un processus métier par ses événements, en réunissant toutes les parties prenantes dans la même pièce.
+6. **Sous-domaine feuille** : dans la décomposition d'un métier en sous-domaines, le niveau terminal qu'on ne découpe plus. C'est la bonne granularité pour extraire un module autonome, car les dépendances entrantes y sont les plus faibles.
+7. **Anti-Corruption Layer (ACL)** : couche qui protège un contexte de tout ce qui vient d'un système extérieur : son vocabulaire, son modèle, ses changements, ses instabilités. On traduit à la frontière plutôt que de laisser l'extérieur dicter l'intérieur.
+
 
 ## Sources
 
@@ -247,4 +249,3 @@ Si ton équipe galère malgré des dashboards au vert, c'est probablement qu'il 
 - [False Positive Vulnerability](https://tuxcare.com/blog/false-positive-vulnerability/) — TuxCare — sur la prévalence des faux positifs et la fatigue d'alerte
 - [Alignment Risk Update: Claude Mythos Preview](https://www-cdn.anthropic.com/3edfc1a7f947aa81841cf88305cb513f184c36ae.pdf) — Anthropic — citation au conditionnel sur la supervision humaine
 - [Technical Debt Quadrant](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) — Martin Fowler — le quadrant de la dette technique
-
