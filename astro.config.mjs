@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import rehypeExternalLinks from 'rehype-external-links';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
@@ -30,6 +31,9 @@ export default defineConfig({
     }),
   ],
   markdown: {
+    rehypePlugins: [
+      [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+    ],
     shikiConfig: {
       themes: {
         light: 'github-light',
