@@ -6,7 +6,6 @@ pubDate: 2026-08-05
 categories: [organisation]
 service: audit
 ---
-
 Sur le papier, tout va bien : PHPStan au niveau max, des tests automatisés, les métriques DORA en place. Et pourtant, l'équipe galère.
 
 Les fonctionnalités prennent de plus en plus de temps à sortir. Ou l'inverse : depuis l'arrivée de l'IA, on livre plus vite que jamais, mais ce qu'on livre produit de moins en moins de valeur. La dette s'accumule, la plateforme devient instable, et plus personne ne sait où va le produit ni où va la tech. Les deux visions étaient alignées au départ ; elles se sont perdues en route.
@@ -60,7 +59,7 @@ Plus profondément, le problème vient de ce qu'on mesure. Presque toutes les m�
 
 On peut aller très vite et faire la mauvaise chose. Aller plus vite n'aide pas si on s'est trompé de cap.
 
-Les vrais critères devraient être reliés à l'impact. Est-ce qu'on répond au besoin de l'utilisateur ? Est-ce qu'un indicateur produit qui compte vraiment a bougé ? Des frameworks récents commencent à poser ce cadre. Le DX Core 4 ajoute explicitement une dimension Impact (le pourcentage du temps R&D consacré à de nouvelles capabilities). SPACE, dans sa lecture la plus exigeante, demande d'aller au-delà du temps de cycle pour évaluer comment le logiciel répond aux besoins métier.
+Les vrais critères devraient être reliés à l'impact. Est-ce qu'on répond au besoin de l'utilisateur ? Est-ce qu'un indicateur produit qui compte vraiment a bougé ? Des frameworks récents commencent à poser ce cadre. Le DX Core 4 ajoute explicitement une dimension Impact (le pourcentage du temps R&amp;D consacré à de nouvelles capabilities). SPACE, dans sa lecture la plus exigeante, demande d'aller au-delà du temps de cycle pour évaluer comment le logiciel répond aux besoins métier.
 
 Mais aucun de ces cadres ne dispense d'analyser le besoin, de challenger le problème et la solution, et parfois d'accepter qu'il faut changer d'angle. Cette analyse, elle, est humaine.
 
@@ -70,9 +69,9 @@ Aucune métrique, aussi bien posée soit-elle, ne sait si la baisse que tu vois 
 
 Un scanner de sécurité remonte régulièrement des centaines d'alertes. Combien sont des vraies failles exploitables ?
 
-Malgré toutes les améliorations du monde, beaucoup des alertes remontées restent des faux positifs. Et le tri n'est pas optionnel : un faux positif non traité, c'est soit une fausse alerte qui pollue les KPI, soit, pire, une vraie faille noyée dans le bruit.
+Malgré toutes les améliorations du monde, beaucoup d'alertes remontées restent des faux positifs. Et le tri n'est pas optionnel : un faux positif non traité, c'est soit une fausse alerte qui pollue les KPI, soit une vraie faille noyée dans le bruit.
 
-Le scanner ne sait pas qu'une « faille » a un mécanisme de compensation en place. Il ne remonte pas la chaîne d'exécution pour vérifier si la faille est réellement exploitable depuis l'extérieur. Il signale un pattern. Quelqu'un derrière doit signer : « celle-ci est un faux positif, j'assume ».
+Le scanner ne sait pas qu'une « faille » a un mécanisme de compensation en place. Il ne remonte pas parfaitement la chaîne d'exécution pour vérifier si la faille est réellement exploitable depuis l'extérieur. Il signale un pattern. Quelqu'un derrière doit signer : « celle-ci est un faux positif, j'assume ».
 
 L'IA peut aller encore plus loin, parce qu'elle peut elle-même utiliser ces outils, croiser leurs résultats, raisonner sur la chaîne d'exécution. Certains modèles remontent désormais cette chaîne avec une précision impressionnante.
 
@@ -80,15 +79,15 @@ Et pourtant, le nombre de faux positifs ne baisse pas. Il augmente.
 
 L'IA peut mal interpréter un pattern. Elle diagnostique parfois un problème là où il n'y en a pas. Et elle remonte régulièrement en criticité haute des mauvaises pratiques qui restent inoffensives en pratique. Plus elle est capable, plus elle a de matière à mal interpréter.
 
-À ça s'ajoutent des erreurs d'un nouveau genre : hallucinations subtiles, raccourcis silencieux, faux positifs qui ressemblent à de vraies analyses détaillées. Le format est plus convaincant qu'avant. Le tri devient plus difficile, pas plus facile.
+À ça s'ajoutent des erreurs d'un nouveau genre : hallucinations subtiles, raccourcis silencieux, fausses affirmations qui ressemblent à de vraies analyses détaillées. Le format est plus convaincant qu'avant. Le tri devient plus difficile, pas plus facile.
 
-Une prise de recul, un regard externe, une expertise capable de dire « ce signal-là, en pratique, n'a pas d'impact dans ton contexte » : c'est ce qui fait la différence entre un rapport bruité de 500 lignes et un diagnostic actionnable de 30.
+Une prise de recul, un regard externe, une expertise capable de dire « ce signal-là, en pratique, n'a pas d'impact dans ton contexte » ou encore « ce que tu dis est faux »  : c'est ce qui fait la différence entre un rapport bruité de 500 lignes et un diagnostic actionnable de 30.
 
 Le rapport public d'Anthropic sur l'évaluation des risques d'alignement formule clairement le cadre :
 
 > « If AI models were routinely used to carry out significant technical workflows with very little human oversight (...) then we believe the impact of concern would be higher. »
 
-Anthropic, dans son propre rapport, indique qu'utiliser ses modèles sans supervision humaine augmente le risque. Le constructeur lui-même pose la limite.
+Anthropic, dans son propre rapport, indique qu'utiliser ses modèles sans supervision humaine augmente le risque. 
 
 Ce point structurel est traité en profondeur dans un autre article de cette série. Pour ce qu'il faut retenir ici : l'IA n'échappe pas à la règle. Elle l'amplifie.
 
@@ -143,7 +142,7 @@ Un audit, c'est d'abord des conversations. Avec l'équipe, avec la direction, et
 
 Les échanges informels sont souvent les plus riches : une pause café, un aparté après un point d'équipe, et des non-dits remontent à la surface. Une contrainte que tout le monde subit sans jamais l'avoir écrite, un désaccord ancien qui structure encore les choix techniques d'aujourd'hui. Ces éléments ne figurent dans aucun document ; ils pèsent pourtant plus que bien des schémas d'architecture.
 
-L'Event Storming a un nom pour ça : les unknown unknowns, ces choses qu'on ne sait pas ne pas savoir. Aucune spec ne les mentionnera, puisque personne n'a conscience de les porter. Elles n'émergent que quand on met les bonnes personnes dans la même pièce et qu'on les fait parler du même flux métier. Un atelier de deux heures révèle parfois un malentendu que le code paie depuis deux ans.
+L'Event Storming a un nom pour ça : les unknown unknowns, ces choses qu'on ne sait pas qu'on ne sait pas. Aucune spec ne les mentionnera, puisque personne n'a conscience de les porter. Elles n'émergent que quand on met les bonnes personnes dans la même pièce et qu'on les fait parler du même flux métier. Un atelier de deux heures révèle parfois un malentendu que le code paie depuis deux ans.
 
 Faire converger ces perceptions divergentes vers une vision commune, c'est le premier livrable d'un audit. L'outil, lui, ne fait pas de réunion. Il ne lit pas les tensions d'une roadmap, et il ne sait pas que le tech lead et le PO ne se parlent plus depuis trois mois.
 
@@ -169,7 +168,7 @@ Gérer la dette, ce n'est donc pas viser zéro. C'est savoir laquelle on porte, 
 
 ### 4. Prioriser, arbitrer, dire non
 
-Un audit utile ne rend pas une liste de 500 problèmes. Il classe en trois piles : à corriger, à surveiller, à ignorer.
+Un audit utile ne rend pas une liste de 500 problèmes. Il classe, il priorise, il filtre.
 
 Le critère de tri n'est pas la sévérité technique, c'est l'impact. Une alerte « critique » de l'outil peut être sans conséquence dans ton contexte, parce que le chemin d'exécution n'est pas atteignable ou qu'une compensation existe. À l'inverse, un détail que personne ne signale, comme un champ de formulaire trop strict ou une règle métier câblée à l'envers, peut coûter des clients chaque semaine. L'outil classe par gravité théorique ; l'expert classe par ce que ça te coûte.
 
@@ -197,27 +196,21 @@ Le code peut révéler une anomalie fonctionnelle dont l'équipe n'a plus consci
 
 ### 7. Conserver la décision, l'éthique, la responsabilité
 
-Quelqu'un signe. Quelqu'un assume.
-
 Si une faille est ignorée parce qu'elle est jugée non exploitable dans le contexte, c'est une décision humaine qui engage. Si une dette technique est portée volontairement pour aller plus vite, c'est un arbitrage humain qui engage.
 
 On me demande souvent si une refonte est nécessaire. Sans vouloir jeter la faute sur l'équipe, ma réponse honnête est : rarement. Sans changement organisationnel et parfois sans accompagnement de l'équipe interne, une refonte reproduit les mêmes causes 6 mois ou 2 ans plus tard. Les meilleures intentions du monde, les patterns qu'on s'est juré de ne pas reproduire, l'équipe motivée : tout ça ne suffit pas si l'organisation continue de produire les contraintes qui ont mené à l'état initial. Les anomalies de l'applicatif sont des symptômes. Les causes sont dans les méthodes de travail, dans les pratiques de développement, dans une organisation qui ne déploie pas le plein potentiel de son équipe et la contraint à des choix qui produisent des problèmes à retardement.
 
 Quand je signe une recommandation, c'est ce que je remonte. Pas pour désigner un coupable : un audit qui distribue les fautes ne répare rien. L'objectif est de poser les causes sur la table, y compris celles qui relèvent du cadre plutôt que du code, pour que celui qui décide ait enfin les moyens d'agir dessus. C'est ce qu'on attend d'un regard extérieur : dire les choses, et les dire de façon à pouvoir avancer ensemble.
 
-Aucun outil ne signe à ta place. Aucun outil ne peut être tenu responsable.
-
 ## L'outil reste indispensable
 
 Ce n'est pas un article anti-outils.
 
-De l'analyse statique, des tests, de l'observabilité, des KPI...
-Les outils sont le socle. Ils libèrent du temps humain pour ce qui compte vraiment : l'arbitrage, la priorisation, l'interprétation. 
+De l'analyse statique, des tests, de l'observabilité, des KPI et maintenant l'IA...  
+Les outils sont le socle. Ils libèrent du temps humain pour ce qui compte vraiment : l'arbitrage, la priorisation, l'interprétation.   
 Sans outils, tu passes tes journées à faire ce qu'une machine ferait mieux.
 
 L'erreur n'est pas d'utiliser des outils. C'est de croire qu'ils suffisent. C'est de penser qu'un score au vert dispense d'avoir un humain qui comprend, qui décide, qui assume.
-
-L'IA, le plus prometteur de ces outils, n'échappe pas à cette limite. Plus elle progresse, plus elle nous renvoie au même endroit : il faut quelqu'un derrière. C'est le sujet d'un autre article de cette série.
 
 ## Conclusion
 
@@ -225,9 +218,9 @@ Les outils mesurent. L'expert comprend.
 
 Un audit utile lance les outils, bien sûr. Mais ce n'est jamais l'essentiel. L'essentiel, c'est tout ce que l'outil ne fait pas seul : parler à l'équipe, écouter la vision tech et la vision produit, rassembler les informations qui ne sont nulle part dans le code, comprendre le contexte avant d'interpréter les chiffres.
 
-Sans cette couche humaine, l'outil reste interprété sur la base de suppositions qui comblent les trous. Et une supposition mal posée, c'est un diagnostic faux. Un diagnostic faux, c'est une recommandation qui aggrave le problème.
+Sans cette couche humaine, l'outil reste interprété sur la base de suppositions qui comblent les trous. Et une supposition mal posée, c'est un diagnostic faux. 
 
-Les outils servent à confirmer ou infirmer des hypothèses humaines, pas à produire des rapports en pilotage automatique.
+Les outils servent à confirmer ou infirmer des hypothèses humaines, pas à produire des rapports en pilotage automatique. A la fin, c'est un humain qui finit par lire ce rapport. Autant ne pas noyer le poisson.
 
 C'est cette lecture humaine que je propose dans [mes audits](/audit). Pas un rapport de 500 lignes généré par un outil. Un diagnostic qui distingue le voulu de l'accidentel, qui priorise par impact business, qui assume les décisions qu'il propose.
 
@@ -254,3 +247,4 @@ Si ton équipe galère malgré des dashboards au vert, c'est probablement qu'il 
 - [False Positive Vulnerability](https://tuxcare.com/blog/false-positive-vulnerability/) — TuxCare — sur la prévalence des faux positifs et la fatigue d'alerte
 - [Alignment Risk Update: Claude Mythos Preview](https://www-cdn.anthropic.com/3edfc1a7f947aa81841cf88305cb513f184c36ae.pdf) — Anthropic — citation au conditionnel sur la supervision humaine
 - [Technical Debt Quadrant](https://martinfowler.com/bliki/TechnicalDebtQuadrant.html) — Martin Fowler — le quadrant de la dette technique
+
