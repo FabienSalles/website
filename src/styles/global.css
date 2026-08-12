@@ -160,3 +160,14 @@ html[data-theme="dark"] .logos-adaptive img:not(.logo-opaque):hover {
 html[data-theme="dark"] .logos-adaptive .logo-opaque {
   border-radius: 0.25rem;
 }
+
+/* Heading anchors : le # discret apparait au survol du titre */
+.heading-anchor {
+  @apply ml-2 text-foreground-muted no-underline opacity-0 transition-opacity;
+}
+h2:hover .heading-anchor,
+h3:hover .heading-anchor,
+h4:hover .heading-anchor,
+.heading-anchor:focus {
+  @apply opacity-100;
+}

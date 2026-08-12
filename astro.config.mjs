@@ -1,4 +1,6 @@
 import { defineConfig } from 'astro/config';
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeExternalLinks from 'rehype-external-links';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
@@ -32,6 +34,12 @@ export default defineConfig({
   ],
   markdown: {
     rehypePlugins: [
+      rehypeHeadingIds,
+      [rehypeAutolinkHeadings, {
+        behavior: 'append',
+        properties: { class: 'heading-anchor', ariaLabel: 'Lien direct vers cette section' },
+        content: { type: 'text', value: '#' },
+      }],
       [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
     ],
     shikiConfig: {
