@@ -183,7 +183,7 @@ Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audi
 ## Sources
 
 - *Your Code as a Crime Scene* — Adam Tornhill — behavioral code analysis, hotspots, couplage temporel
-- [code-maat](https://github.com/adam-tornhill/code-maat) — Adam Tornhill — l'outil open source pour analyser soi-même son historique git (hotspots, couplage, auteurs)
+- [code-maat](https://github.com/adamtornhill/code-maat) — Adam Tornhill — l'outil open source pour analyser soi-même son historique git (hotspots, couplage, auteurs)
 - [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
 - *Learning Domain-Driven Design* — Vlad Khononov (O'Reilly, 2021) — complexité essentielle vs accidentelle, ch. 11
 - [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Melvin Conway (1968)
