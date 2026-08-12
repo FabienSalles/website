@@ -87,23 +87,39 @@ Quand tu lis l'historique d'un projet, tu lis des décisions, des arbitrages, de
 
 Quelques signaux concrets.
 
-**La qualité des messages de commit** raconte la culture. Des messages clairs, avec une référence à un ticket et une description de l'intention : signe d'une équipe qui prend le temps de documenter ses décisions. Des messages de type « fix », « wip », « update », « test 3 » : signe d'une équipe qui livre sous pression, ou qui n'a pas la rigueur suffisante pour nettoyer son historique. Qu'en serait-il alors pour le code ?
+### La qualité des messages de commit
 
-**Le rythme des commits** raconte le rythme de l'organisation. Des commits réguliers, équilibrés, sans rush de fin de sprint : signe d'un flow stable. Des pics massifs avant chaque démo, suivis de creux et de hotfixes : signe d'un système qui développement pour son organisation et non pour ses clients finaux.
+Elle raconte la culture. Des messages clairs, avec une référence à un ticket et une description de l'intention : signe d'une équipe qui prend le temps de documenter ses décisions. Des messages de type « fix », « wip », « update », « test 3 » : signe d'une équipe qui livre sous pression, ou qui n'a pas la rigueur suffisante pour nettoyer son historique. Qu'en serait-il alors pour le code ?
 
-**La pratique de la revue** peut prendre des formes très différentes. Une grande partie de l'historique mergée directement sur la branche principale, sans passage par une PR, a deux lectures opposées selon la maturité de l'équipe. Le trunk-based development est considéré comme une meilleure pratique que les pull requests. Mais il demande une discipline et une cohésion qui ne s'improvisent pas : pair ou mob programming, intégration continue solide, ownership collectif du code, et une observabilité (logs, métriques, alertes) qui permet d'être prévenu au plus tôt quand une anomalie passe. Sans cette maturité, ce qui ressemble à du trunk-based devient juste du push direct sur main, sans maitrise et garde-fous. Le même signal dans le git log révèle soit une équipe très avancée, soit une équipe qui n'a pas posé son filet de sécurité collectif. La conversation avec l'équipe lève l'ambiguïté.
+### Le rythme des commits
 
-**La fréquence de déploiement** raconte qui a la main sur la prod. Dans beaucoup d'organisations en difficulté, les développeurs ne peuvent simplement pas livrer. Le métier attend l'intégralité des fonctionnalités pour tout valider d'un bloc, façon cycle en V. Ou l'équipe n'a pas accès à sa production : une autre équipe déploie, une équipe QA valide en aval, les responsabilités se diluent, et chaque livraison devient une négociation. Ces frictions se voient dans le git : des releases espacées de plusieurs mois, des phases de développement puis de recette puis de correction, des rafales de hotfixes juste après chaque mise en production.
+Il raconte le rythme de l'organisation. Des commits réguliers, équilibrés, sans rush de fin de sprint : signe d'un flow stable. Des pics massifs avant chaque démo, suivis de creux et de hotfixes : signe d'un système qui développement pour son organisation et non pour ses clients finaux.
+
+### La pratique de la revue
+
+Elle peut prendre des formes très différentes. Une grande partie de l'historique mergée directement sur la branche principale, sans passage par une PR, a deux lectures opposées selon la maturité de l'équipe. Le trunk-based development est considéré comme une meilleure pratique que les pull requests. Mais il demande une discipline et une cohésion qui ne s'improvisent pas : pair ou mob programming, intégration continue solide, ownership collectif du code, et une observabilité (logs, métriques, alertes) qui permet d'être prévenu au plus tôt quand une anomalie passe. Sans cette maturité, ce qui ressemble à du trunk-based devient juste du push direct sur main, sans maitrise et garde-fous. Le même signal dans le git log révèle soit une équipe très avancée, soit une équipe qui n'a pas posé son filet de sécurité collectif. La conversation avec l'équipe lève l'ambiguïté.
+
+### La fréquence de déploiement
+
+Elle raconte qui a la main sur la prod. Dans beaucoup d'organisations en difficulté, les développeurs ne peuvent simplement pas livrer. Le métier attend l'intégralité des fonctionnalités pour tout valider d'un bloc, façon cycle en V. Ou l'équipe n'a pas accès à sa production : une autre équipe déploie, une équipe QA valide en aval, les responsabilités se diluent, et chaque livraison devient une négociation. Ces frictions se voient dans le git : des releases espacées de plusieurs mois, des phases de développement puis de recette puis de correction, des rafales de hotfixes juste après chaque mise en production.
 
 À l'inverse, une équipe qui a la main sur son déploiement livre par petits incréments et corrige vite. Elle peut séparer la mise en production de l'activation d'une fonctionnalité : le code part inactif derrière un feature flag, en modifications additives, et on active quand le métier est prêt, sans l'impacter. Le trunk-based development prend là tout son sens, puisqu'il facilite ce déploiement continu. Le git log le montre aussi : un flux régulier de petites mises en production, sans pic de panique.
 
-**Les cycles de montées de version** racontent la capacité à se maintenir à niveau. On l'avait évoqué dans l'article sur les limites des outils : un projet qui n'a fait aucune montée de version pendant des années et qui s'y met soudain en bloc, c'est le symptôme d'une organisation qui ne sait pas absorber l'amélioration continue. À l'inverse, des montées intégrées au fil des développements, ou automatisées via des outils comme Renovate ou Dependabot : signe d'une équipe qui a fait de la maintenance technique un sujet continu plutôt qu'un sujet exceptionnel. Bien menée, cette maintenance ne coûte presque rien : elle se fond dans le flow normal de l'équipe.
+### Les cycles de montées de version
 
-**Les tests qui apparaissent tardivement, ou mal écrits** racontent le rapport au filet de sécurité. Une vague massive de tests ajoutés sur du code déjà en production : à un moment, quelqu'un a demandé de la couverture sans demander de la qualité. Des tests qui valident l'implémentation plutôt que le comportement attendu : ils pètent à la moindre refacto, l'équipe finit par les désactiver, et le filet de sécurité s'effrite sans que personne le revendique.
+Ils racontent la capacité à se maintenir à niveau. On l'avait évoqué dans l'article sur les limites des outils : un projet qui n'a fait aucune montée de version pendant des années et qui s'y met soudain en bloc, c'est le symptôme d'une organisation qui ne sait pas absorber l'amélioration continue. À l'inverse, des montées intégrées au fil des développements, ou automatisées via des outils comme Renovate ou Dependabot : signe d'une équipe qui a fait de la maintenance technique un sujet continu plutôt qu'un sujet exceptionnel. Bien menée, cette maintenance ne coûte presque rien : elle se fond dans le flow normal de l'équipe.
 
-**L'évolution maintenance / nouvelles fonctionnalités** raconte la santé du produit. Plus la part de maintenance grossit, plus l'équipe est aspirée par l'urgence, jusqu'au jour où le ratio bascule et où personne ne change la trajectoire : on ajoute des développeurs pour absorber la charge. On a vu plus haut où ça mène.
+### Les tests tardifs ou mal écrits
 
-**Les traces de roadmaps inachevées** racontent une organisation qui ouvre sans clore. Des `@todo` éparpillés à plusieurs endroits avec des edge cases non traités. Des refactorings interrompus au milieu de la migration, où l'ancien et le nouveau cohabitent. Des duplications de traitements qui devaient être unifiées et qui ne l'ont jamais été. Des fichiers marqués « legacy » dans des dossiers qu'on n'a jamais retirés. Chacun de ces signaux est la trace d'une décision prise et jamais terminée. L'organisation a décidé de bouger, puis quelque chose a interrompu le mouvement. Identifier ce qui a interrompu : c'est ce que l'audit doit chercher.
+Ils racontent le rapport au filet de sécurité. Une vague massive de tests ajoutés sur du code déjà en production : à un moment, quelqu'un a demandé de la couverture sans demander de la qualité. Des tests qui valident l'implémentation plutôt que le comportement attendu : ils pètent à la moindre refacto, l'équipe finit par les désactiver, et le filet de sécurité s'effrite sans que personne le revendique.
+
+### L'évolution maintenance / nouvelles fonctionnalités
+
+Elle raconte la santé du produit. Plus la part de maintenance grossit, plus l'équipe est aspirée par l'urgence, jusqu'au jour où le ratio bascule et où personne ne change la trajectoire : on ajoute des développeurs pour absorber la charge. On a vu plus haut où ça mène.
+
+### Les traces de roadmaps inachevées
+
+Elles racontent une organisation qui ouvre sans clore. Des `@todo` éparpillés à plusieurs endroits avec des edge cases non traités. Des refactorings interrompus au milieu de la migration, où l'ancien et le nouveau cohabitent. Des duplications de traitements qui devaient être unifiées et qui ne l'ont jamais été. Des fichiers marqués « legacy » dans des dossiers qu'on n'a jamais retirés. Chacun de ces signaux est la trace d'une décision prise et jamais terminée. L'organisation a décidé de bouger, puis quelque chose a interrompu le mouvement. Identifier ce qui a interrompu : c'est ce que l'audit doit chercher.
 
 Une précision honnête, parce que j'affirme depuis le début que les outils ne voient pas ces signaux : c'est de moins en moins vrai. Une IA bien cadrée sait fouiller un historique git et remonter une bonne partie de ces indices, les pics de commits, les rafales de hotfixes, les zones à auteur unique. C'est d'ailleurs ainsi que je travaille en audit : je cadre l'IA pour qu'elle extraie ces éléments à ma place. Mais un indice n'est pas une interprétation. Il faut croiser ces signaux entre eux, les confronter au contexte du projet, et surtout faire valider l'interprétation en échangeant avec les différents interlocuteurs. C'est la conversation qui transforme un faisceau d'indices en une histoire un peu plus juste.
 
@@ -155,18 +171,18 @@ Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audi
 
 ## Sources
 
-— *Your Code as a Crime Scene* — Adam Tornhill — behavioral code analysis, hotspots, couplage temporel
-— [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
-— *Learning Domain-Driven Design* — Vlad Khononov (O'Reilly, 2021) — complexité essentielle vs accidentelle, ch. 11
-— [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Melvin Conway (1968)
-— [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) — Martin Fowler — bliki
-— *The Goal* — Eliyahu Goldratt (1984) — théorie des contraintes
-— *Domain-Driven Design* — Eric Evans (Addison-Wesley, 2003) — context mapping : Customer/Supplier, Conformist, Anti-Corruption Layer
-— *Team Topologies* — Matthew Skelton, Manuel Pais (IT Revolution, 2019) — charge cognitive, modes d'interaction entre équipes
-— [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) — DORA — la pratique et ses prérequis
-— [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html) — Pete Hodgson (martinfowler.com) — séparer déploiement et activation
-— [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) — Michael Nygard (2011) — le format ADR
-— [Knowledge Hiding in Organizations](https://onlinelibrary.wiley.com/doi/10.1002/job.737) — Connelly et al. — Journal of Organizational Behavior (2012)
-— [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022)
-— [CodeScene — Measure Conway's Law](https://codescene.com/blog/measure-conways-law/) — l'outil d'analyse comportementale dont cet article se différencie
-— Alberto Brandolini — « Merge the people, split the software » ; « Software development is a learning process, working code is a side effect » (Event Storming)
+- *Your Code as a Crime Scene* — Adam Tornhill — behavioral code analysis, hotspots, couplage temporel
+- [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
+- *Learning Domain-Driven Design* — Vlad Khononov (O'Reilly, 2021) — complexité essentielle vs accidentelle, ch. 11
+- [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Melvin Conway (1968)
+- [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) — Martin Fowler — bliki
+- *The Goal* — Eliyahu Goldratt (1984) — théorie des contraintes
+- *Domain-Driven Design* — Eric Evans (Addison-Wesley, 2003) — context mapping : Customer/Supplier, Conformist, Anti-Corruption Layer
+- *Team Topologies* — Matthew Skelton, Manuel Pais (IT Revolution, 2019) — charge cognitive, modes d'interaction entre équipes
+- [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) — DORA — la pratique et ses prérequis
+- [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html) — Pete Hodgson (martinfowler.com) — séparer déploiement et activation
+- [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) — Michael Nygard (2011) — le format ADR
+- [Knowledge Hiding in Organizations](https://onlinelibrary.wiley.com/doi/10.1002/job.737) — Connelly et al. — Journal of Organizational Behavior (2012)
+- [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022)
+- [CodeScene — Measure Conway's Law](https://codescene.com/blog/measure-conways-law/) — l'outil d'analyse comportementale dont cet article se différencie
+- Alberto Brandolini — « Merge the people, split the software » ; « Software development is a learning process, working code is a side effect » (Event Storming)
