@@ -35,13 +35,13 @@ Quelques étages où la cause peut se loger, avec, pour chacun, ce qui se lit da
 
 **Le client final.** Absent, indécis, ou trop occupé pour fournir les specs. L'équipe avance quand même : elle invente les règles métier à sa place. Je l'ai vécu en mission. On est passés de trois à sept développeurs pour absorber la pression, et le goulot s'est déplacé chez le métier : les specs n'arrivaient plus, on a fait les choix métier à la place du client. La théorie des contraintes de Goldratt en pratique : ajouter des ressources à un maillon ne résout rien si le maillon contraignant est ailleurs. Le projet a fini par tripler en jours-hommes. Dans le code, ça se lit : des règles métier inventées ou mal implémentées, des edge cases inutiles, un vocabulaire qui ne correspond à rien de ce que dit le métier.
 
-**Le contexte contractuel.** Un forfait serré pousse à raboter la qualité pour tenir la marge. Il peut même pousser à laisser passer des bugs : leur correction sera facturée plus tard, dans le contrat de TMA (tierce maintenance applicative) qui prend le relais. Une échéance imposée de l'extérieur comme une campagne marketing produit le même effet : des raccourcis pris sous pression, qu'on retrouve dans le code, datés et regroupés autour des dates clés. Ce code raconte plus les contraintes de l'équipe que son expertise réelle.
+**Le contexte contractuel.** Un forfait serré pousse à raboter la qualité pour tenir la marge. Il peut même pousser à laisser passer des bugs : leur correction sera facturée plus tard, dans le contrat de TMA<sup>[1](#glossaire)</sup> (tierce maintenance applicative) qui prend le relais. Une échéance imposée de l'extérieur comme une campagne marketing produit le même effet : des raccourcis pris sous pression, qu'on retrouve dans le code, datés et regroupés autour des dates clés. Ce code raconte plus les contraintes de l'équipe que son expertise réelle.
 
 **Le staffing qui tourne.** Quand les développeurs changent régulièrement de projet, chaque arrivant apporte ses habitudes et repart avant de les avoir accordées avec celles des autres. Plus le turnover est élevé, plus le code accumule de façons de faire différentes, sans cohérence d'ensemble : des styles qui changent par strates, des traductions différentes pour le même concept métier, voire plusieurs traitements pour le même besoin.
 
-**La relation de pouvoir.** Le DDD a nommé ces rapports de force. Dans une relation Customer/Supplier, le fournisseur peut négocier : les priorités du client pèsent, mais la discussion existe. Dans une relation Conformist, l'aval n'a aucun pouvoir et subit le modèle de l'amont tel quel. Ça se voit dans le code. Une intégration où le vocabulaire d'un système tiers contamine tout le modèle, sans couche de traduction (ce que le DDD appelle un Anti-Corruption Layer), raconte une relation où personne n'a pu, ou osé, négocier. L'ACL absent est souvent la trace d'un rapport de force absent.
+**La relation de pouvoir.** Le DDD a nommé ces rapports de force. Dans une relation Customer/Supplier<sup>[2](#glossaire)</sup>, le fournisseur peut négocier : les priorités du client pèsent, mais la discussion existe. Dans une relation Conformist, l'aval n'a aucun pouvoir et subit le modèle de l'amont tel quel. Ça se voit dans le code. Une intégration où le vocabulaire d'un système tiers contamine tout le modèle, sans couche de traduction (ce que le DDD appelle un Anti-Corruption Layer<sup>[3](#glossaire)</sup>), raconte une relation où personne n'a pu, ou osé, négocier. L'ACL absent est souvent la trace d'un rapport de force absent.
 
-**L'équipe elle-même, même avec les moyens.** Une équipe peut avoir le budget, l'autonomie et les outils, et produire quand même du code confus : trop de sujets à porter en même temps (ce que Team Topologies appelle la charge cognitive), des modes de collaboration jamais explicités entre équipes, une organisation interne qui repose sur des habitudes plutôt que sur des accords. Les moyens ne remplacent pas la communication.
+**L'équipe elle-même, même avec les moyens.** Une équipe peut avoir le budget, l'autonomie et les outils, et produire quand même du code confus : trop de sujets à porter en même temps (ce que Team Topologies appelle la charge cognitive<sup>[4](#glossaire)</sup>), des modes de collaboration jamais explicités entre équipes, une organisation interne qui repose sur des habitudes plutôt que sur des accords. Les moyens ne remplacent pas la communication.
 
 Cinq étages, cinq remèdes différents. Un audit qui s'arrête à « le code est mauvais » n'a pas fini son travail : reste à trouver à quel étage la cause habite, parce que le remède n'est pas le même.
 
@@ -51,11 +51,11 @@ En 1997, Brian Foote et Joseph Yoder ont posé un mot sur le pattern le plus ré
 
 Ce pattern n'a rien d'un accident technique : il apparaît par défaut dès qu'une organisation étend ses fonctionnalités sans réévaluer son design. Les frontières des composants s'effritent, la complexité accidentelle s'accumule, et au bout de quelques années la jungle a tout recouvert.
 
-On peut distinguer deux types de complexité. La complexité essentielle vient du domaine métier lui-même : règles, invariants, processus. Elle est légitime : on ne peut pas l'éliminer, seulement la gérer avec les bons outils. La complexité accidentelle, elle, vient de mauvaises décisions techniques, d'abstractions inutiles, de choix non révisés. Elle n'apporte aucune valeur, et elle peut disparaître.
+On peut distinguer deux types de complexité. La complexité essentielle vient du domaine métier lui-même : règles, invariants<sup>[5](#glossaire)</sup>, processus. Elle est légitime : on ne peut pas l'éliminer, seulement la gérer avec les bons outils. La complexité accidentelle, elle, vient de mauvaises décisions techniques, d'abstractions inutiles, de choix non révisés. Elle n'apporte aucune valeur, et elle peut disparaître.
 
 Quand tu lis une codebase, ces deux complexités se mélangent. Le travail d'audit consiste précisément à les démêler.
 
-Dans une organisation où le tech et le métier se parlent, le code parle métier. Les classes et les méthodes portent les mots qu'on entend en réunion produit, et une conversation avec un expert métier peut se prolonger dans le code sans traduction. C'est ce que le DDD appelle le langage ubiquitaire : un vocabulaire unique, partagé entre les conversations et le code.
+Dans une organisation où le tech et le métier se parlent, le code parle métier. Les classes et les méthodes portent les mots qu'on entend en réunion produit, et une conversation avec un expert métier peut se prolonger dans le code sans traduction. C'est ce que le DDD appelle le langage ubiquitaire<sup>[6](#glossaire)</sup> : un vocabulaire unique, partagé entre les conversations et le code.
 
 Dans une organisation où le tech et le métier vivent dans deux mondes, le code parle technique. Les noms décrivent la mécanique (des `Manager`, des `Handler`, des `Helper` qui font un peu tout) et enfouissent l'intention métier sous les détails d'implémentation. La traduction entre le code et le besoin réel se fait dans la tête des développeurs, jamais formalisée, et chaque nouvel arrivant doit la réapprendre depuis zéro.
 
@@ -63,21 +63,21 @@ Cette absence de langage commun est un signal organisationnel.
 
 ## Hotspots, Bus Factor et couplage temporel
 
-Adam Tornhill, dans *Your Code as a Crime Scene*, a popularisé une approche que l'analyse statique classique ne couvre pas : la behavioral code analysis. L'idée est simple : le code qui pose problème est probablement celui qu'on touche en permanence, pas celui qui dort depuis des années.
+Adam Tornhill, dans *Your Code as a Crime Scene*, a popularisé une approche que l'analyse statique classique ne couvre pas : la behavioral code analysis<sup>[7](#glossaire)</sup>. L'idée est simple : le code qui pose problème est probablement celui qu'on touche en permanence, pas celui qui dort depuis des années.
 
-En croisant la fréquence de changement avec la complexité, on obtient des hotspots. Des zones où l'équipe lutte vraiment. Ces hotspots racontent quelque chose de l'organisation : ce qu'elle touche tout le temps, ce qu'elle ne maîtrise pas, ce qu'elle évite.
+En croisant la fréquence de changement avec la complexité, on obtient des hotspots<sup>[8](#glossaire)</sup>. Des zones où l'équipe lutte vraiment. Ces hotspots racontent quelque chose de l'organisation : ce qu'elle touche tout le temps, ce qu'elle ne maîtrise pas, ce qu'elle évite.
 
 Des outils comme CodeScene automatisent aujourd'hui une partie de cette lecture : hotspots, couplage temporel, cartes de connaissance. Ils peuvent servir de point de départ, et ils font gagner un temps précieux. Mais l'outil calcule, il n'interprète pas. Il ne sait pas si ton hotspot est un cœur métier qu'on retouche parce que le produit vit, ou une zone que tout le monde subit. Il ne posera jamais la question qui lève l'ambiguïté. Cette interprétation-là demande le contexte, le métier, et une conversation avec l'équipe.
 
-Au-delà, le couplage temporel est un signal encore plus parlant. Deux fichiers qui changent toujours ensemble, dans le même commit ou dans la même journée, sont couplés, parfois sans qu'aucune ligne de code ne l'exprime : le lien est conceptuel. Si tu modifies le calcul de remise dans `OrderService.php`, et qu'à chaque fois il faut aussi toucher `InvoicePrinter.php`, c'est qu'il y a une dépendance cachée. Soit une dépendance technique mal exprimée, soit une dépendance organisationnelle (deux équipes qui doivent se synchroniser sur chaque évolution).
+Au-delà, le couplage temporel<sup>[9](#glossaire)</sup> est un signal encore plus parlant. Deux fichiers qui changent toujours ensemble, dans le même commit ou dans la même journée, sont couplés, parfois sans qu'aucune ligne de code ne l'exprime : le lien est conceptuel. Si tu modifies le calcul de remise dans `OrderService.php`, et qu'à chaque fois il faut aussi toucher `InvoicePrinter.php`, c'est qu'il y a une dépendance cachée. Soit une dépendance technique mal exprimée, soit une dépendance organisationnelle (deux équipes qui doivent se synchroniser sur chaque évolution).
 
-Un autre signal lisible dans le git : le Bus Factor. Combien d'auteurs ont touché telle zone du code ? Si la réponse est « un seul, et il est parti il y a six mois », tu as un problème. La connaissance de cette zone s'est éteinte avec son auteur. Personne d'autre n'a la mémoire de ce qui s'y passe.
+Un autre signal lisible dans le git : le Bus Factor<sup>[10](#glossaire)</sup>. Combien d'auteurs ont touché telle zone du code ? Si la réponse est « un seul, et il est parti il y a six mois », tu as un problème. La connaissance de cette zone s'est éteinte avec son auteur. Personne d'autre n'a la mémoire de ce qui s'y passe.
 
-C'est ce que la recherche académique appelle le knowledge hiding. Pas toujours volontaire. Parfois c'est une organisation qui n'a pas mis en place de revue de code ou de pair programming. Parfois c'est un développeur qui, par peur de perdre sa place, retient ce qu'il sait pour rester indispensable.
+C'est ce que la recherche académique appelle le knowledge hiding<sup>[11](#glossaire)</sup>. Pas toujours volontaire. Parfois c'est une organisation qui n'a pas mis en place de revue de code ou de pair programming. Parfois c'est un développeur qui, par peur de perdre sa place, retient ce qu'il sait pour rester indispensable. Ce réflexe touche à l'ego et à la peur du jugement, un biais que j'ai creusé dans [un article dédié](/blog/2026/03/ego-developpement-logiciel).
 
 Une équipe saine distribue la connaissance. Une équipe en souffrance la concentre.
 
-Petite précision importante. Ces signaux supposent un git log qui reflète fidèlement qui a fait quoi. Quand l'équipe pratique le pair ou le mob programming, ou qu'elle a pris l'habitude des commits co-signés (`Co-Authored-By`), la lecture devient ambiguë. Un seul auteur visible peut cacher trois personnes qui ont travaillé ensemble. À l'inverse, des commits réguliers à plusieurs mains signalent une distribution active de la connaissance, même si le Bus Factor brut donne l'impression d'un point unique. Il faut croiser les signaux du git log avec une question simple posée à l'équipe : comment écrivez-vous le code, à plusieurs ou chacun de votre côté ?
+Petite précision importante. Ces signaux supposent un git log qui reflète fidèlement qui a fait quoi. Quand l'équipe pratique le pair ou le mob programming<sup>[12](#glossaire)</sup>, ou qu'elle a pris l'habitude des commits co-signés (`Co-Authored-By`), la lecture devient ambiguë. Un seul auteur visible peut cacher trois personnes qui ont travaillé ensemble. À l'inverse, des commits réguliers à plusieurs mains signalent une distribution active de la connaissance, même si le Bus Factor brut donne l'impression d'un point unique. Il faut croiser les signaux du git log avec une question simple posée à l'équipe : comment écrivez-vous le code, à plusieurs ou chacun de votre côté ?
 
 ## Archéologie git : culture, goulots, mémoire perdue
 
@@ -97,17 +97,17 @@ Il raconte le rythme de l'organisation. Des commits réguliers, équilibrés, sa
 
 ### La pratique de la revue
 
-Elle peut prendre des formes très différentes. Une grande partie de l'historique mergée directement sur la branche principale, sans passage par une PR, a deux lectures opposées selon la maturité de l'équipe. Le trunk-based development est considéré comme une meilleure pratique que les pull requests. Mais il demande une discipline et une cohésion qui ne s'improvisent pas : pair ou mob programming, intégration continue solide, ownership collectif du code, et une observabilité (logs, métriques, alertes) qui permet d'être prévenu au plus tôt quand une anomalie passe. Sans cette maturité, ce qui ressemble à du trunk-based devient juste du push direct sur main, sans maitrise et garde-fous. Le même signal dans le git log révèle soit une équipe très avancée, soit une équipe qui n'a pas posé son filet de sécurité collectif. La conversation avec l'équipe lève l'ambiguïté.
+Elle peut prendre des formes très différentes. Une grande partie de l'historique mergée directement sur la branche principale, sans passage par une PR, a deux lectures opposées selon la maturité de l'équipe. Le trunk-based development<sup>[13](#glossaire)</sup> est considéré comme une meilleure pratique que les pull requests. Mais il demande une discipline et une cohésion qui ne s'improvisent pas : pair ou mob programming, intégration continue solide, ownership collectif du code, et une observabilité (logs, métriques, alertes) qui permet d'être prévenu au plus tôt quand une anomalie passe. Sans cette maturité, ce qui ressemble à du trunk-based devient juste du push direct sur main, sans maitrise et garde-fous. Le même signal dans le git log révèle soit une équipe très avancée, soit une équipe qui n'a pas posé son filet de sécurité collectif. La conversation avec l'équipe lève l'ambiguïté.
 
 ### La fréquence de déploiement
 
 Elle raconte qui a la main sur la prod. Dans beaucoup d'organisations en difficulté, les développeurs ne peuvent simplement pas livrer. Le métier attend l'intégralité des fonctionnalités pour tout valider d'un bloc, façon cycle en V. Ou l'équipe n'a pas accès à sa production : une autre équipe déploie, une équipe QA valide en aval, les responsabilités se diluent, et chaque livraison devient une négociation. Ces frictions se voient dans le git : des releases espacées de plusieurs mois, des phases de développement puis de recette puis de correction, des rafales de hotfixes juste après chaque mise en production.
 
-À l'inverse, une équipe qui a la main sur son déploiement livre par petits incréments et corrige vite. Elle peut séparer la mise en production de l'activation d'une fonctionnalité : le code part inactif derrière un feature flag, en modifications additives, et on active quand le métier est prêt, sans l'impacter. Le trunk-based development prend là tout son sens, puisqu'il facilite ce déploiement continu. Le git log le montre aussi : un flux régulier de petites mises en production, sans pic de panique.
+À l'inverse, une équipe qui a la main sur son déploiement livre par petits incréments et corrige vite. Elle peut séparer la mise en production de l'activation d'une fonctionnalité : le code part inactif derrière un feature flag<sup>[14](#glossaire)</sup>, en modifications additives, et on active quand le métier est prêt, sans l'impacter. Le trunk-based development prend là tout son sens, puisqu'il facilite ce déploiement continu. Le git log le montre aussi : un flux régulier de petites mises en production, sans pic de panique.
 
 ### Les cycles de montées de version
 
-Ils racontent la capacité à se maintenir à niveau. Le rattrapage en bloc après des années d'immobilisme, déjà évoqué dans l'article sur les limites des outils, en est le symptôme le plus visible. Son contraire se lit aussi : des montées de version intégrées au fil des développements, ou automatisées via Renovate ou Dependabot, signent une équipe qui a fait de la maintenance un sujet continu. Bien menée, elle se fond dans le flow normal et ne coûte presque rien.
+Ils racontent la capacité à se maintenir à niveau. Le rattrapage en bloc après des années d'immobilisme, déjà évoqué dans l'article sur les limites des outils, en est le symptôme le plus visible. Son contraire se lit aussi : des montées de version intégrées au fil des développements, ou automatisées via Renovate ou Dependabot<sup>[15](#glossaire)</sup>, signent une équipe qui a fait de la maintenance un sujet continu. Bien menée, elle se fond dans le flow normal et ne coûte presque rien.
 
 ### Les tests tardifs ou mal écrits
 
@@ -125,13 +125,13 @@ Lire l'organisation dans le code demande une posture autant qu'une technique.
 
 La tentation, quand on remonte des signaux comme ceux-là, c'est d'identifier des coupables. Tel développeur qui a écrit tel code spaghetti. La posture est confortable, et elle est presque toujours fausse.
 
-Dans « Pourquoi les outils ne suffisent pas », j'écrivais : « la faute est presque toujours renvoyée à celui qui développe le produit. Au dev, à l'équipe tech, parfois au tech lead. Mais le code reflète d'abord le cadre dans lequel il a été écrit. » Cette posture reste centrale.
+Dans [Pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas), j'écrivais : « la faute est presque toujours renvoyée à celui qui développe le produit. Au dev, à l'équipe tech, parfois au tech lead. Mais le code reflète d'abord le cadre dans lequel il a été écrit. » Cette posture reste centrale.
 
-Quand tu lis un hotspot sur un fichier touché par six personnes en six mois, ce ne sont pas ces six personnes qui sont en cause. C'est le système qui a fait converger six personnes sur ce point. Quand tu vois un Bus Factor de 1 sur une zone critique, ce n'est pas la personne qui en sait qui est en faute. C'est l'organisation qui n'a pas mis en place les conditions pour distribuer la connaissance.
+Quand tu lis un hotspot, un fichier complexe que toute l'équipe retouche en permanence, ce ne sont pas les personnes qui l'ont modifié qui sont en cause. C'est le système qui les a fait converger sur ce point. Quand tu vois un Bus Factor de 1 sur une zone critique, ce n'est pas la personne qui en sait qui est en faute. C'est l'organisation qui n'a pas mis en place les conditions pour distribuer la connaissance.
 
 Un auditeur qui pointe le développeur n'apporte rien. Il rejoint la liste des gens qui ont déjà pointé le développeur, et il rate ce qui compte.
 
-C'est aussi pour ça que la refonte est rarement la bonne première réponse. Si la cause habite ailleurs que dans l'équipe et son code (chez le client, dans le contrat, dans l'organisation), tu peux refondre le logiciel autant que tu veux : le système qui a produit les problèmes est toujours là, et les mêmes problématiques reviendront, dans un laps de temps plus ou moins long. Refondre sans traiter la cause, c'est reposer le problème à plus tard. Et on finit par faire des refontes de refontes.
+C'est aussi pour ça que la refonte est rarement la bonne première réponse. Si le problème prend sa source en dehors de l'équipe et de son code (chez le client, dans le contrat, dans l'organisation), tu peux refondre le logiciel autant que tu veux : le système qui a produit les problèmes est toujours là, et les mêmes problématiques reviendront, dans un laps de temps plus ou moins long. Refondre sans traiter la cause, c'est reposer le problème à plus tard. Et on finit par faire des refontes de refontes.
 
 J'ai longtemps essayé d'agir contre la culture de mes clients. J'arrivais en mission, je voyais ce qu'il y avait à améliorer, je proposais.
 
@@ -145,7 +145,7 @@ Lire l'organisation dans le code a des limites.
 
 Le code dit ce qui s'est produit, pas pourquoi. Tu vois le résultat, pas les raisons. Telle décision d'archi avait peut-être un sens dans le contexte de l'époque. Tel raccourci était peut-être la bonne décision face à une deadline produit critique. Tel module abandonné l'a peut-être été parce que le besoin a changé, pas parce que personne ne savait quoi en faire.
 
-C'est précisément le rôle des Architecture Decision Records (ADR) : de courtes notes qui consignent une décision d'architecture, son contexte et les alternatives écartées, au moment où on la prend. Sans eux, un choix remis en cause aujourd'hui est illisible : impossible de savoir s'il s'agit d'une erreur ou de la bonne décision d'une époque dont les contraintes ont disparu. La mémoire du pourquoi part avec les gens.
+C'est précisément le rôle des Architecture Decision Records (ADR)<sup>[16](#glossaire)</sup> : de courtes notes qui consignent une décision d'architecture, son contexte et les alternatives écartées, au moment où on la prend. Sans eux, un choix remis en cause aujourd'hui est illisible : impossible de savoir s'il s'agit d'une erreur ou de la bonne décision d'une époque dont les contraintes ont disparu. La mémoire du pourquoi part avec les gens.
 
 Le code ne dit pas non plus ce qui n'a pas été essayé. Les chemins refusés, les propositions enterrées, les améliorations bloquées par un seul décideur. Le git log montre les décisions qui ont abouti, pas celles qui n'ont jamais existé.
 
@@ -167,35 +167,43 @@ Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audi
 
 ## Glossaire
 
-- **Behavioral code analysis** : analyse de la manière dont l'équipe travaille sur le code (fréquence des changements, auteurs, zones touchées ensemble) à partir de l'historique git, en complément de l'analyse statique du code lui-même.
-- **Hotspot** : zone de code à la fois complexe et fréquemment modifiée. C'est là que l'équipe dépense le plus d'effort.
-- **Couplage temporel** : deux fichiers qui changent systématiquement ensemble dans l'historique, signe d'une dépendance cachée, technique ou organisationnelle.
-- **Bus Factor** : nombre de personnes qui connaissent une zone du code. À 1, la connaissance disparaît avec un seul départ.
-- **TMA (tierce maintenance applicative)** : contrat par lequel un prestataire assure la maintenance corrective et évolutive d'une application après sa livraison.
-- **Customer/Supplier et Conformist** : patterns du DDD qui décrivent la relation entre deux équipes ou systèmes. Customer/Supplier : la négociation existe. Conformist : l'aval subit le modèle de l'amont sans pouvoir d'influence.
-- **Anti-Corruption Layer (ACL)** : couche de traduction qui protège un modèle des concepts d'un système tiers, pour que le vocabulaire de l'un ne contamine pas l'autre.
-- **Charge cognitive** : quantité de sujets qu'une équipe doit maîtriser en même temps. Au-delà d'un seuil, la qualité et le rythme chutent (Team Topologies).
-- **Trunk-based development** : intégration continue de tout le travail sur la branche principale, par petits incréments, plutôt que via de longues branches.
-- **Langage ubiquitaire** : vocabulaire unique partagé entre le métier et le code (DDD) : les mots des réunions produit sont ceux des classes et des méthodes.
-- **Feature flag** : interrupteur qui sépare la mise en production du code de l'activation de la fonctionnalité.
-- **ADR (Architecture Decision Record)** : note courte qui consigne une décision d'architecture, son contexte et les alternatives écartées, au moment où on la prend.
+1. **TMA (tierce maintenance applicative)** : contrat par lequel un prestataire assure la maintenance corrective et évolutive d'une application après sa livraison.
+2. **Customer/Supplier et Conformist** : deux types de relations entre contextes, qu'on représente sur une context map (la carte des relations entre les contextes métier d'un système, issue du DDD). Customer/Supplier : l'aval peut négocier avec l'amont. Conformist : l'aval subit le modèle de l'amont, sans pouvoir d'influence.
+3. **Anti-Corruption Layer (ACL)** : couche qui protège un contexte de tout ce qui vient d'un système extérieur : son vocabulaire, son modèle, ses changements, ses instabilités. On traduit à la frontière plutôt que de laisser l'extérieur dicter l'intérieur.
+4. **Charge cognitive** : quantité de sujets qu'une équipe doit maîtriser en même temps. Au-delà d'un seuil, la qualité et le rythme chutent (Team Topologies).
+5. **Invariant** : règle métier qui doit rester vraie en toutes circonstances (un solde jamais négatif, une commande jamais expédiée sans paiement). Les invariants font partie de la complexité essentielle d'un domaine.
+6. **Langage ubiquitaire** : au sein d'un même contexte métier, vocabulaire unique partagé entre les experts métier et le code : les mots des conversations sont ceux des classes et des méthodes.
+7. **Behavioral code analysis** : analyse de la manière dont l'équipe travaille sur le code (fréquence des changements, auteurs, zones modifiées ensemble) à partir de l'historique git.
+8. **Hotspot** : zone de code à la fois complexe et fréquemment modifiée, là où l'équipe dépense le plus d'effort.
+9. **Couplage temporel** : deux fichiers qui changent systématiquement ensemble dans l'historique, signe d'une dépendance cachée, technique ou organisationnelle.
+10. **Bus Factor** : nombre de personnes qui connaissent une zone du code. À 1, la connaissance disparaît avec un seul départ.
+11. **Knowledge hiding** : rétention de connaissance au sein d'une équipe, volontaire (peur d'être remplacé) ou structurelle (pas de revue, pas de pair programming).
+12. **Mob programming** : toute l'équipe travaille ensemble sur le même code, en même temps, sur un seul écran. Le pair programming en est la version à deux.
+13. **Trunk-based development** : intégration continue de tout le travail sur la branche principale, par petits incréments, plutôt que via de longues branches.
+14. **Feature flag** : interrupteur qui sépare la mise en production du code de l'activation de la fonctionnalité.
+15. **Renovate et Dependabot** : outils qui automatisent les montées de version des dépendances en ouvrant des pull requests au fil de l'eau.
+16. **ADR (Architecture Decision Record)** : note courte qui consigne une décision d'architecture, son contexte et les alternatives écartées, au moment où on la prend.
 
 ## Sources
 
+Livres :
+
 - *Your Code as a Crime Scene* — Adam Tornhill — behavioral code analysis, hotspots, couplage temporel
-- [code-maat](https://github.com/adamtornhill/code-maat) — Adam Tornhill — l'outil open source pour analyser soi-même son historique git (hotspots, couplage, auteurs)
-- [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
 - *Learning Domain-Driven Design* — Vlad Khononov (O'Reilly, 2021) — complexité essentielle vs accidentelle, ch. 11
-- [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Melvin Conway (1968)
-- [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) — Martin Fowler — bliki
-- *Le But* — Eliyahu Goldratt (1984, traduction française AFNOR) — la théorie des contraintes
 - *Domain-Driven Design* — Eric Evans (Addison-Wesley, 2003) — context mapping : Customer/Supplier, Conformist, Anti-Corruption Layer
 - *Team Topologies* — Matthew Skelton, Manuel Pais (IT Revolution, 2019) — charge cognitive, modes d'interaction entre équipes
+- *Le But* — Eliyahu Goldratt (1984, traduction française AFNOR) — la théorie des contraintes
+
+Articles et outils :
+
+- [code-maat](https://github.com/adamtornhill/code-maat) — Adam Tornhill — l'outil open source pour analyser soi-même son historique git (hotspots, couplage, auteurs)
+- [CodeScene — Measure Conway's Law](https://codescene.com/blog/measure-conways-law/) — la version industrialisée de la behavioral code analysis
+- [Loi de Conway](https://fr.wikipedia.org/wiki/Loi_de_Conway) — Wikipédia (FR)
+- [Conway's Law](https://martinfowler.com/bliki/ConwaysLaw.html) — Martin Fowler — bliki
+- [Big Ball of Mud](http://www.laputan.org/mud/) — Brian Foote, Joseph Yoder (1997)
+- [Facteur d'autobus](https://fr.wikipedia.org/wiki/Facteur_d%27autobus) — Wikipédia (FR)
+- [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022) — l'étude empirique
+- [Knowledge Hiding in Organizations](https://onlinelibrary.wiley.com/doi/10.1002/job.737) — Connelly et al. — Journal of Organizational Behavior (2012)
 - [Trunk-Based Development](https://dora.dev/capabilities/trunk-based-development/) — DORA — la pratique et ses prérequis
 - [Feature Toggles](https://martinfowler.com/articles/feature-toggles.html) — Pete Hodgson (martinfowler.com) — séparer déploiement et activation
 - [Documenting Architecture Decisions](https://cognitect.com/blog/2011/11/15/documenting-architecture-decisions) — Michael Nygard (2011) — le format ADR
-- [Knowledge Hiding in Organizations](https://onlinelibrary.wiley.com/doi/10.1002/job.737) — Connelly et al. — Journal of Organizational Behavior (2012)
-- [Facteur d'autobus](https://fr.wikipedia.org/wiki/Facteur_d%27autobus) — Wikipédia (FR) — le concept de Bus Factor
-- [Bus Factor in Practice](https://arxiv.org/abs/2202.01523) — Jabrayilzade et al. (arXiv, 2022) — l'étude empirique
-- [CodeScene — Measure Conway's Law](https://codescene.com/blog/measure-conways-law/) — l'outil d'analyse comportementale dont cet article se différencie
-- Alberto Brandolini — « Merge the people, split the software » ; « Software development is a learning process, working code is a side effect » (Event Storming)
