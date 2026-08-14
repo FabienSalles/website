@@ -179,12 +179,37 @@ const modalites = [
     description: "Mission cadrée avec objectifs clairs. Pour des problématiques identifiées."
   }
 ];
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Accompagnement PHP et Symfony',
+  serviceType: 'Accompagnement technique PHP et Symfony',
+  description: "Intervention dans les équipes PHP et Symfony, à temps plein ou fractionné, sur le craft, les tests et l'architecture.",
+  url: 'https://fabiensalles.com/accompagnement/',
+  areaServed: 'FR',
+  provider: {
+    '@type': 'Person',
+    name: 'Fabien Salles',
+    url: 'https://fabiensalles.com',
+  },
+  offers: {
+    '@type': 'Offer',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      minPrice: '550',
+      maxPrice: '800',
+      priceCurrency: 'EUR',
+      unitText: 'jour',
+    },
+  },
+};
 ---
 
 <Layout
   title="Accompagnement PHP et Symfony au sein de vos équipes"
   description="J'interviens dans vos équipes PHP et Symfony, à temps plein ou fractionné. Relation directe, sans intermédiaire. Hermès, LVMH, RATP, Volkswagen."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(serviceJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Accompagnement' }]} />
   </div>

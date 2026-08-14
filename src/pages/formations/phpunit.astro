@@ -7,12 +7,32 @@ import { getRecommendationsForFormationPage, formatDate } from '../../data/forma
 
 // Récupère les recommandations spécifiques à PHPUnit
 const recommendations = getRecommendationsForFormationPage('phpunit');
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Formation PHPUnit et TDD',
+  description: "Deux jours pour stabiliser du code existant, écrire des tests qui tiennent et cadrer ce que génère l'IA.",
+  url: 'https://fabiensalles.com/formations/phpunit/',
+  inLanguage: 'fr-FR',
+  teaches: ['PHPUnit', 'TDD', 'Tests sur code legacy', 'Test doubles', 'Refactoring'],
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'blended',
+    courseWorkload: 'PT14H',
+  },
+  provider: {
+    '@type': 'Person',
+    name: 'Fabien Salles',
+    url: 'https://fabiensalles.com',
+  },
+};
 ---
 
 <Layout
   title="Formation PHPUnit et TDD : tester du code legacy"
   description="Deux jours pour stabiliser du code existant, écrire des tests qui tiennent et cadrer ce que génère l'IA. Moitié pratique, sur ton propre code."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(courseJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations/' }, { label: 'PHPUnit' }]} />
   </div>

@@ -7,12 +7,27 @@ import { getRecommendationsForFormationPage, formatDate } from '../../data/forma
 
 // Récupère les recommandations spécifiques à DDD (sera vide si pas encore de recommandations)
 const recommendations = getRecommendationsForFormationPage('ddd');
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Formation Domain-Driven Design',
+  description: "Strategic Design ouvert aux non-développeurs, puis Tactical Design en PHP : Event Storming, Context Mapping, agrégats.",
+  url: 'https://fabiensalles.com/formations/ddd/',
+  inLanguage: 'fr-FR',
+  teaches: ['Domain-Driven Design', 'Event Storming', 'Context Mapping', 'Strategic Design', 'Tactical Design'],
+  provider: {
+    '@type': 'Person',
+    name: 'Fabien Salles',
+    url: 'https://fabiensalles.com',
+  },
+};
 ---
 
 <Layout
   title="Formation DDD : modéliser le métier avant de coder"
   description="Strategic Design sur 3 jours, ouvert aux non-développeurs, puis Tactical Design sur 2 jours en PHP. Event Storming, Context Mapping, agrégats."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(courseJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations/' }, { label: 'DDD' }]} />
   </div>

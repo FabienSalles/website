@@ -7,12 +7,32 @@ import { getRecommendationsForFormationPage, formatDate } from '../../data/forma
 
 // Récupère les recommandations spécifiques à Git
 const recommendations = getRecommendationsForFormationPage('git');
+const courseJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Course',
+  name: 'Formation Git avancé',
+  description: "Deux jours pour arrêter de subir Git : rebase interactif, worktree, conflits et choix d'un workflow d'équipe.",
+  url: 'https://fabiensalles.com/formations/git/',
+  inLanguage: 'fr-FR',
+  teaches: ['Git', 'Rebase interactif', 'Worktree', 'Workflows Git', 'Résolution de conflits'],
+  hasCourseInstance: {
+    '@type': 'CourseInstance',
+    courseMode: 'blended',
+    courseWorkload: 'PT14H',
+  },
+  provider: {
+    '@type': 'Person',
+    name: 'Fabien Salles',
+    url: 'https://fabiensalles.com',
+  },
+};
 ---
 
 <Layout
   title="Formation Git avancé : rebase, worktree, workflows"
   description="Deux jours pour arrêter de subir Git. Rebase interactif, worktree, résolution de conflits et choix d'un workflow d'équipe. 70 % de pratique."
 >
+  <script type="application/ld+json" set:html={JSON.stringify(courseJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations/' }, { label: 'Git' }]} />
   </div>
