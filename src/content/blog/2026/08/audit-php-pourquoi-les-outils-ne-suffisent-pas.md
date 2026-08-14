@@ -225,9 +225,9 @@ Sans cette couche humaine, l'outil reste interprété sur la base de supposition
 
 Les outils servent à confirmer ou infirmer des hypothèses humaines, pas à produire des rapports en pilotage automatique. À la fin, c'est un humain qui finit par lire ce rapport. Autant ne pas noyer le poisson.
 
-C'est cette lecture humaine que je propose dans [mes audits](/audit). Pas un rapport de 500 lignes généré par un outil. Un diagnostic qui distingue le voulu de l'accidentel, qui priorise par impact business, qui assume les décisions qu'il propose.
+C'est cette lecture humaine que je propose dans [mes audits](/audit/). Pas un rapport de 500 lignes généré par un outil. Un diagnostic qui distingue le voulu de l'accidentel, qui priorise par impact business, qui assume les décisions qu'il propose.
 
-Si ton équipe galère malgré des dashboards au vert, c'est probablement qu'il manque la lecture qu'aucun outil ne fait à ta place. [Discutons de ton contexte](/audit).
+Si ton équipe galère malgré des dashboards au vert, c'est probablement qu'il manque la lecture qu'aucun outil ne fait à ta place. [Discutons de ton contexte](/audit/).
 
 ## Glossaire
 

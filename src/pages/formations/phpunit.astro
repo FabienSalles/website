@@ -14,7 +14,7 @@ const recommendations = getRecommendationsForFormationPage('phpunit');
   description="Formation PHPUnit par Fabien Salles : stabiliser, refactorer, cadrer le code généré par IA. Tests Legacy, TDD. 2 jours, 50% pratique."
 >
   <div class="container mx-auto px-4 pt-12">
-    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'PHPUnit' }]} />
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations/' }, { label: 'PHPUnit' }]} />
   </div>
 
   <!-- 1. HERO SECTION — cream (no bg) -->
@@ -411,7 +411,7 @@ const recommendations = getRecommendationsForFormationPage('phpunit');
           ))}
         </div>
         <div class="text-center mt-8">
-          <a href="/recommendations#formations" class="btn-outline w-full md:w-auto text-center">
+          <a href="/recommendations/#formations" class="btn-outline w-full md:w-auto text-center">
             Voir toutes les recommandations →
           </a>
         </div>
@@ -571,7 +571,7 @@ const recommendations = getRecommendationsForFormationPage('phpunit');
         </div>
       </div>
       <p class="text-center mt-8 text-foreground-muted">
-        N'hésite pas à <a href="/contact?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+        N'hésite pas à <a href="/contact/?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </div>
   </section>
@@ -619,7 +619,7 @@ const recommendations = getRecommendationsForFormationPage('phpunit');
         </p>
         <div class="grid grid-cols-2 md:flex justify-center gap-4">
           <a
-            href="/contact?subject=formation"
+            href="/contact/?subject=formation"
             title="Parler de mon contexte"
             class="btn-primary text-lg text-center"
           >

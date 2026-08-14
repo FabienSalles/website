@@ -82,7 +82,7 @@ describe('Audit page (built)', () => {
     expect(html).toContain("Et après l'audit ?");
     expect(html).toContain("plan d'action");
     expect(html).not.toContain('90 jours');
-    expect(html).toContain('href="/accompagnement"');
+    expect(html).toContain('href="/accompagnement/"');
   });
 
   it('resolves every internal anchor to an existing id', () => {

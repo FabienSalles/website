@@ -26,7 +26,7 @@ export async function GET(context: { site: any; }) {
     },
     customData: `
       <language>fr</language>
-      <atom:link href="${context.site}rss.xml/" rel="self" type="application/rss+xml"/>
+      <atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml"/>
     `
   });
 }

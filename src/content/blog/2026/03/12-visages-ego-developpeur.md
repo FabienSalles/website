@@ -12,7 +12,7 @@ Le dev le plus dangereux de ton équipe n'est pas celui qui code mal. C'est celu
 
 L'égo ne ressemble pas toujours à de l'arrogance. Il ne crie pas. Il ne se vante pas. La plupart du temps, il se cache derrière des réflexes si courants qu'on ne les questionne plus.
 
-L'égo en développement logiciel n'est pas un défaut de caractère. C'est un biais systémique. On l'a détaillé dans le [premier article de cette série](/blog/2026/03/ego-developpement-logiciel). Mais à quoi ressemble-t-il concrètement ?
+L'égo en développement logiciel n'est pas un défaut de caractère. C'est un biais systémique. On l'a détaillé dans le [premier article de cette série](/blog/2026/03/ego-developpement-logiciel/). Mais à quoi ressemble-t-il concrètement ?
 
 Chaque visage a ses propres mécanismes, ses propres déclencheurs, et sa propre façon de se rendre invisible. Certains sont individuels. D'autres sont collectifs. Quelques-uns sont même positifs.
 
@@ -178,7 +178,7 @@ Les reconnaître, c'est déjà choisir. Choisir quand les laisser agir et quand 
 
 Lequel de ces 12 visages reconnais-tu le plus chez toi ? Si tu oses te répondre honnêtement, tu as déjà commencé à le désarmer.
 
-Le [troisième article de cette série](/blog/2026/04/05-desarmer-ego-equipe-tech) va plus loin : comment désarmer l'égo concrètement, individuellement et collectivement. Des accords toltèques à l'écoute active, en passant par les dynamiques de pouvoir invisibles qui le nourrissent dans les équipes.
+Le [troisième article de cette série](/blog/2026/04/05-desarmer-ego-equipe-tech/) va plus loin : comment désarmer l'égo concrètement, individuellement et collectivement. Des accords toltèques à l'écoute active, en passant par les dynamiques de pouvoir invisibles qui le nourrissent dans les équipes.
 
 ## Sources
 
@@ -193,4 +193,4 @@ Le [troisième article de cette série](/blog/2026/04/05-desarmer-ego-equipe-tec
 - [Flow: The Psychology of Optimal Experience](https://en.wikipedia.org/wiki/Flow_(psychology)) — Wikipedia — Mihaly Csikszentmihalyi (1990)
 - [Mob Programming: A Whole Team Approach](https://www.agilealliance.org/resources/experience-reports/mob-programming-agile2014/) — Agile Alliance — Woody Zuill
 - Ryan Holiday, *Ego Is the Enemy* (2016)
-- [L'égo en développement logiciel : le biais que personne ne veut voir](/blog/2026/03/ego-developpement-logiciel) — Article 1 de la série
+- [L'égo en développement logiciel : le biais que personne ne veut voir](/blog/2026/03/ego-developpement-logiciel/) — Article 1 de la série

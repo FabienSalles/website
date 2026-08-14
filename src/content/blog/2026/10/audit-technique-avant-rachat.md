@@ -89,7 +89,7 @@ Une dépendance technique recouvre souvent une question de position. Un système
 
 Reste à savoir qui détient la donnée. Une application qui ne fait que la transiter pour la reformuler dans le langage d'un tiers ne détient pas le cœur métier qu'elle revendique. Elle en est l'intermédiaire.
 
-En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation).
+En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation/).
 
 ## Identifier le cœur métier
 
@@ -101,7 +101,7 @@ On peut distinguer trois natures de briques dans une application.
 - **Les sous-domaines support**<sup>[6](#glossaire)</sup> sont nécessaires au fonctionnement sans rien différencier : la gestion documentaire, le paramétrage, les exports.
 - **Les sous-domaines génériques**<sup>[7](#glossaire)</sup> couvrent l'authentification, l'envoi d'emails, l'émission de factures, tout ce que chacun fait sans s'en différencier.
 
-Cette classification vient du Domain-Driven Design, que j'[enseigne en formation](/formations/ddd) et que je pratique depuis **2014**. Ce qu'elle apporte à un audit de rachat, c'est une lecture stratégique que le code seul ne donne pas. Elle montre où l'effort de développement a été mis, et permet de se demander s'il l'a été au bon endroit.
+Cette classification vient du Domain-Driven Design, que j'[enseigne en formation](/formations/ddd/) et que je pratique depuis **2014**. Ce qu'elle apporte à un audit de rachat, c'est une lecture stratégique que le code seul ne donne pas. Elle montre où l'effort de développement a été mis, et permet de se demander s'il l'a été au bon endroit.
 
 Le même défaut ne se lit pas pareil selon la brique où il se trouve.
 
@@ -194,7 +194,7 @@ Plusieurs sujets manquent ici, et ils ne tiennent pas dans un seul article.
 - La chaîne de livraison : fréquence de mise en production, revue de code, environnements, retour arrière, observabilité.
 - La faisabilité technique de la feuille de route annoncée par le vendeur.
 
-Le premier a le sien : [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas). Les deux autres pèsent surtout pour un acquéreur qui veut accélérer.
+Le premier a le sien : [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas/). Les deux autres pèsent surtout pour un acquéreur qui veut accélérer.
 
 ## Conclusion
 
@@ -219,11 +219,11 @@ Et on situe chaque défaut sur la brique où il se trouve.
 | Générique | Un service du marché fait le travail | Aucun sujet |
 | Générique | Développé maison, à maintenir | Coût récurrent, remplaçable quand on veut |
 
-Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation).
+Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation/).
 
 Ce que ces constats deviennent dans le contrat ne se décide pas de mon côté. Mais c'est là qu'ils servent : à suspendre la vente, à obtenir une garantie du vendeur, ou à discuter le prix.
 
-Si tu prépares une acquisition et que tu veux un regard extérieur sur ce que tu t'apprêtes à reprendre, [discutons de ton contexte](/audit).
+Si tu prépares une acquisition et que tu veux un regard extérieur sur ce que tu t'apprêtes à reprendre, [discutons de ton contexte](/audit/).
 
 ## Glossaire
 
