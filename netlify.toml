@@ -26,3 +26,10 @@
     to = "/"
     status = 301
     force = true
+
+# Le flux était déclaré avec un slash parasite, servi en 200 comme un doublon.
+[[redirects]]
+    from = "/rss.xml/"
+    to = "/rss.xml"
+    status = 301
+    force = true
