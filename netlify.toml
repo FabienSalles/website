@@ -1,2 +1,35 @@
 [build]
     functions = "netlify/functions"
+
+# Pages supprimées qui recevaient encore des impressions Search Console.
+# Sans ces règles, les requêtes qui les classaient tombent sur un 404.
+[[redirects]]
+    from = "/formations/tdd"
+    to = "/formations/phpunit/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/formations/clean-code"
+    to = "/formations/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/about"
+    to = "/"
+    status = 301
+    force = true
+
+[[redirects]]
+    from = "/cv"
+    to = "/"
+    status = 301
+    force = true
+
+# Le flux était déclaré avec un slash parasite, servi en 200 comme un doublon.
+[[redirects]]
+    from = "/rss.xml/"
+    to = "/rss.xml"
+    status = 301
+    force = true
