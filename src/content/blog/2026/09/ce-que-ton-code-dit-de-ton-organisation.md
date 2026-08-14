@@ -4,6 +4,7 @@ description: "Hotspots, couplage temporel, archéologie git : ton code raconte l
 draft: true
 pubDate: 2026-09-01
 categories: [organisation]
+series: audit
 service: audit
 ---
 

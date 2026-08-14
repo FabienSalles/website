@@ -3,6 +3,7 @@ title: "Tu te crois égoless ? Voici 12 preuves du contraire"
 description: "12 formes concrètes d'égo en développement logiciel, du Dunning-Kruger au flow state, appuyées par la recherche en psychologie et neuroscience."
 pubDate: 2026-03-28
 categories: ["mindset", "culture", "ego"]
+series: ego
 service: "accompagnement"
 draft: false
 ---

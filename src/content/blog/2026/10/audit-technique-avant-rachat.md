@@ -4,6 +4,7 @@ description: "Audit technique avant rachat : ce qui peut bloquer la reprise, ce 
 draft: true
 pubDate: 2026-10-06
 categories: [audit, strategie]
+series: audit
 service: audit
 ---
 

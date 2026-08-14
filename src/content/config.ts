@@ -12,6 +12,7 @@ const blog = defineCollection({
       'formation-phpunit', 'formation-ddd', 'formation-git',
       'audit', 'accompagnement', 'automatisation',
     ]).optional(),
+    series: z.enum(['ego', 'audit']).optional(),
     tldr: z.string().optional(),
     draft: z.boolean().default(false),
   }),

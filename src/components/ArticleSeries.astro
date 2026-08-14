@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import generateUrl from "@utils/url";
+
+interface Props {
+  currentSlug: string;
+  series: string;
+}
+
+const { currentSlug, series } = Astro.props;
+
+const seriesTitleMap: Record<string, string> = {
+  'ego': "Série : l'ego en développement logiciel",
+  'audit': 'Série : audit technique',
+};
+
+const posts = (await getCollection('blog', ({ data }) => {
+  return import.meta.env.PROD ? !data.draft : true;
+}))
+  .filter(post => post.data.series === series)
+  .sort((a, b) => a.data.pubDate.getTime() - b.data.pubDate.getTime());
+
+const seriesTitle = seriesTitleMap[series];
+---
+
+{seriesTitle && posts.length > 1 && (
+  <nav
+    aria-label={seriesTitle}
+    class="bg-surface-elevated rounded-lg p-6 border border-border-light"
+  >
+    <h2 class="text-sm font-bold uppercase tracking-wider text-foreground-heading mb-4">
+      {seriesTitle}
+    </h2>
+    <ol class="flex flex-col gap-3 list-none p-0 m-0">
+      {posts.map((post, index) => {
+        const isCurrent = post.slug === currentSlug;
+        return (
+          <li class="flex gap-3 leading-snug">
+            <span class={`text-sm tabular-nums shrink-0 ${isCurrent ? 'text-primary font-semibold' : 'text-foreground-muted'}`}>
+              {index + 1}.
+            </span>
+            {isCurrent ? (
+              <span class="text-sm text-primary font-semibold" aria-current="page">
+                {post.data.title}
+              </span>
+            ) : (
+              <a
+                href={generateUrl(`/blog/${post.slug}`)}
+                class="text-sm text-foreground-muted hover:text-primary transition-colors"
+              >
+                {post.data.title}
+              </a>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+)}

@@ -9,6 +9,7 @@ import LinkedinLink from "../../components/LinkedinLink.astro";
 import ServiceCta from "../../components/ServiceCta.astro";
 import RelatedArticles from "../../components/RelatedArticles.astro";
 import TableOfContents from "../../components/TableOfContents.astro";
+import ArticleSeries from "../../components/ArticleSeries.astro";
 import PostTldr from "../../components/PostTldr.astro";
 
 export async function getStaticPaths() {
@@ -32,18 +33,18 @@ const breadcrumbItems = [
 ];
 
 const hasToc = shouldRenderToc(headings);
-const hasService = Boolean(post.data.service);
+const hasRightAside = Boolean(post.data.service) || Boolean(post.data.series);
 // Mobile width is always max-w-3xl (ToC is hidden, asides stack vertically).
 // On xl breakpoint, the container expands to fit the visible side panels.
 let containerMaxWidth: string;
-if (hasToc && hasService) {
+if (hasToc && hasRightAside) {
   containerMaxWidth = 'max-w-3xl xl:max-w-7xl';
-} else if (hasToc || hasService) {
+} else if (hasToc || hasRightAside) {
   containerMaxWidth = 'max-w-3xl xl:max-w-5xl';
 } else {
   containerMaxWidth = 'max-w-3xl';
 }
-const wrapperRowClasses = (hasToc || hasService)
+const wrapperRowClasses = (hasToc || hasRightAside)
   ? 'xl:flex-row xl:items-stretch xl:gap-8 xl:justify-center'
   : '';
 
@@ -91,7 +92,7 @@ const articleJsonLd = {
     <div class={`flex flex-col items-center ${wrapperRowClasses}`}>
       {hasToc && (
         <aside class="hidden xl:block xl:w-72 xl:shrink-0">
-          <div class="xl:sticky xl:top-24">
+          <div class="xl:sticky xl:top-24 xl:max-h-[calc(100vh-8rem)] xl:overflow-y-auto sticky-scroll">
             <TableOfContents headings={headings} minHeadings={TOC_MIN_HEADINGS} />
           </div>
         </aside>
@@ -145,14 +146,18 @@ const articleJsonLd = {
         <NewsletterForm />
       </div>
 
-      {hasService && (
+      {hasRightAside && (
         <aside class="w-full max-w-3xl xl:w-72 xl:max-w-none xl:shrink-0 mt-8 xl:mt-0">
-          <div class="xl:sticky xl:top-24 flex flex-col gap-6">
-            <ServiceCta service={post.data.service} />
+          <div class="xl:sticky xl:top-24 xl:max-h-[calc(100vh-8rem)] xl:overflow-y-auto sticky-scroll flex flex-col gap-6">
+            {post.data.series && (
+              <ArticleSeries currentSlug={post.slug} series={post.data.series} />
+            )}
+            {post.data.service && <ServiceCta service={post.data.service} />}
             <RelatedArticles
               currentSlug={post.slug}
               service={post.data.service}
               categories={post.data.categories}
+              series={post.data.series}
             />
           </div>
         </aside>
@@ -160,3 +165,36 @@ const articleJsonLd = {
     </div>
   </div>
 </Layout>
+
+<style>
+  .sticky-scroll.is-overflowing {
+    overscroll-behavior: contain;
+  }
+</style>
+
+<script>
+  function initStickyScroll() {
+    const panels = Array.from(document.querySelectorAll<HTMLElement>('.sticky-scroll'));
+    if (panels.length === 0) return;
+
+    const observer = new ResizeObserver(() => {
+      panels.forEach((panel) => {
+        panel.classList.toggle('is-overflowing', panel.scrollHeight > panel.clientHeight);
+      });
+    });
+
+    panels.forEach((panel) => {
+      observer.observe(panel);
+      Array.from(panel.children).forEach((child) => observer.observe(child));
+    });
+
+    document.addEventListener('astro:before-swap', () => observer.disconnect(), { once: true });
+  }
+
+  document.addEventListener('astro:page-load', initStickyScroll);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStickyScroll, { once: true });
+  } else {
+    initStickyScroll();
+  }
+</script>

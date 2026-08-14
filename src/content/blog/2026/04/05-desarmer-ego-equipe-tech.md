@@ -3,6 +3,7 @@ title: "Désarmer l'égo : toi d'abord, le système ensuite"
 description: "Reconnaître l'égo ne suffit pas. Cet article propose des leviers concrets, individuels et collectifs, pour le désarmer dans les équipes tech."
 pubDate: 2026-04-05
 categories: ["mindset", "culture", "ego", "organisation"]
+series: ego
 service: "accompagnement"
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7446808541434261504/"
 tldr: "Reconnaître l'égo ne suffit pas. Pour le désarmer, deux leviers indissociables : un travail individuel (autocompassion, écoute active, dépolarisation, growth mindset) et un cadre collectif qui l'entretient (décisions décentralisées, rééquilibrage des voix, leadership par l'intention). Et souvent, amplifier ce qui marche déjà fait plus reculer l'égo que le confronter frontalement."

@@ -4,6 +4,7 @@ description: "L'ego n'est pas un défaut de caractère. C'est un biais cognitif 
 pubDate: 2026-03-21
 categories: ["mindset", "culture", "ego"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7441744117220392960/"
+series: ego
 service: "accompagnement"
 draft: false
 ---
