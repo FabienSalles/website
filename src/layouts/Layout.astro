@@ -1,5 +1,4 @@
 ---
-import generateUrl from "@utils/url";
 import "../styles/global.css";
 
 interface Props {
@@ -19,52 +18,22 @@ const {
 const ogImage = new URL(image, Astro.site).href;
 
 const currentPath = Astro.url.pathname;
-const isEnglishPath = currentPath.startsWith('/en');
 
 // Helper to check if a nav item is active
 const isActive = (href: string) => {
   // Exact match
   if (currentPath === href || currentPath === href + '/') return true;
   // For formations, also match sub-pages
-  if (href === '/formations' && currentPath.startsWith('/formations/')) return true;
+  if (href === '/formations/' && currentPath.startsWith('/formations/')) return true;
   return false;
 };
-const translationEnabled = import.meta.env.TRANSLATION_ENABLED === 'true';
 const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
 const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
-const aboutEnabled = import.meta.env.ABOUT_ENABLED === 'true';
-const cvEnabled = import.meta.env.CV_ENABLED === 'true';
 const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
-
-const routeMapping = {
-  '/formations': '/en/training',
-  '/en/training': '/formations',
-  '/cv': '/en/resume',
-  '/en/resume': '/cv',
-  '/about': '/en/about',
-  '/en/about': '/about',
-  '/blog': '/en/blog',
-  '/en/blog': '/blog',
-  '/contact': '/en/contact',
-  '/en/contact': '/contact',
-  '/': '/en',
-  '/en': '/',
-};
-
-let alternateLink = routeMapping[currentPath];
-
-if (!alternateLink) {
-  if (currentPath.startsWith('/blog/')) {
-    alternateLink = '/en' + currentPath;
-  } else if (currentPath.startsWith('/en/blog/')) {
-    alternateLink = currentPath.replace('/en', '');
-  }
-}
-
 ---
 
 <!doctype html>
-<html lang={isEnglishPath ? 'en' : 'fr'}>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -91,7 +60,7 @@ if (!alternateLink) {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
-    <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href={generateUrl('/rss.xml')} />
+    <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href="/rss.xml" />
     <script is:inline type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`>
     </script>
     <script is:inline type="text/partytown" define:vars={{googleAnalyticsId}}>
@@ -158,7 +127,7 @@ if (!alternateLink) {
       <nav class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
           <a
-            href={isEnglishPath ? '/en' : '/'}
+            href="/"
             title="Accueil"
             class="text-xl font-semibold text-foreground-heading hover:text-primary transition-colors"
             data-astro-reload
@@ -193,43 +162,23 @@ if (!alternateLink) {
 
           <!-- Desktop menu -->
           <ul class="hidden md:flex gap-6 items-center">
-            <li><a href="/accompagnement" class={isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Accompagnement</a></li>
-            <li><a href="/audit" class={isActive('/audit') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Audit</a></li>
+            <li><a href="/accompagnement/" class={isActive('/accompagnement/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Accompagnement</a></li>
+            <li><a href="/audit/" class={isActive('/audit/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Audit</a></li>
             {
               trainingEnabled &&
               <li id="formations-nav" class="static">
-                <a href={isEnglishPath ? '/en/training' : '/formations'} class={`${isActive('/formations') ? 'nav-link-active' : 'nav-link'} inline-flex items-center gap-1 leading-none`} data-astro-reload>
-                  {isEnglishPath ? 'Training' : 'Formations'}
+                <a href="/formations/" class={`${isActive('/formations/') ? 'nav-link-active' : 'nav-link'} inline-flex items-center gap-1 leading-none`} data-astro-reload>
+                  Formations
                   <svg id="formations-chevron" class="w-2.5 h-2.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
                 </a>
               </li>
             }
-            <li><a href="/automatisation" class={isActive('/automatisation') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Automatisation</a></li>
-            <li><a href="/apport-affaires" class={isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Apport d'affaires</a></li>
-            <li><a href={generateUrl('/blog')} title="Blog" class={isActive('/blog') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Blog</a></li>
-            {
-              cvEnabled &&
-              <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={isActive('/cv') ? 'nav-link-active' : 'nav-link'} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
-            }
-            {
-              aboutEnabled &&
-              <li><a href={isEnglishPath ? '/en/about' : '/about'} class={isActive('/about') ? 'nav-link-active' : 'nav-link'} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
-            }
+            <li><a href="/automatisation/" class={isActive('/automatisation/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Automatisation</a></li>
+            <li><a href="/apport-affaires/" class={isActive('/apport-affaires/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Apport d'affaires</a></li>
+            <li><a href="/blog/" title="Blog" class={isActive('/blog/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Blog</a></li>
             {
               contactEnabled &&
-              <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={isActive('/contact') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Contact</a></li>
-            }
-            {
-              translationEnabled &&
-                <li>
-                  <a
-                    href={isEnglishPath ? '/' : '/en'}
-                    class="lang-switch"
-                    data-astro-reload
-                  >
-                    {isEnglishPath ? 'FR' : 'EN'}
-                  </a>
-                </li>
+              <li><a href="/contact/" class={isActive('/contact/') ? 'nav-link-active' : 'nav-link'} data-astro-reload>Contact</a></li>
             }
             <li>
               <button
@@ -246,45 +195,25 @@ if (!alternateLink) {
 
         <!-- Mobile menu -->
         <ul id="mobile-menu" class="hidden md:hidden flex-col gap-1 pt-4 pb-2">
-          <li><a href="/accompagnement" class={`block py-2 px-3 rounded-lg ${isActive('/accompagnement') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Accompagnement</a></li>
-          <li><a href="/audit" class={`block py-2 px-3 rounded-lg ${isActive('/audit') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Audit</a></li>
+          <li><a href="/accompagnement/" class={`block py-2 px-3 rounded-lg ${isActive('/accompagnement/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Accompagnement</a></li>
+          <li><a href="/audit/" class={`block py-2 px-3 rounded-lg ${isActive('/audit/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Audit</a></li>
           {
             trainingEnabled &&
             <li>
-              <a href={isEnglishPath ? '/en/training' : '/formations'} class={`block py-2 px-3 rounded-lg ${isActive('/formations') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Training' : 'Formations'}</a>
+              <a href="/formations/" class={`block py-2 px-3 rounded-lg ${isActive('/formations/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Formations</a>
               <ul class="pl-4 flex flex-col gap-1 mt-1">
-                <li><a href="/formations/git" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/git') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>Git</a></li>
-                <li><a href="/formations/phpunit" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/phpunit') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>PHPUnit</a></li>
-                <li><a href="/formations/ddd" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/ddd') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>DDD</a></li>
+                <li><a href="/formations/git/" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/git/') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>Git</a></li>
+                <li><a href="/formations/phpunit/" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/phpunit/') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>PHPUnit</a></li>
+                <li><a href="/formations/ddd/" class={`block py-1.5 px-3 rounded-lg text-sm transition-colors ${isActive('/formations/ddd/') ? 'nav-link-sub-active text-foreground-heading font-medium' : 'text-foreground-muted hover:text-primary'}`} data-astro-reload>DDD</a></li>
               </ul>
             </li>
           }
-          <li><a href="/automatisation" class={`block py-2 px-3 rounded-lg ${isActive('/automatisation') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Automatisation</a></li>
-          <li><a href="/apport-affaires" class={`block py-2 px-3 rounded-lg ${isActive('/apport-affaires') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Apport d'affaires</a></li>
-          <li><a href={generateUrl('/blog')} class={`block py-2 px-3 rounded-lg ${isActive('/blog') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Blog</a></li>
-          {
-            cvEnabled &&
-            <li><a href={isEnglishPath ? '/en/resume' : '/cv'} class={`block py-2 px-3 rounded-lg ${isActive('/cv') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'Resume' : 'CV'}</a></li>
-          }
-          {
-            aboutEnabled &&
-            <li><a href={isEnglishPath ? '/en/about' : '/about'} class={`block py-2 px-3 rounded-lg ${isActive('/about') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>{isEnglishPath ? 'About' : 'À propos'}</a></li>
-          }
+          <li><a href="/automatisation/" class={`block py-2 px-3 rounded-lg ${isActive('/automatisation/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Automatisation</a></li>
+          <li><a href="/apport-affaires/" class={`block py-2 px-3 rounded-lg ${isActive('/apport-affaires/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Apport d'affaires</a></li>
+          <li><a href="/blog/" class={`block py-2 px-3 rounded-lg ${isActive('/blog/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Blog</a></li>
           {
             contactEnabled &&
-            <li><a href={isEnglishPath ? '/en/contact' : '/contact'} class={`block py-2 px-3 rounded-lg ${isActive('/contact') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Contact</a></li>
-          }
-          {
-            translationEnabled &&
-              <li>
-                <a
-                  href={isEnglishPath ? '/' : '/en'}
-                  class="block lang-switch py-2 px-3"
-                  data-astro-reload
-                >
-                  {isEnglishPath ? 'FR' : 'EN'}
-                </a>
-              </li>
+            <li><a href="/contact/" class={`block py-2 px-3 rounded-lg ${isActive('/contact/') ? 'nav-link-active' : 'nav-link'}`} data-astro-reload>Contact</a></li>
           }
         </ul>
       </nav>
@@ -294,7 +223,7 @@ if (!alternateLink) {
         <div id="formations-mega" class="hidden bg-surface-elevated border-t border-border-light">
           <div class="container mx-auto px-4 py-8">
             <div class="grid grid-cols-3 gap-8 max-w-5xl mx-auto">
-              <a href="/formations/git" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/git') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+              <a href="/formations/git/" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/git/') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-bold text-foreground-heading">Git avancé</span>
                   <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">2 jours</span>
@@ -303,7 +232,7 @@ if (!alternateLink) {
                 <p class="text-sm text-foreground-heading font-semibold">Passe de "ça marche je sais pas pourquoi" à "je sais exactement ce que je fais".</p>
                 <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
               </a>
-              <a href="/formations/phpunit" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/phpunit') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+              <a href="/formations/phpunit/" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/phpunit/') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-bold text-foreground-heading">PHPUnit</span>
                   <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">2 jours</span>
@@ -312,7 +241,7 @@ if (!alternateLink) {
                 <p class="text-sm text-foreground-heading font-semibold">Apprends à écrire des tests qui te font gagner du temps au lieu d'en perdre.</p>
                 <span class="inline-block mt-3 text-sm text-primary font-medium">Découvrir →</span>
               </a>
-              <a href="/formations/ddd" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/ddd') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
+              <a href="/formations/ddd/" class={`block p-5 rounded-lg hover:bg-surface border transition-all ${currentPath.startsWith('/formations/ddd/') ? 'border-border-light bg-surface' : 'border-transparent hover:border-border-light'}`} data-astro-reload>
                 <div class="flex items-center justify-between mb-2">
                   <span class="font-bold text-foreground-heading">DDD</span>
                   <span class="text-xs text-foreground-muted bg-surface px-2 py-0.5 rounded-full">3 à 5 jours</span>
@@ -324,7 +253,7 @@ if (!alternateLink) {
             </div>
             <div class="flex items-center justify-center gap-6 mt-6 pt-4 border-t border-border-light max-w-5xl mx-auto">
               <span class="text-sm text-foreground-muted">Organisme déclaré · 137+ développeurs formés · Depuis 2016</span>
-              <a href="/formations" class="text-sm bg-primary-cta text-on-primary px-4 py-1.5 rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors" data-astro-reload>Toutes les formations →</a>
+              <a href="/formations/" class="text-sm bg-primary-cta text-on-primary px-4 py-1.5 rounded-lg font-semibold hover:bg-primary-cta-hover transition-colors" data-astro-reload>Toutes les formations →</a>
             </div>
           </div>
         </div>
@@ -353,11 +282,11 @@ if (!alternateLink) {
             </a>
             {
               contactEnabled &&
-              <a href="/contact" class="social-link">
+              <a href="/contact/" class="social-link">
                   Contact
               </a>
             }
-            <a href={generateUrl('/rss.xml')} class="social-link" title="RSS Feed">
+            <a href="/rss.xml" class="social-link" title="RSS Feed">
               RSS
             </a>
           </div>
