@@ -6,6 +6,7 @@ pubDate: 2026-08-14
 categories: [organisation]
 series: audit
 service: audit
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7493921144434147328/"
 ---
 
 Sur le papier, tout va bien : PHPStan au niveau max, des tests automatisés, les métriques DORA en place. Et pourtant, l'équipe galère.
