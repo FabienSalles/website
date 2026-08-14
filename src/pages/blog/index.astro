@@ -16,7 +16,7 @@ const sortedPosts = posts.sort(
 const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].sort();
 ---
 
-<Layout title="Blog - Fabien Salles" description="Articles sur l'artisanat logiciel, le développement et les bonnes pratiques">
+<Layout title="Mindset, craft et organisation : le blog de Fabien Salles" description="L'ego dans les équipes tech, ce que le code dit de l'organisation, l'audit de projets legacy. Des articles de fond écrits depuis le terrain.">
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Blog' }]} />
   </div>
