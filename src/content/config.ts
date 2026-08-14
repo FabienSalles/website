@@ -15,6 +15,7 @@ const blog = defineCollection({
     series: z.enum(['ego', 'audit']).optional(),
     tldr: z.string().optional(),
     draft: z.boolean().default(false),
+    noindex: z.boolean().default(false),
   }),
 });
 

@@ -28,7 +28,7 @@ const githubBlogContributionBaseUrl = import.meta.env.GITHUB_BLOG_CONTRIBUTION_B
 
 const breadcrumbItems = [
   { label: 'Accueil', href: '/' },
-  { label: 'Blog', href: generateUrl('/blog') },
+  { label: 'Blog', href: '/blog/' },
   { label: post.data.title },
 ];
 
@@ -83,7 +83,7 @@ const articleJsonLd = {
 };
 ---
 
-<Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description}>
+<Layout title={`${post.data.title} - Fabien Salles`} description={post.data.description} noindex={post.data.noindex}>
   <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
   <div class="container mx-auto px-4 pt-12">
     <Breadcrumb items={breadcrumbItems} />

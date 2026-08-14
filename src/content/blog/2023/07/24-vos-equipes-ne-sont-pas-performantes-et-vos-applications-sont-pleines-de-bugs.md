@@ -7,6 +7,7 @@ categories: ["organisation", "performance", "qualité"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7089117225705447424/"
 service: "formation-ddd"
 draft: false
+noindex: true
 ---
 
 ![culture d'entreprise et travaille simon sinek](/images/blog/2023/07/simon-sinek-culture.webp)

@@ -6,6 +6,7 @@ categories: ["meetup", "afup", "php", "IA"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_2-meetups-2-jours-2-mois-de-veille-ia-activity-7386734243143651328-yL0F"
 service: "automatisation"
 draft: false
+noindex: true
 ---
 
 🧠 2 meetups, 2 jours, 2 mois de veille IA gagnés

@@ -6,6 +6,7 @@ categories: ["mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7087665544522280960/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Imposer ne signifie pas être un bon manager / leader ! 👇

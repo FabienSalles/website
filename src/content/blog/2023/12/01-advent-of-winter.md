@@ -7,6 +7,7 @@ categories: ["advent"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7136255133570469888/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Vous souhaitez profiter du mois de décembre pour monter en compétence en développement ?

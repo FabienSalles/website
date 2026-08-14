@@ -6,6 +6,7 @@ categories: ["organisation", "leadership", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_cest-toi-le-lead-cest-à-toi-de-réfléchir-activity-7072823829433077761-iX0e?utm_source=share&utm_medium=member_desktop"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 « C’est toi le lead, c’est à toi de réfléchir, pas aux développeurs de ton équipe »

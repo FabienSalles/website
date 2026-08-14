@@ -6,6 +6,7 @@ categories: ["organisation", "agile", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_utiliser-le-daily-scrum-pour-suivre-lavancement-activity-7076425242620874752-EszL/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Utiliser le Daily Scrum pour suivre l’avancement des développeurs fait perdre du temps !

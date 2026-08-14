@@ -6,6 +6,7 @@ categories: ["mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7086967801919217664/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Une équipe ne devrait pas avoir à justifier sa manière de travailler ! 👇

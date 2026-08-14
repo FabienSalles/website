@@ -6,6 +6,7 @@ categories: ["CI/CD", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7084051367056568321/"
 service: "formation-ddd"
 draft: false
+noindex: true
 ---
 
 ![QA collaboration](/images/blog/2023/07/qa.webp)

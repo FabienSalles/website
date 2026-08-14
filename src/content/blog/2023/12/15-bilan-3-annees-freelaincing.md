@@ -6,6 +6,7 @@ categories: ["freelance"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7141328554071359489/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 J’arrive à la fin de ma 3ᵉ année en tant que Freelance. Voici un petit bilan avec quelques chiffres pour ceux qui seraient intéressés 👇

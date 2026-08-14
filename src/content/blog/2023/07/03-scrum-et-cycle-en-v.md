@@ -7,6 +7,7 @@ categories: ["agile", "organisation", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7081509021039386624/"
 service: "formation-ddd"
 draft: false
+noindex: true
 ---
 
 ![water scrum fall](/images/blog/2023/07/water-scrum-fall.webp)
