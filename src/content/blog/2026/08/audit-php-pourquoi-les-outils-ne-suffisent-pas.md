@@ -1,8 +1,8 @@
 ---
 title: "Audit PHP : pourquoi les outils ne suffisent pas"
 description: Tes outils remontent des centaines d'alertes. Qui arbitre les faux positifs, priorise par impact business et assume la dette stratégique ?
-draft: true
-pubDate: 2026-08-05
+draft: false
+pubDate: 2026-08-14
 categories: [organisation]
 service: audit
 ---
