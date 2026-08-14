@@ -59,6 +59,7 @@ const articleJsonLd = {
   headline: post.data.title,
   description: post.data.description,
   datePublished: post.data.pubDate.toISOString(),
+  dateModified: (post.data.updatedDate ?? post.data.pubDate).toISOString(),
   inLanguage: 'fr-FR',
   author: { '@id': 'https://fabiensalles.com/#person' },
   publisher: { '@id': 'https://fabiensalles.com/#person' },
@@ -110,6 +111,17 @@ const articleJsonLd = {
                   day: 'numeric',
                 })}
               </time>
+              {post.data.updatedDate && (
+                <span>
+                  (mis à jour le <time datetime={post.data.updatedDate.toISOString()}>
+                    {post.data.updatedDate.toLocaleDateString('fr-FR', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>)
+                </span>
+              )}
               •
               <div class="flex gap-2">
                 {post.data.categories.map(category => (

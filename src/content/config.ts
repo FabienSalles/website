@@ -6,6 +6,7 @@ const blog = defineCollection({
     title: z.string(),
     description: z.string(),
     pubDate: z.date(),
+    updatedDate: z.date().optional(),
     categories: z.array(z.string()),
     linkedinPostUrl: z.string().url().optional(),
     service: z.enum([
