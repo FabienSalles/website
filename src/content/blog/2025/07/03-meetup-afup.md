@@ -6,6 +6,7 @@ categories: ["meetup", "afup", "php"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_meetup-de-juillet-ia-recrutement-et-%C3%A9lection-activity-7346476001888989184-FOKH"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 **AFUP Paris — Jeudi 24 juillet 🔥** **IA + Recrutement + Élections**

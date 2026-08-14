@@ -6,6 +6,7 @@ categories: ["organisation", "agile", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7073889798851031040/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Arrêtons avec les questions 👇  

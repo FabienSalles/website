@@ -8,6 +8,7 @@ categories: ["mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7075448919601631232/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Les 4 accords Toltèques est une référence à lire absolument.

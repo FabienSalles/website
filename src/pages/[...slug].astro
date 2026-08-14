@@ -4,9 +4,7 @@ import Layout from '../layouts/Layout.astro';
 
 // Import all page components statically
 import IndexPage from './index.astro';
-import AboutPage from './about.astro';
 import BlogIndexPage from './blog/index.astro';
-import CVPage from './cv.astro';
 import FormationsPage from './formations.astro';
 import BlogPostPage from './blog/[...slug].astro';
 import BlogCategoryPage from './blog/categories/[category].astro';
@@ -16,9 +14,7 @@ export async function getStaticPaths() {
 
   // Add static routes
   const staticRoutes = [
-    'about',
     'blog',
-    'cv',
     'formations'
   ];
 
@@ -57,9 +53,7 @@ const { slug = '' } = Astro.params;
 // Map routes to components
 const routeComponentMap = {
   '': IndexPage,
-  'about': AboutPage,
   'blog': BlogIndexPage,
-  'cv': CVPage,
   'formations': FormationsPage
 };
 

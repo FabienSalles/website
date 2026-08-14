@@ -26,7 +26,7 @@ const { category, posts } = Astro.props;
 const sortedPosts = posts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const noindex = posts.length < 3;
+const noindex = true;
 ---
 
 <Layout
@@ -35,7 +35,7 @@ const noindex = posts.length < 3;
   noindex={noindex}
 >
   <div class="container mx-auto px-4 pt-12">
-    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Blog', href: '/blog' }, { label: category }]} />
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Blog', href: '/blog/' }, { label: category }]} />
   </div>
   <div class="container max-w-3xl mx-auto px-4 pb-12 my-8">
     <div class="bg-surface-elevated rounded-lg p-8 border border-border-light">

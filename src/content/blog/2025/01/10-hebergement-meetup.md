@@ -6,6 +6,7 @@ categories: ["meetup", "afup", "php"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_votre-entreprise-est-situ%C3%A9e-%C3%A0-paris-et-peut-activity-7283104069387223041-mP9q/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Nous recherchons des adresses pour l'[AFUP Paris](https://www.linkedin.com/company/afup-paris/).

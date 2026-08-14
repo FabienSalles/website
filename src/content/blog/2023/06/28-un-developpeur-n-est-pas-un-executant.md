@@ -6,6 +6,7 @@ categories: ["mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7079691597751169024/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 Ils ne sont pas là pour suivre des directives et faire ce qu’on leur demande, mais pour :  

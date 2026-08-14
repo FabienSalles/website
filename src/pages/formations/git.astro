@@ -14,7 +14,7 @@ const recommendations = getRecommendationsForFormationPage('git');
   description="Formation Git avancée par Fabien Salles : rebase interactif, worktree, workflows (GitFlow, Trunk-based), conventions, conflits. 2 jours, 70% pratique."
 >
   <div class="container mx-auto px-4 pt-12">
-    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations' }, { label: 'Git' }]} />
+    <Breadcrumb items={[{ label: 'Accueil', href: '/' }, { label: 'Formations', href: '/formations/' }, { label: 'Git' }]} />
   </div>
 
   <!-- HERO SECTION (cream) -->
@@ -407,7 +407,7 @@ const recommendations = getRecommendationsForFormationPage('git');
           ))}
         </div>
         <div class="text-center mt-8">
-          <a href="/recommendations#formations" class="btn-outline w-full md:w-auto text-center">
+          <a href="/recommendations/#formations" class="btn-outline w-full md:w-auto text-center">
             Voir toutes les recommandations →
           </a>
         </div>
@@ -497,7 +497,7 @@ const recommendations = getRecommendationsForFormationPage('git');
         </div>
       </div>
       <p class="text-center mt-8 text-foreground-muted">
-        N'hésite pas à <a href="/contact?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
+        N'hésite pas à <a href="/contact/?subject=formation" title="Me contacter pour une formation" class="text-primary hover:underline font-semibold">me contacter pour un devis personnalisé</a>.
       </p>
     </div>
   </section>
@@ -537,7 +537,7 @@ const recommendations = getRecommendationsForFormationPage('git');
         </p>
         <div class="grid grid-cols-2 md:flex justify-center gap-4">
           <a
-            href="/contact"
+            href="/contact/"
             title="Me contacter"
             class="btn-primary text-lg text-center"
           >

@@ -6,6 +6,7 @@ categories: ["organisation", "tests", "TDD", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7071362108411494400/"
 service: "formation-phpunit"
 draft: false
+noindex: true
 ---
 C’est sur que si tu as développé ta fonctionnalité en testant manuellement, les tests automatisées perdent de leurs intérêts…
 

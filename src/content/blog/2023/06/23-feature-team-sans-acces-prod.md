@@ -7,6 +7,7 @@ categories: ["organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7077898488407040000/"
 service: "formation-ddd"
 draft: false
+noindex: true
 ---
 
 C’est un peu comme vouloir utiliser une moto de course dans Paris.

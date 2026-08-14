@@ -8,7 +8,7 @@ series: audit
 service: audit
 ---
 
-Dans [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas), j'ai posé une thèse : le code reflète d'abord le cadre dans lequel il a été écrit. Les délais imposés, les arbitrages tranchés en haut, les silos, la pression. Tout ce qui ne se voit pas dans un dashboard, mais qui détermine ce qu'on trouve dans le repo.
+Dans [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas/), j'ai posé une thèse : le code reflète d'abord le cadre dans lequel il a été écrit. Les délais imposés, les arbitrages tranchés en haut, les silos, la pression. Tout ce qui ne se voit pas dans un dashboard, mais qui détermine ce qu'on trouve dans le repo.
 
 Reste une question concrète. Comment lit-on ce cadre dans le code, quand on n'est pas dans la salle de réunion où il a été décidé ?
 
@@ -74,7 +74,7 @@ Au-delà, le couplage temporel<sup>[9](#glossaire)</sup> est un signal encore pl
 
 Un autre signal lisible dans le git : le Bus Factor<sup>[10](#glossaire)</sup>. Combien d'auteurs ont touché telle zone du code ? Si la réponse est « un seul, et il est parti il y a six mois », tu as un problème. La connaissance de cette zone s'est éteinte avec son auteur. Personne d'autre n'a la mémoire de ce qui s'y passe.
 
-C'est ce que la recherche académique appelle le knowledge hiding<sup>[11](#glossaire)</sup>. Pas toujours volontaire. Parfois c'est une organisation qui n'a pas mis en place de revue de code ou de pair programming. Parfois c'est un développeur qui, par peur de perdre sa place, retient ce qu'il sait pour rester indispensable. Ce réflexe touche à l'ego et à la peur du jugement, un biais que j'ai creusé dans [un article dédié](/blog/2026/03/ego-developpement-logiciel).
+C'est ce que la recherche académique appelle le knowledge hiding<sup>[11](#glossaire)</sup>. Pas toujours volontaire. Parfois c'est une organisation qui n'a pas mis en place de revue de code ou de pair programming. Parfois c'est un développeur qui, par peur de perdre sa place, retient ce qu'il sait pour rester indispensable. Ce réflexe touche à l'ego et à la peur du jugement, un biais que j'ai creusé dans [un article dédié](/blog/2026/03/ego-developpement-logiciel/).
 
 Une équipe saine distribue la connaissance. Une équipe en souffrance la concentre.
 
@@ -126,7 +126,7 @@ Lire l'organisation dans le code demande une posture autant qu'une technique.
 
 La tentation, quand on remonte des signaux comme ceux-là, c'est d'identifier des coupables. Tel développeur qui a écrit tel code spaghetti. La posture est confortable, et elle est presque toujours fausse.
 
-Dans [Pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas), j'écrivais : « la faute est presque toujours renvoyée à celui qui développe le produit. Au dev, à l'équipe tech, parfois au tech lead. Mais le code reflète d'abord le cadre dans lequel il a été écrit. » Cette posture reste centrale.
+Dans [Pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas/), j'écrivais : « la faute est presque toujours renvoyée à celui qui développe le produit. Au dev, à l'équipe tech, parfois au tech lead. Mais le code reflète d'abord le cadre dans lequel il a été écrit. » Cette posture reste centrale.
 
 Quand tu lis un hotspot, un fichier complexe que toute l'équipe retouche en permanence, ce ne sont pas les personnes qui l'ont modifié qui sont en cause. C'est le système qui les a fait converger sur ce point. Quand tu vois un Bus Factor de 1 sur une zone critique, ce n'est pas la personne qui en sait qui est en faute. C'est l'organisation qui n'a pas mis en place les conditions pour distribuer la connaissance.
 
@@ -164,7 +164,7 @@ Les hotspots, le couplage temporel, le Bus Factor, le langage du code, l'histori
 
 Au lieu de juger le code, cherche à comprendre le contexte qui a permis sa mise en place. Un audit utile ne demande pas à l'équipe de justifier ce qu'elle a écrit. Il essaie de remonter à ce qui, dans son environnement de travail, a rendu ce code possible.
 
-Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audit peut t'apporter. [Discutons de ton contexte](/audit).
+Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audit peut t'apporter. [Discutons de ton contexte](/audit/).
 
 ## Glossaire
 

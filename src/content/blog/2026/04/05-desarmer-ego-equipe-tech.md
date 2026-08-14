@@ -14,7 +14,7 @@ Reconnaître l'égo, c'est la première étape. Le cataloguer, c'est la deuxièm
 
 Désarmer l'égo demande d'agir à deux niveaux. D'abord sur soi, parce que c'est le seul levier qu'on contrôle. Ensuite sur le système, parce que désarmer son égo ne sert à rien si l'environnement le réactive en permanence.
 
-Les deux premiers articles de cette série posaient le constat ([l'égo est un biais systémique](/blog/2026/03/ego-developpement-logiciel)) et le catalogue ([12 visages concrets](/blog/2026/03/12-visages-ego-developpeur)). Celui-ci propose des leviers concrets. Certains sont individuels. D'autres sont collectifs. Tous partent du même principe : l'égo ne se combat pas par la volonté. Il se désarme par la conscience et le cadre.
+Les deux premiers articles de cette série posaient le constat ([l'égo est un biais systémique](/blog/2026/03/ego-developpement-logiciel/)) et le catalogue ([12 visages concrets](/blog/2026/03/12-visages-ego-developpeur/)). Celui-ci propose des leviers concrets. Certains sont individuels. D'autres sont collectifs. Tous partent du même principe : l'égo ne se combat pas par la volonté. Il se désarme par la conscience et le cadre.
 
 ## Toi d'abord
 
@@ -38,7 +38,7 @@ On confond souvent confiance en soi et estime de soi. Kristin Neff, chercheuse e
 
 L'autocompassion est différente. Trois piliers : la bienveillance envers soi, l'humanité commune, la pleine conscience. Elle apporte les mêmes bénéfices que l'estime de soi, sans les effets toxiques. Stable même dans l'échec. Indépendante de la performance.
 
-J'avais écrit [un article à ce sujet](/blog/2023/07/05-qualite-la-plus-importante-d-une-personne-dans-une-equipe) : l'autocompassion permet de prendre ses responsabilités sans chercher un coupable, d'être satisfait de son travail sans rechercher la perfection, de penser collectif au lieu de protéger son territoire.
+J'avais écrit [un article à ce sujet](/blog/2023/07/05-qualite-la-plus-importante-d-une-personne-dans-une-equipe/) : l'autocompassion permet de prendre ses responsabilités sans chercher un coupable, d'être satisfait de son travail sans rechercher la perfection, de penser collectif au lieu de protéger son territoire.
 
 Au lieu de « je dois être le meilleur » (estime de soi, égo), on passe à « je fais de mon mieux dans ce contexte, et c'est suffisant » (autocompassion). Et paradoxalement, c'est cette posture qui construit une vraie confiance en soi, solide parce qu'elle ne dépend plus du regard des autres.
 

@@ -6,6 +6,7 @@ categories: ["mindset", "développement personnel"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7077155685397876736/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 C'étaient les mêmes schémas, à chaque fois, durant de nombreuses années… 👇

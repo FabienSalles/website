@@ -6,6 +6,7 @@ categories: ["mindset", "développement personnel"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7082230607904137216/"
 service: "accompagnement"
 draft: false
+noindex: true
 ---
 
 ![Self compassion](/images/blog/2023/07/self-compassion.webp)

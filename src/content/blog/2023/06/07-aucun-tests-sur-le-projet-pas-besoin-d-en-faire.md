@@ -6,6 +6,7 @@ categories: ["tests", "mindset"]
 linkedinPostUrl: "https://www.linkedin.com/posts/fabiensalles_cela-ne-sert-à-rien-décrire-tests-sur-activity-7072089811427160064-oqLE"
 service: "formation-phpunit"
 draft: false
+noindex: true
 ---
 
 💡 Écrire des tests pour écrire des tests ne sert effectivement à rien. Ce n’est qu’un outil, pas une finalité.

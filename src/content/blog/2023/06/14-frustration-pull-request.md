@@ -6,6 +6,7 @@ categories: ["CI/CD", "mindset", "organisation"]
 linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:share:7074446162908311553/"
 service: "formation-git"
 draft: false
+noindex: true
 ---
 
 Voici 10 cas personnels et des solutions que l’on peut envisager pour y répondre👇
