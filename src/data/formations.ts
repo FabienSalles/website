@@ -15,9 +15,31 @@ export interface FormationSession {
 // Données des formations
 export const formationSessions: FormationSession[] = [
   {
+    date: '2026-08',
+    name: 'git',
+    number: 5,
+    recommendations: [
+      {
+        name: 'Michael P.',
+        note: 5,
+        recommendation: "Très bonne formation, avec un formateur également très compétent et pédagogue. Le contenu est intéressant et bien présenté."
+      },
+      {
+        name: 'Participant',
+        note: 5,
+        recommendation: "Le formateur maîtrise très bien son sujet et sait le rendre accessible. Ses explications sont claires, il prend le temps de répondre aux questions et son approche pédagogique rend la formation vivante et intéressante !"
+      },
+      {
+        name: 'Franck Boivin',
+        note: 5,
+        recommendation: "Présentation complète qui doit répondre a ce que l on peut rencontrer dans notre domaine."
+      }
+    ]
+  },
+  {
     date: '2026-05',
     name: 'phpunit',
-    number: 6,
+    number: 5,
     recommendations: [
       {
         name: 'Enzo B.',
@@ -54,7 +76,7 @@ export const formationSessions: FormationSession[] = [
   {
     date: '2026-04',
     name: 'ddd',
-    number: 3,
+    number: 28,
     recommendations: [
       {
         name: 'Participant',
@@ -72,6 +94,16 @@ export const formationSessions: FormationSession[] = [
         recommendation: "Sympa, sûrement une des formations les plus utiles que j'ai suivies."
       }
     ]
+  },
+  {
+    date: '2026-04',
+    name: 'git',
+    number: 10,
+  },
+  {
+    date: '2026-03',
+    name: 'phpunit',
+    number: 13,
   },
   {
     date: '2026-02',
@@ -157,7 +189,7 @@ export const formationSessions: FormationSession[] = [
         recommendation: "Stage très vivant et formateur, le formateur a su s’adapter aux besoins de chacun !"
       },
       {
-        name: 'Alexandre T..',
+        name: 'Alexandre T.',
         note: 4.7,
         recommendation: "Très bien, le formateur s’adapte aux besoins spécifiques des participants. On a pu faire des exercices sur notre environnement de travail (Eclipse)"
       }
@@ -189,7 +221,7 @@ export const formationSessions: FormationSession[] = [
     number: 14,
   },
   {
-    date: '2017-02',
+    date: '2017-12',
     name: 'phpunit',
     number: 3,
     recommendations: [
@@ -201,7 +233,7 @@ export const formationSessions: FormationSession[] = [
     ]
   },
   {
-    date: '2017-02',
+    date: '2017-12',
     name: 'phpunit',
     number: 2,
     recommendations: [
@@ -221,11 +253,6 @@ export const formationSessions: FormationSession[] = [
     date: '2017-06',
     name: 'phpunit',
     number: 3
-  },
-  {
-    date: '2017-01',
-    name: 'sql',
-    number: 10,
   },
   {
     date: '2017-02',
@@ -270,6 +297,11 @@ export const formationSessions: FormationSession[] = [
     date: '2016-11',
     name: 'symfony',
     number:  4
+  },
+  {
+    date: '2016-07',
+    name: 'sql',
+    number: 10,
   }
 ];
 
