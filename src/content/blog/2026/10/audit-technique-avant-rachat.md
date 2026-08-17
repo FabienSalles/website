@@ -89,7 +89,7 @@ Une dépendance technique recouvre souvent une question de position. Un système
 
 Reste à savoir qui détient la donnée. Une application qui ne fait que la transiter pour la reformuler dans le langage d'un tiers ne détient pas le cœur métier qu'elle revendique. Elle en est l'intermédiaire.
 
-En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation/).
+En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation/).
 
 ## Identifier le cœur métier
 
@@ -219,7 +219,7 @@ Et on situe chaque défaut sur la brique où il se trouve.
 | Générique | Un service du marché fait le travail | Aucun sujet |
 | Générique | Développé maison, à maintenir | Coût récurrent, remplaçable quand on veut |
 
-Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/09/ce-que-ton-code-dit-de-ton-organisation/).
+Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation/).
 
 Ce que ces constats deviennent dans le contrat ne se décide pas de mon côté. Mais c'est là qu'ils servent : à suspendre la vente, à obtenir une garantie du vendeur, ou à discuter le prix.
 
