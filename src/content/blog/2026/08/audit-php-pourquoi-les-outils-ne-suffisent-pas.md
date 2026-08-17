@@ -111,7 +111,7 @@ Et pourtant, ces facteurs expliquent souvent mieux ton code que toutes les métr
 
 Un couplage fort entre deux modules en dit plus sur les équipes qui les ont écrits que sur l'architecture choisie. Trois manières de faire la même chose dans le même projet, c'est de l'histoire : chaque époque a laissé ses patterns.
 
-Cette dimension est traitée en profondeur dans un autre article de la série. Ce qu'il faut acter ici : aucun outil automatisé ne lit cette couche. Elle se lit avec un humain qui parle à l'équipe, qui regarde le git log, qui croise les données et les zones de friction, et qui en tire une interprétation.
+Cette dimension est traitée en profondeur dans [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation/). Ce qu'il faut acter ici : aucun outil automatisé ne lit cette couche. Elle se lit avec un humain qui parle à l'équipe, qui regarde le git log, qui croise les données et les zones de friction, et qui en tire une interprétation.
 
 J'ai vu ces impacts à profils égaux mais dans des contextes opposés. Deux projets PHP. Le premier : forfait, pression sur les délais, équipe sous-staffée. Code spaghetti, dette qui s'accumule, sentiment d'impuissance. Le second : carte blanche, équipe autonome, contact direct avec le métier. Trunk-based<sup>[4](#glossaire)</sup>, déploiement continu, qualité élevée.
 
