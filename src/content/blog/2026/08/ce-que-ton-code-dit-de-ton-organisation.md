@@ -172,6 +172,8 @@ Le code est le miroir de ton organisation. Mais un miroir ne se lit pas en passa
 
 Les hotspots, le couplage temporel, le Bus Factor, le langage du code, l'historique des commits : autant de signaux que les scores de qualité ne racontent pas, et qui en disent long sur la santé d'une organisation.
 
+Et derrière chaque signal, un étage où la cause se loge : le client, le contrat, le staffing, le rapport de force, l'équipe elle-même. Ce n'est pas le même remède selon l'étage.
+
 Au lieu de juger le code, cherche à comprendre le contexte qui a permis sa mise en place. Un audit utile ne demande pas à l'équipe de justifier ce qu'elle a écrit. Il essaie de remonter à ce qui, dans son environnement de travail, a rendu ce code possible.
 
 Si tu reconnais ta situation, ces signaux ne sont qu'une partie de ce qu'un audit peut t'apporter. [Discutons de ton contexte](/audit/).
