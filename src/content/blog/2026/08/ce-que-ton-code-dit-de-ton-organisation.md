@@ -34,15 +34,25 @@ Quand on cite la loi de Conway, on pense presque toujours à l'organigramme : le
 
 Quelques étages où la cause peut se loger, avec, pour chacun, ce qui se lit dans le code.
 
-**Le client final.** Absent, indécis, ou trop occupé pour fournir les specs. L'équipe avance quand même : elle invente les règles métier à sa place. Je l'ai vécu en mission. On est passés de trois à sept développeurs pour absorber la pression, et le goulot s'est déplacé chez le métier : les specs n'arrivaient plus, on a fait les choix métier à la place du client. La théorie des contraintes de Goldratt en pratique : ajouter des ressources à un maillon ne résout rien si le maillon contraignant est ailleurs. Le projet a fini par tripler en jours-hommes. Dans le code, ça se lit : des règles métier inventées ou mal implémentées, des edge cases inutiles, un vocabulaire qui ne correspond à rien de ce que dit le métier.
+### Le client final
 
-**Le contexte contractuel.** Un forfait serré pousse à raboter la qualité pour tenir la marge. Il peut même pousser à laisser passer des bugs : leur correction sera facturée plus tard, dans le contrat de TMA<sup>[1](#glossaire)</sup> (tierce maintenance applicative) qui prend le relais. Une échéance imposée de l'extérieur comme une campagne marketing produit le même effet : des raccourcis pris sous pression, qu'on retrouve dans le code, datés et regroupés autour des dates clés. Ce code raconte plus les contraintes de l'équipe que son expertise réelle.
+Absent, indécis, ou trop occupé pour fournir les specs. L'équipe avance quand même : elle invente les règles métier à sa place. Je l'ai vécu en mission. On est passés de trois à sept développeurs pour absorber la pression, et le goulot s'est déplacé chez le métier : les specs n'arrivaient plus, on a fait les choix métier à la place du client. La théorie des contraintes de Goldratt en pratique : ajouter des ressources à un maillon ne résout rien si le maillon contraignant est ailleurs. Le projet a fini par tripler en jours-hommes. Dans le code, ça se lit : des règles métier inventées ou mal implémentées, des edge cases inutiles, un vocabulaire qui ne correspond à rien de ce que dit le métier.
 
-**Le staffing qui tourne.** Quand les développeurs changent régulièrement de projet, chaque arrivant apporte ses habitudes et repart avant de les avoir accordées avec celles des autres. Plus le turnover est élevé, plus le code accumule de façons de faire différentes, sans cohérence d'ensemble : des styles qui changent par strates, des traductions différentes pour le même concept métier, voire plusieurs traitements pour le même besoin.
+### Le contexte contractuel
 
-**La relation de pouvoir.** Le DDD a nommé ces rapports de force. Dans une relation Customer/Supplier<sup>[2](#glossaire)</sup>, le fournisseur peut négocier : les priorités du client pèsent, mais la discussion existe. Dans une relation Conformist, l'aval n'a aucun pouvoir et subit le modèle de l'amont tel quel. Ça se voit dans le code. Une intégration où le vocabulaire d'un système tiers contamine tout le modèle, sans couche de traduction (ce que le DDD appelle un Anti-Corruption Layer<sup>[3](#glossaire)</sup>), raconte une relation où personne n'a pu, ou osé, négocier. L'ACL absent est souvent la trace d'un rapport de force absent.
+Un forfait serré pousse à raboter la qualité pour tenir la marge. Il peut même pousser à laisser passer des bugs : leur correction sera facturée plus tard, dans le contrat de TMA<sup>[1](#glossaire)</sup> (tierce maintenance applicative) qui prend le relais. Une échéance imposée de l'extérieur comme une campagne marketing produit le même effet : des raccourcis pris sous pression, qu'on retrouve dans le code, datés et regroupés autour des dates clés. Ce code raconte plus les contraintes de l'équipe que son expertise réelle.
 
-**L'équipe elle-même, même avec les moyens.** Une équipe peut avoir le budget, l'autonomie et les outils, et produire quand même du code confus : trop de sujets à porter en même temps (ce que Team Topologies appelle la charge cognitive<sup>[4](#glossaire)</sup>), des modes de collaboration jamais explicités entre équipes, une organisation interne qui repose sur des habitudes plutôt que sur des accords. Les moyens ne remplacent pas la communication.
+### Le staffing qui tourne
+
+Quand les développeurs changent régulièrement de projet, chaque arrivant apporte ses habitudes et repart avant de les avoir accordées avec celles des autres. Plus le turnover est élevé, plus le code accumule de façons de faire différentes, sans cohérence d'ensemble : des styles qui changent par strates, des traductions différentes pour le même concept métier, voire plusieurs traitements pour le même besoin.
+
+### La relation de pouvoir
+
+Le DDD a nommé ces rapports de force. Dans une relation Customer/Supplier<sup>[2](#glossaire)</sup>, le fournisseur peut négocier : les priorités du client pèsent, mais la discussion existe. Dans une relation Conformist, l'aval n'a aucun pouvoir et subit le modèle de l'amont tel quel. Ça se voit dans le code. Une intégration où le vocabulaire d'un système tiers contamine tout le modèle, sans couche de traduction (ce que le DDD appelle un Anti-Corruption Layer<sup>[3](#glossaire)</sup>), raconte une relation où personne n'a pu, ou osé, négocier. L'ACL absent est souvent la trace d'un rapport de force absent.
+
+### L'équipe elle-même, même avec les moyens
+
+Une équipe peut avoir le budget, l'autonomie et les outils, et produire quand même du code confus : trop de sujets à porter en même temps (ce que Team Topologies appelle la charge cognitive<sup>[4](#glossaire)</sup>), des modes de collaboration jamais explicités entre équipes, une organisation interne qui repose sur des habitudes plutôt que sur des accords. Les moyens ne remplacent pas la communication.
 
 Cinq étages, cinq remèdes différents. Un audit qui s'arrête à « le code est mauvais » n'a pas fini son travail : reste à trouver à quel étage la cause habite, parce que le remède n'est pas le même.
 
