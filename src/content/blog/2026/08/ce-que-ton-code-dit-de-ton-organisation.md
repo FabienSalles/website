@@ -3,7 +3,7 @@ title: Ce que ton code dit de ton organisation
 description: "Hotspots, couplage temporel, archéologie git : ton code raconte les silos, la pression et les arbitrages de ton organisation. À condition de savoir le lire."
 draft: false
 pubDate: 2026-08-17
-linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7495020907283992576/"
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7495020908093546496/"
 categories: [organisation]
 series: audit
 service: audit
