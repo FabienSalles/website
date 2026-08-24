@@ -4,6 +4,7 @@ description: "Audit technique avant rachat : ce qui peut bloquer la reprise, ce 
 draft: false
 pubDate: 2026-08-24
 categories: [audit, strategie]
+linkedinPostUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7497561150755127296/"
 service: audit
 series: audit
 ---
