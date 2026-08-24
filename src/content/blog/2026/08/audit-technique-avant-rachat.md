@@ -1,11 +1,11 @@
 ---
 title: "Audit technique avant rachat : ce qu'il faut vérifier"
 description: "Audit technique avant rachat : ce qui peut bloquer la reprise, ce qui la complique, et ce qu'une lecture de code ne pourra jamais te dire."
-draft: true
-pubDate: 2026-10-06
+draft: false
+pubDate: 2026-08-24
 categories: [audit, strategie]
-series: audit
 service: audit
+series: audit
 ---
 
 Un rapport d'audit technique classe les problèmes par gravité : critique, majeur, mineur. C'est utile quand on veut redresser une application qu'on garde.
@@ -14,9 +14,11 @@ Devant un rachat, ce classement ne répond pas forcément à la bonne question.
 
 La gravité d'un défaut dépend de ce que l'acquéreur compte faire du logiciel. Une dette technique lourde sur un module qu'on éteindra dans six mois ne coûte presque rien. La même dette sur le composant qui doit absorber trois fois plus d'utilisateurs l'an prochain change la nature du deal. Pourtant, la plupart des audits produisent la même liste. Dans les deux cas.
 
+Cette lecture sert autant à l'acheteur qui négocie qu'au vendeur qui prépare sa sortie : les deux ont intérêt à savoir ce que le rapport dira.
+
 Cet écart est le vrai sujet d'une due diligence<sup>[1](#glossaire)</sup> technique : ce système tient-il la promesse pour laquelle on l'achète ?
 
-## L'intention de l'acheteur commande tout le reste
+## L'intention de l'acheteur commande tout
 
 Je n'ouvre pas le code avant d'avoir eu cette conversation.
 
@@ -40,7 +42,7 @@ En exploitation telle quelle, un vieux monolithe que personne n'a envie de touch
 
 En accélération, la lecture s'inverse. Ce n'est plus l'état du code qui compte, mais sa capacité à suivre la direction envisagée.
 
-## Avant de savoir ce que vaut le logiciel, vérifier qu'on peut le reprendre
+## Peut-on seulement reprendre le logiciel ?
 
 C'est l'ordre que j'ai fini par adopter. Évaluer la qualité d'une application dont on découvre ensuite qu'on ne peut pas l'exploiter, c'est du travail perdu.
 
@@ -59,13 +61,13 @@ Les points que je remonte, sans prétendre les traiter :
 - Les dépendances externes et partenaires : que se passe-t-il s'ils cessent leurs activités, refusent de continuer, ou sont rachetés par un concurrent de l'acquéreur ?
 - Les moyens de déployer : scripts d'infrastructure, procédures d'exploitation et chaînes de déploiement font-ils partie du périmètre cédé ? Récupérer le code sans pouvoir le mettre en production ne permet pas de l'exploiter.
 
-### Les droits sur le code écrit par un prestataire
+### Les droits sur le code d'un prestataire
 
 Un dernier point mérite une mention à part, parce qu'il touche directement au code.
 
 En France, les droits sur un logiciel écrit par un salarié dans le cadre de ses fonctions reviennent automatiquement à l'employeur. Cette dévolution repose sur le lien de subordination, et elle ne joue donc pas hors salariat : freelance, société de services, dirigeant non salarié. Dans ces cas, il faut une cession de droits<sup>[4](#glossaire)</sup> écrite, et avoir payé la prestation ne suffit pas à l'établir.
 
-Il arrive qu'une entreprise ait fait développer une partie de son logiciel par un prestataire externe, sur la base d'un bon de commande qui ne dit rien des droits. Je ne qualifie jamais juridiquement ces situations. Ce n'est pas mon métier. Je pose la question et constate l'absence de contrat écrit, parce que l'incertitude qui en découle est elle-même le risque.
+Il arrive qu'une entreprise ait fait développer une partie de son logiciel par un prestataire externe, sur la base d'un bon de commande qui ne dit rien des droits. Je ne qualifie jamais juridiquement ces situations. Ce n'est pas mon métier. Je pose simplement la question parce que l'incertitude qui peut en découler est un risque.
 
 ## Les dépendances qui compliquent sans bloquer
 
@@ -83,13 +85,23 @@ Une question manque souvent à ce stade : qui reste après la vente, sous quel e
 
 Quand plus personne n'est en mesure de transmettre le produit, parce que l'équipe est partie ou que la passation n'aura pas lieu, il reste une option. Reconstituer la documentation à partir du code et de l'historique. C'est une prestation que j'assure. Ça ne remplace pas ce que les gens savaient, mais ça rend un système reprenable.
 
+### Le coût de fonctionnement
+
+Hébergement, licences, services tiers facturés à l'usage, astreinte : le coût mensuel d'exploitation est un des rares chiffres qu'on obtient vite. Il est tentant de le lire comme une donnée stable. Il dépend en fait de la même intention que tout le reste.
+
+Quand l'application doit s'éteindre une fois les clients migrés, il ne permet que d'estimer un coût temporaire.
+
+Quand on exploite le produit tel quel, il reste à peu près ce qu'il est, et c'est là qu'il devient exploitable. On y trouve presque toujours des postes à réduire sans toucher au fonctionnel : dimensionnement calé sur un pic ancien, environnements laissés allumés, traitements qui font travailler la base plus que nécessaire, stockage jamais purgé.
+
+En accélération, c'est l'inverse. La facture d'aujourd'hui ne dit rien de celle de demain, parce qu'elle dépend de la dette en place. Une architecture qui ne monte qu'en augmentant la taille des machines, un traitement qui recalcule tout au lieu de traiter l'incrément, une requête sans index sur une table qui grossit : dans ces cas, le coût ne suit pas la charge, il l'amplifie. Doubler les utilisateurs peut tripler la facture.
+
 ### Qui impose son modèle à qui
 
 Une dépendance technique recouvre souvent une question de position. Un système qui adopte le modèle d'un tiers, son langage et ses spécificités, perd sa liberté : chaque changement décidé en face a des conséquences lourdes, qu'il faut suivre et répercuter partout où ce modèle a été recopié. À l'inverse, un système qui pose une couche de protection entre les deux, ce qu'on appelle une couche anticorruption, garde sa liberté de mouvement et limite les dégâts quand le tiers évolue.
 
 Reste à savoir qui détient la donnée. Une application qui ne fait que la transiter pour la reformuler dans le langage d'un tiers ne détient pas le cœur métier qu'elle revendique. Elle en est l'intermédiaire.
 
-En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation/).
+En rachetant l'application, on rachète cette position. Elle relève rarement du seul choix technique, et c'est ce que j'explore dans [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation).
 
 ## Identifier le cœur métier
 
@@ -101,13 +113,13 @@ On peut distinguer trois natures de briques dans une application.
 - **Les sous-domaines support**<sup>[6](#glossaire)</sup> sont nécessaires au fonctionnement sans rien différencier : la gestion documentaire, le paramétrage, les exports.
 - **Les sous-domaines génériques**<sup>[7](#glossaire)</sup> couvrent l'authentification, l'envoi d'emails, l'émission de factures, tout ce que chacun fait sans s'en différencier.
 
-Cette classification vient du Domain-Driven Design, que j'[enseigne en formation](/formations/ddd/) et que je pratique depuis **2014**. Ce qu'elle apporte à un audit de rachat, c'est une lecture stratégique que le code seul ne donne pas. Elle montre où l'effort de développement a été mis, et permet de se demander s'il l'a été au bon endroit.
+Cette classification vient du Domain-Driven Design, que j'[enseigne en formation](/formations/ddd) et que je pratique depuis **2014**. Ce qu'elle apporte à un audit de rachat, c'est une lecture stratégique que le code seul ne donne pas. Elle montre où l'effort de développement a été mis, et permet de se demander s'il l'a été au bon endroit.
 
 Le même défaut ne se lit pas pareil selon la brique où il se trouve.
 
 Une dette sur du générique se règle en remplaçant le composant par un service existant. Du travail, aucun danger. La même dette sur le cœur métier attaque ce pour quoi on paie : si le calcul de prix est illisible et que personne ne sait plus le modifier, l'entreprise ne peut plus faire évoluer son avantage concurrentiel.
 
-Reste à savoir classer. ### Trier les briques d'une application
+Reste à savoir classer.
 
 ### Une question ne suffit pas à trancher
 
@@ -125,17 +137,15 @@ L'historique du code donne un signal plus fiable que le discours. Si les contrib
 
 On peut aussi avoir une complexité applicative faible derrière laquelle se cache une forte complexité métier, si celle-ci se joue en dehors de l'application.
 
-Prenons un module de saisie de devis. Le code est un formulaire, l'équipe technique répond honnêtement que non, ça ne la dérange pas qu'un concurrent ait le même. Elle a raison sur le code. Sauf que les commerciaux appliquent de tête des règles de remise qui ne sont écrites nulle part dans le logiciel. La complexité existe. Elle n'est pas dans l'application, et le vrai actif de l'entreprise est ailleurs.
+Prenons un module de saisie de devis. Le code est un simple formulaire sans contraintes métier sauf que les commerciaux appliquent de tête des règles de remise qui ne sont écrites nulle part dans le logiciel. La complexité existe. Elle n'est pas dans l'application, et le vrai actif de l'entreprise est ailleurs.
 
 ### La durée de vie d'un avantage
 
 Reste à savoir si l'avantage concurrentiel va perdurer dans le temps. Tout ce qui a de la valeur finit par se banaliser : ce qui relevait de l'invention devient un produit, puis une commodité que le marché fournit à tout le monde.
 
-Ponicode génère des tests unitaires par intelligence artificielle. La société lève 3 millions d'euros en 2020, puis se fait racheter par CircleCI en mars 2022. Aujourd'hui, son site redirige vers celui de l'acquéreur, son extension a disparu du catalogue, et aucune offre de CircleCI ne porte cette technologie. Entre-temps, générer un test est devenu une fonction ordinaire des assistants de code.
+Exemple avec Ponicode, qui génère des tests unitaires par intelligence artificielle. La société lève 3 millions d'euros en 2020, puis se fait racheter par CircleCI en mars 2022. Aujourd'hui, son site redirige vers celui de l'acquéreur, son extension a disparu du catalogue, et aucune offre de CircleCI ne porte cette technologie. Entre-temps, générer un test est devenu une fonction ordinaire des assistants de code.
 
-Il faut donc étudier la trajectoire et déterminer si la valeur de l'avantage concurrentiel affiché peut être remise en question.
-
-## Les données valent souvent plus que le code
+## L'importance des données
 
 Quand on rachète un portefeuille de clients, l'actif réel n'est peut-être pas l'application. C'est ce qu'il y a dans la base.
 
@@ -145,15 +155,15 @@ La première chose à regarder, c'est la structure des données. Des contraintes
 
 La structure décide ensuite du coût de reprise. Un modèle relationnel documenté et contraint se migre. On connaît les entités, leurs relations et leurs types. Un stockage documentaire, ou des colonnes qui contiennent du texte libre ou des structures sans schéma imposé, demande d'abord un travail d'archéologie. Il faut deviner la forme des données, si elle a changé à plusieurs reprises et écrire un convertisseur pour chaque variante.
 
-Les dimensions à instruire sont connues et stables depuis longtemps : complétude, exactitude, cohérence, unicité, validité, fraîcheur...
+Il y a différents axes qui peuvent être pris en compte : complétude, exactitude, cohérence, unicité, validité, fraîcheur...
 
-### Quand deux systèmes ne parlent pas de la même chose
+### Le même mot, deux modèles
 
-Un dernier écueil, qui ne se voit qu'en comparant deux systèmes. Deux produits appellent « client » deux choses qui n'ont pas la même forme. L'un enregistre une ligne par entreprise, avec des contacts rattachés. L'autre enregistre une ligne par personne, reliée à des entreprises. Sur le papier, les deux ont des clients. Dans les faits, faire passer les données de l'un à l'autre n'est pas une migration. C'est une refonte du modèle.
+Un dernier écueil, qui ne se voit qu'en comparant deux systèmes. Deux produits appellent « client » deux choses qui n'ont pas la même forme. L'un enregistre une ligne par entreprise, avec des contacts rattachés. L'autre enregistre une ligne par personne, reliée à des entreprises. Sur le papier, les deux ont des clients. Dans les faits, faire passer les données de l'un à l'autre peut devenir une migration coûteuse sous-estimée.
 
 Si la donnée doit être migrée, il faut donc vérifier qu'elle respecte bien l'ensemble des critères de l'outil cible.
 
-## La sécurité et son passif de conformité suivent l'application
+## Le passif de sécurité suit l'application
 
 ### Ce qui se vérifie côté technique
 
@@ -180,7 +190,7 @@ En France, ce serait la CNIL. Pour les manquements les plus graves, l'article 83
 
 On peut montrer un pourcentage de couverture de code sur les tests. Il mesure la part du code exécutée pendant les tests, pas la part du code vérifiée. Un test peut parcourir toute l'application sans rien affirmer : il passe au vert, il compte dans la couverture, il ne détecte rien.
 
-Depuis qu'un agent peut générer une suite complète sur une application existante, le chiffre vaut encore moins. Faute de spécification, le modèle déduit le comportement attendu du code qu'il a sous les yeux. Il enregistre la sortie actuelle comme référence, bug compris, et passe au vert.
+Un agent peut désormais générer une suite complète sur une application existante, et le chiffre en dit alors encore moins. Faute de spécification, le modèle déduit le comportement attendu du code qu'il a sous les yeux. Il enregistre la sortie actuelle comme référence, bug compris, et passe au vert.
 
 Ce qui compte, c'est de savoir si ces tests aideront l'équipe qui reprend ou s'ils la ralentiront. Un test couplé à l'implémentation casse au moindre réagencement qui ne change rien pour l'utilisateur, et ne bronche pas quand une règle métier est cassée.
 
@@ -194,7 +204,7 @@ Plusieurs sujets manquent ici, et ils ne tiennent pas dans un seul article.
 - La chaîne de livraison : fréquence de mise en production, revue de code, environnements, retour arrière, observabilité.
 - La faisabilité technique de la feuille de route annoncée par le vendeur.
 
-Le premier a le sien : [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas/). Les deux autres pèsent surtout pour un acquéreur qui veut accélérer.
+Le premier a le sien : [Audit PHP : pourquoi les outils ne suffisent pas](/blog/2026/08/audit-php-pourquoi-les-outils-ne-suffisent-pas). Les deux autres pèsent surtout pour un acquéreur qui veut accélérer.
 
 ## Conclusion
 
@@ -219,11 +229,11 @@ Et on situe chaque défaut sur la brique où il se trouve.
 | Générique | Un service du marché fait le travail | Aucun sujet |
 | Générique | Développé maison, à maintenir | Coût récurrent, remplaçable quand on veut |
 
-Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation/).
+Reste ce qu'aucune de ces vérifications ne montre : ce que le code dit de l'organisation qui l'a produit, et qu'on retrouvera après le rachat. C'est le sujet de [Ce que ton code dit de ton organisation](/blog/2026/08/ce-que-ton-code-dit-de-ton-organisation).
 
 Ce que ces constats deviennent dans le contrat ne se décide pas de mon côté. Mais c'est là qu'ils servent : à suspendre la vente, à obtenir une garantie du vendeur, ou à discuter le prix.
 
-Si tu prépares une acquisition et que tu veux un regard extérieur sur ce que tu t'apprêtes à reprendre, [discutons de ton contexte](/audit/).
+Si tu prépares une acquisition et que tu veux un regard extérieur sur ce que tu t'apprêtes à reprendre, [discutons de ton contexte](/audit).
 
 ## Glossaire
 
@@ -231,9 +241,9 @@ Si tu prépares une acquisition et que tu veux un regard extérieur sur ce que t
 2. **Clause de changement de contrôle** : disposition d'un contrat qui s'active quand l'actionnariat d'une des parties change. Elle peut exiger un accord préalable ou permettre au cocontractant de résilier.
 3. **Licence copyleft** : licence open source qui impose de publier sous la même licence le code qui l'utilise. La famille GPL en est l'exemple le plus connu. Un composant copyleft intégré à un produit propriétaire peut obliger à en ouvrir le code, ou à le réécrire.
 4. **Cession de droits** : transfert écrit des droits patrimoniaux d'un auteur vers un tiers. En droit français, elle est automatique pour un salarié et doit être expresse pour un prestataire indépendant.
-5. **Cœur métier** : la partie du logiciel qui porte l'avantage concurrentiel de l'entreprise. Ce qu'aucun concurrent ne peut acheter sur étagère.
-6. **Sous-domaine support** : partie nécessaire au fonctionnement mais qui ne différencie pas l'entreprise de ses concurrents.
-7. **Générique** : fonction commune à toutes les entreprises, pour laquelle des solutions existantes font le travail (authentification, facturation, envoi d'emails).
+5. **Cœur métier** : la partie stratégique du Domain-Driven Design classe les domaines fonctionnels d'une entreprise selon l'écart qu'ils créent avec la concurrence. Ce classement sert à décider où investir. Le cœur métier est la catégorie qui porte cet écart, et la seule où l'effort de développement se justifie pleinement, puisque personne ne peut le vendre à l'entreprise.
+6. **Sous-domaine support** : deuxième catégorie du même classement. Le produit ne fonctionne pas sans elle, mais elle ne crée aucun écart. La règle d'investissement s'inverse : on y met ce qui suffit, et jamais ses meilleurs efforts.
+7. **Générique** : troisième catégorie. Le marché la couvre déjà pour tout le monde, donc la décision par défaut est d'acheter plutôt que de construire. Développée maison, elle devient un coût récurrent sans contrepartie.
 
 ## Sources
 
