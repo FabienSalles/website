@@ -19,7 +19,7 @@ export async function provisionWebsite({ hostUrl, apiKey, domain = DOMAIN, name 
   if (!apiKey) throw new Error('UMAMI_API_KEY is required');
 
   const headers = {
-    'x-umami-api-key': apiKey,
+    Authorization: `Bearer ${apiKey}`,
     'Content-Type': 'application/json',
   };
 

@@ -20,6 +20,20 @@ describe('provisionWebsite', () => {
     expect(fetchImpl.mock.calls[1][1]).toMatchObject({ method: 'POST' });
   });
 
+  it('authenticates with an Authorization Bearer header, per the Umami API', async () => {
+    const fetchImpl = vi
+      .fn()
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ data: [] }) })
+      .mockResolvedValueOnce({ ok: true, json: async () => ({ id: 'new-id' }) });
+
+    await provisionWebsite({ hostUrl, apiKey, domain, fetchImpl });
+
+    expect(fetchImpl.mock.calls[0][1].headers).toMatchObject({
+      Authorization: `Bearer ${apiKey}`,
+    });
+    expect(fetchImpl.mock.calls[0][1].headers).not.toHaveProperty('x-umami-api-key');
+  });
+
   it('reuses the existing website instead of creating a duplicate', async () => {
     const fetchImpl = vi.fn().mockResolvedValueOnce({
       ok: true,
