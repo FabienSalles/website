@@ -9,6 +9,7 @@
     "build": "node scripts/generate-sitemap-dates.mjs && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

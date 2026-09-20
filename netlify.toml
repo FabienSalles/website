@@ -26,3 +26,17 @@
     to = "/"
     status = 301
     force = true
+
+# Umami served first-party so ad-blockers filtering the umami.salles.dev
+# domain don't drop the tracking script or the events it sends.
+[[redirects]]
+    from = "/stats.js"
+    to = "https://umami.salles.dev/script.js"
+    status = 200
+    force = true
+
+[[redirects]]
+    from = "/api/send"
+    to = "https://umami.salles.dev/api/send"
+    status = 200
+    force = true

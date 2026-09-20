@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { shouldInjectUmami } from "@utils/analytics";
 
 interface Props {
   title: string;
@@ -30,6 +31,16 @@ const isActive = (href: string) => {
 const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
 const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
 const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
+
+const umamiWebsiteId = import.meta.env.UMAMI_WEBSITE_ID;
+const umamiSrc = import.meta.env.UMAMI_SRC;
+const umamiHostUrl = import.meta.env.UMAMI_HOST_URL;
+const injectUmami = shouldInjectUmami({
+  context: process.env.CONTEXT,
+  websiteId: umamiWebsiteId,
+  src: umamiSrc,
+  hostUrl: umamiHostUrl,
+});
 ---
 
 <!doctype html>
@@ -71,6 +82,9 @@ const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
       gtag("js", new Date());
       gtag("config", googleAnalyticsId);
     </script>
+    {injectUmami && (
+      <script defer src={umamiSrc} data-website-id={umamiWebsiteId} data-host-url={umamiHostUrl}></script>
+    )}
     <script is:inline type="application/ld+json">
     {
       "@context": "https://schema.org",

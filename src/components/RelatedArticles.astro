@@ -40,6 +40,7 @@ const related = scored.map(s => s.post);
           <a
             href={generateUrl(`/blog/${post.slug}`)}
             class="block group"
+            data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="related-articles" data-umami-event-label={post.data.title}
           >
             <span class="text-sm text-foreground-heading group-hover:text-primary transition-colors leading-snug">
               {post.data.title}
