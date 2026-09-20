@@ -125,6 +125,27 @@ import Breadcrumb from '../components/Breadcrumb.astro';
   }
 </script>
 
+<script>
+  import { trackContactFormSubmission } from '../utils/contact-tracking';
+
+  const form = document.querySelector<HTMLFormElement>('form[name="contact"]');
+  const submitButton = form?.querySelector<HTMLButtonElement>('button[type="submit"]');
+  const umamiScript = document.querySelector<HTMLScriptElement>('script[data-website-id]');
+
+  if (form && submitButton && umamiScript && navigator.sendBeacon) {
+    // Umami auto-tracks the button's data-umami-event on click via a fetch that
+    // races the form's native submit navigation. Drop it so only the sendBeacon
+    // call below (which survives that navigation) reports the submission.
+    submitButton.removeAttribute('data-umami-event');
+    form.addEventListener('submit', () => {
+      trackContactFormSubmission(
+        { websiteId: umamiScript.dataset.websiteId!, url: window.location.pathname },
+        (url, data) => navigator.sendBeacon(url, data)
+      );
+    });
+  }
+</script>
+
 <style>
   .form-group {
     @apply relative;
