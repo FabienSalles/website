@@ -6,7 +6,6 @@ import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
-import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -53,11 +52,6 @@ export default defineConfig({
         }
         return item;
       },
-    }),
-    partytown({
-      config: {
-        forward: ["dataLayer.push"]
-      }
     }),
   ],
   markdown: {
