@@ -30,7 +30,6 @@ const isActive = (href: string) => {
 };
 const trainingEnabled = import.meta.env.TRAINING_ENABLED === 'true';
 const contactEnabled = import.meta.env.CONTACT_ENABLED === 'true';
-const googleAnalyticsId = import.meta.env.GOOGLE_ANALYTICS_ID;
 
 const umamiWebsiteId = import.meta.env.UMAMI_WEBSITE_ID;
 const umamiSrc = import.meta.env.UMAMI_SRC;
@@ -72,16 +71,6 @@ const injectUmami = shouldInjectUmami({
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="alternate" type="application/rss+xml" title="Fabien Salles - Blog RSS Feed" href="/rss.xml" />
-    <script is:inline type="text/partytown" src=`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`>
-    </script>
-    <script is:inline type="text/partytown" define:vars={{googleAnalyticsId}}>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", googleAnalyticsId);
-    </script>
     {injectUmami && (
       <script defer src={umamiSrc} data-website-id={umamiWebsiteId} data-host-url={umamiHostUrl}></script>
     )}
