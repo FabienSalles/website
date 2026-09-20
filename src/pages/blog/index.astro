@@ -32,6 +32,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
             href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
             title={category}
             class="px-3 py-1 bg-surface-muted text-foreground rounded-full text-sm hover:bg-border transition-colors"
+            data-umami-event="Click" data-umami-event-type="nav" data-umami-event-location="blog-categories" data-umami-event-label={category}
           >
             {category}
           </a>
@@ -43,7 +44,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
       {sortedPosts.map(post => (
         <article class="border-b pb-8">
           <h2 class="text-2xl font-bold mb-2">
-            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="hover:text-primary transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="hover:text-primary transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="blog-index" data-umami-event-label={post.data.title}>
               {post.data.title}
             </a>
           </h2>
@@ -62,6 +63,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
                   href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
                   title={category}
                   class="px-2 py-0.5 bg-surface-muted text-foreground rounded-full text-xs hover:bg-border transition-colors"
+                  data-umami-event="Click" data-umami-event-type="nav" data-umami-event-location="blog-index-categories" data-umami-event-label={category}
                 >
                   {category}
                 </a>
@@ -70,7 +72,7 @@ const allCategories = [...new Set(posts.flatMap(post => post.data.categories))].
           </div>
           <p class="text-foreground">{post.data.description}</p>
           <div class="mt-4">
-            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="text-primary hover:text-primary-hover transition-colors">
+            <a href={generateUrl(`/blog/${post.slug}`)} title={post.data.title} class="text-primary hover:text-primary-hover transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="blog-index" data-umami-event-label={`Lire la suite: ${post.data.title}`}>
               Lire la suite →
             </a>
           </div>

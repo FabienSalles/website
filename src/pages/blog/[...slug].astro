@@ -129,6 +129,7 @@ const articleJsonLd = {
                     href={generateUrl(`/blog/categories/${category.toLowerCase().replace(/[\s/]/g, '-')}`)}
                     title={category}
                     class="hover:text-primary transition-colors"
+                    data-umami-event="Click" data-umami-event-type="nav" data-umami-event-location="article-header" data-umami-event-label={category}
                   >
                     {category}
                   </a>
@@ -147,7 +148,7 @@ const articleJsonLd = {
             <div class="flex flex-col gap-4 pt-8 border-t border-border-light">
                 <p>
                     Vous avez repéré une erreur ?{' '}
-                    <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-primary hover:text-primary-hover transition-colors" target="_blank" rel="noopener noreferrer">
+                    <a href={githubBlogContributionBaseUrl + post.id} title="Contribuez au post sur GitHub" class="text-primary hover:text-primary-hover transition-colors" target="_blank" rel="noopener noreferrer" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="article-footer" data-umami-event-label="Contribuez au post sur GitHub">
                         Contribuez au post sur GitHub
                     </a>
                 </p>

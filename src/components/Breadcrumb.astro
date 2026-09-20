@@ -34,6 +34,7 @@ const jsonLd = {
             href={item.href}
             title={item.label}
             class="text-primary hover:text-primary-hover transition-colors"
+            data-umami-event="Click" data-umami-event-type="nav" data-umami-event-location="breadcrumb" data-umami-event-label={item.label}
           >
             {item.label}
           </a>

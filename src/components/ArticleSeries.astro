@@ -47,6 +47,7 @@ const seriesTitle = seriesTitleMap[series];
               <a
                 href={generateUrl(`/blog/${post.slug}`)}
                 class="text-sm text-foreground-muted hover:text-primary transition-colors"
+                data-umami-event="Click" data-umami-event-type="nav" data-umami-event-location="article-series" data-umami-event-label={post.data.title}
               >
                 {post.data.title}
               </a>

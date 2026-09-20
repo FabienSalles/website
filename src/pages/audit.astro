@@ -67,6 +67,7 @@ const serviceJsonLd = {
         <a
           href="#contact"
           class="btn-primary text-lg w-full md:w-auto text-center"
+          data-umami-event="Click" data-umami-event-type="cta" data-umami-event-location="hero" data-umami-event-label="Demander un diagnostic"
         >
           Demander un diagnostic
         </a>
@@ -140,6 +141,7 @@ const serviceJsonLd = {
         <a
           href="#ce-que-j-audite"
           class="btn-outline w-full md:w-auto text-center"
+          data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="douleur-section" data-umami-event-label="Voir ce que j'audite"
         >
           Voir ce que j'audite
         </a>
@@ -372,6 +374,7 @@ const serviceJsonLd = {
         <a
           href="#tarif"
           class="btn-outline text-lg inline-flex items-center gap-2 w-full md:w-auto text-center"
+          data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="perimetre-section" data-umami-event-label="Voir mes tarifs"
         >
           Voir mes tarifs
         </a>
@@ -616,7 +619,7 @@ const serviceJsonLd = {
           </h3>
           <p class="text-foreground-muted">
             Pour la mise en œuvre, je peux accompagner ton équipe :
-            <a href="/accompagnement/" class="text-primary font-semibold hover:underline">découvre l'accompagnement</a>.
+            <a href="/accompagnement/" class="text-primary font-semibold hover:underline" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="apres-audit-section" data-umami-event-label="découvre l'accompagnement">découvre l'accompagnement</a>.
           </p>
         </div>
       </div>
@@ -643,6 +646,7 @@ const serviceJsonLd = {
         <a
           href="#contact"
           class="btn-primary w-full md:w-auto text-center"
+          data-umami-event="Click" data-umami-event-type="cta" data-umami-event-location="tarification-section" data-umami-event-label="Demander un diagnostic"
         >
           Demander un diagnostic
         </a>
@@ -721,19 +725,19 @@ const serviceJsonLd = {
         <div class="mt-8 pt-6">
           <p class="text-foreground mb-4 font-medium">Tu cherches autre chose ?</p>
           <div class="flex flex-wrap gap-3 text-sm">
-            <a href="/accompagnement/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/accompagnement/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="autres-offres-section" data-umami-event-label="Accompagnement">
               <Icon name="mdi:crosshairs-gps" class="w-5 h-5 text-primary" />
               <span><strong>Accompagnement</strong></span>
             </a>
-            <a href="/formations/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/formations/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="autres-offres-section" data-umami-event-label="Formation">
               <Icon name="mdi:school" class="w-5 h-5 text-primary" />
               <span><strong>Formation</strong></span>
             </a>
-            <a href="/automatisation/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/automatisation/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="autres-offres-section" data-umami-event-label="IA & Automatisation">
               <Icon name="mdi:robot" class="w-5 h-5 text-primary" />
               <span><strong>IA & Automatisation</strong></span>
             </a>
-            <a href="/apport-affaires/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors">
+            <a href="/apport-affaires/" class="inline-flex items-center gap-2 px-3 py-2 bg-surface-elevated rounded-lg border border-border-light text-foreground hover:border-primary transition-colors" data-umami-event="Click" data-umami-event-type="link" data-umami-event-location="autres-offres-section" data-umami-event-label="Apport d'affaires">
               <Icon name="mdi:handshake" class="w-5 h-5 text-primary" />
               <span><strong>Apport d'affaires</strong></span>
             </a>
@@ -765,7 +769,7 @@ const serviceJsonLd = {
         },
         {
           question: "Et après l'audit ?",
-          answer: "Le plan d'action est fait pour être déroulé par tes équipes, en autonomie. Si tu veux un appui pour le mettre en œuvre, c'est le rôle de <a href=\"/accompagnement/\" class=\"text-primary font-semibold hover:underline\">l'accompagnement</a>."
+          answer: "Le plan d'action est fait pour être déroulé par tes équipes, en autonomie. Si tu veux un appui pour le mettre en œuvre, c'est le rôle de <a href=\"/accompagnement/\" class=\"text-primary font-semibold hover:underline\" data-umami-event=\"Click\" data-umami-event-type=\"link\" data-umami-event-location=\"faq-section\" data-umami-event-label=\"l&#39;accompagnement\">l'accompagnement</a>."
         }
       ]} />
     </div>
@@ -785,6 +789,7 @@ const serviceJsonLd = {
             href="/contact/?subject=audit"
             title="Me contacter pour un audit"
             class="btn-primary text-lg text-center"
+            data-umami-event="Click" data-umami-event-type="cta" data-umami-event-location="cta-finale" data-umami-event-label="Me contacter"
           >
             Me contacter →
           </a>
@@ -794,6 +799,7 @@ const serviceJsonLd = {
             target="_blank"
             rel="noopener noreferrer"
             class="btn-outline text-lg inline-flex items-center justify-center gap-2 text-center"
+            data-umami-event="Click" data-umami-event-type="social" data-umami-event-location="cta-finale" data-umami-event-label="LinkedIn"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
